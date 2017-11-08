@@ -6,4 +6,10 @@ install: ant
 script: ant test
 
 notifications:
-  email: false
+ email:
+    recipients:
+      - delmazofederico@gmail.com
+      - nraveszani@gmail.com
+      - viky_zambi95@hotmail.com
+      - florrr1997@gmail.com
+    on_failure: always
