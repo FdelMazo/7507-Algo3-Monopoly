@@ -5,6 +5,11 @@ jdk:
 install: ant
 script: ant test
 
+#addons:
+#  apt:
+#    packages:
+#      -oracle-java8-installer
+
 notifications:
  email:
     recipients:

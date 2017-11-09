@@ -6,7 +6,9 @@ Trabajo Práctico de Algoritmos y Programación III (FIUBA) - Modelo de Monopoly
 ### Cosas a hacer:
 
 - [ ] Pasar informe a latex antes de entregar
-- [ ] Sacar dependendias no usadas del proyecto base
+- [X] Sacar dependendias no usadas del proyecto base
+- [ ] Sacar targets de build.xml
+- [ ] Poner code coverage
 
 ### Pasos para trabajar:
 
@@ -20,6 +22,7 @@ Siempre:
     1. Informe: Modificar informe.md
     1. Codigo: Modificar src/ y test/ con IntelliJ
     1. Diagramas: Modificar diagramas.asta con Astah 
+1. `git status`
 1. `git add ARCHIVOS_MODIFICADOS`
 1. `git commit -m "Agrego.."`
 1. `git push origin master` 
