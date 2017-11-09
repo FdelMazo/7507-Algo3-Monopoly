@@ -5,11 +5,6 @@ jdk:
 install: ant
 script: ant test
 
-#addons:
-#  apt:
-#    packages:
-#      -oracle-java8-installer
-
 notifications:
  email:
     recipients:
@@ -18,3 +13,4 @@ notifications:
       - viky_zambi95@hotmail.com
       - florrr1997@gmail.com
     on_failure: always
+    on_success: always

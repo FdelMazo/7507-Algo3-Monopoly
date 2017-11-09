@@ -9,12 +9,6 @@
     <dependencies>
         
         <dependency org="junit" name="junit" rev="4.11" conf="build->default"/>
-        <!--
-         
-        <dependency org="oro" name="oro" rev="2.0.8"/>  
-        <dependency org="log4j" name="log4j" rev="1.2.9"/>
-        <dependency org="asm" name="asm" rev="3.3.1"/>
-        
-        -->
+
     </dependencies>
 </ivy-module>

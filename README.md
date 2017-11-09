@@ -3,13 +3,6 @@ Trabajo Práctico de Algoritmos y Programación III (FIUBA) - Modelo de Monopoly
 
 [![Build Status](https://travis-ci.com/FdelMazo/TP-AlgoPoly.svg?token=kj1PzEAEuR5mVTx6hGWT&branch=master)](https://travis-ci.com/FdelMazo/TP-AlgoPoly)
 
-### Cosas a hacer:
-
-- [ ] Pasar informe a latex antes de entregar
-- [X] Sacar dependendias no usadas del proyecto base
-- [ ] Sacar targets de build.xml
-- [ ] Poner code coverage
-
 ### Pasos para trabajar:
 
 Solo la primera vez:
