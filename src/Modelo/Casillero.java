@@ -2,6 +2,6 @@ package Modelo;
 
 public interface Casillero {
 
-    void actuar ( Jugador jugador);
+    int actuar ( Jugador jugador, int numDado);
 
 }

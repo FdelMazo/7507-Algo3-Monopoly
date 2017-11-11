@@ -45,7 +45,7 @@ public class Quini6Test {
         Jugador jugador = new Jugador("Dio");
         Quini6 quini6 = new Quini6();
         jugador.asignarCasilla(quini6);
-        quini6.actuar(jugador);
+        quini6.actuar(jugador,2);
         Assert.assertEquals(jugador.capital(), 150000);
     }
 
@@ -54,8 +54,8 @@ public class Quini6Test {
         Jugador jugador = new Jugador("Dio");
         Quini6 quini6 = new Quini6();
         jugador.asignarCasilla(quini6);
-        quini6.actuar(jugador);
-        quini6.actuar(jugador);
+        quini6.actuar(jugador,5);
+        quini6.actuar(jugador,3);
         Assert.assertEquals(jugador.capital(), 180000);
     }
 
@@ -64,9 +64,9 @@ public class Quini6Test {
         Jugador jugador = new Jugador("Dio");
         Quini6 quini6 = new Quini6();
         jugador.asignarCasilla(quini6);
-        quini6.actuar(jugador);
-        quini6.actuar(jugador);
-        quini6.actuar(jugador);
+        int a =quini6.actuar(jugador,2);
+        int b = quini6.actuar(jugador,5);
+        int c =quini6.actuar(jugador,7);
         Assert.assertEquals(jugador.capital(), 180000);
     }
 }

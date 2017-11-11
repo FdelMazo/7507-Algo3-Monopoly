@@ -16,9 +16,12 @@ public class Jugador {
         casillaActual = null ;  //debería ser la de salida
         nombre = nombre_jugador;
     }
+    public int devolverCantPropiedades(){
+        return propiedades.size() ;
+    }
 
-    public void cobrar_ingreso(int alquiler){
-        return;
+    public void cobrar_ingreso(int monto){
+        capital += monto;
     }
 
     public void asignarCasilla ( Casillero nueva_casilla){

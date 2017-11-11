@@ -22,7 +22,7 @@ public class Barrio implements Casillero {
         }
     }
 
-    public void actuar(Jugador jugador) {
+    public int actuar(Jugador jugador, int numDado) {
 
         if (propietario == null){
             this.vender(jugador);
@@ -30,6 +30,7 @@ public class Barrio implements Casillero {
         else{
             jugador.cobrar_ingreso(alquiler);
         }
+        return numDado;
     }
 
     public Jugador duenio (){

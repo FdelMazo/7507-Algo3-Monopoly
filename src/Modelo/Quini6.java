@@ -35,9 +35,11 @@ public class Quini6 implements Casillero {
         return 0;
     }
 
-    public void actuar ( Jugador jugador){
+    public int actuar ( Jugador jugador,int numDado){
         this.sumarVisita(jugador);
         jugador.cobrar_ingreso(this.devolverPrecioCorrespondiente(jugador));
+        return numDado;
     }
+
 
 }
