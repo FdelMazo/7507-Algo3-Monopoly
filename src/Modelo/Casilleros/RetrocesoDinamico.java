@@ -1,4 +1,6 @@
-package Modelo;
+package Modelo.Casilleros;
+
+import Modelo.Jugador;
 
 public class RetrocesoDinamico extends Dinamismo {
     public int primeraOpcion(int numDado, Jugador jugador) {
@@ -12,4 +14,5 @@ public class RetrocesoDinamico extends Dinamismo {
     public int terceraOpcion(int numDado, Jugador jugador) {
         return (restaDos(numDado)*-1);
     }
+
 }

@@ -1,4 +1,6 @@
-package Modelo;
+package Modelo.Casilleros;
+
+import Modelo.Jugador;
 
 import java.util.HashMap;
 
@@ -8,11 +10,7 @@ public class Quini6 implements Casillero {
         jugadoresregistrados = new HashMap<>();
     }
 
-    public boolean jugadorEstaRegistrado(Jugador jugador) {
-        return jugadoresregistrados.containsKey(jugador);
-    }
-
-    public void sumarVisita(Jugador jugador){
+    private void sumarVisita(Jugador jugador){
         if (jugadorEstaRegistrado(jugador)){
             jugadoresregistrados.put(jugador, jugadoresregistrados.get(jugador) + 1);
         }
@@ -25,21 +23,28 @@ public class Quini6 implements Casillero {
         return jugadoresregistrados.get(jugador);
     }
 
-    public int devolverPrecioCorrespondiente(Jugador jugador){
-        if (devolverCantidadDeVisitas(jugador) == 1){
+    public void accionAlPartir(Jugador jugador) {}
+    public boolean permiteSalida(Jugador jugador){
+        return true;
+    }
+
+    private int devolverPrecioCorrespondiente(Jugador jugador){
+        if (jugadoresregistrados.get(jugador) == 1){
             return 50000;
         }
-        else if (devolverCantidadDeVisitas(jugador) == 2){
+        else if (jugadoresregistrados.get(jugador) == 2){
             return 30000;
         }
         return 0;
     }
 
-    public int actuar ( Jugador jugador,int numDado){
+    public void accionAlCaer( Jugador jugador, int numDado){
         this.sumarVisita(jugador);
         jugador.cobrar_ingreso(this.devolverPrecioCorrespondiente(jugador));
-        return numDado;
     }
 
 
+    public boolean jugadorEstaRegistrado(Jugador jugador) {
+        return jugadoresregistrados.containsKey(jugador);
+    }
 }

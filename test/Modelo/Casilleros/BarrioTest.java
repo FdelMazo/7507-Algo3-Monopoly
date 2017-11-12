@@ -1,5 +1,7 @@
-package Modelo;
+package Modelo.Casilleros;
 
+import Modelo.Casilleros.Barrio;
+import Modelo.Jugador;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -8,10 +10,8 @@ public class BarrioTest {
 
     @Test
     public void BarrioRecienCreadoNoTieneDuenio(){
-
         Barrio buenosAiresSur = new Barrio(20000,2000);
         Assert.assertEquals( null, buenosAiresSur.duenio() );
-
     }
 
     @Test
@@ -19,8 +19,8 @@ public class BarrioTest {
 
         Jugador jugador = new Jugador("Pablo");
         Barrio buenosAiresSur = new Barrio(20000,2000);
-        jugador.asignarCasilla(buenosAiresSur);
-        buenosAiresSur.actuar(jugador,6);
+        jugador.caeEn(buenosAiresSur, 4);
+        buenosAiresSur.accionAlCaer(jugador,4);
 
         Assert.assertEquals(jugador.nombre(), buenosAiresSur.duenio().nombre() );
 
@@ -31,8 +31,8 @@ public class BarrioTest {
 
         Jugador jugador = new Jugador("Pablo");
         Barrio buenosAiresSur = new Barrio(200000,2000);
-        jugador.asignarCasilla(buenosAiresSur);
-        buenosAiresSur.actuar(jugador,4);
+        jugador.caeEn(buenosAiresSur, 0);
+        buenosAiresSur.accionAlCaer(jugador,6);
 
         Assert.assertEquals(null, buenosAiresSur.duenio() );
     }

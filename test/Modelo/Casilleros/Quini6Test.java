@@ -1,5 +1,7 @@
-package Modelo;
+package Modelo.Casilleros;
 
+import Modelo.Casilleros.Quini6;
+import Modelo.Jugador;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -16,8 +18,7 @@ public class Quini6Test {
     public void testJugadorEstaRegistradoAlPasarPorElQuini6(){
         Jugador jugador = new Jugador("Dio");
         Quini6 quini6 = new Quini6();
-        jugador.asignarCasilla(quini6);
-        quini6.sumarVisita(jugador);
+        jugador.caeEn(quini6, 0);
         Assert.assertTrue(quini6.jugadorEstaRegistrado(jugador));
     }
 
@@ -25,8 +26,7 @@ public class Quini6Test {
     public void testJugadorTiene1Visita(){
         Jugador jugador = new Jugador("Dio");
         Quini6 quini6 = new Quini6();
-        jugador.asignarCasilla(quini6);
-        quini6.sumarVisita(jugador);
+        jugador.caeEn(quini6, 0);
         Assert.assertEquals(quini6.devolverCantidadDeVisitas(jugador), 1);
     }
 
@@ -34,9 +34,8 @@ public class Quini6Test {
     public void testJugadorTiene2Visitas(){
         Jugador jugador = new Jugador("Dio");
         Quini6 quini6 = new Quini6();
-        jugador.asignarCasilla(quini6);
-        quini6.sumarVisita(jugador);
-        quini6.sumarVisita(jugador);
+        jugador.caeEn(quini6, 0);
+        jugador.caeEn(quini6, 0);
         Assert.assertEquals(quini6.devolverCantidadDeVisitas(jugador), 2);
     }
 
@@ -44,8 +43,7 @@ public class Quini6Test {
     public void testJugadorAlPasarPorPrimeraVezRecibe50000ASuCapital(){
         Jugador jugador = new Jugador("Dio");
         Quini6 quini6 = new Quini6();
-        jugador.asignarCasilla(quini6);
-        quini6.actuar(jugador,2);
+        jugador.caeEn(quini6, 0);
         Assert.assertEquals(jugador.capital(), 150000);
     }
 
@@ -53,9 +51,8 @@ public class Quini6Test {
     public void testJugadorAlPasarPorSegundaVezRecibe30000ASuCapital(){
         Jugador jugador = new Jugador("Dio");
         Quini6 quini6 = new Quini6();
-        jugador.asignarCasilla(quini6);
-        quini6.actuar(jugador,5);
-        quini6.actuar(jugador,3);
+        jugador.caeEn(quini6, 0);
+        jugador.caeEn(quini6, 0);
         Assert.assertEquals(jugador.capital(), 180000);
     }
 
@@ -63,10 +60,10 @@ public class Quini6Test {
     public void testJugadorAlPasarPorTerceraVezNoRecibeIngresoASuCapital(){
         Jugador jugador = new Jugador("Dio");
         Quini6 quini6 = new Quini6();
-        jugador.asignarCasilla(quini6);
-        int a =quini6.actuar(jugador,2);
-        int b = quini6.actuar(jugador,5);
-        int c =quini6.actuar(jugador,7);
+        jugador.caeEn(quini6, 0);
+        jugador.caeEn(quini6, 0);
+        jugador.caeEn(quini6, 0);
+        jugador.caeEn(quini6, 0);
         Assert.assertEquals(jugador.capital(), 180000);
     }
 }

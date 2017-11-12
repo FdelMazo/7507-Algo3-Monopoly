@@ -1,5 +1,8 @@
 package Modelo;
 
+import Modelo.Casilleros.Barrio;
+import Modelo.Casilleros.Casillero;
+
 import java.util.ArrayList;
 
 public class Jugador {
@@ -20,21 +23,34 @@ public class Jugador {
         return propiedades.size() ;
     }
 
-    public void cobrar_ingreso(int monto){
-        capital += monto;
+    //public int tirarDados
+
+    public void empezarTurno(){ casillaActual.accionAlPartir(this); }
+
+    public void caeEn(Casillero casillero, int numDado){
+        casillaActual = casillero;
+        casillaActual.accionAlCaer(this, numDado);
     }
 
-    public void asignarCasilla ( Casillero nueva_casilla){
-     casillaActual = nueva_casilla;
+    //public void casilleroActual(){ return casillaActual; }
+
+    public void cobrar_ingreso(int monto){
+        capital += monto;
     }
 
     public int capital(){
         return capital;
     }
 
-    public void pedir_dinero( int dinero_solicitado){
-        capital -= dinero_solicitado;
+    public void pedir_dinero( int dinero_solicitado){ capital -= dinero_solicitado;   }
+    public boolean solicitar_dinero( int dinero_solicitado)    {
+        if (capital>dinero_solicitado){
+           pedir_dinero(dinero_solicitado);
+           return true;
+        }
+        return false;
     }
+
 
     public void agregar_propiedad(Barrio barrio){
         propiedades.add(barrio);

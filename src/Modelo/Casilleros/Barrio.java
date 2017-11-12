@@ -1,4 +1,6 @@
-package Modelo;
+package Modelo.Casilleros;
+
+import Modelo.Jugador;
 
 public class Barrio implements Casillero {
 
@@ -12,7 +14,9 @@ public class Barrio implements Casillero {
         costo = valor_propiedad;
         alquiler = costo_alquiler;
     }
-
+    public boolean permiteSalida(Jugador jugador){
+        return true;
+    }
     public void vender(Jugador jugador){
         int capital_jugador = jugador.capital();
         if (capital_jugador >= costo) {
@@ -22,7 +26,10 @@ public class Barrio implements Casillero {
         }
     }
 
-    public int actuar(Jugador jugador, int numDado) {
+    public void accionAlPartir(Jugador jugador) {
+    }
+
+    public void accionAlCaer(Jugador jugador, int numDado) {
 
         if (propietario == null){
             this.vender(jugador);
@@ -30,7 +37,6 @@ public class Barrio implements Casillero {
         else{
             jugador.cobrar_ingreso(alquiler);
         }
-        return numDado;
     }
 
     public Jugador duenio (){

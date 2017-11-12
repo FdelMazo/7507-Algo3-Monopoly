@@ -1,4 +1,6 @@
-package Modelo;
+package Modelo.Casilleros;
+
+import Modelo.Jugador;
 
 public class AvanceDinamico extends Dinamismo{
 
@@ -11,4 +13,6 @@ public class AvanceDinamico extends Dinamismo{
     public int terceraOpcion(int numDado , Jugador jugador){
         return restaCantidadPropiedades(numDado, jugador);
     }
+
+
 }

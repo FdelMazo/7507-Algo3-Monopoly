@@ -2,18 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6554b38e-5006-4b3c-9879-b090815babcd" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Modelo/AvanceDinamico.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Modelo/Dinamismo.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Modelo/RetrocesoDinamico.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/Modelo/MovimientoDinamicoTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Controladores/Blank.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Modelo/Casilleros/Carcel.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Modelo/Tablero.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/Controladores/BlankTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/Modelo/Casilleros/CarcelTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Modelo/AvanceDinamico.java" afterPath="$PROJECT_DIR$/src/Modelo/Casilleros/AvanceDinamico.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Modelo/Barrio.java" afterPath="$PROJECT_DIR$/src/Modelo/Casilleros/Barrio.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Modelo/Casillero.java" afterPath="$PROJECT_DIR$/src/Modelo/Casilleros/Casillero.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Modelo/Dinamismo.java" afterPath="$PROJECT_DIR$/src/Modelo/Casilleros/Dinamismo.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Modelo/Quini6.java" afterPath="$PROJECT_DIR$/src/Modelo/Casilleros/Quini6.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/Modelo/RetrocesoDinamico.java" afterPath="$PROJECT_DIR$/src/Modelo/Casilleros/RetrocesoDinamico.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test/Modelo/BarrioTest.java" afterPath="$PROJECT_DIR$/test/Modelo/Casilleros/BarrioTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test/Modelo/MovimientoDinamicoTest.java" afterPath="$PROJECT_DIR$/test/Modelo/Casilleros/MovimientoDinamicoTest.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/test/Modelo/Quini6Test.java" afterPath="$PROJECT_DIR$/test/Modelo/Casilleros/Quini6Test.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Modelo/Barrio.java" afterPath="$PROJECT_DIR$/src/Modelo/Barrio.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Modelo/Casillero.java" afterPath="$PROJECT_DIR$/src/Modelo/Casillero.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Modelo/Jugador.java" afterPath="$PROJECT_DIR$/src/Modelo/Jugador.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Modelo/Quini6.java" afterPath="$PROJECT_DIR$/src/Modelo/Quini6.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/Modelo/BarrioTest.java" afterPath="$PROJECT_DIR$/test/Modelo/BarrioTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/Modelo/Quini6Test.java" afterPath="$PROJECT_DIR$/test/Modelo/Quini6Test.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -24,11 +30,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="BarrioTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/Modelo/BarrioTest.java">
+      <file leaf-file-name="CarcelTest.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/Modelo/Casilleros/CarcelTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="41" lean-forward="true" selection-start-line="20" selection-start-column="8" selection-end-line="22" selection-end-column="41" />
+            <state relative-caret-position="301">
+              <caret line="31" column="29" lean-forward="false" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -36,22 +42,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Quini6Test.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/Modelo/Quini6Test.java">
+      <file leaf-file-name="Carcel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Modelo/Casilleros/Carcel.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1005">
-              <caret line="68" column="15" lean-forward="false" selection-start-line="68" selection-start-column="15" selection-end-line="68" selection-end-column="15" />
-              <folding />
+            <state relative-caret-position="328">
+              <caret line="31" column="20" lean-forward="false" selection-start-line="31" selection-start-column="15" selection-end-line="31" selection-end-column="20" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Quini6.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Modelo/Quini6.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="15" lean-forward="false" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
-              <folding />
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="260">
+                <caret line="34" column="4" lean-forward="false" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -59,95 +70,8 @@
       <file leaf-file-name="Jugador.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Modelo/Jugador.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="22" column="42" lean-forward="true" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
-              <folding>
-                <element signature="e#458#459#0" expanded="true" />
-                <element signature="e#500#501#0" expanded="true" />
-                <element signature="e#576#577#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Dinamismo.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/Modelo/Dinamismo.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="123">
-              <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
-              <folding>
-                <element signature="e#493#494#0" expanded="true" />
-                <element signature="e#525#526#0" expanded="true" />
-                <element signature="e#589#590#0" expanded="true" />
-                <element signature="e#641#642#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="JugadorTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/Modelo/JugadorTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="58" lean-forward="false" selection-start-line="20" selection-start-column="58" selection-end-line="20" selection-end-column="58" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AvanceDinamico.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Modelo/AvanceDinamico.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="58" lean-forward="false" selection-start-line="11" selection-start-column="58" selection-end-line="11" selection-end-column="58" />
-              <folding>
-                <element signature="e#123#124#0" expanded="true" />
-                <element signature="e#163#164#0" expanded="true" />
-                <element signature="e#222#223#0" expanded="true" />
-                <element signature="e#279#280#0" expanded="true" />
-                <element signature="e#340#341#0" expanded="true" />
-                <element signature="e#405#406#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RetrocesoDinamico.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Modelo/RetrocesoDinamico.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="4" column="57" lean-forward="true" selection-start-line="4" selection-start-column="57" selection-end-line="4" selection-end-column="57" />
-              <folding>
-                <element signature="e#127#128#0" expanded="true" />
-                <element signature="e#196#197#0" expanded="true" />
-                <element signature="e#258#259#0" expanded="true" />
-                <element signature="e#320#321#0" expanded="true" />
-                <element signature="e#382#383#0" expanded="true" />
-                <element signature="e#427#428#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MovimientoDinamicoTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test/Modelo/MovimientoDinamicoTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="690">
-              <caret line="46" column="23" lean-forward="false" selection-start-line="46" selection-start-column="23" selection-end-line="46" selection-end-column="23" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Barrio.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/Modelo/Barrio.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="32" column="23" lean-forward="false" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+            <state relative-caret-position="-130">
+              <caret line="16" column="29" lean-forward="false" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -170,6 +94,8 @@
       <find>coverage</find>
       <find>test</find>
       <find>build</find>
+      <find>presos</find>
+      <find>actual</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -193,15 +119,12 @@
         <option value="$PROJECT_DIR$/src/HelloWorld" />
         <option value="$PROJECT_DIR$/informe.md" />
         <option value="$PROJECT_DIR$/test/Modelo/Jugador.java" />
-        <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/Modelo/Blank.java" />
         <option value="$PROJECT_DIR$/src/Vista/Blank.java" />
         <option value="$PROJECT_DIR$/test/Modelo/BlankTest.java" />
         <option value="$PROJECT_DIR$/test/Vista/BlankTest.java" />
         <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/ivy.xml" />
-        <option value="$PROJECT_DIR$/src/Controladores/Blank.java" />
         <option value="$PROJECT_DIR$/build.xml" />
         <option value="$PROJECT_DIR$/build/tests/Controladores/BlankTest.class" />
         <option value="$PROJECT_DIR$/src/Controladores/Casillero.java" />
@@ -211,16 +134,32 @@
         <option value="$PROJECT_DIR$/src/Controladores/Barrio.java" />
         <option value="$PROJECT_DIR$/test/Controladores/BarrioTest.java" />
         <option value="$PROJECT_DIR$/test/Modelo/JugadorTest.java" />
-        <option value="$PROJECT_DIR$/src/Modelo/Casillero.java" />
         <option value="$PROJECT_DIR$/src/Modelo/Barrio.java" />
         <option value="$PROJECT_DIR$/src/Modelo/AvanceDinamico.java" />
-        <option value="$PROJECT_DIR$/test/Modelo/BarrioTest.java" />
-        <option value="$PROJECT_DIR$/test/Modelo/MovimientoDinamicoTest.java" />
         <option value="$PROJECT_DIR$/src/Modelo/RetrocesoDinamico.java" />
-        <option value="$PROJECT_DIR$/src/Modelo/Quini6.java" />
-        <option value="$PROJECT_DIR$/test/Modelo/Quini6Test.java" />
-        <option value="$PROJECT_DIR$/src/Modelo/Jugador.java" />
         <option value="$PROJECT_DIR$/src/Modelo/Dinamismo.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/src/Vista/Controladores.java" />
+        <option value="$PROJECT_DIR$/src/Controladores/Blank.java" />
+        <option value="$PROJECT_DIR$/src/Controladores/BlankTest.java" />
+        <option value="$PROJECT_DIR$/src/Modelo/Quini6.java" />
+        <option value="$PROJECT_DIR$/src/Modelo/Carcel.java" />
+        <option value="$PROJECT_DIR$/src/Modelo/Casillero.java" />
+        <option value="$PROJECT_DIR$/src/Modelo/Casilleros/AvanceDinamico.java" />
+        <option value="$PROJECT_DIR$/src/Modelo/Casilleros/RetrocesoDinamico.java" />
+        <option value="$PROJECT_DIR$/src/Modelo/Tablero.java" />
+        <option value="$PROJECT_DIR$/src/Modelo/Casilleros/Dinamismo.java" />
+        <option value="$PROJECT_DIR$/src/Modelo/Casilleros/Barrio.java" />
+        <option value="$PROJECT_DIR$/src/Modelo/Casilleros/Quini6.java" />
+        <option value="$PROJECT_DIR$/test/Modelo/Quini6Test.java" />
+        <option value="$PROJECT_DIR$/test/Modelo/MovimientoDinamicoTest.java" />
+        <option value="$PROJECT_DIR$/test/Modelo/BarrioTest.java" />
+        <option value="$PROJECT_DIR$/src/Modelo/Casilleros/Casillero.java" />
+        <option value="$PROJECT_DIR$/src/Modelo/Jugador.java" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/test/Modelo/CarcelTest.java" />
+        <option value="$PROJECT_DIR$/src/Modelo/Casilleros/Carcel.java" />
+        <option value="$PROJECT_DIR$/test/Modelo/Casilleros/CarcelTest.java" />
       </list>
     </option>
   </component>
@@ -231,9 +170,13 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="114" />
-    <option name="width" value="841" />
-    <option name="height" value="923" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
+  </component>
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -250,9 +193,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
-      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -274,6 +215,19 @@
             <path>
               <item name="TP-AlgoPoly" type="b2602c69:ProjectViewProjectNode" />
               <item name="TP-AlgoPoly" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Modelo" type="462c0819:PsiDirectoryNode" />
+              <item name="Casilleros" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TP-AlgoPoly" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TP-AlgoPoly" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Vista" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="TP-AlgoPoly" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TP-AlgoPoly" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -282,11 +236,20 @@
               <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="Modelo" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="TP-AlgoPoly" type="b2602c69:ProjectViewProjectNode" />
+              <item name="TP-AlgoPoly" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="Modelo" type="462c0819:PsiDirectoryNode" />
+              <item name="Casilleros" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -303,22 +266,134 @@
     <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Feder\Desktop\TP-AlgoPoly" />
-    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="Modelo" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="Vista" />
-      <recent name="Modelo" />
+      <recent name="Modelo.Casilleros" />
       <recent name="Controladores" />
+      <recent name="Modelo" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Feder\Desktop\TP-AlgoPoly\test" />
       <recent name="C:\Users\Feder\Desktop\TP-AlgoPoly\src" />
       <recent name="C:\Users\Feder\Desktop\TP-AlgoPoly" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="Modelo" />
+      <recent name="Controladores" />
+      <recent name="Vista" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Feder\Desktop\TP-AlgoPoly" />
+    </key>
+  </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/README.md</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -332,19 +407,19 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.Modelo in TP-AlgoPoly">
+  <component name="RunManager" selected="JUnit.Test Totales">
     <configuration name="BarrioTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="Modelo.*" />
+          <option name="PATTERN" value="Modelo.Casilleros.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="TP-AlgoPoly" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="Modelo" />
-      <option name="MAIN_CLASS_NAME" value="Modelo.BarrioTest" />
+      <option name="PACKAGE_NAME" value="Modelo.Casilleros" />
+      <option name="MAIN_CLASS_NAME" value="Modelo.Casilleros.BarrioTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -358,20 +433,20 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="Modelo in TP-AlgoPoly" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CarcelTest.testCarcelPermiteSalidaDespuesDelPrimerTurno" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="Modelo.*" />
+          <option name="PATTERN" value="Modelo.Casilleros.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="TP-AlgoPoly" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="Modelo" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="package" />
+      <option name="PACKAGE_NAME" value="Modelo.Casilleros" />
+      <option name="MAIN_CLASS_NAME" value="Modelo.Casilleros.CarcelTest" />
+      <option name="METHOD_NAME" value="testCarcelPermiteSalidaDespuesDelPrimerTurno" />
+      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -383,10 +458,35 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="Quini6Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CarcelTest.testJugadorEstaRegistradoAlPasarPorElQuini6" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="Modelo.*" />
+          <option name="PATTERN" value="Modelo.Casilleros.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="TP-AlgoPoly" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="Modelo.Casilleros" />
+      <option name="MAIN_CLASS_NAME" value="Modelo.Casilleros.CarcelTest" />
+      <option name="METHOD_NAME" value="testJugadorEstaRegistradoAlPasarPorElQuini6" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+    </configuration>
+    <configuration name="JugadorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="Modelo.Casilleros.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -394,7 +494,7 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="Modelo" />
-      <option name="MAIN_CLASS_NAME" value="Modelo.Quini6Test" />
+      <option name="MAIN_CLASS_NAME" value="Modelo.JugadorTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -408,45 +508,20 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="Quini6Test.testJugadorAlPasarPorPrimeraVezRecibe50000ASuCapital" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MovimientoDinamicoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="Modelo.*" />
+          <option name="PATTERN" value="Modelo.Casilleros.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="TP-AlgoPoly" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="Modelo" />
-      <option name="MAIN_CLASS_NAME" value="Modelo.Quini6Test" />
-      <option name="METHOD_NAME" value="testJugadorAlPasarPorPrimeraVezRecibe50000ASuCapital" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="Quini6Test.testJugadorAlPasarPorTerceraVezNoRecibeIngresoASuCapital" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
-        <pattern>
-          <option name="PATTERN" value="Modelo.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <module name="TP-AlgoPoly" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="Modelo" />
-      <option name="MAIN_CLASS_NAME" value="Modelo.Quini6Test" />
-      <option name="METHOD_NAME" value="testJugadorAlPasarPorTerceraVezNoRecibeIngresoASuCapital" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="Modelo.Casilleros" />
+      <option name="MAIN_CLASS_NAME" value="Modelo.Casilleros.MovimientoDinamicoTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -567,19 +642,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="JUnit.Test Totales" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.BarrioTest" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.Quini6Test" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.Quini6Test.testJugadorAlPasarPorTerceraVezNoRecibeIngresoASuCapital" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.Quini6Test.testJugadorAlPasarPorPrimeraVezRecibe50000ASuCapital" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.Modelo in TP-AlgoPoly" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.MovimientoDinamicoTest" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.BarrioTest" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.JugadorTest" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.CarcelTest.testJugadorEstaRegistradoAlPasarPorElQuini6" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.CarcelTest.testCarcelPermiteSalidaDespuesDelPrimerTurno" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.Modelo in TP-AlgoPoly" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.Quini6Test" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.Quini6Test.testJugadorAlPasarPorPrimeraVezRecibe50000ASuCapital" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.Quini6Test.testJugadorAlPasarPorTerceraVezNoRecibeIngresoASuCapital" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.BarrioTest" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.CarcelTest.testCarcelPermiteSalidaDespuesDelPrimerTurno" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.CarcelTest.testJugadorEstaRegistradoAlPasarPorElQuini6" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.JugadorTest" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.BarrioTest" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.MovimientoDinamicoTest" />
       </list>
     </recent_temporary>
   </component>
@@ -601,69 +676,70 @@
       <workItem from="1510268923894" duration="8030000" />
       <workItem from="1510279668463" duration="8000" />
       <workItem from="1510425244594" duration="7973000" />
+      <workItem from="1510439802261" duration="25000" />
+      <workItem from="1510439845670" duration="9827000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="BarrioTest - 2017.11.11 at 17h 35m 10s.xml">
-      <configuration name="BarrioTest" configurationId="JUnit" />
+    <history-entry file="CarcelTest_testCarcelPermiteSalidaDespuesDelPrimerTurno - 2017.11.11 at 22h 26m 26s.xml">
+      <configuration name="CarcelTest.testCarcelPermiteSalidaDespuesDelPrimerTurno" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="JugadorTest - 2017.11.11 at 17h 34m 57s.xml">
-      <configuration name="JugadorTest" configurationId="JUnit" />
+    <history-entry file="CarcelTest_testJugadorEstaRegistradoAlPasarPorElQuini6 - 2017.11.11 at 22h 15m 53s.xml">
+      <configuration name="CarcelTest.testJugadorEstaRegistradoAlPasarPorElQuini6" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Modelo_in_TP-AlgoPoly - 2017.11.11 at 17h 44m 51s.xml">
-      <configuration name="Modelo in TP-AlgoPoly" configurationId="JUnit" />
+    <history-entry file="Test_Totales - 2017.11.11 at 22h 24m 44s.xml">
+      <configuration name="Test Totales" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Modelo_in_TP-AlgoPoly - 2017.11.11 at 17h 45m 50s.xml">
-      <configuration name="Modelo in TP-AlgoPoly" configurationId="JUnit" />
+    <history-entry file="Test_Totales - 2017.11.11 at 22h 27m 51s.xml">
+      <configuration name="Test Totales" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="MovimientoDinamicoTest - 2017.11.11 at 17h 33m 49s.xml">
-      <configuration name="MovimientoDinamicoTest" configurationId="JUnit" />
+    <history-entry file="Test_Totales - 2017.11.11 at 22h 28m 01s.xml">
+      <configuration name="Test Totales" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Quini6Test - 2017.11.11 at 17h 35m 26s.xml">
-      <configuration name="Quini6Test" configurationId="JUnit" />
+    <history-entry file="Test_Totales - 2017.11.11 at 22h 29m 23s.xml">
+      <configuration name="Test Totales" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Quini6Test - 2017.11.11 at 17h 43m 49s.xml">
-      <configuration name="Quini6Test" configurationId="JUnit" />
+    <history-entry file="Test_Totales - 2017.11.11 at 22h 30m 01s.xml">
+      <configuration name="Test Totales" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Quini6Test_testJugadorAlPasarPorPrimeraVezRecibe50000ASuCapital - 2017.11.11 at 17h 39m 41s.xml">
-      <configuration name="Quini6Test.testJugadorAlPasarPorPrimeraVezRecibe50000ASuCapital" configurationId="JUnit" />
+    <history-entry file="Test_Totales - 2017.11.11 at 22h 30m 23s.xml">
+      <configuration name="Test Totales" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Quini6Test_testJugadorAlPasarPorPrimeraVezRecibe50000ASuCapital - 2017.11.11 at 17h 43m 21s.xml">
-      <configuration name="Quini6Test.testJugadorAlPasarPorPrimeraVezRecibe50000ASuCapital" configurationId="JUnit" />
+    <history-entry file="Test_Totales - 2017.11.11 at 22h 30m 50s.xml">
+      <configuration name="Test Totales" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="Quini6Test_testJugadorAlPasarPorTerceraVezNoRecibeIngresoASuCapital - 2017.11.11 at 17h 38m 08s.xml">
-      <configuration name="Quini6Test.testJugadorAlPasarPorTerceraVezNoRecibeIngresoASuCapital" configurationId="JUnit" />
+    <history-entry file="Test_Totales - 2017.11.11 at 22h 31m 15s.xml">
+      <configuration name="Test Totales" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22139000" />
+    <option name="totallyTimeSpent" value="31991000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="114" width="1368" height="743" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32761312" sideWeight="0.49121523" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32649842" sideWeight="0.49121523" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.109350234" sideWeight="0.511713" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2574103" sideWeight="0.48828697" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25709778" sideWeight="0.48828697" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24816984" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.111273795" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -671,35 +747,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.109350234" sideWeight="0.511713" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.111273795" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32873806" sideWeight="0.49121523" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20360552" sideWeight="0.48828697" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2484375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -708,7 +755,18 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/test/Modelo/Casilleros/MovimientoDinamicoTest.java</url>
+          <line>38</line>
+          <properties class="Modelo.Casilleros.MovimientoDinamicoTest" method="numeroEntre2Y6EnRetrocesoDianmico">
+            <option name="EMULATED" value="true" />
+          </properties>
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="2" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -729,39 +787,7 @@
     </buildFile>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test/Modelo/JugadorTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/Modelo/BarrioTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="15" lean-forward="true" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Modelo/Barrio.java" />
-    <entry file="file://$PROJECT_DIR$/test/Modelo/JugadorTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="14" column="0" lean-forward="true" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Modelo/Jugador.java" />
-    <entry file="file://$PROJECT_DIR$/src/Modelo/Casillero.java" />
+    <entry file="file://$PROJECT_DIR$/src/Modelo/Casilleros/Casillero.java" />
     <entry file="file://$PROJECT_DIR$/build.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="782">
@@ -770,12 +796,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/Modelo/BarrioTest.java">
+    <entry file="file://$PROJECT_DIR$/test/Modelo/Casilleros/BarrioTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="9" column="28" lean-forward="false" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -879,46 +905,10 @@
     <entry file="file://$PROJECT_DIR$/build.properties" />
     <entry file="file://$PROJECT_DIR$/src/HelloWorld" />
     <entry file="file://$PROJECT_DIR$/test/fiuba/algo3/ejemplomvc/modelo/DirectionTest.java" />
-    <entry file="file://$PROJECT_DIR$/informe.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="315">
-            <caret line="21" column="1" lean-forward="false" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/fiuba/algo3/Jugador.java" />
     <entry file="file://$PROJECT_DIR$/test/Modelo/Jugador.java" />
     <entry file="file://$PROJECT_DIR$/JugadorTest.class" />
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="204">
-            <caret line="12" column="13" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Modelo/Blank.java" />
-    <entry file="file://$PROJECT_DIR$/src/Vista/Blank.java" />
-    <entry file="file://$PROJECT_DIR$/test/Vista/BlankTest.java" />
-    <entry file="file://$PROJECT_DIR$/.travis.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="5" lean-forward="false" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ivy.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -928,129 +918,211 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build/tests/Controladores/BlankTest.class" />
+    <entry file="file://$PROJECT_DIR$/test/Modelo/BlankTest.java" />
+    <entry file="file://$PROJECT_DIR$/src/Vista/Controladores.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Controladores/Blank.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.travis.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="0" lean-forward="true" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/build.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
+        <state relative-caret-position="323">
           <caret line="46" column="13" lean-forward="false" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Controladores/Blank.java" />
-    <entry file="file://$PROJECT_DIR$/test/Modelo/BlankTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/Modelo/Casillero.java">
+    <entry file="file://$PROJECT_DIR$/test/Controladores/BlankTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="12" lean-forward="false" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+        <state relative-caret-position="187">
+          <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Modelo/Barrio.java">
+    <entry file="file://$PROJECT_DIR$/test/Vista/BlankTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="32" column="23" lean-forward="false" selection-start-line="32" selection-start-column="23" selection-end-line="32" selection-end-column="23" />
+        <state relative-caret-position="68">
+          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Modelo/AvanceDinamico.java">
+    <entry file="file://$PROJECT_DIR$/src/Vista/Blank.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="58" lean-forward="false" selection-start-line="11" selection-start-column="58" selection-end-line="11" selection-end-column="58" />
-          <folding>
-            <element signature="e#123#124#0" expanded="true" />
-            <element signature="e#163#164#0" expanded="true" />
-            <element signature="e#222#223#0" expanded="true" />
-            <element signature="e#279#280#0" expanded="true" />
-            <element signature="e#340#341#0" expanded="true" />
-            <element signature="e#405#406#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="34">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Modelo/RetrocesoDinamico.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="57" lean-forward="true" selection-start-line="4" selection-start-column="57" selection-end-line="4" selection-end-column="57" />
-          <folding>
-            <element signature="e#127#128#0" expanded="true" />
-            <element signature="e#196#197#0" expanded="true" />
-            <element signature="e#258#259#0" expanded="true" />
-            <element signature="e#320#321#0" expanded="true" />
-            <element signature="e#382#383#0" expanded="true" />
-            <element signature="e#427#428#0" expanded="true" />
-          </folding>
+    <entry file="file://$PROJECT_DIR$/informe.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="342">
+            <caret line="21" column="1" lean-forward="false" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/Modelo/MovimientoDinamicoTest.java">
+    <entry file="file://$PROJECT_DIR$/src/Modelo/Casilleros/Barrio.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="690">
-          <caret line="46" column="23" lean-forward="false" selection-start-line="46" selection-start-column="23" selection-end-line="46" selection-end-column="23" />
+        <state relative-caret-position="413">
+          <caret line="39" column="0" lean-forward="false" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Modelo/Tablero.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Modelo/Casilleros/Quini6.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-51">
+          <caret line="30" column="11" lean-forward="false" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1285#1286#0" expanded="true" />
+            <element signature="e#1349#1350#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Modelo/Casilleros/AvanceDinamico.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="45" lean-forward="false" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Modelo/Casilleros/Dinamismo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-34">
+          <caret line="7" column="38" lean-forward="false" selection-start-line="7" selection-start-column="21" selection-end-line="7" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Modelo/Casilleros/RetrocesoDinamico.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Modelo/Casilleros/MovimientoDinamicoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="8" column="0" lean-forward="false" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/Modelo/JugadorTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="58" lean-forward="false" selection-start-line="20" selection-start-column="58" selection-end-line="20" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="284">
+          <caret line="19" column="30" lean-forward="false" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/Modelo/BarrioTest.java">
+    <entry file="file://$PROJECT_DIR$/test/Modelo/Casilleros/BarrioTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="41" lean-forward="true" selection-start-line="20" selection-start-column="8" selection-end-line="22" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="165">
+          <caret line="20" column="20" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Modelo/Casilleros/Casillero.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/Modelo/Casilleros/Quini6Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Modelo/Jugador.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="22" column="42" lean-forward="true" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
+        <state relative-caret-position="-130">
+          <caret line="16" column="29" lean-forward="false" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="260">
+            <caret line="34" column="4" lean-forward="false" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
+            <folding />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Modelo/Casilleros/Carcel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="31" column="20" lean-forward="false" selection-start-line="31" selection-start-column="15" selection-end-line="31" selection-end-column="20" />
           <folding>
-            <element signature="e#458#459#0" expanded="true" />
-            <element signature="e#500#501#0" expanded="true" />
-            <element signature="e#576#577#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Modelo/Quini6.java">
+    <entry file="file://$PROJECT_DIR$/test/Modelo/Casilleros/CarcelTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="15" lean-forward="false" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/Modelo/Quini6Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1005">
-          <caret line="68" column="15" lean-forward="false" selection-start-line="68" selection-start-column="15" selection-end-line="68" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Modelo/Dinamismo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+        <state relative-caret-position="301">
+          <caret line="31" column="29" lean-forward="false" selection-start-line="31" selection-start-column="29" selection-end-line="31" selection-end-column="29" />
           <folding>
-            <element signature="e#493#494#0" expanded="true" />
-            <element signature="e#525#526#0" expanded="true" />
-            <element signature="e#589#590#0" expanded="true" />
-            <element signature="e#641#642#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
