@@ -1,11 +1,13 @@
 package Modelo.Casilleros;
 
 import Modelo.Jugador;
+import Modelo.Tablero;
 
 import java.util.HashMap;
 
 public class Quini6 implements Casillero {
     private HashMap<Jugador, Integer> jugadoresregistrados;
+
     public Quini6(){
         jugadoresregistrados = new HashMap<>();
     }
@@ -38,7 +40,7 @@ public class Quini6 implements Casillero {
         return 0;
     }
 
-    public void accionAlCaer( Jugador jugador, int numDado){
+    public void accionAlCaer( Jugador jugador, int numDado, Tablero tablero){
         this.sumarVisita(jugador);
         jugador.cobrar_ingreso(this.devolverPrecioCorrespondiente(jugador));
     }

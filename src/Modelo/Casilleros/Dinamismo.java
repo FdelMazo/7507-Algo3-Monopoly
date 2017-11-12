@@ -1,12 +1,14 @@
 package Modelo.Casilleros;
 
 import Modelo.Jugador;
+import Modelo.Tablero;
 
 public abstract class Dinamismo implements Casillero {
 
-    public void accionAlCaer(Jugador jugador, int numDado){
+    public void accionAlCaer(Jugador jugador, int numDado, Tablero tablero){
         int aMover = calcularDinamismo(jugador, numDado);
-        //tablero.mover(jugador, aMover);
+        Casillero nuevoCasillero = tablero.desplazarCasillero(this, aMover, jugador);
+        jugador.caeEn(nuevoCasillero, numDado, tablero);
     }
 
     public int calcularDinamismo(Jugador jugador, int numDado) {

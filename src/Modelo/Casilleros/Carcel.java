@@ -1,6 +1,7 @@
 package Modelo.Casilleros;
 
 import Modelo.Jugador;
+import Modelo.Tablero;
 
 import java.util.HashMap;
 
@@ -19,7 +20,7 @@ public class Carcel implements Casillero {
         return jugador.solicitar_dinero(45000);
     }
 
-    public void accionAlCaer(Jugador jugador, int numDado) {
+    public void accionAlCaer(Jugador jugador, int numDado, Tablero tablero) {
         nochesPresos.put(jugador, 1);
     }
 

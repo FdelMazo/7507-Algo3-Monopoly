@@ -8,4 +8,4 @@ tmp/
 bin/
 build.xml.old
 *.jar
-idea/
+.idea/

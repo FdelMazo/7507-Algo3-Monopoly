@@ -7,17 +7,14 @@ public class JugadorTest {
 
     @Test
     public void capitalInicialEs100000(){
-
         Jugador jugador = new Jugador("Marcos");
         Assert.assertEquals(100000,jugador.capital());
-
     }
 
     @Test
     public void solicitarDineroRestaAlCapitalDelJugador() {
-
         Jugador jugador = new Jugador("María");
-        jugador.pedir_dinero(500);
+        jugador.solicitar_dinero(500);
         Assert.assertEquals(100000-500,jugador.capital());
     }
 
