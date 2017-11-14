@@ -1,6 +1,7 @@
 package Modelo;
 
 import Modelo.Casilleros.Barrio;
+import Modelo.Casilleros.Servicio;
 import Modelo.Casilleros.Casillero;
 
 import java.util.ArrayList;
@@ -11,12 +12,14 @@ public class Jugador {
     private ArrayList<Barrio> propiedades;
     private Casillero casilleroActual;
     private String nombre;
+    private ArrayList<Servicio> servicios;
 
     public Jugador(String nombre_jugador) {
         this.capital = 100000;
         propiedades = new ArrayList<>();
         casilleroActual = null ;  //debería ser la de salida
         nombre = nombre_jugador;
+        servicios = new ArrayList<>();
     }
 
     public int devolverCantPropiedades(){
@@ -50,6 +53,10 @@ public class Jugador {
 
     public void agregar_propiedad(Barrio barrio){
         propiedades.add(barrio);
+    }
+
+    public void agregar_servicio(Servicio servicio){
+        servicios.add(servicio);
     }
 
     public String nombre(){
