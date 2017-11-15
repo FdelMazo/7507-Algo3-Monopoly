@@ -90,4 +90,9 @@ public class Barrio implements Casillero {
         }
         return false;
     }
+
+    public int resetear(){
+        propietario = null;
+        return costo*(85/100);
+    }
 }

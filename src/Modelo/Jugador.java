@@ -26,6 +26,8 @@ public class Jugador {
         return propiedades.size() ;
     }
 
+    public int devolverCantServicios(){ return  servicios.size(); }
+
     public void empezarTurno(){ casilleroActual.accionAlPartir(this); }
 
     public void caeEn(Casillero casillero, int numDado, Tablero tablero){
@@ -44,9 +46,34 @@ public class Jugador {
     }
 
     public boolean solicitar_dinero( double dinero_solicitado)    {
-        if (capital>dinero_solicitado){
+        if ( capital > dinero_solicitado){
             capital -= dinero_solicitado;
            return true;
+        }
+        boolean resultado = this.vender_propiedades((int)(dinero_solicitado));
+        return resultado;
+    }
+
+    public boolean vender_propiedades(int dinero_solicitado) {
+
+        int monto_a_alcanzar = dinero_solicitado - capital;
+        int monto_conseguido = 0;
+
+        for (int i = 0; i < propiedades.size(); i++) {
+            monto_conseguido += propiedades.get(i).resetear();
+            if (monto_conseguido >= monto_a_alcanzar) {
+                this.cobrar_ingreso(monto_conseguido);
+                this.solicitar_dinero(dinero_solicitado);
+                return true;
+            }
+        }
+        for (int i = 0; i < servicios.size(); i++) {
+            monto_conseguido += servicios.get(i).resetear();
+            if (monto_conseguido >= monto_a_alcanzar) {
+                this.cobrar_ingreso(monto_conseguido);
+                this.solicitar_dinero(dinero_solicitado);
+                return true;
+            }
         }
         return false;
     }

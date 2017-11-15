@@ -25,12 +25,12 @@ public class Servicio implements Casillero{
 
     public void accionAlCaer(Jugador jugador, int numDado, Tablero tablero){
         if (propietario == null) {
-            jugador.solicitar_dinero(numDado * cobro_regular);
+            jugador.solicitar_dinero(valor);
+            this.agregarPropietario(jugador);
+            jugador.agregar_servicio(this);
         }
         else{
-            jugador.cobrar_ingreso(valor);
-            jugador.agregar_servicio(this);
-            this.agregarPropietario(jugador);
+            jugador.solicitar_dinero(numDado * cobro_regular);
         }
 
     }
@@ -41,6 +41,11 @@ public class Servicio implements Casillero{
 
     public void accionAlPartir(Jugador jugador){
         return;
+    }
+
+    public int resetear(){
+        propietario = null;
+        return valor*85/100;
     }
 
 }
