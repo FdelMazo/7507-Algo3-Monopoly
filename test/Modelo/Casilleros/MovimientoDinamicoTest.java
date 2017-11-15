@@ -8,6 +8,8 @@ import Modelo.Tablero;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
 public class MovimientoDinamicoTest {
 
     @Test
@@ -32,7 +34,9 @@ public class MovimientoDinamicoTest {
         int numDado = 11;
         AvanceDinamico avanceDinamico = new AvanceDinamico();
         Jugador jugador = new Jugador("flor");
-        Barrio buenosAiresSur = new Barrio("Buenos Aires Sur", 20000,2000);
+        ArrayList<Integer> listaAlquileres= new ArrayList();
+        listaAlquileres.add(2000);
+        Barrio buenosAiresSur = new Barrio("Buenos Aires Sur", 20000, listaAlquileres, 5000, 8000);
         jugador.caeEn(buenosAiresSur, numDado, tablero);
         Assert.assertEquals(numDado - jugador.devolverCantPropiedades(),avanceDinamico.calcularDinamismo(jugador, numDado));
     }
@@ -43,7 +47,9 @@ public class MovimientoDinamicoTest {
         int numDado = 2;
         RetrocesoDinamico retrocesoDinamico = new RetrocesoDinamico();
         Jugador jugador = new Jugador("flor");
-        Barrio buenosAiresSur = new Barrio("Buenos Aires Sur", 20000,2000);
+        ArrayList<Integer> listaAlquileres= new ArrayList();
+        listaAlquileres.add(2000);
+        Barrio buenosAiresSur = new Barrio("Buenos Aires Sur", 20000, listaAlquileres, 5000, 8000);
         jugador.caeEn(buenosAiresSur, numDado, tablero);
         Assert.assertEquals(((numDado - jugador.devolverCantPropiedades()) * -1), retrocesoDinamico.calcularDinamismo(jugador, numDado));
     }

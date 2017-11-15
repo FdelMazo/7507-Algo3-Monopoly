@@ -62,4 +62,5 @@ public class Jugador {
     public String nombre(){
         return nombre;
     }
+
 }
