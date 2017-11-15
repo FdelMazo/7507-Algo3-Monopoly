@@ -16,6 +16,7 @@ public class Tablero {
         casilleros.add(new AvanceDinamico());
         casilleros.add(new Policia());
         casilleros.add(new RetrocesoDinamico());
+        casilleros.add(new ImpuestoAlLujo());
     }
 
     public Casillero desplazarCasillero(Casillero actual, int num, Jugador jugador){

@@ -43,7 +43,7 @@ public class Jugador {
         return capital;
     }
 
-    public boolean solicitar_dinero( int dinero_solicitado)    {
+    public boolean solicitar_dinero( double dinero_solicitado)    {
         if (capital>dinero_solicitado){
             capital -= dinero_solicitado;
            return true;
