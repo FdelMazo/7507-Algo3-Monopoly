@@ -5,7 +5,7 @@ import Modelo.Tablero;
 
 import java.util.ArrayList;
 
-public class Barrio implements Casillero {
+public class Barrio implements Casillero, Propiedades {
 
     public Jugador propietario;
     public String nombre;
@@ -95,4 +95,9 @@ public class Barrio implements Casillero {
         propietario = null;
         return costo*(85/100);
     }
+
+    public String nombre() {
+        return nombre;
+    }
+
 }

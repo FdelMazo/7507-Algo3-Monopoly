@@ -1,6 +1,7 @@
 package Modelo;
 
 import Modelo.Casilleros.Barrio;
+import Modelo.Casilleros.Propiedades;
 import Modelo.Casilleros.Servicio;
 import Modelo.Casilleros.Casillero;
 
@@ -9,24 +10,20 @@ import java.util.ArrayList;
 public class Jugador {
 
     private int capital;
-    private ArrayList<Barrio> propiedades;
+    private ArrayList<Propiedades> propiedades;
     private Casillero casilleroActual;
     private String nombre;
-    private ArrayList<Servicio> servicios;
 
     public Jugador(String nombre_jugador) {
         this.capital = 100000;
         propiedades = new ArrayList<>();
         casilleroActual = null ;  //debería ser la de salida
         nombre = nombre_jugador;
-        servicios = new ArrayList<>();
     }
 
     public int devolverCantPropiedades(){
         return propiedades.size() ;
     }
-
-    public int devolverCantServicios(){ return  servicios.size(); }
 
     public void empezarTurno(){ casilleroActual.accionAlPartir(this); }
 
@@ -67,27 +64,23 @@ public class Jugador {
                 return true;
             }
         }
-        for (int i = 0; i < servicios.size(); i++) {
-            monto_conseguido += servicios.get(i).resetear();
-            if (monto_conseguido >= monto_a_alcanzar) {
-                this.cobrar_ingreso(monto_conseguido);
-                this.solicitar_dinero(dinero_solicitado);
-                return true;
-            }
-        }
         return false;
     }
 
-    public void agregar_propiedad(Barrio barrio){
-        propiedades.add(barrio);
-    }
-
-    public void agregar_servicio(Servicio servicio){
-        servicios.add(servicio);
+    public void agregar_propiedad(Propiedades propiedad){
+        propiedades.add(propiedad);
     }
 
     public String nombre(){
         return nombre;
     }
 
+    public boolean posee(String propiedad){
+        for ( int i=0 ; i < propiedades.size(); i++){
+            if (propiedad == propiedades.get(i).nombre()){
+                return true;
+            }
+        }
+        return false;
+    }
 }
