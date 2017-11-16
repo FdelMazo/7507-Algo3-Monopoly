@@ -90,4 +90,69 @@ public class BarrioTest {
         jugador.caeEn(buenosAiresSur, 4, tablero);
         Assert.assertFalse(buenosAiresSur.edificarHotel(jugador));
     }
+
+    @Test
+    public void JugadorVendeTerrenoYAhoraElCompradorTieneUnaPropiedadMas(){
+
+        Tablero tablero = new Tablero();
+        Jugador jugador = new Jugador("Pablo");
+        ArrayList<Integer> listaAlquileres= new ArrayList();
+        listaAlquileres.add(2000);
+        Barrio buenosAiresSur = new Barrio("Buenos Aires Sur", 20000, listaAlquileres, 5000, 8000);
+        jugador.caeEn(buenosAiresSur, 4, tablero);
+        Jugador jugador1 = new Jugador("Ezra");
+        jugador.vender(jugador1,buenosAiresSur);
+        Assert.assertEquals(1,jugador1.devolverCantPropiedades());
+    }
+
+    @Test
+    public void JugadorVendeTerrenoYAhoraElVendedorTieneUnaPropiedadMenos(){
+
+        Tablero tablero = new Tablero();
+        Jugador jugador = new Jugador("Pablo");
+        ArrayList<Integer> listaAlquileres= new ArrayList();
+        listaAlquileres.add(2000);
+        Barrio buenosAiresSur = new Barrio("Buenos Aires Sur", 20000, listaAlquileres, 5000, 8000);
+        jugador.caeEn(buenosAiresSur, 4, tablero);
+        Jugador jugador1 = new Jugador("Ezra");
+        jugador.vender(jugador1,buenosAiresSur);
+        Assert.assertEquals(0,jugador.devolverCantPropiedades());
+    }
+
+    @Test
+    public void JugadorVendeTerrenoConCasasPeroJugadorQueRecibeNoEncuentraNinguna(){
+
+        Tablero tablero = new Tablero();
+        Jugador jugador = new Jugador("Lance");
+        ArrayList<Integer> listaAlquileres= new ArrayList();
+        listaAlquileres.add(2000);
+        listaAlquileres.add(3000);
+        Barrio buenosAiresSur = new Barrio("Buenos Aires Sur", 20000, listaAlquileres, 5000, 8000);
+        jugador.caeEn(buenosAiresSur, 4, tablero);
+        buenosAiresSur.edificarCasa(jugador);
+        Jugador jugador1 = new Jugador("Ezra");
+        jugador.vender(jugador1,buenosAiresSur);
+        Jugador jugador2 = new Jugador("Kahlan");
+        jugador2.caeEn(buenosAiresSur,4,tablero);
+        Assert.assertEquals(100000-2000,jugador2.capital());
+    }
+
+    @Test
+    public void JugadorCaeEnUnTerrenoVendidoYAhoraElAlquilerSeAcreditaAlNuevoDuenio(){
+
+        int numDado = 4;
+        Tablero tablero = new Tablero();
+        Jugador jugador = new Jugador("Pablo");
+        ArrayList<Integer> listaAlquileres= new ArrayList();
+        listaAlquileres.add(2000);
+        Barrio buenosAiresSur = new Barrio("Buenos Aires Sur", 20000, listaAlquileres, 5000, 8000);
+        jugador.caeEn(buenosAiresSur, 4, tablero);
+        Jugador jugador1 = new Jugador("Ezra");
+        jugador.vender(jugador1,buenosAiresSur);
+        Jugador jugador2 = new Jugador("Matias");
+        jugador2.caeEn(buenosAiresSur,numDado,tablero);
+        Assert.assertEquals(100000-17000+2000,jugador1.capital());
+    }
+
+
 }

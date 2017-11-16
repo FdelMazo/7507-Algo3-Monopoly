@@ -6,6 +6,7 @@ import Modelo.Tablero;
 public class Servicio implements Casillero, Propiedades{
 
     private int valor;
+    private int valor_mercado;
     private int cobro_regular;
     private  int cobro_plus;
     private int cobro;
@@ -21,6 +22,7 @@ public class Servicio implements Casillero, Propiedades{
         propietario = null ;
         cobro = cobro_regular;
         clase_hermana = nombre_hermana;
+        valor_mercado = valor * 85 / 100;
     }
 
     public void agregarPropietario(Jugador jugador){
@@ -38,6 +40,7 @@ public class Servicio implements Casillero, Propiedades{
         }
         else if (propietario != jugador){
             jugador.solicitar_dinero(numDado * cobro);
+            propietario.cobrar_ingreso(numDado*cobro);
         }
 
     }
@@ -52,8 +55,17 @@ public class Servicio implements Casillero, Propiedades{
 
     public int resetear(){
         propietario = null;
-        return valor*85/100;
+        return valor_mercado;
     }
+
+    public boolean vender(Jugador jugador){
+        if(!jugador.solicitar_dinero(valor_mercado)) return false;
+        jugador.agregar_propiedad(this);
+        propietario = jugador;
+        return true;
+    }
+
+    public int valorMercado(){return valor_mercado;}
 
     public String nombre() {
         return nombre;

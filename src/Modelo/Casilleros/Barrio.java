@@ -16,6 +16,7 @@ public class Barrio implements Casillero, Propiedades {
     public int edificacionHotel;
     public int casasTotales;
     public int casasMaximas;
+    public int valor_mercado;
 
 
 
@@ -29,16 +30,21 @@ public class Barrio implements Casillero, Propiedades {
         edificacionHotel = edificacionDeHotel;
         casasTotales = 0;
         casasMaximas = 2;
+        valor_mercado = costo;
     }
 
     public boolean permiteSalida(Jugador jugador){
         return true;
     }
 
-    public void vender(Jugador jugador){
-        if(!jugador.solicitar_dinero(costo)) return;
+    public boolean vender(Jugador jugador){
+        if(!jugador.solicitar_dinero(valor_mercado)) return false;
         jugador.agregar_propiedad(this);
         propietario = jugador;
+        casasTotales = 0;
+        alquilerActual = 0;
+        valor_mercado = costo * 85 /100;
+        return true;
         }
 
 
@@ -48,17 +54,17 @@ public class Barrio implements Casillero, Propiedades {
         if (propietario == null){
             this.vender(jugador);
         }
-        else if (propietario == jugador){
-            jugador.cobrar_ingreso(alquiler.get(alquilerActual));
-        }
-        else{
+        else if (propietario != jugador){
             jugador.solicitar_dinero(alquiler.get(alquilerActual));
+            propietario.cobrar_ingreso(alquiler.get(alquilerActual));
         }
     }
 
     public Jugador duenio (){
         return propietario;
     }
+
+    public int valorMercado(){return valor_mercado;}
 
     public boolean hayCapacidadMaximaDeCasas(){
         return casasTotales == casasMaximas;

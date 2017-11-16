@@ -1,8 +1,7 @@
 package Modelo;
 
-import Modelo.Casilleros.Barrio;
+
 import Modelo.Casilleros.Propiedades;
-import Modelo.Casilleros.Servicio;
 import Modelo.Casilleros.Casillero;
 
 import java.util.ArrayList;
@@ -42,16 +41,36 @@ public class Jugador {
         return capital;
     }
 
+    public boolean comprar(Propiedades propiedad, Jugador jugador){
+        if (capital >= propiedad.valorMercado()){
+            propiedad.vender(this);
+            jugador.cobrar_ingreso(propiedad.valorMercado());
+            return true;
+        }
+        return false;
+    }
+
+    public boolean vender (Jugador jugador,Propiedades propiedad){
+
+        boolean resultado = jugador.comprar(propiedad,this);
+        if(resultado == true){
+            propiedades.remove(0);
+            return true;
+        }
+        return false;
+    }
+
+
     public boolean solicitar_dinero( double dinero_solicitado)    {
         if ( capital > dinero_solicitado){
             capital -= dinero_solicitado;
            return true;
         }
-        boolean resultado = this.vender_propiedades((int)(dinero_solicitado));
+        boolean resultado = this.vender_propiedades((int)(dinero_solicitado), null);
         return resultado;
     }
 
-    public boolean vender_propiedades(int dinero_solicitado) {
+    public boolean vender_propiedades(int dinero_solicitado, Jugador jugador) {
 
         int monto_a_alcanzar = dinero_solicitado - capital;
         int monto_conseguido = 0;
