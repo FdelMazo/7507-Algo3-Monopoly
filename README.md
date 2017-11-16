@@ -45,9 +45,9 @@ Siempre:
 - [X] Un jugador cuenta con Buenos Aires Sur y Buenos Aires Norte y tiene 1 casa en el Sur y una en el Norte. Verificar que al caer un contrincante en esta área (sur o nortre) el dinero de este se reduce en un monto de $3000.
 - [X] Un jugador cuenta con Buenos Aires Sur y Buenos Aires Norte y tiene 2 casa en el Sur y una en el Norte. Verificar que al caer un contrincante en esta área (sur o nortre) el dinero de este se reduce en un monto de $3500.
 - [X] Un jugador cuenta con Buenos Aires Sur y Buenos Aires Norte , no tiene cubierta la máxima capacidad de casas y construye una hotel. Verificar que su dinero disponible NO se decrementó.
-- [ ] Un jugador cuenta con Buenos Aires Sur y Buenos Aires Norte y tiene 2 casa en el Sur, dos casas en el Norte y construye una hotel. Verificar que su dinero disponible se decrementó en $8000.
-- [ ] Un jugador cuenta con Buenos Aires Sur y Buenos Aires Norte y tiene 2 casa en el Sur, dos casas en el Norte y construye una hotel. Verificar que al caer un contrincante en esta área el dinero de este se reduce en un monto de $5000.
-- [ ] Agregar los mismos casos para Córdoba, Salta .
+- [x] Un jugador cuenta con Buenos Aires Sur y Buenos Aires Norte y tiene 2 casa en el Sur, dos casas en el Norte y construye una hotel. Verificar que su dinero disponible se decrementó en $8000.
+- [x] Un jugador cuenta con Buenos Aires Sur y Buenos Aires Norte y tiene 2 casa en el Sur, dos casas en el Norte y construye una hotel. Verificar que al caer un contrincante en esta área el dinero de este se reduce en un monto de $5000.
+- [x] Agregar los mismos casos para Córdoba, Salta .
 - [ ] Un jugador cuenta con Santa Fé y construye una casa. Verificar que su dinero disponible se decrementó en $4000.
 - [ ] Un jugador cae en un barrio con construcciones. Verificar que su dinero disponible reduzca en función del alquiler según la propiedad construida. Implementar esto para todos los barrios.
 - [X] Un jugador cae en TRENES adquirida previamente por otro jugador que no se adueño de SUBTES . Verificar que su dinero se reduzca por 450 veces lo que dice los dados arrojados previamente.
