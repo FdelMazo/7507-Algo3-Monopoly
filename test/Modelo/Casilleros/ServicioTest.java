@@ -80,65 +80,30 @@ public class ServicioTest {
     }
 
     @Test
-    public void testJugadorVendeEdesurAOtorJugadorYAhoraEstePoseeLaPropiedad(){
+    public void testJugadoresIntercambiaPropiedadesYLasPropiedadesTieneNuevosDuenios(){
 
         Tablero tablero = new Tablero();
         Jugador jugador = new Jugador("Pablo");
         Jugador jugador1 = new Jugador("Martin");
         Servicio servicio1 = new Servicio("Edesur",35000,500,1000,"Aysa");
+        Servicio servicio2 = new Servicio("Subte",40000,600,1100,"Trenes");
         jugador.caeEn(servicio1,4,tablero);
-        jugador.vender(jugador1,servicio1);
-        Assert.assertEquals(1,jugador1.devolverCantPropiedades());
+        jugador1.caeEn(servicio2,4,tablero);
+        jugador.intercambiarPropiedades(jugador1);
+
+        Assert.assertEquals(jugador1,servicio1.devolverDuenio());
     }
 
     @Test
-    public void testJugadorVendeEdesurAOtorJugadorYAhoraElVendedorNoPoseeLaPropiedad(){
+    public void testJugadorVendePropiedadYSeeIncrementaSuCapitalUn85DelValorDeLaPropiedad() {
 
         Tablero tablero = new Tablero();
-        Jugador jugador = new Jugador("Pablo");
-        Jugador jugador1 = new Jugador("Martin");
-        Servicio servicio1 = new Servicio("Edesur",35000,500,1000,"Aysa");
-        jugador.caeEn(servicio1,4,tablero);
-        jugador.vender(jugador1,servicio1);
-        Assert.assertEquals(0,jugador.devolverCantPropiedades());
+        Jugador jugador = new Jugador("Oca");
+        Servicio servicio1 = new Servicio("Edesur", 10000, 500, 1000, "Aysa");
+        jugador.caeEn(servicio1, 4, tablero);
+        jugador.venderAlBanco();
+        Assert.assertEquals(100000 - 10000 + 8500, jugador.capital());
     }
 
-    @Test
-    public void testJugadorVendeEdesurAOtorJugadorYSuCapitalSeAumenta(){
 
-        Tablero tablero = new Tablero();
-        Jugador jugador = new Jugador("Pablo");
-        Jugador jugador1 = new Jugador("Martin");
-        Servicio servicio1 = new Servicio("Edesur",35000,500,1000,"Aysa");
-        jugador.caeEn(servicio1,4,tablero);
-        jugador.vender(jugador1,servicio1);
-        Assert.assertEquals(100000-35000+29750,jugador.capital());
-    }
-
-    @Test
-    public void testJugadorVendeEdesurAOtorJugadorSeLeDisminuyeElCapitalAlComprador(){
-
-        Tablero tablero = new Tablero();
-        Jugador jugador = new Jugador("Pablo");
-        Jugador jugador1 = new Jugador("Martin");
-        Servicio servicio1 = new Servicio("Edesur",35000,500,1000,"Aysa");
-        jugador.caeEn(servicio1,4,tablero);
-        jugador.vender(jugador1,servicio1);
-        Assert.assertEquals(100000-29750,jugador1.capital());
-    }
-
-    @Test
-    public void testJugadorCaeEnUnaPropiedadQueFueVendidadYElDineroSeAcreditaAlNuevoDueño(){
-
-        int numDado = 4;
-        Tablero tablero = new Tablero();
-        Jugador jugador = new Jugador("Pablo");
-        Jugador jugador1 = new Jugador("Martin");
-        Servicio servicio1 = new Servicio("Edesur",35000,500,1000,"Aysa");
-        jugador.caeEn(servicio1,numDado,tablero);
-        jugador.vender(jugador1,servicio1);
-        Jugador jugador2 = new Jugador("maria");
-        jugador2.caeEn(servicio1,numDado,tablero);
-        Assert.assertEquals(100000-29750+(numDado*500),jugador1.capital());
-    }
 }

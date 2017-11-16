@@ -60,6 +60,24 @@ public class Jugador {
         return false;
     }
 
+    public void venderAlBanco(){
+
+        Propiedades propiedad = propiedades.remove(0);
+        int costo = propiedad.resetear();
+        this.cobrar_ingreso(costo);
+    }
+
+    public Propiedades propiedadParaIntercambiar(){
+        return  propiedades.remove(0);
+    }
+
+    public void intercambiarPropiedades(Jugador jugador){
+
+        Propiedades propiedad1 = this.propiedadParaIntercambiar();
+        Propiedades propiedad2 = jugador.propiedadParaIntercambiar();
+        jugador.agregar_propiedad(propiedad1);
+        this.agregar_propiedad(propiedad2);
+    }
 
     public boolean solicitar_dinero( double dinero_solicitado)    {
         if ( capital > dinero_solicitado){

@@ -9,6 +9,7 @@ public class BarrioConHermano extends Barrio{
 
     public BarrioConHermano(String unNombre, int valor_propiedad, ArrayList listaalquileres, int edificacionDeCasa, int edificacionDeHotel) {
         super(unNombre, valor_propiedad, listaalquileres, edificacionDeCasa, edificacionDeHotel);
+        this.casasMaximas = 2;
     }
 
     public void setHermano(BarrioConHermano barrioHermano){

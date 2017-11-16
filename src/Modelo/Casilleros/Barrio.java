@@ -29,7 +29,7 @@ public class Barrio implements Casillero, Propiedades {
         edificacionCasa = edificacionDeCasa;
         edificacionHotel = edificacionDeHotel;
         casasTotales = 0;
-        casasMaximas = 2;
+        casasMaximas = 1;
         valor_mercado = costo;
     }
 
@@ -40,12 +40,16 @@ public class Barrio implements Casillero, Propiedades {
     public boolean vender(Jugador jugador){
         if(!jugador.solicitar_dinero(valor_mercado)) return false;
         jugador.agregar_propiedad(this);
-        propietario = jugador;
-        casasTotales = 0;
-        alquilerActual = 0;
+        cambiarPropietario(jugador);
         valor_mercado = costo * 85 /100;
         return true;
         }
+
+    public void cambiarPropietario(Jugador jugador){
+        propietario = jugador;
+        casasTotales = 0;
+        alquilerActual = 0;
+    }
 
 
     public void accionAlPartir(Jugador jugador) {  }

@@ -39,6 +39,9 @@ public class Servicio implements Casillero, Propiedades{
             }
         }
         else if (propietario != jugador){
+            if (propietario.posee(clase_hermana)) {
+                cobro = cobro_plus;
+            }
             jugador.solicitar_dinero(numDado * cobro);
             propietario.cobrar_ingreso(numDado*cobro);
         }
@@ -67,7 +70,15 @@ public class Servicio implements Casillero, Propiedades{
 
     public int valorMercado(){return valor_mercado;}
 
+    public void cambiarPropietario(Jugador jugador){
+        propietario = jugador;
+    }
+
     public String nombre() {
         return nombre;
+    }
+
+    public Jugador devolverDuenio(){
+        return propietario;
     }
 }
