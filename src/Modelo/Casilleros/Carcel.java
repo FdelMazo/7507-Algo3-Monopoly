@@ -2,6 +2,7 @@ package Modelo.Casilleros;
 
 import Modelo.Jugador;
 import Modelo.Tablero;
+import Modelo.Preso;
 
 import java.util.HashMap;
 
@@ -21,7 +22,7 @@ public class Carcel implements Casillero {
     }
 
     public void accionAlCaer(Jugador jugador, int numDado, Tablero tablero) {
-        nochesPresos.put(jugador, 1);
+        jugador.actualizarEstado(new Preso());
     }
 
     public boolean permiteSalida(Jugador jugador) {

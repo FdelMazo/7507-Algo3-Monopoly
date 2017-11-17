@@ -1,10 +1,8 @@
 package Modelo;
-
-
 import Modelo.Casilleros.Propiedades;
 import Modelo.Casilleros.Casillero;
-
 import java.util.ArrayList;
+
 
 public class Jugador {
 
@@ -12,12 +10,14 @@ public class Jugador {
     private ArrayList<Propiedades> propiedades;
     private Casillero casilleroActual;
     private String nombre;
+    private Estado estado;
 
     public Jugador(String nombre_jugador) {
         this.capital = 100000;
         propiedades = new ArrayList<>();
         casilleroActual = null ;  //debería ser la de salida
         nombre = nombre_jugador;
+        estado = new Libre();
     }
 
     public int devolverCantPropiedades(){
@@ -120,4 +120,21 @@ public class Jugador {
         }
         return false;
     }
+
+    public boolean salir(int fianza){
+        if(capital >= fianza){
+            this.solicitar_dinero(fianza);
+            return true;
+        }
+        return false;
+    }
+
+    public boolean mover(){
+        return estado.mover(this);
+    }
+
+    public void actualizarEstado(Estado nuevo_estado){
+        estado = nuevo_estado;
+    }
+
 }
