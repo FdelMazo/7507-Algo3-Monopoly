@@ -3,6 +3,7 @@ package Modelo.Casilleros;
 import Modelo.Casilleros.AvanceDinamico;
 import Modelo.Casilleros.Barrio;
 import Modelo.Casilleros.RetrocesoDinamico;
+import Modelo.Edificacion;
 import Modelo.Jugador;
 import Modelo.Tablero;
 import org.junit.Assert;
@@ -34,9 +35,10 @@ public class MovimientoDinamicoTest {
         int numDado = 11;
         AvanceDinamico avanceDinamico = new AvanceDinamico();
         Jugador jugador = new Jugador("flor");
-        ArrayList<Integer> listaAlquileres= new ArrayList();
-        listaAlquileres.add(2000);
-        Barrio buenosAiresSur = new Barrio("Buenos Aires Sur", 20000, listaAlquileres, 5000, 8000);
+        ArrayList<Edificacion> listaCasas= new ArrayList();
+        listaCasas.add(new Edificacion(5000, 3000));
+        listaCasas.add(new Edificacion(5000, 3500));
+        Barrio buenosAiresSur = new Barrio("Buenos Aires SUr", 20000, 2000, listaCasas);
         jugador.caeEn(buenosAiresSur, numDado, tablero);
         Assert.assertEquals(numDado - jugador.devolverCantPropiedades(),avanceDinamico.calcularDinamismo(jugador, numDado));
     }
@@ -47,9 +49,10 @@ public class MovimientoDinamicoTest {
         int numDado = 2;
         RetrocesoDinamico retrocesoDinamico = new RetrocesoDinamico();
         Jugador jugador = new Jugador("flor");
-        ArrayList<Integer> listaAlquileres= new ArrayList();
-        listaAlquileres.add(2000);
-        Barrio buenosAiresSur = new Barrio("Buenos Aires Sur", 20000, listaAlquileres, 5000, 8000);
+        ArrayList<Edificacion> listaCasas= new ArrayList();
+        listaCasas.add(new Edificacion(5000, 3000));
+        listaCasas.add(new Edificacion(5000, 3500));
+        Barrio buenosAiresSur = new Barrio("Buenos Aires SUr", 20000, 2000, listaCasas);
         jugador.caeEn(buenosAiresSur, numDado, tablero);
         Assert.assertEquals(((numDado - jugador.devolverCantPropiedades()) * -1), retrocesoDinamico.calcularDinamismo(jugador, numDado));
     }
@@ -71,5 +74,4 @@ public class MovimientoDinamicoTest {
         Jugador jugador = new Jugador("Viky");
         Assert.assertEquals(-9, retrocesoDinamico.calcularDinamismo(jugador, numDado));
     }
-
 }

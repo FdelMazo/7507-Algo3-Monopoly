@@ -26,9 +26,10 @@ public class JugadorTest {
     public void jugadorCaeEnBarrioSinPropietarioYAlComprarloSuCapitalSeRedujo(){
         Tablero tablero = new Tablero();
         Jugador jugador = new Jugador("Lance");
-        ArrayList<Integer> listaAlquileres= new ArrayList();
-        listaAlquileres.add(2000);
-        Barrio buenosAiresSur = new Barrio("Buenos Aires Sur", 20000, listaAlquileres, 5000, 8000);
+        ArrayList<Edificacion> listaCasas= new ArrayList();
+        listaCasas.add(new Edificacion(5000, 3000));
+        listaCasas.add(new Edificacion(5000, 3500));
+        Barrio buenosAiresSur = new Barrio("Buenos Aires SUr", 20000, 2000, listaCasas);
         jugador.caeEn(buenosAiresSur, 4, tablero);
         Assert.assertEquals(jugador.capital(), 80000);
     }
