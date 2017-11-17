@@ -25,11 +25,6 @@ public class Quini6 implements Casillero {
         return jugadoresregistrados.get(jugador);
     }
 
-    public void accionAlPartir(Jugador jugador) {}
-    public boolean permiteSalida(Jugador jugador){
-        return true;
-    }
-
     private int devolverPrecioCorrespondiente(Jugador jugador){
         if (jugadoresregistrados.get(jugador) == 1){
             return 50000;

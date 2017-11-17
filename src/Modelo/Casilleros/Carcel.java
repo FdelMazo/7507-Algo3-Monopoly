@@ -13,10 +13,6 @@ public class Carcel implements Casillero {
         nochesPresos = new HashMap<>();
     }
 
-    public void accionAlPartir(Jugador jugador) {
-        nochesPresos.put(jugador, nochesPresos.get(jugador)+1);
-    }
-
     private boolean pagarFianza(Jugador jugador) {
         return jugador.solicitar_dinero(45000);
     }

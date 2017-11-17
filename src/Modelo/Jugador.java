@@ -24,8 +24,6 @@ public class Jugador {
         return propiedades.size() ;
     }
 
-    public void empezarTurno(){ casilleroActual.accionAlPartir(this); }
-
     public void caeEn(Casillero casillero, int numDado, Tablero tablero){
         casilleroActual = casillero;
         casilleroActual.accionAlCaer(this, numDado, tablero);

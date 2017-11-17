@@ -20,10 +20,6 @@ public abstract class Dinamismo implements Casillero {
             return terceraOpcion(numDado, jugador);
         }
     }
-    public void accionAlPartir(Jugador jugador) {}
-    public boolean permiteSalida(Jugador jugador){
-        return true;
-    }
 
     public int restaDos(int numDado){
         return numDado-2;

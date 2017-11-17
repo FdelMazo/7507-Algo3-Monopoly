@@ -4,9 +4,6 @@ import Modelo.Jugador;
 import Modelo.Tablero;
 
 public class ImpuestoAlLujo implements Casillero {
-    public void accionAlPartir(Jugador jugador) {
-
-    }
 
     public void accionAlCaer(Jugador jugador, int numDado, Tablero tablero) {
         double impuesto = jugador.capital() * 0.1 ;
@@ -14,7 +11,4 @@ public class ImpuestoAlLujo implements Casillero {
 
     }
 
-    public boolean permiteSalida(Jugador jugador) {
-        return false;
-    }
 }

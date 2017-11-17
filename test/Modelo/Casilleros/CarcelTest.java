@@ -31,4 +31,17 @@ public class CarcelTest {
         Assert.assertTrue(jugador.mover());
     }
 
+    @Test
+    public void testCarcelPermiteSalidaPasadas3Noches(){
+
+        Tablero tablero = new Tablero();
+        Jugador jugador = new Jugador("man");
+        Carcel carcel = new Carcel();
+        jugador.caeEn(carcel, 6, tablero);
+        jugador.mover();
+        jugador.mover();
+        jugador.mover();
+        Assert.assertTrue(jugador.mover());
+    }
+
 }

@@ -48,14 +48,6 @@ public class Servicio implements Casillero, Propiedades{
 
     }
 
-    public boolean permiteSalida(Jugador jugador){
-        return true;
-    }
-
-    public void accionAlPartir(Jugador jugador){
-        return;
-    }
-
     public int resetear(){
         propietario = null;
         return valor_mercado;
