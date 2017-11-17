@@ -9,3 +9,5 @@ bin/
 build.xml.old
 *.jar
 .idea/
+out/
+TP-AlgoPoly.iml
