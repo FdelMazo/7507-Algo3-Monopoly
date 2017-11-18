@@ -1,18 +1,22 @@
 package Vista;
 
-import Modelo.Jugador;
+import javafx.animation.Animation;
 import javafx.animation.AnimationTimer;
+import javafx.animation.TranslateTransition;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
+import javafx.util.Duration;
+
+import javax.swing.text.BoxView;
 
 public class Main extends Application {
 
-    PiezaJugador piezaJugador = new PiezaJugador(660,340,20,20);
     CasilleroVista salida = new CasilleroVista(660, 310, 130, 60, "salida", Color.PALEGOLDENROD);
     CasilleroVista quini6 = new CasilleroVista(530, 310, 130, 60,"quini6",Color.PALEVIOLETRED);
     CasilleroVista bsAsZonaSur = new CasilleroVista(400, 310, 130, 60,"bsAsZonaSur",Color.PALEGOLDENROD);
@@ -33,6 +37,9 @@ public class Main extends Application {
     CasilleroVista neuquen = new CasilleroVista(660, 130, 130, 60,"neuquen",Color.PALEVIOLETRED);
     CasilleroVista retrocesoDinamico = new CasilleroVista(660, 190, 130, 60,"retrocesoDinamico",Color.PALEGOLDENROD);
     CasilleroVista tucuman = new CasilleroVista(660, 250, 130, 60,"tucuman",Color.PALEVIOLETRED);
+    int x = 400;
+    int y = 300;
+
 
     public static void main(String[] args) {
         launch(args);
@@ -42,22 +49,34 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
 
         primaryStage.setTitle("AlgoPoly");
+
         Group root = new Group();
         Canvas canvas = new Canvas(800, 500);
         GraphicsContext gc = canvas.getGraphicsContext2D();
         drawShapes(gc);
+
+        Circle cir = new Circle(10, Color.BLUEVIOLET);
+        cir.setLayoutX(x);
+        cir.setLayoutY(y);
+
+        TranslateTransition tr = new TranslateTransition();
+        tr.setDuration(Duration.seconds(0.5));
+        tr.setToX(-50);
+        tr.setNode(cir);
+        tr.play();;
+
         root.getChildren().add(canvas);
+        root.getChildren().add(cir);
         primaryStage.setScene(new Scene(root));
-
-        new AnimationTimer(){
-            public  void handle(long currentNanoTime)
-            {
-                piezaJugador.move(800, 500, 60, 130, 1);
-            }
-        }.start();
-
-
         primaryStage.show();
+
+        starGame();
+    }
+
+    private void starGame(){
+
+
+
     }
 
     private void drawShapes(GraphicsContext gc) {
@@ -83,6 +102,5 @@ public class Main extends Application {
         retrocesoDinamico.show(gc);
         tucuman.show(gc);
         //jugadores
-        piezaJugador.show(gc);
     }
 }

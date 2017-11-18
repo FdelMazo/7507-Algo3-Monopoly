@@ -1,34 +1,47 @@
 package Vista;
 
+import javafx.animation.TranslateTransition;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
+import javafx.util.Duration;
+
+import java.awt.*;
 
 public class PiezaJugador {
 
     public int posX;
     public int posY;
-    public int largox;
-    public int largoy;
+    public int radio = 10;
+    GraphicsContext gc;
+    Circle pieza;
 
-    public PiezaJugador(int x, int y, int largoX, int largoY){
+    public PiezaJugador(int x, int y,GraphicsContext gc){
+        this.gc = gc;
         posX = x;
         posY = y;
-        largox = largoX;
-        largoy = largoY;
+        pieza = new Circle(radio,Color.BLUE);
+        Circle pieza = new Circle(radio,Color.BLUE);
     }
 
-    public void show(GraphicsContext gc){
-
-        gc.setFill(Color.BLUE);
-        gc.fillOval(posX,posY,largox,largoy);
+    public void show(){
+        this.drawShapes();
     }
 
-    public void move (int anchoPantalla, int largoPantalla, int anchoCasilla, int largoCasilla ,int n){
+    public void drawShapes(){
 
-        //el ancho y el largo lo vamos a necesitar para que no siga derecho dps
-        for( int i =0 ; i < n ; i++) {
-            posX += largoCasilla / 2;
-            posY += anchoCasilla /2 ;
-        }
+        pieza.setCenterX(posX);
+        pieza.setCenterY(posY);
+
+    }
+
+    public void move (){
+
+        posX -= 10;
+        pieza.setCenterX(posX);
+        TranslateTransition tt = new TranslateTransition(Duration.millis(2000), this.pieza);
+        tt.setByX(posX);
+        tt.play();
+
     }
 }
