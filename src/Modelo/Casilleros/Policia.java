@@ -13,5 +13,4 @@ public class Policia implements Casillero {
         jugador.caeEn(carcel, numDado, tablero);
     }
 
-
 }

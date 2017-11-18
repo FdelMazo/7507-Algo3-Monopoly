@@ -1,7 +1,5 @@
 package Modelo.Casilleros;
 
-import Modelo.Casilleros.Barrio;
-import Modelo.Casilleros.Carcel;
 import Modelo.Jugador;
 import Modelo.Tablero;
 import org.junit.Assert;
