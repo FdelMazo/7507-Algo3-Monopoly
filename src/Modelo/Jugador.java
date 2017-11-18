@@ -15,9 +15,13 @@ public class Jugador {
     public Jugador(String nombre_jugador) {
         this.capital = 100000;
         propiedades = new ArrayList<>();
-        casilleroActual = null ;  //debería ser la de salida
+        casilleroActual = null ;
         nombre = nombre_jugador;
         estado = new Libre();
+    }
+
+    public void asignarCasillero(Casillero casillero){
+        casilleroActual = casillero;
     }
 
     public int devolverCantPropiedades(){
@@ -25,7 +29,7 @@ public class Jugador {
     }
 
     public void caeEn(Casillero casillero, int numDado, Tablero tablero){
-        casilleroActual = casillero;
+        asignarCasillero(casillero);
         casilleroActual.accionAlCaer(this, numDado, tablero);
     }
 
@@ -135,4 +139,6 @@ public class Jugador {
         estado = nuevo_estado;
     }
 
+    public boolean perdio() {return false;
+    }
 }

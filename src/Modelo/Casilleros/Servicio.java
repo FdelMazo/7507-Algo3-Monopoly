@@ -14,7 +14,7 @@ public class Servicio implements Casillero, Propiedades{
     private String nombre;
     private String clase_hermana;
 
-    Servicio(String nombre_servicio, int valor_serv , int cobro_regular_serv, int cobro_plus_serv, String nombre_hermana){
+    public Servicio(String nombre_servicio, int valor_serv, int cobro_regular_serv, int cobro_plus_serv, String nombre_hermana){
         nombre = nombre_servicio;
         valor = valor_serv;
         cobro_plus = cobro_plus_serv;
