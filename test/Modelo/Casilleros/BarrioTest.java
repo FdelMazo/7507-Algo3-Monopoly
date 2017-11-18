@@ -4,7 +4,9 @@ import Modelo.Casilleros.Barrio;
 import Modelo.Jugador;
 import Modelo.Tablero;
 import Modelo.Edificacion;
+
 import java.util.ArrayList;
+import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -12,7 +14,7 @@ public class BarrioTest {
 
     @Test
     public void BarrioRecienCreadoNoTieneDuenio(){
-        ArrayList<Edificacion> listaCasas= new ArrayList();
+        List<Edificacion> listaCasas= new ArrayList();
         listaCasas.add(new Edificacion(5000, 3000));
         listaCasas.add(new Edificacion(5000, 3500));
         Barrio buenosAiresSur = new Barrio("Buenos Aires SUr", 20000, 2000, listaCasas);
@@ -24,7 +26,7 @@ public class BarrioTest {
     public void testSeActualizaElPropietarioAlSerCompradoUnTerreno() {
         Tablero tablero = new Tablero();
         Jugador jugador = new Jugador("Pablo");
-        ArrayList<Edificacion> listaCasas= new ArrayList();
+        List<Edificacion> listaCasas= new ArrayList();
         listaCasas.add(new Edificacion(5000, 3000));
         listaCasas.add(new Edificacion(5000, 3500));
         Barrio buenosAiresSur = new Barrio("Buenos Aires SUr", 20000, 2000, listaCasas);
@@ -36,7 +38,7 @@ public class BarrioTest {
     public void testJugadorConFondosInsuficientesNoPuedeComprarPropiedad(){
         Tablero tablero = new Tablero();
         Jugador jugador = new Jugador("Pablo");
-        ArrayList<Edificacion> listaCasas= new ArrayList();
+        List<Edificacion> listaCasas= new ArrayList();
         listaCasas.add(new Edificacion(5000, 3000));
         listaCasas.add(new Edificacion(5000, 3500));
         Barrio buenosAiresSur = new Barrio("Buenos Aires SUr", 20000, 2000, listaCasas);
@@ -49,7 +51,7 @@ public class BarrioTest {
     public void testjugadorEdificarCasaEnBarrioEsTrue(){
         Tablero tablero = new Tablero();
         Jugador jugador = new Jugador("Lance");
-        ArrayList<Edificacion> listaCasas= new ArrayList();
+        List<Edificacion> listaCasas= new ArrayList();
         listaCasas.add(new Edificacion(5000, 3000));
         listaCasas.add(new Edificacion(5000, 3500));
         Barrio buenosAiresSur = new Barrio("Buenos Aires SUr", 20000, 2000, listaCasas);
@@ -61,7 +63,7 @@ public class BarrioTest {
     public void edificarCasaEnBarrioRestaElCapitalDelJugador(){
         Tablero tablero = new Tablero();
         Jugador jugador = new Jugador("Lance");
-        ArrayList<Edificacion> listaCasas= new ArrayList();
+        List<Edificacion> listaCasas= new ArrayList();
         listaCasas.add(new Edificacion(5000, 3000));
         listaCasas.add(new Edificacion(5000, 3500));
         Barrio buenosAiresSur = new Barrio("Buenos Aires SUr", 20000, 2000, listaCasas);
@@ -75,7 +77,7 @@ public class BarrioTest {
         Tablero tablero = new Tablero();
         Jugador jugador1 = new Jugador("Lance");
         Jugador jugador2 = new Jugador("Hunk");
-        ArrayList<Edificacion> listaCasas= new ArrayList();
+        List<Edificacion> listaCasas= new ArrayList();
         listaCasas.add(new Edificacion(5000, 3000));
         listaCasas.add(new Edificacion(5000, 3500));
         Barrio buenosAiresSur = new Barrio("Buenos Aires SUr", 20000, 2000, listaCasas);
@@ -89,7 +91,7 @@ public class BarrioTest {
         Tablero tablero = new Tablero();
         Jugador jugador1 = new Jugador("Lance");
         Jugador jugador2 = new Jugador("Hunk");
-        ArrayList<Edificacion> listaCasas= new ArrayList();
+        List<Edificacion> listaCasas= new ArrayList();
         listaCasas.add(new Edificacion(5000, 3000));
         listaCasas.add(new Edificacion(5000, 3500));
         Barrio buenosAiresSur = new Barrio("Buenos Aires SUr", 20000, 2000, listaCasas);
@@ -102,7 +104,7 @@ public class BarrioTest {
     public void JugadorVendeTerrenoYAhoraElCompradorTieneUnaPropiedadMas(){
         Tablero tablero = new Tablero();
         Jugador jugador = new Jugador("Pablo");
-        ArrayList<Edificacion> listaCasas= new ArrayList();
+        List<Edificacion> listaCasas= new ArrayList();
         listaCasas.add(new Edificacion(5000, 3000));
         listaCasas.add(new Edificacion(5000, 3500));
         Barrio buenosAiresSur = new Barrio("Buenos Aires SUr", 20000, 2000, listaCasas);
@@ -116,7 +118,7 @@ public class BarrioTest {
     public void JugadorVendeTerrenoYAhoraElVendedorTieneUnaPropiedadMenos(){
         Tablero tablero = new Tablero();
         Jugador jugador = new Jugador("Pablo");
-        ArrayList<Edificacion> listaCasas= new ArrayList();
+        List<Edificacion> listaCasas= new ArrayList();
         listaCasas.add(new Edificacion(5000, 3000));
         listaCasas.add(new Edificacion(5000, 3500));
         Barrio buenosAiresSur = new Barrio("Buenos Aires SUr", 20000, 2000, listaCasas);
@@ -130,7 +132,7 @@ public class BarrioTest {
     public void JugadorVendeTerrenoConCasasPeroJugadorQueRecibeNoEncuentraNinguna(){
         Tablero tablero = new Tablero();
         Jugador jugador = new Jugador("Lance");
-        ArrayList<Edificacion> listaCasas= new ArrayList();
+        List<Edificacion> listaCasas= new ArrayList();
         listaCasas.add(new Edificacion(5000, 3000));
         listaCasas.add(new Edificacion(5000, 3500));
         Barrio buenosAiresSur = new Barrio("Buenos Aires SUr", 20000, 2000, listaCasas);
@@ -148,7 +150,7 @@ public class BarrioTest {
         int numDado = 4;
         Tablero tablero = new Tablero();
         Jugador jugador = new Jugador("Pablo");
-        ArrayList<Edificacion> listaCasas= new ArrayList();
+        List<Edificacion> listaCasas= new ArrayList();
         listaCasas.add(new Edificacion(5000, 3000));
         listaCasas.add(new Edificacion(5000, 3500));
         Barrio buenosAiresSur = new Barrio("Buenos Aires SUr", 20000, 2000, listaCasas);
@@ -165,7 +167,7 @@ public class BarrioTest {
     public void testJugadorCuentaConSantaFeYConstruyeUnaCasaPierde4000(){
         Tablero tablero = new Tablero();
         Jugador jugador = new Jugador("Lance");
-        ArrayList<Edificacion> listaCasas= new ArrayList();
+        List<Edificacion> listaCasas= new ArrayList();
         listaCasas.add(new Edificacion(4000, 3500));
         Barrio santaFe = new Barrio("Santa Fe", 15000, 1500, listaCasas);
         jugador.caeEn(santaFe, 4, tablero);

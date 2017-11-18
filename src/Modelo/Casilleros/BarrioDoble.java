@@ -3,13 +3,13 @@ package Modelo.Casilleros;
 import Modelo.Edificacion;
 import Modelo.Jugador;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class BarrioDoble extends Barrio{
     BarrioDoble hermano;
-    ArrayList<Edificacion> listaHoteles;
+    List<Edificacion> listaHoteles;
 
-    public BarrioDoble(String unNombre, int valor_propiedad, int elAlquilerOriginal, ArrayList edificacionesCasas, ArrayList edificacionesHoteles) {
+    public BarrioDoble(String unNombre, int valor_propiedad, int elAlquilerOriginal, List edificacionesCasas, List edificacionesHoteles) {
         super(unNombre,valor_propiedad, elAlquilerOriginal, edificacionesCasas);
         listaHoteles = edificacionesHoteles;
     }

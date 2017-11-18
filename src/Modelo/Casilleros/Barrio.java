@@ -4,14 +4,14 @@ import Modelo.Jugador;
 import Modelo.Tablero;
 import Modelo.Edificacion;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class Barrio implements Casillero, Propiedades {
 
     public Jugador propietario;
     public String nombre;
     public int costo;
-    public ArrayList<Edificacion> listaCasas;
+    public List<Edificacion> listaCasas;
     public int alquilerActual;
     public int alquilerOriginal;
     public int casasTotales;
@@ -19,7 +19,7 @@ public class Barrio implements Casillero, Propiedades {
 
 
 
-    public Barrio(String unNombre, int valor_propiedad, int elAlquilerOriginal, ArrayList edificacionesCasas){
+    public Barrio(String unNombre, int valor_propiedad, int elAlquilerOriginal, List edificacionesCasas){
         nombre = unNombre;
         propietario  = null;
         costo = valor_propiedad;

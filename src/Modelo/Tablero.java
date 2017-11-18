@@ -3,35 +3,18 @@ package Modelo;
 import Modelo.Casilleros.*;
 
 import java.util.ArrayList;
-import java.util.Collection;
+import java.util.Arrays;
 
 public class Tablero {
     private ArrayList<Casillero> casilleros;
 
     public Tablero(){
         casilleros = new ArrayList<>();
-        casilleros.add(new Salida());
-        casilleros.add(new Quini6());
-//        casilleros.add(new BarrioDoble("Buenos Aires Sur", 20000,2000));
-        casilleros.add(new Servicio("Edesur",35000,500,1000,"Aysa"));
-//        casilleros.add(new BarrioDoble("Buenos Aires Norte", 20000,2000));
-        casilleros.add(new Carcel());
-//        casilleros.add(new BarrioDoble("Cordoba Sur", 20000,2000));
-        casilleros.add(new AvanceDinamico());
-        casilleros.add(new Servicio("Subte",40000,600,1100,"Trenes"));
-//        casilleros.add(new BarrioDoble("Cordoba Norte", 20000,2000));
-        casilleros.add(new ImpuestoAlLujo());
-//        casilleros.add(new Barrio("Santa Fe", 15000, 1500, 1));
-        casilleros.add(new Servicio("Aysa",30000,300,5000,"Edesur"));
-//        casilleros.add(new BarrioDoble("Salta Norte", 20000,2000));
-//        casilleros.add(new BarrioDoble("Salta Sur", 20000,2000));
-        casilleros.add(new Policia());
-        casilleros.add(new Servicio("Trenes",38000,450,800,"Subte"));
-//        casilleros.add(new Barrio("Neuquen", 15000, 1500, 1));
-        casilleros.add(new RetrocesoDinamico());
-//        casilleros.add(new Barrio("Tucumán", 15000, 1500, 1));
+        agregarCasilleros0a5();
+        agregarCasilleros6a10();
+        agregarCasilleros11a15();
+        agregarCasilleros16a20();
     }
-
 
     public Casillero desplazarCasillero(Casillero actual, int num, Jugador jugador){
         int indexInicial = casilleros.indexOf(actual);
@@ -45,5 +28,65 @@ public class Tablero {
 
     public Casillero salida(){
         return casilleros.get(0);
+    }
+
+    private void agregarCasilleros16a20() {
+        casilleros.add(new Policia());
+        casilleros.add(new Servicio("Trenes",
+                38000,450,800,"Subte"));
+        casilleros.add(new Barrio("Neuquen",
+                17000, 1800,
+                Arrays.asList(new Edificacion(4800, 3800))));
+        casilleros.add(new RetrocesoDinamico());
+        casilleros.add(new Barrio("Neuquen",
+                25000, 2500,
+                Arrays.asList(new Edificacion(7000, 4500))));
+    }
+
+    private void agregarCasilleros11a15() {
+        casilleros.add(new ImpuestoAlLujo());
+        casilleros.add(new Barrio("Santa Fe",
+                15000, 1500,
+                Arrays.asList(new Edificacion(4000, 3500))));
+        casilleros.add(new Servicio("Aysa",
+                30000,300,500,"Edesur"));
+        casilleros.add(new BarrioDoble("Salta Norte",
+                23000, 2000,
+                Arrays.asList(new Edificacion(4500, 3250),new Edificacion(4500, 3850)),
+                Arrays.asList(new Edificacion(7500, 5500))));
+        casilleros.add(new BarrioDoble("Salta Sur",
+                23000, 2000,
+                Arrays.asList(new Edificacion(4500, 3250),new Edificacion(4500, 3850)),
+                Arrays.asList(new Edificacion(7500, 5500))));
+    }
+
+    private void agregarCasilleros6a10() {
+        casilleros.add(new Carcel());
+        casilleros.add(new BarrioDoble("Cordoba Sur",
+                18000, 1000,
+                Arrays.asList(new Edificacion(2000, 1500),new Edificacion(2000, 2500)),
+                Arrays.asList(new Edificacion(3000, 3000))));
+        casilleros.add(new AvanceDinamico());
+        casilleros.add(new Servicio("Subte",
+                40000,600,1100,"Trenes"));
+        casilleros.add(new BarrioDoble("Cordoba Norte",
+                20000, 1300,
+                Arrays.asList(new Edificacion(2200, 1800),new Edificacion(2200, 2900)),
+                Arrays.asList(new Edificacion(3500, 3500))));
+    }
+
+    private void agregarCasilleros0a5() {
+        casilleros.add(new Salida());
+        casilleros.add(new Quini6());
+        casilleros.add(new BarrioDoble("Buenos Aires Sur",
+                20000, 2000,
+                Arrays.asList(new Edificacion(3000, 5000),new Edificacion(3000, 3500)),
+                Arrays.asList(new Edificacion(8000, 5000))));
+        casilleros.add(new Servicio("Edesur",
+                35000,500,1000,"Aysa"));
+        casilleros.add(new BarrioDoble("Buenos Aires Norte",
+                25000, 2500,
+                Arrays.asList(new Edificacion(5500, 3500),new Edificacion(5500, 4000)),
+                Arrays.asList(new Edificacion(9000, 6000))));
     }
 }
