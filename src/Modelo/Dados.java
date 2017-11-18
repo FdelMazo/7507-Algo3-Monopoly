@@ -14,4 +14,6 @@ public class Dados {
     public int suma(){
         return dado1+dado2;
     }
+
+    public boolean doble() {return dado1==dado2; }
 }

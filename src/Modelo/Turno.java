@@ -6,6 +6,7 @@ public class Turno {
         tablero = tablero;
         Dados dados = new Dados();
         tablero.desplazarCasillero(jugador.actual(), dados.suma(), jugador);
+        if (dados.doble()) new Turno(tablero, jugador);
         }
     }
 
