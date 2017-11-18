@@ -39,6 +39,11 @@ public class Main extends Application {
         ContenedorPrincipal contenedorPrincipal = new ContenedorPrincipal(listaJugadores);
         Scene escenaJuego = new Scene(contenedorPrincipal,500,500);
 
+        ContenedorEntrada contenedorEntrada = new ContenedorEntrada(primaryStage,escenaJuego);
+        Scene escenaBienvenidos = new Scene (contenedorEntrada,500,500);
+
+        primaryStage.setScene(escenaBienvenidos);
+
         primaryStage.show();
 
     }

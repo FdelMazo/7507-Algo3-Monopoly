@@ -40,6 +40,7 @@ public class ContenedorPrincipal extends BorderPane{
         contenedorVertical.setSpacing(15);
         contenedorVertical.setPadding(new Insets(20));
 
+
     }
 
 
