@@ -25,6 +25,7 @@ public class PiezaJugador {
 
     public void move (int anchoPantalla, int largoPantalla, int anchoCasilla, int largoCasilla ,int n){
 
+        //el ancho y el largo lo vamos a necesitar para que no siga derecho dps
         for( int i =0 ; i < n ; i++) {
             posX += largoCasilla / 2;
             posY += anchoCasilla /2 ;
