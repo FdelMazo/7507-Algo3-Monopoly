@@ -2,8 +2,10 @@ package Modelo;
 
 public class Turno {
 
-    public Turno(Jugador jugador){}
-
-    public void jugar() {
+    public Turno(Tablero tablero, Jugador jugador){
+        tablero = tablero;
+        Dados dados = new Dados();
+        tablero.desplazarCasillero(jugador.actual(), dados.suma(), jugador);
+        }
     }
-}
+

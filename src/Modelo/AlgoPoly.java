@@ -25,8 +25,7 @@ public class AlgoPoly {
 
     public void jugar(){
         while(!(ganador())){
-            Turno turno = new Turno(actual);
-            turno.jugar();
+            Turno turno = new Turno(tablero, actual);
             if(actual.perdio()) retirarJugador(actual);
             actual = siguienteJugador(actual);
         }
@@ -47,15 +46,4 @@ public class AlgoPoly {
         return jugadores.size() == 1;
     }
 
-//    public void juego(){
-            //actual = Elegir siguiente
-        //anunciar ganador
-//        }
-
-//    public void turno(Jugador){
-        //jugador.empezarTurno
-        //num = jugador.tirarDados
-        //casillero nuevo = tablero.avanzar (jugador, num
-        //jugador.caerEn casillero nuevo
-//    }
 }
