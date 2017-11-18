@@ -1,5 +1,6 @@
 package Vista;
 
+import Modelo.Jugador;
 import Modelo.Tablero;
 import javafx.animation.TranslateTransition;
 import javafx.application.Application;
@@ -10,6 +11,8 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
+
+import java.util.ArrayList;
 
 public class Main extends Application {
 
@@ -23,10 +26,18 @@ public class Main extends Application {
 
         primaryStage.setTitle("AlgoPoly");
 
-        //
-        //.....
-        //
+        ArrayList<Jugador> listaJugadores = new ArrayList<Jugador>();
 
+        Jugador jugador1 = new Jugador("Jorge");
+        Jugador jugador2 = new Jugador("batman");
+        Jugador jugador3 = new Jugador("Kahlan");
+
+        listaJugadores.add(jugador1);
+        listaJugadores.add(jugador2);
+        listaJugadores.add(jugador3);
+
+        ContenedorPrincipal contenedorPrincipal = new ContenedorPrincipal(listaJugadores);
+        Scene escenaJuego = new Scene(contenedorPrincipal,500,500);
 
         primaryStage.show();
 
