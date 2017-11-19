@@ -8,14 +8,14 @@ import javafx.geometry.Insets;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.control.Button;
+import javafx.stage.Stage;
 import Modelo.Dados;
 
-import java.awt.*;
 import java.util.ArrayList;
 
 public class ContenedorPrincipal extends BorderPane{
 
-    public ContenedorPrincipal(ArrayList<Jugador> jugadores){
+    public ContenedorPrincipal(ArrayList<Jugador> jugadores, Stage stage){
         this.setBotonera(jugadores.get(0)); //esto sería para probar, ver como maneja que spon varios jug
     }
 
@@ -39,6 +39,8 @@ public class ContenedorPrincipal extends BorderPane{
         VBox contenedorVertical = new VBox(botonComprar,botonVender,botonTirarDados);
         contenedorVertical.setSpacing(15);
         contenedorVertical.setPadding(new Insets(20));
+
+        this.setLeft(contenedorVertical);
 
 
     }
