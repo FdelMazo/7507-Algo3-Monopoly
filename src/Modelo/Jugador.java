@@ -44,21 +44,7 @@ public class Jugador {
     public int capital() {
         return capital;
     }
-
-    public boolean comprar(Propiedades propiedad, Jugador duenio) {
-        if (capital <= propiedad.valorMercado()) return false;
-        propiedad.vender(this);
-        return true;
-    }
-
-    public boolean venderAOtroJugador(Jugador otroJugador, Propiedades propiedad) {
-        if (!otroJugador.comprar(propiedad, this)) return false;
-        propiedades.remove(propiedad);
-        int costo = propiedad.valorMercado();
-        this.cobrar(costo);
-        return true;
-    }
-
+    
     public void venderAlBanco(Propiedades propiedad) {
         propiedades.remove(propiedad);
         int costo = propiedad.valorMercado();
@@ -83,10 +69,10 @@ public class Jugador {
             capital -= dineroSolicitado;
             return true;
         }
-        return this.venderPropiedades((int) (dineroSolicitado), null);
+        return this.venderPropiedades((int) (dineroSolicitado));
     }
 
-    public boolean venderPropiedades(int dineroSolicitado, Jugador jugador) {
+    public boolean venderPropiedades(int dineroSolicitado) {
         for (Propiedades propiedadesDeJugador : propiedades) {
             int monto = propiedadesDeJugador.resetear();
             this.cobrar(monto);

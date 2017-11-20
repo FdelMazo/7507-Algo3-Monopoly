@@ -1,7 +1,5 @@
 package Modelo.Casilleros;
 
-import Modelo.Casilleros.Barrio;
-import Modelo.Casilleros.BarrioDoble;
 import Modelo.Edificacion;
 import Modelo.Jugador;
 import Modelo.Tablero;
@@ -33,7 +31,6 @@ public class BarrioDobleTest {
 
     @Test
     public void testUnJugadorPuedeEdificarUnaCasaAlTenerLosDosBarriosNecesariosBuenosAires(){
-        Tablero tablero = new Tablero();
         Jugador jugador = new Jugador("Lance");
         List<Edificacion> listaCasas= new ArrayList();
         listaCasas.add(new Edificacion(5000, 3000));
@@ -116,35 +113,6 @@ public class BarrioDobleTest {
         buenosAiresSur.edificarCasa(jugador1);
         buenosAiresNorte.edificarCasa(jugador1);
         jugador2.caeEn(buenosAiresSur, 4, tablero);
-        Assert.assertEquals(jugador2.capital(), 96500);
-    }
-
-    //ENTREGA 2: TEST 4 REQUERIDO
-    @Test
-    public void testUnJugadorCaeEnBuenosAiresNorteUnBarrioDobleQuePerteneceAOtroJugadorQueEdificoUnaCasaAhiYDosEnBuenosAiresSurPierde3500(){
-        Tablero tablero = new Tablero();
-        Jugador jugador1 = new Jugador("Lance");
-        Jugador jugador2 = new Jugador("Hunk");
-        List<Edificacion> listaCasasS= new ArrayList();
-        listaCasasS.add(new Edificacion(5000, 3000));
-        listaCasasS.add(new Edificacion(5000, 3500));
-        List<Edificacion> listaHotelesS = new ArrayList();
-        listaHotelesS.add(new Edificacion(8000, 5000));
-        List<Edificacion> listaCasasN= new ArrayList();
-        listaCasasN.add(new Edificacion(5500, 3500));
-        listaCasasN.add(new Edificacion(5500, 4000));
-        List<Edificacion> listaHotelesN = new ArrayList();
-        listaHotelesN.add(new Edificacion(9000, 6000));
-        BarrioDoble buenosAiresSur = new BarrioDoble("Buenos Aires Sur", 20000, 2000, listaCasasS, listaHotelesS);
-        BarrioDoble buenosAiresNorte = new BarrioDoble("Buenos Aires Norte", 25000, 2500, listaCasasN, listaHotelesN);
-        buenosAiresSur.setHermano(buenosAiresNorte);
-        buenosAiresNorte.setHermano(buenosAiresSur);
-        jugador1.caeEn(buenosAiresSur, 4, tablero);
-        jugador1.caeEn(buenosAiresNorte, 4, tablero);
-        buenosAiresSur.edificarCasa(jugador1);
-        buenosAiresSur.edificarCasa(jugador1);
-        buenosAiresNorte.edificarCasa(jugador1);
-        jugador2.caeEn(buenosAiresNorte, 4, tablero);
         Assert.assertEquals(jugador2.capital(), 96500);
     }
 
@@ -266,7 +234,6 @@ public class BarrioDobleTest {
     public void testUnJugadorPuedeEdificarUnaCasaAlTenerLosDosBarriosNecesariosCordoba(){
         Tablero tablero = new Tablero();
         Jugador jugador = new Jugador("Kevin");
-        ArrayList<Integer> listaAlquileresSur = new ArrayList();
         List<Edificacion> listaCasasS= new ArrayList();
         listaCasasS.add(new Edificacion(2000, 1500));
         listaCasasS.add(new Edificacion(2000, 2500));
@@ -293,7 +260,6 @@ public class BarrioDobleTest {
         Tablero tablero = new Tablero();
         Jugador jugador1 = new Jugador("Demi");
         Jugador jugador2 = new Jugador("Selena");
-        ArrayList<Integer> listaAlquileresSur = new ArrayList();
         List<Edificacion> listaCasasS= new ArrayList();
         listaCasasS.add(new Edificacion(2000, 1500));
         listaCasasS.add(new Edificacion(2000, 2500));
@@ -321,7 +287,6 @@ public class BarrioDobleTest {
         Tablero tablero = new Tablero();
         Jugador jugador1 = new Jugador("Demi");
         Jugador jugador2 = new Jugador("Selena");
-        ArrayList<Integer> listaAlquileresSur = new ArrayList();
         List<Edificacion> listaCasasS= new ArrayList();
         listaCasasS.add(new Edificacion(2000, 1500));
         listaCasasS.add(new Edificacion(2000, 2500));
@@ -349,7 +314,6 @@ public class BarrioDobleTest {
     public void testJugadorNoSeLeRestaCapitalAlEdificarHotelAlNoTenerTodasLasCasasEdificadasNecesariasDeAmbosBarriosDoblesCordoba(){
         Tablero tablero = new Tablero();
         Jugador jugador = new Jugador("Kevin");
-        ArrayList<Integer> listaAlquileresSur = new ArrayList();
         List<Edificacion> listaCasasS= new ArrayList();
         listaCasasS.add(new Edificacion(2000, 1500));
         listaCasasS.add(new Edificacion(2000, 2500));
@@ -368,7 +332,7 @@ public class BarrioDobleTest {
         jugador.caeEn(cordobaNorte, 4, tablero);
         cordobaNorte.edificarCasa(jugador);
         cordobaNorte.edificarHotel(jugador);
-        Assert.assertEquals(jugador.capital(), 59800);;
+        Assert.assertEquals(jugador.capital(), 59800);
     }
 
     //ENTREGA 2: TEST 8 REQUERIDO (CORDOBA)
@@ -376,7 +340,6 @@ public class BarrioDobleTest {
     public void testJugadorContruyeUnHotelYDecrementaSuCapitalCordoba(){
         Tablero tablero = new Tablero();
         Jugador jugador = new Jugador("Kevin");
-        ArrayList<Integer> listaAlquileresSur = new ArrayList();
         List<Edificacion> listaCasasS= new ArrayList();
         listaCasasS.add(new Edificacion(2000, 1500));
         listaCasasS.add(new Edificacion(2000, 2500));
@@ -398,7 +361,7 @@ public class BarrioDobleTest {
         cordobaSur.edificarCasa(jugador);
         cordobaSur.edificarCasa(jugador);
         cordobaNorte.edificarHotel(jugador);
-        Assert.assertEquals(jugador.capital(), 50100);;
+        Assert.assertEquals(jugador.capital(), 50100);
     }
 
     //ENTREGA 2: TEST 8 REQUERIDO (CORDOBA)
@@ -407,7 +370,6 @@ public class BarrioDobleTest {
         Tablero tablero = new Tablero();
         Jugador jugador = new Jugador("Kevin");
         Jugador jugadorAct = new Jugador("Kevin");
-        ArrayList<Integer> listaAlquileresSur = new ArrayList();
         List<Edificacion> listaCasasS= new ArrayList();
         listaCasasS.add(new Edificacion(2000, 1500));
         listaCasasS.add(new Edificacion(2000, 2500));
@@ -430,7 +392,7 @@ public class BarrioDobleTest {
         cordobaSur.edificarCasa(jugador);
         cordobaNorte.edificarHotel(jugador);
         jugadorAct.caeEn(cordobaNorte,2,tablero);
-        Assert.assertEquals(jugadorAct.capital(), 96500);;
+        Assert.assertEquals(jugadorAct.capital(), 96500);
     }
 
     //ENTREGA 2: TEST 8 REQUERIDO (SALTA)

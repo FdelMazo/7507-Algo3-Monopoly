@@ -26,7 +26,7 @@ public class Main extends Application {
 
         primaryStage.setTitle("AlgoPoly");
 
-        ArrayList<Jugador> listaJugadores = new ArrayList<Jugador>();
+        ArrayList<Jugador> listaJugadores = new ArrayList<>();
 
         Jugador jugador1 = new Jugador("Jorge");
         Jugador jugador2 = new Jugador("batman");

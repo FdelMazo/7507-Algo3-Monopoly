@@ -8,7 +8,7 @@ import org.junit.Test;
 public class ServicioTest {
 
     @Test
-    public void testJugadorCaeEnTrenesAdueñadoPorOtroJugadorQueNoTieneSubte(){
+    public void testJugadorCaeEnTrenesAdueniadoPorOtroJugadorQueNoTieneSubte(){
 
         int numDado = 4;
         Tablero tablero = new Tablero();
@@ -22,7 +22,7 @@ public class ServicioTest {
     }
 
     @Test
-    public void testJugadorCaeEnEdesurAdueñadoPorOtroJugadorQueNoTieneAysa(){
+    public void testJugadorCaeEnEdesurAdueniadoPorOtroJugadorQueNoTieneAysa(){
 
         int numDado = 4;
         Tablero tablero = new Tablero();
@@ -35,7 +35,7 @@ public class ServicioTest {
     }
 
     @Test
-    public void testJugadorCaeEnEdesurPeroEsDueñoPorLoQueNoSeLeCobra(){
+    public void testJugadorCaeEnEdesurPeroEsDuenioPorLoQueNoSeLeCobra(){
 
         int numDado = 4;
         Tablero tablero = new Tablero();
@@ -48,7 +48,7 @@ public class ServicioTest {
     }
 
     @Test
-    public void testJugadorCaeEnEdesurPeroElDueñoTambienPoseeAysa(){
+    public void testJugadorCaeEnEdesurPeroElDuenioTambienPoseeAysa(){
 
         int numDado = 4;
         Tablero tablero = new Tablero();
@@ -64,7 +64,7 @@ public class ServicioTest {
     }
 
     @Test
-    public void testJugadorCaeEnTrenesPeroElDueñoTambienPoseeSubte(){
+    public void testJugadorCaeEnTrenesPeroElDuenioTambienPoseeSubte(){
 
         int numDado = 4;
         Tablero tablero = new Tablero();

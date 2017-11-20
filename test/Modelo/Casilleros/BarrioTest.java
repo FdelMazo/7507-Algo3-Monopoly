@@ -99,67 +99,6 @@ public class BarrioTest {
         Assert.assertEquals(jugador1.capital(), 82000);
     }
 
-    @Test
-    public void JugadorVendeTerrenoYAhoraElCompradorTieneUnaPropiedadMas(){
-        Tablero tablero = new Tablero();
-        Jugador jugador = new Jugador("Pablo");
-        List<Edificacion> listaCasas= new ArrayList();
-        listaCasas.add(new Edificacion(5000, 3000));
-        listaCasas.add(new Edificacion(5000, 3500));
-        Barrio buenosAiresSur = new Barrio("Buenos Aires SUr", 20000, 2000, listaCasas);
-        jugador.caeEn(buenosAiresSur, 4, tablero);
-        Jugador jugador1 = new Jugador("Ezra");
-        jugador.venderAOtroJugador(jugador1,buenosAiresSur);
-        Assert.assertEquals(1,jugador1.cantPropiedades());
-    }
-
-    @Test
-    public void JugadorVendeTerrenoYAhoraElVendedorTieneUnaPropiedadMenos(){
-        Tablero tablero = new Tablero();
-        Jugador jugador = new Jugador("Pablo");
-        List<Edificacion> listaCasas= new ArrayList();
-        listaCasas.add(new Edificacion(5000, 3000));
-        listaCasas.add(new Edificacion(5000, 3500));
-        Barrio buenosAiresSur = new Barrio("Buenos Aires SUr", 20000, 2000, listaCasas);
-        jugador.caeEn(buenosAiresSur, 4, tablero);
-        Jugador jugador1 = new Jugador("Ezra");
-        jugador.venderAOtroJugador(jugador1,buenosAiresSur);
-        Assert.assertEquals(0,jugador.cantPropiedades());
-    }
-
-    @Test
-    public void JugadorVendeTerrenoConCasasPeroJugadorQueRecibeNoEncuentraNinguna(){
-        Tablero tablero = new Tablero();
-        Jugador jugador = new Jugador("Lance");
-        List<Edificacion> listaCasas= new ArrayList();
-        listaCasas.add(new Edificacion(5000, 3000));
-        listaCasas.add(new Edificacion(5000, 3500));
-        Barrio buenosAiresSur = new Barrio("Buenos Aires SUr", 20000, 2000, listaCasas);
-        jugador.caeEn(buenosAiresSur, 4, tablero);
-        buenosAiresSur.edificarCasa(jugador);
-        Jugador jugador1 = new Jugador("Ezra");
-        jugador.venderAOtroJugador(jugador1,buenosAiresSur);
-        Jugador jugador2 = new Jugador("Kahlan");
-        jugador2.caeEn(buenosAiresSur,4,tablero);
-        Assert.assertEquals(100000-2000,jugador2.capital());
-    }
-
-    @Test
-    public void JugadorCaeEnUnTerrenoVendidoYAhoraElAlquilerSeAcreditaAlNuevoDuenio(){
-        int numDado = 4;
-        Tablero tablero = new Tablero();
-        Jugador jugador = new Jugador("Pablo");
-        List<Edificacion> listaCasas= new ArrayList();
-        listaCasas.add(new Edificacion(5000, 3000));
-        listaCasas.add(new Edificacion(5000, 3500));
-        Barrio buenosAiresSur = new Barrio("Buenos Aires SUr", 20000, 2000, listaCasas);
-        jugador.caeEn(buenosAiresSur, 4, tablero);
-        Jugador jugador1 = new Jugador("Ezra");
-        jugador.venderAOtroJugador(jugador1,buenosAiresSur);
-        Jugador jugador2 = new Jugador("Matias");
-        jugador2.caeEn(buenosAiresSur,numDado,tablero);
-        Assert.assertEquals(100000-17000+2000, jugador1.capital());
-    }
 
     //ENTREGA 2: TEST 9 REQUERID0
     @Test

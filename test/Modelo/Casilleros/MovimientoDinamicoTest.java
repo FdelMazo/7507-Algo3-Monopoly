@@ -57,7 +57,6 @@ public class MovimientoDinamicoTest {
     @Test
     public void numeroEntre7Y10EnRetrocesoDianmico() {
         int numDado = 9;
-        int resultado;
         RetrocesoDinamico retrocesoDinamico = new RetrocesoDinamico();
         Jugador jugador = new Jugador("Viky");
         Assert.assertEquals(-1, retrocesoDinamico.calcularDinamismo(jugador, numDado));
@@ -66,7 +65,6 @@ public class MovimientoDinamicoTest {
     @Test
     public void numeroEntre11Y12EnRetrocesoDianmico() {
         int numDado = 11;
-        int resultado;
         RetrocesoDinamico retrocesoDinamico = new RetrocesoDinamico();
         Jugador jugador = new Jugador("Viky");
         Assert.assertEquals(-9, retrocesoDinamico.calcularDinamismo(jugador, numDado));

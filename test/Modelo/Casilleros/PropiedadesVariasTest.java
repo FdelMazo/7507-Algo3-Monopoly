@@ -20,7 +20,7 @@ public class PropiedadesVariasTest {
     }
 
     @Test
-    public void JugadorIntercambiaPropiedadConOtroJugadorYAhoraElNuevoDueñoCobraElAlquiler(){
+    public void JugadorIntercambiaPropiedadConOtroJugadorYAhoraElNuevoDueniooCobraElAlquiler(){
 
         Tablero tablero = new Tablero();
         Jugador jugador1 = new Jugador("Carlos");

@@ -3,8 +3,6 @@ package Modelo.Casilleros;
 import Modelo.Jugador;
 import Modelo.Tablero;
 
-import java.util.HashMap;
-
 public class Policia implements Casillero {
 
 

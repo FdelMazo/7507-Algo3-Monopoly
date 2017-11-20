@@ -63,17 +63,15 @@ public class Barrio implements Casillero, Propiedades {
     }
 
     public boolean todasLasCasasFueronConstruidas(){
-        for (int i = 0; i < listaCasas.size(); i++){
-            if (!listaCasas.get(i).estaEdificado()){
-                return false;
-            }
+        for (Edificacion casa : listaCasas) {
+            if (!casa.estaEdificado()) return false;
         }
         return true;
     }
 
     public void destruirCasasConstruidas(){
-        for (int i = 0; i < listaCasas.size(); i++){
-            listaCasas.get(i).cambiarEstadoDeEdificacionAFalse();
+        for (Edificacion casa : listaCasas) {
+            casa.cambiarEstadoDeEdificacionAFalse();
         }
     }
 

@@ -13,7 +13,7 @@ public class Quini6 implements Casillero {
     }
 
     private void sumarVisita(Jugador jugador){
-        if (jugadorEstaRegistrado(jugador)){
+        if (jugadoresregistrados.containsKey(jugador)){
             jugadoresregistrados.put(jugador, jugadoresregistrados.get(jugador) + 1);
         }
         else{
@@ -21,11 +21,7 @@ public class Quini6 implements Casillero {
         }
     }
 
-    public int devolverCantidadDeVisitas(Jugador jugador) {
-        return jugadoresregistrados.get(jugador);
-    }
-
-    private int devolverPrecioCorrespondiente(Jugador jugador){
+    private int calcularPrecio(Jugador jugador){
         if (jugadoresregistrados.get(jugador) == 1){
             return 50000;
         }
@@ -37,11 +33,8 @@ public class Quini6 implements Casillero {
 
     public void accionAlCaer( Jugador jugador, int numDado, Tablero tablero){
         this.sumarVisita(jugador);
-        jugador.cobrar(this.devolverPrecioCorrespondiente(jugador));
+        jugador.cobrar(this.calcularPrecio(jugador));
     }
 
 
-    public boolean jugadorEstaRegistrado(Jugador jugador) {
-        return jugadoresregistrados.containsKey(jugador);
-    }
 }

@@ -7,7 +7,7 @@ public class BlankTest {
 
     @Test
     public void testBlank() {
-        Assert.assertEquals(0, 0);;
+        Assert.assertEquals(0, 0);
     }
 
 }

@@ -1,6 +1,5 @@
 package Modelo;
 
-import Modelo.Casilleros.Casillero;
 import org.junit.Assert;
 import org.junit.Test;
 

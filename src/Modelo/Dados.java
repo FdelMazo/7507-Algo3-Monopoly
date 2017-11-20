@@ -3,8 +3,8 @@ package Modelo;
 import java.util.Random;
 
 public class Dados {
-    Integer dado1;
-    Integer dado2;
+    int dado1;
+    int dado2;
 
     public Dados(){
         dado1 = new Random().nextInt(5) +1;

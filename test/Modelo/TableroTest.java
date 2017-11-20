@@ -5,11 +5,7 @@ import Modelo.Casilleros.Servicio;
 import org.junit.Assert;
 import org.junit.Test;
 
-import java.lang.invoke.SerializedLambda;
-
 public class TableroTest {
-
-    private Casillero deberiaSerEdesur;
 
     @Test
     public void testAvanzar3PasosEnTableroCaeEnEdesur() {
