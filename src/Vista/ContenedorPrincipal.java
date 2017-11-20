@@ -1,12 +1,15 @@
 package Vista;
 
 import Modelo.Jugador;
+import Modelo.Tablero;
 import Vista.eventos.BotonComprar;
 import Vista.eventos.BotonTirarDados;
 import Vista.eventos.BotonVender;
 import javafx.geometry.Insets;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.VBox;
+import javafx.geometry.Pos;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.image.Image;
+import javafx.scene.layout.*;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import Modelo.Dados;
@@ -15,8 +18,15 @@ import java.util.ArrayList;
 
 public class ContenedorPrincipal extends BorderPane{
 
+    Tablero tablero;
+    VBox contenedorCentral;
+    Canvas canvasCentral;
+    VistaTablero vistaTablero;
+    Pane tableroCentral;
+
     public ContenedorPrincipal(ArrayList<Jugador> jugadores, Stage stage){
         this.setBotonera(jugadores.get(0)); //esto sería para probar, ver como maneja que spon varios jug
+        this.setCentro(tablero);
     }
 
     private void setBotonera(Jugador jugador){
@@ -42,10 +52,22 @@ public class ContenedorPrincipal extends BorderPane{
 
         this.setLeft(contenedorVertical);
 
-
     }
 
+    private void setCentro(Tablero tablero) {
 
+        canvasCentral = new Canvas(800,500);
+        tableroCentral = new Pane();
+        vistaTablero = new VistaTablero( tablero , canvasCentral, tableroCentral);
+        vistaTablero.dibujar();
+
+        contenedorCentral = new VBox(tableroCentral);
+        contenedorCentral.setAlignment(Pos.CENTER);
+        contenedorCentral.setSpacing(20);
+        contenedorCentral.setPadding(new Insets(25));
+
+        this.setCenter(contenedorCentral);
+    }
 
 
 
