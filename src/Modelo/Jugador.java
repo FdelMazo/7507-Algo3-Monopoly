@@ -1,6 +1,8 @@
 package Modelo;
 import Modelo.Casilleros.Propiedades;
 import Modelo.Casilleros.Casillero;
+import Vista.Consola;
+
 import java.util.ArrayList;
 
 
@@ -18,6 +20,7 @@ public class Jugador {
         casilleroActual = null;
         nombre = nombreJugador;
         estado = new Libre();
+        Consola.println("El jugador "+nombreJugador+"ha ingresado a la partida");
     }
 
     public void asignarCasillero(Casillero casillero) {

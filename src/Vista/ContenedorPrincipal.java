@@ -11,6 +11,9 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.control.Button;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import Modelo.Dados;
 
@@ -25,9 +28,9 @@ public class ContenedorPrincipal extends BorderPane{
     Pane tableroCentral;
 
     public ContenedorPrincipal(ArrayList<Jugador> jugadores, Stage stage){
+        this.setConsola();
         this.setBotonera(jugadores.get(0)); //esto sería para probar, ver como maneja que spon varios jug
         this.setCentro(tablero);
-        this.setConsola();
     }
 
     private void setBotonera(Jugador jugador){
@@ -71,14 +74,7 @@ public class ContenedorPrincipal extends BorderPane{
     }
 
     private void setConsola() {
-
-        VBox contenedorConsola = new VBox();
-        contenedorConsola.setSpacing(10);
-        contenedorConsola.setPadding(new Insets(15));
-        contenedorConsola.setStyle("-fx-background-color: black;");
-        this.setBottom(contenedorConsola);
+        Consola consolaLocal = new Consola();
+        this.setBottom(consolaLocal.contenedorConsola());
     }
-
-
-
 }

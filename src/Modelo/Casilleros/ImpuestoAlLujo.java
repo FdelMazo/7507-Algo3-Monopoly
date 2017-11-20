@@ -2,6 +2,8 @@ package Modelo.Casilleros;
 
 import Modelo.Jugador;
 import Modelo.Tablero;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 
 public class ImpuestoAlLujo implements Casillero {
 
@@ -12,5 +14,7 @@ public class ImpuestoAlLujo implements Casillero {
     }
 
     public String nombre() {  return "Impuesto Al Lujo";}
+
+    public Paint color() { return Color.LIME;  }
 
 }

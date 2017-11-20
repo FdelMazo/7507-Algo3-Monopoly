@@ -2,6 +2,8 @@ package Modelo.Casilleros;
 
 import Modelo.Jugador;
 import Modelo.Tablero;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 
 public abstract class Dinamismo implements Casillero {
 
@@ -31,5 +33,7 @@ public abstract class Dinamismo implements Casillero {
     public abstract int primeraOpcion(int num, Jugador jugador);
     public abstract int segundaOpcion (int num,Jugador jugador);
     public abstract int terceraOpcion (int num, Jugador jugador);
+
+    public Paint color() { return Color.YELLOW;  }
 
 }

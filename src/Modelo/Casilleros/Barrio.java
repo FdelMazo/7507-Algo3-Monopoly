@@ -3,6 +3,8 @@ package Modelo.Casilleros;
 import Modelo.Jugador;
 import Modelo.Tablero;
 import Modelo.Edificacion;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 
 import java.util.List;
 
@@ -94,5 +96,7 @@ public class Barrio implements Casillero, Propiedades {
     public String nombre() {
         return nombre;
     }
+
+    public Paint color() { return Color.ORANGE;  }
 
 }

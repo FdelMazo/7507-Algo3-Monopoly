@@ -57,7 +57,7 @@ public class VistaTablero {
                 text.relocate(x+10, y+25);
 
             rectangle.setStroke(Color.BLACK);
-            rectangle.setFill(Color.RED);
+            rectangle.setFill(casillero.color());
             rectangle.relocate(x, y);
 
             pane.getChildren().addAll(rectangle,text);

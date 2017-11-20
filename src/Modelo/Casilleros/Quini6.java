@@ -2,6 +2,8 @@ package Modelo.Casilleros;
 
 import Modelo.Jugador;
 import Modelo.Tablero;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 
 import java.util.HashMap;
 
@@ -37,5 +39,6 @@ public class Quini6 implements Casillero {
     }
     public String nombre() {  return "Quini 6";}
 
+    public Paint color() { return Color.BLUE;  }
 
 }

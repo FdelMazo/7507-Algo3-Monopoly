@@ -2,6 +2,8 @@ package Modelo.Casilleros;
 
 import Modelo.Jugador;
 import Modelo.Tablero;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.Paint;
 
 public class Servicio implements Casillero, Propiedades{
 
@@ -64,4 +66,5 @@ public class Servicio implements Casillero, Propiedades{
     public Jugador devolverDuenio(){
         return propietario;
     }
-}
+
+    public Paint color() { return Color.RED;  }}
