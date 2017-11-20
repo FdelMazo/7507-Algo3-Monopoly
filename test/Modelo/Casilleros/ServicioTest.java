@@ -79,20 +79,20 @@ public class ServicioTest {
 
     }
 
-    //@Test
-    //public void testJugadoresIntercambiaPropiedadesYLasPropiedadesTieneNuevosDuenios(){
+    @Test
+    public void testJugadoresIntercambiaPropiedadesYLasPropiedadesTieneNuevosDuenios(){
 
-      //  Tablero tablero = new Tablero();
-       // Jugador jugador = new Jugador("Pablo");
-        //Jugador jugador1 = new Jugador("Martin");
-        //Servicio servicio1 = new Servicio("Edesur",35000,500,1000,"Aysa");
-        //Servicio servicio2 = new Servicio("Subte",40000,600,1100,"Trenes");
-        //jugador.caeEn(servicio1,4,tablero);
-        //jugador1.caeEn(servicio2,4,tablero);
-        //jugador.intercambiarPropiedades(jugador1);
+        Tablero tablero = new Tablero();
+        Jugador jugador = new Jugador("Pablo");
+        Jugador jugador1 = new Jugador("Martin");
+        Servicio servicio1 = new Servicio("Edesur",35000,500,1000,"Aysa");
+        Servicio servicio2 = new Servicio("Subte",40000,600,1100,"Trenes");
+        jugador.caeEn(servicio1,4,tablero);
+        jugador1.caeEn(servicio2,4,tablero);
+        jugador.intercambiarPropiedades(jugador1);
 
-        //Assert.assertEquals(jugador1,servicio1.devolverDuenio());
-    //}
+        Assert.assertEquals(jugador1,servicio1.devolverDuenio());
+    }
 
     @Test
     public void testJugadorVendePropiedadYSeeIncrementaSuCapitalUn85DelValorDeLaPropiedad() {
@@ -101,7 +101,7 @@ public class ServicioTest {
         Jugador jugador = new Jugador("Oca");
         Servicio servicio1 = new Servicio("Edesur", 10000, 500, 1000, "Aysa");
         jugador.caeEn(servicio1, 4, tablero);
-        jugador.venderAlBanco();
+        jugador.venderAlBanco(servicio1);
         Assert.assertEquals(100000 - 10000 + 8500, jugador.capital());
     }
 

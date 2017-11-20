@@ -27,7 +27,7 @@ public abstract class Dinamismo implements Casillero {
     public int porcentajeCapital(int numDado, Jugador jugador){
         return (jugador.capital() % numDado);
     }
-    public int restaCantidadPropiedades(int numDado, Jugador jugador){ return (numDado - jugador.devolverCantPropiedades()); }
+    public int restaCantidadPropiedades(int numDado, Jugador jugador){ return (numDado - jugador.cantPropiedades()); }
     public abstract int primeraOpcion(int num, Jugador jugador);
     public abstract int segundaOpcion (int num,Jugador jugador);
     public abstract int terceraOpcion (int num, Jugador jugador);

@@ -1,7 +1,6 @@
 package Modelo;
 
 import Modelo.Casilleros.Barrio;
-import Modelo.Jugador;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -18,7 +17,7 @@ public class JugadorTest {
     @Test
     public void solicitarDineroRestaAlCapitalDelJugador(){
         Jugador jugador = new Jugador("María");
-        jugador.solicitar_dinero(500);
+        jugador.solicitarDinero(500);
         Assert.assertEquals(100000-500,jugador.capital());
     }
 

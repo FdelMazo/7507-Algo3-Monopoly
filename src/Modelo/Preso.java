@@ -2,22 +2,22 @@ package Modelo;
 
 public class Preso implements Estado{
 
-    int dias_preso;
+    int diasPreso;
     int fianza;
 
     public Preso(){
-        dias_preso = 0; //?
+        diasPreso = 0;
         fianza = 45000;
     }
 
     @Override
     public boolean mover(Jugador jugador) {
-        dias_preso += 1;
-        if (dias_preso > 3){
+        diasPreso += 1;
+        if (diasPreso > 3){
             return true;
         }
-        else if (dias_preso > 1){
-            return jugador.salir(fianza);
+        else if (diasPreso > 1){
+            return jugador.solicitarDinero(fianza);
         }
         return false;
     }

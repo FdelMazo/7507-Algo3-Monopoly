@@ -31,7 +31,7 @@ public class Servicio implements Casillero, Propiedades{
 
     public void accionAlCaer(Jugador jugador, int numDado, Tablero tablero){
         if (propietario == null) {
-            jugador.solicitar_dinero(valor);
+            jugador.solicitarDinero(valor);
             this.agregarPropietario(jugador);
             jugador.agregar_propiedad(this);
             if (jugador.posee(clase_hermana)){
@@ -42,8 +42,8 @@ public class Servicio implements Casillero, Propiedades{
             if (propietario.posee(clase_hermana)) {
                 cobro = cobro_plus;
             }
-            jugador.solicitar_dinero(numDado * cobro);
-            propietario.cobrar_ingreso(numDado*cobro);
+            jugador.solicitarDinero(numDado * cobro);
+            propietario.cobrar(numDado*cobro);
         }
 
     }
@@ -54,7 +54,7 @@ public class Servicio implements Casillero, Propiedades{
     }
 
     public boolean vender(Jugador jugador){
-        if(!jugador.solicitar_dinero(valor_mercado)) return false;
+        if(!jugador.solicitarDinero(valor_mercado)) return false;
         jugador.agregar_propiedad(this);
         propietario = jugador;
         return true;

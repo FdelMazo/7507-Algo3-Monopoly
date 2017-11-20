@@ -27,6 +27,7 @@ public class ContenedorPrincipal extends BorderPane{
     public ContenedorPrincipal(ArrayList<Jugador> jugadores, Stage stage){
         this.setBotonera(jugadores.get(0)); //esto sería para probar, ver como maneja que spon varios jug
         this.setCentro(tablero);
+        this.setConsola();
     }
 
     private void setBotonera(Jugador jugador){
@@ -67,6 +68,15 @@ public class ContenedorPrincipal extends BorderPane{
         contenedorCentral.setPadding(new Insets(25));
 
         this.setCenter(contenedorCentral);
+    }
+
+    private void setConsola() {
+
+        VBox contenedorConsola = new VBox();
+        contenedorConsola.setSpacing(10);
+        contenedorConsola.setPadding(new Insets(15));
+        contenedorConsola.setStyle("-fx-background-color: black;");
+        this.setBottom(contenedorConsola);
     }
 
 

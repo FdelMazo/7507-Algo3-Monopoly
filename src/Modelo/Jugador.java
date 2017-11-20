@@ -12,11 +12,11 @@ public class Jugador {
     private String nombre;
     private Estado estado;
 
-    public Jugador(String nombre_jugador) {
+    public Jugador(String nombreJugador) {
         this.capital = 100000;
         propiedades = new ArrayList<>();
         casilleroActual = null ;
-        nombre = nombre_jugador;
+        nombre = nombreJugador;
         estado = new Libre();
     }
 
@@ -24,7 +24,7 @@ public class Jugador {
         casilleroActual = casillero;
     }
 
-    public int devolverCantPropiedades(){
+    public int cantPropiedades(){
         return propiedades.size() ;
     }
 
@@ -35,7 +35,7 @@ public class Jugador {
 
     public Casillero actual(){ return casilleroActual; }
 
-    public void cobrar_ingreso(int monto){
+    public void cobrar(int monto){
         capital += monto;
     }
 
@@ -43,30 +43,24 @@ public class Jugador {
         return capital;
     }
 
-    public boolean comprar(Propiedades propiedad, Jugador jugador){
-        if (capital >= propiedad.valorMercado()){
-            propiedad.vender(this);
-            jugador.cobrar_ingreso(propiedad.valorMercado());
-            return true;
-        }
-        return false;
+    public boolean comprar(Propiedades propiedad, Jugador duenio){
+        if (capital <= propiedad.valorMercado()) return false;
+        propiedad.vender(this);
+        return true;
     }
 
-    public boolean vender (Jugador jugador,Propiedades propiedad){
-
-        boolean resultado = jugador.comprar(propiedad,this);
-        if(resultado == true){
-            propiedades.remove(0);
-            return true;
-        }
-        return false;
+    public boolean venderAOtroJugador (Jugador otroJugador, Propiedades propiedad){
+        if(! otroJugador.comprar(propiedad,this)) return false;
+        propiedades.remove(propiedad);
+        int costo = propiedad.valorMercado();
+        this.cobrar(costo);
+        return true;
     }
 
-    public void venderAlBanco(){
-
-        Propiedades propiedad = propiedades.remove(0);
-        int costo = propiedad.resetear();
-        this.cobrar_ingreso(costo);
+    public void venderAlBanco(Propiedades propiedad){
+        propiedades.remove(propiedad);
+        int costo = propiedad.valorMercado();
+        this.cobrar(costo);
     }
 
     public Propiedades propiedadParaIntercambiar(){
@@ -74,7 +68,6 @@ public class Jugador {
     }
 
     public void intercambiarPropiedades(Jugador jugador){
-
         Propiedades propiedad1 = this.propiedadParaIntercambiar();
         Propiedades propiedad2 = jugador.propiedadParaIntercambiar();
         jugador.agregar_propiedad(propiedad1);
@@ -83,28 +76,21 @@ public class Jugador {
         propiedad2.cambiarPropietario(this);
     }
 
-    public boolean solicitar_dinero( double dinero_solicitado)    {
-        if ( capital > dinero_solicitado){
-            capital -= dinero_solicitado;
-           return true;
+    public boolean solicitarDinero(double dineroSolicitado)    {
+        if ( capital > dineroSolicitado){
+            capital -= dineroSolicitado;
+            return true;
         }
-        boolean resultado = this.vender_propiedades((int)(dinero_solicitado), null);
+        boolean resultado = this.venderPropiedades((int)(dineroSolicitado), null);
         return resultado;
     }
 
-    public boolean vender_propiedades(int dinero_solicitado, Jugador jugador) {
-
-        int monto_a_alcanzar = dinero_solicitado - capital;
-        int monto_conseguido = 0;
-
+    public boolean venderPropiedades(int dineroSolicitado, Jugador jugador) {
         for (int i = 0; i < propiedades.size(); i++) {
-            monto_conseguido += propiedades.get(i).resetear();
-            if (monto_conseguido >= monto_a_alcanzar) {
-                this.cobrar_ingreso(monto_conseguido);
-                this.solicitar_dinero(dinero_solicitado);
-                return true;
+            int monto = propiedades.get(i).resetear();
+            this.cobrar(monto);
+            if (this.solicitarDinero(dineroSolicitado)) return true;
             }
-        }
         return false;
     }
 
@@ -125,14 +111,6 @@ public class Jugador {
         return false;
     }
 
-    public boolean salir(int fianza){
-        if(capital >= fianza){
-            this.solicitar_dinero(fianza);
-            return true;
-        }
-        return false;
-    }
-
     public boolean mover(){
         return estado.mover(this);
     }
@@ -141,6 +119,5 @@ public class Jugador {
         estado = nuevo_estado;
     }
 
-    public boolean perdio() {return false;
-    }
+    public boolean perdio() {return false;    }
 }

@@ -1,6 +1,5 @@
 package Modelo.Casilleros;
 
-import Modelo.Casilleros.Barrio;
 import Modelo.Jugador;
 import Modelo.Tablero;
 import Modelo.Edificacion;
@@ -42,7 +41,7 @@ public class BarrioTest {
         listaCasas.add(new Edificacion(5000, 3000));
         listaCasas.add(new Edificacion(5000, 3500));
         Barrio buenosAiresSur = new Barrio("Buenos Aires SUr", 20000, 2000, listaCasas);
-        jugador.solicitar_dinero(90000);
+        jugador.solicitarDinero(90000);
         jugador.caeEn(buenosAiresSur, 4, tablero);
         Assert.assertEquals(null, buenosAiresSur.duenio() );
     }
@@ -110,8 +109,8 @@ public class BarrioTest {
         Barrio buenosAiresSur = new Barrio("Buenos Aires SUr", 20000, 2000, listaCasas);
         jugador.caeEn(buenosAiresSur, 4, tablero);
         Jugador jugador1 = new Jugador("Ezra");
-        jugador.vender(jugador1,buenosAiresSur);
-        Assert.assertEquals(1,jugador1.devolverCantPropiedades());
+        jugador.venderAOtroJugador(jugador1,buenosAiresSur);
+        Assert.assertEquals(1,jugador1.cantPropiedades());
     }
 
     @Test
@@ -124,8 +123,8 @@ public class BarrioTest {
         Barrio buenosAiresSur = new Barrio("Buenos Aires SUr", 20000, 2000, listaCasas);
         jugador.caeEn(buenosAiresSur, 4, tablero);
         Jugador jugador1 = new Jugador("Ezra");
-        jugador.vender(jugador1,buenosAiresSur);
-        Assert.assertEquals(0,jugador.devolverCantPropiedades());
+        jugador.venderAOtroJugador(jugador1,buenosAiresSur);
+        Assert.assertEquals(0,jugador.cantPropiedades());
     }
 
     @Test
@@ -139,7 +138,7 @@ public class BarrioTest {
         jugador.caeEn(buenosAiresSur, 4, tablero);
         buenosAiresSur.edificarCasa(jugador);
         Jugador jugador1 = new Jugador("Ezra");
-        jugador.vender(jugador1,buenosAiresSur);
+        jugador.venderAOtroJugador(jugador1,buenosAiresSur);
         Jugador jugador2 = new Jugador("Kahlan");
         jugador2.caeEn(buenosAiresSur,4,tablero);
         Assert.assertEquals(100000-2000,jugador2.capital());
@@ -156,7 +155,7 @@ public class BarrioTest {
         Barrio buenosAiresSur = new Barrio("Buenos Aires SUr", 20000, 2000, listaCasas);
         jugador.caeEn(buenosAiresSur, 4, tablero);
         Jugador jugador1 = new Jugador("Ezra");
-        jugador.vender(jugador1,buenosAiresSur);
+        jugador.venderAOtroJugador(jugador1,buenosAiresSur);
         Jugador jugador2 = new Jugador("Matias");
         jugador2.caeEn(buenosAiresSur,numDado,tablero);
         Assert.assertEquals(100000-17000+2000, jugador1.capital());

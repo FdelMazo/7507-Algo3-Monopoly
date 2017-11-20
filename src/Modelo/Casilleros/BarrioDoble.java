@@ -33,7 +33,7 @@ public class BarrioDoble extends Barrio{
     public boolean edificarHotel(Jugador jugador){
         if (puedeEdificarHotel(jugador)){
             alquilerActual = listaHoteles.get(0).getAlquiler();
-            jugador.solicitar_dinero(listaHoteles.get(0).getPrecio());
+            jugador.solicitarDinero(listaHoteles.get(0).getPrecio());
             return true;
         }
         return false;

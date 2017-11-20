@@ -30,12 +30,8 @@ public class Barrio implements Casillero, Propiedades {
         valor_mercado = costo;
     }
 
-    public boolean permiteSalida(Jugador jugador){
-        return true;
-    }
-
     public boolean vender(Jugador jugador){
-        if(!jugador.solicitar_dinero(valor_mercado)) return false;
+        if(!jugador.solicitarDinero(valor_mercado)) return false;
         jugador.agregar_propiedad(this);
         cambiarPropietario(jugador);
         valor_mercado = costo * 85 /100;
@@ -53,8 +49,8 @@ public class Barrio implements Casillero, Propiedades {
             this.vender(jugador);
         }
         else if (propietario != jugador){
-            jugador.solicitar_dinero(alquilerActual);
-            propietario.cobrar_ingreso(alquilerActual);
+            jugador.solicitarDinero(alquilerActual);
+            propietario.cobrar(alquilerActual);
         }
     }
 
@@ -87,7 +83,7 @@ public class Barrio implements Casillero, Propiedades {
 
     public boolean edificarCasa(Jugador jugador) {
         if (puedeEdificarCasa(jugador)){
-            jugador.solicitar_dinero(listaCasas.get(casasTotales).getPrecio());
+            jugador.solicitarDinero(listaCasas.get(casasTotales).getPrecio());
             alquilerActual = listaCasas.get(casasTotales).getAlquiler();
             listaCasas.get(casasTotales).cambiarEstadoDeEdificacionATrue();
             casasTotales += 1;

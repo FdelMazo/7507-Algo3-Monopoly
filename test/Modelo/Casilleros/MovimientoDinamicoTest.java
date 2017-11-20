@@ -1,8 +1,5 @@
 package Modelo.Casilleros;
 
-import Modelo.Casilleros.AvanceDinamico;
-import Modelo.Casilleros.Barrio;
-import Modelo.Casilleros.RetrocesoDinamico;
 import Modelo.Edificacion;
 import Modelo.Jugador;
 import Modelo.Tablero;
@@ -40,7 +37,7 @@ public class MovimientoDinamicoTest {
         listaCasas.add(new Edificacion(5000, 3500));
         Barrio buenosAiresSur = new Barrio("Buenos Aires SUr", 20000, 2000, listaCasas);
         jugador.caeEn(buenosAiresSur, numDado, tablero);
-        Assert.assertEquals(numDado - jugador.devolverCantPropiedades(),avanceDinamico.calcularDinamismo(jugador, numDado));
+        Assert.assertEquals(numDado - jugador.cantPropiedades(),avanceDinamico.calcularDinamismo(jugador, numDado));
     }
 
     @Test
@@ -54,7 +51,7 @@ public class MovimientoDinamicoTest {
         listaCasas.add(new Edificacion(5000, 3500));
         Barrio buenosAiresSur = new Barrio("Buenos Aires SUr", 20000, 2000, listaCasas);
         jugador.caeEn(buenosAiresSur, numDado, tablero);
-        Assert.assertEquals(((numDado - jugador.devolverCantPropiedades()) * -1), retrocesoDinamico.calcularDinamismo(jugador, numDado));
+        Assert.assertEquals(((numDado - jugador.cantPropiedades()) * -1), retrocesoDinamico.calcularDinamismo(jugador, numDado));
     }
 
     @Test
