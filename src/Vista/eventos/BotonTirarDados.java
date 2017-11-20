@@ -1,20 +1,16 @@
 package Vista.eventos;
 
 import Modelo.Dados;
-import Modelo.Jugador;
+import Vista.Consola;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
 public class BotonTirarDados implements EventHandler<ActionEvent> {
 
-    Dados dados;
-
-    public BotonTirarDados(Dados dados){
-        this.dados = dados;
-    }
-
     @Override
     public void handle(ActionEvent event) {
-        this.dados.suma();
+        Dados dados = new Dados();
+        int resultado = dados.suma();
+        Consola.println("Sacas : " + resultado);
     }
 }

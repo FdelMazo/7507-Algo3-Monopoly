@@ -37,7 +37,7 @@ public class ContenedorPrincipal extends BorderPane{
 
         Button botonTirarDados = new Button();
         botonTirarDados.setText("Tirar Dados");
-        BotonTirarDados tirarDadosBotonHanler = new BotonTirarDados(new Dados());
+        BotonTirarDados tirarDadosBotonHanler = new BotonTirarDados();
         botonTirarDados.setOnAction(tirarDadosBotonHanler);
 
         Button botonComprar = new Button();
