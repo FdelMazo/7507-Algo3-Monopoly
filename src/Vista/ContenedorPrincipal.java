@@ -59,7 +59,7 @@ public class ContenedorPrincipal extends BorderPane{
 
         canvasCentral = new Canvas(800,500);
         tableroCentral = new Pane();
-        vistaTablero = new VistaTablero( tablero , canvasCentral, tableroCentral);
+        vistaTablero = new VistaTablero( new Tablero() , canvasCentral, tableroCentral);
         vistaTablero.dibujar();
 
         contenedorCentral = new VBox(tableroCentral);

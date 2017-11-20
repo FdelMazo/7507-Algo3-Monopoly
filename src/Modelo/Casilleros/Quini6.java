@@ -35,6 +35,7 @@ public class Quini6 implements Casillero {
         this.sumarVisita(jugador);
         jugador.cobrar(this.calcularPrecio(jugador));
     }
+    public String nombre() {  return "Quini 6";}
 
 
 }

@@ -15,4 +15,5 @@ public class RetrocesoDinamico extends Dinamismo {
         return (restaDos(numDado)*-1);
     }
 
+    public String nombre() {  return "Retroceso Dinamico";}
 }

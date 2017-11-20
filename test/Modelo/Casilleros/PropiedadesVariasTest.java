@@ -8,12 +8,12 @@ import org.junit.Test;
 public class PropiedadesVariasTest {
 
     @Test
-    public void JugadorVendeSuUnicaPropiedadTRenesParaPagarSolicitado() {
+    public void JugadorVendeSuUnicaPropiedadTrenParaPagarSolicitado() {
 
         int numDado = 4;
         Tablero tablero = new Tablero();
         Jugador jugador = new Jugador("Pablo");
-        Servicio servicio = new Servicio("Trenes",38000,450,800,"Subte");
+        Servicio servicio = new Servicio("Tren",38000,450,800,"Subte");
         jugador.caeEn(servicio,numDado,tablero);
         jugador.solicitarDinero(70000);
         Assert.assertEquals(24300,jugador.capital());
@@ -25,8 +25,8 @@ public class PropiedadesVariasTest {
         Tablero tablero = new Tablero();
         Jugador jugador1 = new Jugador("Carlos");
         Jugador jugador2 = new Jugador("Mario");
-        Servicio servicio1 = new Servicio("Trenes",38000,450,800,"Subte");
-        Servicio servicio2 = new Servicio("Subte",40000,600,1100,"Trenes");
+        Servicio servicio1 = new Servicio("Tren",38000,450,800,"Subte");
+        Servicio servicio2 = new Servicio("Subte",40000,600,1100,"Tren");
         jugador1.caeEn(servicio1,3,tablero);
         jugador2.caeEn(servicio2,3,tablero);
         jugador1.intercambiarPropiedades(jugador2);

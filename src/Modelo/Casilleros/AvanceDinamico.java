@@ -14,5 +14,9 @@ public class AvanceDinamico extends Dinamismo{
         return restaCantidadPropiedades(numDado, jugador);
     }
 
+    public String nombre() {
+        return "Avance Dinamico";
+    }
+
 
 }

@@ -9,7 +9,7 @@ public class Salida implements Casillero {
         jugador.cobrar(2000);
     }
 
-
+    public String nombre() {  return "Salida";}
 
 
 }

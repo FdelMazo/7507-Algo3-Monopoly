@@ -10,10 +10,10 @@ public class Tablero {
 
     public Tablero(){
         casilleros = new ArrayList<>();
-        agregarCasilleros0a5();
-        agregarCasilleros6a10();
-        agregarCasilleros11a15();
-        agregarCasilleros16a20();
+        agregarCasilleros0a6();
+        agregarCasilleros7a11();
+        agregarCasilleros12a16();
+        agregarCasilleros17a20();
     }
 
     public Casillero desplazarCasillero(Casillero actual, int num, Jugador jugador){
@@ -30,21 +30,19 @@ public class Tablero {
         return casilleros.get(0);
     }
 
-    private void agregarCasilleros16a20() {
-        casilleros.add(new Policia());
-        casilleros.add(new Servicio("Trenes",
+    private void agregarCasilleros17a20() {
+        casilleros.add(new Servicio("Tren",
                 38000,450,800,"Subte"));
         casilleros.add(new Barrio("Neuquen",
                 17000, 1800,
                 Arrays.asList(new Edificacion(4800, 3800))));
         casilleros.add(new RetrocesoDinamico());
-        casilleros.add(new Barrio("Neuquen",
+        casilleros.add(new Barrio("Tucuman",
                 25000, 2500,
                 Arrays.asList(new Edificacion(7000, 4500))));
     }
 
-    private void agregarCasilleros11a15() {
-        casilleros.add(new ImpuestoAlLujo());
+    private void agregarCasilleros12a16() {
         casilleros.add(new Barrio("Santa Fe",
                 15000, 1500,
                 Arrays.asList(new Edificacion(4000, 3500))));
@@ -58,24 +56,26 @@ public class Tablero {
                 23000, 2000,
                 Arrays.asList(new Edificacion(4500, 3250),new Edificacion(4500, 3850)),
                 Arrays.asList(new Edificacion(7500, 5500))));
+        casilleros.add(new Policia());
+
     }
 
-    private void agregarCasilleros6a10() {
-        casilleros.add(new Carcel());
+    private void agregarCasilleros7a11() {
         casilleros.add(new BarrioDoble("Cordoba Sur",
                 18000, 1000,
                 Arrays.asList(new Edificacion(2000, 1500),new Edificacion(2000, 2500)),
                 Arrays.asList(new Edificacion(3000, 3000))));
         casilleros.add(new AvanceDinamico());
         casilleros.add(new Servicio("Subte",
-                40000,600,1100,"Trenes"));
+                40000,600,1100,"Tren"));
         casilleros.add(new BarrioDoble("Cordoba Norte",
                 20000, 1300,
                 Arrays.asList(new Edificacion(2200, 1800),new Edificacion(2200, 2900)),
                 Arrays.asList(new Edificacion(3500, 3500))));
+        casilleros.add(new ImpuestoAlLujo());
     }
 
-    private void agregarCasilleros0a5() {
+    private void agregarCasilleros0a6() {
         casilleros.add(new Salida());
         casilleros.add(new Quini6());
         casilleros.add(new BarrioDoble("Buenos Aires Sur",
@@ -88,5 +88,8 @@ public class Tablero {
                 25000, 2500,
                 Arrays.asList(new Edificacion(5500, 3500),new Edificacion(5500, 4000)),
                 Arrays.asList(new Edificacion(9000, 6000))));
+        casilleros.add(new Carcel());
     }
+
+    public ArrayList<Casillero> casilleros() { return casilleros;  }
 }

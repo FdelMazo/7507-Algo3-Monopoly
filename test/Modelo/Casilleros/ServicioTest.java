@@ -8,12 +8,12 @@ import org.junit.Test;
 public class ServicioTest {
 
     @Test
-    public void testJugadorCaeEnTrenesAdueniadoPorOtroJugadorQueNoTieneSubte(){
+    public void testJugadorCaeEnTrenAdueniadoPorOtroJugadorQueNoTieneSubte(){
 
         int numDado = 4;
         Tablero tablero = new Tablero();
         Jugador jugador = new Jugador("Pablo");
-        Servicio servicio = new Servicio("Trenes",38000,450,800,"Subte");
+        Servicio servicio = new Servicio("Tren",38000,450,800,"Subte");
         jugador.caeEn(servicio,4,tablero);
         Jugador jugador1 = new Jugador("Martin");
         jugador1.caeEn(servicio,numDado,tablero);
@@ -64,13 +64,13 @@ public class ServicioTest {
     }
 
     @Test
-    public void testJugadorCaeEnTrenesPeroElDuenioTambienPoseeSubte(){
+    public void testJugadorCaeEnTrenPeroElDuenioTambienPoseeSubte(){
 
         int numDado = 4;
         Tablero tablero = new Tablero();
         Jugador jugador = new Jugador("Pablo");
-        Servicio servicio1 = new Servicio("Trenes",38000,450,800,"Subte");
-        Servicio servicio2 = new Servicio("Subte",40000,600,1100,"Trenes");
+        Servicio servicio1 = new Servicio("Tren",38000,450,800,"Subte");
+        Servicio servicio2 = new Servicio("Subte",40000,600,1100,"Tren");
         jugador.caeEn(servicio2,4,tablero);
         jugador.caeEn(servicio1,4,tablero);
         Jugador jugador1 = new Jugador("Martin");
@@ -86,7 +86,7 @@ public class ServicioTest {
         Jugador jugador = new Jugador("Pablo");
         Jugador jugador1 = new Jugador("Martin");
         Servicio servicio1 = new Servicio("Edesur",35000,500,1000,"Aysa");
-        Servicio servicio2 = new Servicio("Subte",40000,600,1100,"Trenes");
+        Servicio servicio2 = new Servicio("Subte",40000,600,1100,"Tren");
         jugador.caeEn(servicio1,4,tablero);
         jugador1.caeEn(servicio2,4,tablero);
         jugador.intercambiarPropiedades(jugador1);

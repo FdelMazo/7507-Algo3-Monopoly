@@ -11,4 +11,6 @@ public class ImpuestoAlLujo implements Casillero {
 
     }
 
+    public String nombre() {  return "Impuesto Al Lujo";}
+
 }

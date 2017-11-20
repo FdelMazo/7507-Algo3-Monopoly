@@ -1,6 +1,11 @@
 package Vista;
 
+import Modelo.Casilleros.Casillero;
 import Modelo.Tablero;
+import javafx.geometry.Pos;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
+import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.canvas.Canvas;
 import javafx.event.EventHandler;
@@ -15,6 +20,9 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.shape.Line;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
+import javafx.scene.text.TextBoundsType;
 import javafx.stage.Stage;
 
 import java.awt.*;
@@ -33,26 +41,31 @@ public class VistaTablero {
         this.pane = pane;
     }
 
-    public void dibujar(){
+    public void dibujar() {
 
         canvas.getGraphicsContext2D().setFill(Color.LIGHTYELLOW);
-        canvas.getGraphicsContext2D().fillRect(0, 0, 700, 500);
+        canvas.getGraphicsContext2D().fillRect(0, 0, 720, 420);
+        pane.getChildren().add(canvas);
 
-        Rectangle rectangle1 = new Rectangle(110,70);
-        rectangle1.setStroke(Color.BLACK);
-        rectangle1.setFill(Color.RED);
-        rectangle1.relocate(0,0);
+        int x = 600; int x_rel = 0;
+        int y = 350; int y_rel = 0;
 
-        Rectangle rectangle2 = new Rectangle(110,70);
-        rectangle2.setStroke(Color.BLACK);
-        rectangle2.setFill(Color.BLUEVIOLET);
-        rectangle2.relocate(110,0);
+        for (Casillero casillero : tablero.casilleros()) {
 
-        Rectangle rectangle3 = new Rectangle(110,70);
-        rectangle3.setStroke(Color.BLACK);
-        rectangle3.setFill(Color.RED);
-        rectangle3.relocate(220,0);
+            Rectangle rectangle = new Rectangle(120, 70);
+                Text text = new Text(casillero.nombre());
+                text.relocate(x+10, y+25);
 
-        pane.getChildren().addAll(canvas,rectangle1,rectangle2,rectangle3);
+            rectangle.setStroke(Color.BLACK);
+            rectangle.setFill(Color.RED);
+            rectangle.relocate(x, y);
+
+            pane.getChildren().addAll(rectangle,text);
+            if (x_rel==0 & y_rel>0){y_rel-=1; y+=70;}
+            if (y_rel==5){x_rel-=1; x+=120;}
+            if (x_rel==5){y_rel+=1; y-=70;}
+            if (y_rel==0){x_rel+=1; x-=120;}
+        }
     }
+
 }

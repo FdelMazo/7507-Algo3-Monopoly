@@ -10,4 +10,6 @@ public class Carcel implements Casillero {
         jugador.actualizarEstado(new Preso());
     }
 
+
+    public String nombre() {  return "Carcel";}
 }

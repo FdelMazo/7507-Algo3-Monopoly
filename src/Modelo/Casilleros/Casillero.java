@@ -7,5 +7,5 @@ public interface Casillero {
 
     void accionAlCaer(Jugador jugador, int numDado, Tablero tablero);
 
-
+    String nombre();
 }
