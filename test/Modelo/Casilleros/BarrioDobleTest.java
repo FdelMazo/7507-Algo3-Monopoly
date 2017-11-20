@@ -26,7 +26,7 @@ public class BarrioDobleTest {
         buenosAiresNorte.setHermano(buenosAiresSur);
         jugador.caeEn(buenosAiresSur, 4, tablero);
         jugador.caeEn(buenosAiresNorte, 4, tablero);
-        Assert.assertTrue(buenosAiresSur.tienenMismoPropietario(buenosAiresNorte));
+        Assert.assertTrue(buenosAiresSur.duenioDeAmbosHermanos());
     }
 
     @Test
@@ -41,6 +41,8 @@ public class BarrioDobleTest {
         BarrioDoble buenosAiresNorte = new BarrioDoble("Buenos Aires Norte", 25000, 2500, listaCasas, listaHoteles);
         buenosAiresSur.setHermano(buenosAiresNorte);
         buenosAiresNorte.setHermano(buenosAiresSur);
+        jugador.caeEn(buenosAiresSur, 0, null);
+        jugador.caeEn(buenosAiresNorte, 0, null);
         Assert.assertTrue(buenosAiresSur.edificarCasa(jugador));
     }
 
@@ -58,9 +60,9 @@ public class BarrioDobleTest {
         BarrioDoble buenosAiresNorte = new BarrioDoble("Buenos Aires Norte", 25000, 2500, listaCasas, listaHoteles);
         buenosAiresSur.setHermano(buenosAiresNorte);
         buenosAiresNorte.setHermano(buenosAiresSur);
-        buenosAiresSur.edificarCasa(jugador);
         jugador.caeEn(buenosAiresSur, 4, tablero);
         jugador.caeEn(buenosAiresNorte, 4, tablero);
+        buenosAiresSur.edificarCasa(jugador);
         Assert.assertEquals(jugador.capital(), 100000 - 20000 - 25000 - 5000);
     }
 

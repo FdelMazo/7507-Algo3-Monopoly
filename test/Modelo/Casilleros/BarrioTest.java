@@ -11,14 +11,6 @@ import org.junit.Test;
 
 public class BarrioTest {
 
-    @Test
-    public void BarrioRecienCreadoNoTieneDuenio(){
-        List<Edificacion> listaCasas= new ArrayList();
-        listaCasas.add(new Edificacion(5000, 3000));
-        listaCasas.add(new Edificacion(5000, 3500));
-        Barrio buenosAiresSur = new Barrio("Buenos Aires SUr", 20000, 2000, listaCasas);
-        Assert.assertEquals( null, buenosAiresSur.duenio() );
-    }
 
     //ENTREGA 2: TEST 1 REQUERIDO
     @Test
@@ -28,9 +20,9 @@ public class BarrioTest {
         List<Edificacion> listaCasas= new ArrayList();
         listaCasas.add(new Edificacion(5000, 3000));
         listaCasas.add(new Edificacion(5000, 3500));
-        Barrio buenosAiresSur = new Barrio("Buenos Aires SUr", 20000, 2000, listaCasas);
+        Barrio buenosAiresSur = new Barrio("Buenos Aires Sur", 20000, 2000, listaCasas);
         jugador.caeEn(buenosAiresSur, 4, tablero);
-        Assert.assertEquals(jugador.nombre(), buenosAiresSur.duenio().nombre() );
+        Assert.assertTrue(jugador.posee("Buenos Aires Sur"));
     }
 
     @Test
@@ -40,10 +32,10 @@ public class BarrioTest {
         List<Edificacion> listaCasas= new ArrayList();
         listaCasas.add(new Edificacion(5000, 3000));
         listaCasas.add(new Edificacion(5000, 3500));
-        Barrio buenosAiresSur = new Barrio("Buenos Aires SUr", 20000, 2000, listaCasas);
+        Barrio buenosAiresSur = new Barrio("Buenos Aires Sur", 20000, 2000, listaCasas);
         jugador.solicitarDinero(90000);
         jugador.caeEn(buenosAiresSur, 4, tablero);
-        Assert.assertEquals(null, buenosAiresSur.duenio() );
+        Assert.assertFalse(jugador.posee("Buenos Aires Sur"));
     }
 
     @Test

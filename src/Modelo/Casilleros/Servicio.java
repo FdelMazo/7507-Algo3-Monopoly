@@ -27,15 +27,11 @@ public class Servicio implements Casillero, Propiedades{
         valor_mercado = valor * 85 / 100;
     }
 
-    public void agregarPropietario(Jugador jugador){
-        propietario = jugador;
-    }
-
     public void accionAlCaer(Jugador jugador, int numDado, Tablero tablero){
         if (propietario == null) {
             jugador.solicitarDinero(valor);
-            this.agregarPropietario(jugador);
-            jugador.agregar_propiedad(this);
+            cambiarPropietario(jugador);
+            jugador.agregarPropiedad(this);
             if (jugador.posee(clase_hermana)){
                 cobro = cobro_plus;
             }
@@ -47,7 +43,6 @@ public class Servicio implements Casillero, Propiedades{
             jugador.solicitarDinero(numDado * cobro);
             propietario.cobrar(numDado*cobro);
         }
-
     }
 
     public int resetear(){
@@ -61,10 +56,6 @@ public class Servicio implements Casillero, Propiedades{
 
     public String nombre() {
         return nombre;
-    }
-
-    public Jugador devolverDuenio(){
-        return propietario;
     }
 
     public Paint color() { return Color.RED;  }}

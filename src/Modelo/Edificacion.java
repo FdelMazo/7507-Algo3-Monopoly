@@ -3,12 +3,12 @@ package Modelo;
 public class Edificacion {
     int precio;
     int alquiler;
-    boolean estado;
+    boolean construido;
 
     public Edificacion(int unPrecio, int unAlquiler){
         precio = unPrecio;
         alquiler = unAlquiler;
-        estado = false;
+        construido = false;
     }
 
     public int getPrecio(){
@@ -20,14 +20,14 @@ public class Edificacion {
     }
 
     public boolean estaEdificado(){
-        return estado;
+        return construido;
     }
 
-    public void cambiarEstadoDeEdificacionATrue(){
-        estado = true;
+    public void construir(){
+        construido = true;
     }
 
-    public void cambiarEstadoDeEdificacionAFalse(){
-        estado = false;
+    public void destruir(){
+        construido = false;
     }
 }

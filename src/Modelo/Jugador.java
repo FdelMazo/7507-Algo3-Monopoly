@@ -54,16 +54,12 @@ public class Jugador {
         this.cobrar(costo);
     }
 
-    public Propiedades propiedadParaIntercambiar() {
-        return propiedades.remove(0);
-    }
-
-    public void intercambiarPropiedades(Jugador jugador) {
-        Propiedades propiedad1 = this.propiedadParaIntercambiar();
-        Propiedades propiedad2 = jugador.propiedadParaIntercambiar();
-        jugador.agregar_propiedad(propiedad1);
-        this.agregar_propiedad(propiedad2);
-        propiedad1.cambiarPropietario(jugador);
+    public void intercambiarPropiedades(Jugador otroJugador) {
+        Propiedades propiedad1 = propiedades.remove(0);
+        Propiedades propiedad2 = otroJugador.propiedades.remove(0);
+        otroJugador.agregarPropiedad(propiedad1);
+        this.agregarPropiedad(propiedad2);
+        propiedad1.cambiarPropietario(otroJugador);
         propiedad2.cambiarPropietario(this);
     }
 
@@ -79,17 +75,13 @@ public class Jugador {
         return false;
     }
 
-    public void agregar_propiedad(Propiedades propiedad) {
+    public void agregarPropiedad(Propiedades propiedad) {
         propiedades.add(propiedad);
     }
 
-    public String nombre() {
-        return nombre;
-    }
-
-    public boolean posee(String propiedad) {
+    public boolean posee(String nombrePropiedad) {
         for (Propiedades propiedadesDeJugador : propiedades) {
-            if (propiedad == propiedadesDeJugador.nombre()) return true;
+            if (nombrePropiedad == propiedadesDeJugador.nombre()) return true;
         }
         return false;
     }

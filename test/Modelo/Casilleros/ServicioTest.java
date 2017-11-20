@@ -83,15 +83,15 @@ public class ServicioTest {
     public void testJugadoresIntercambiaPropiedadesYLasPropiedadesTieneNuevosDuenios(){
 
         Tablero tablero = new Tablero();
-        Jugador jugador = new Jugador("Pablo");
-        Jugador jugador1 = new Jugador("Martin");
+        Jugador jugador1 = new Jugador("Pablo");
+        Jugador jugador2 = new Jugador("Martin");
         Servicio servicio1 = new Servicio("Edesur",35000,500,1000,"Aysa");
         Servicio servicio2 = new Servicio("Subte",40000,600,1100,"Tren");
-        jugador.caeEn(servicio1,4,tablero);
-        jugador1.caeEn(servicio2,4,tablero);
-        jugador.intercambiarPropiedades(jugador1);
-
-        Assert.assertEquals(jugador1,servicio1.devolverDuenio());
+        jugador1.caeEn(servicio1,4,tablero);
+        jugador2.caeEn(servicio2,4,tablero);
+        jugador1.intercambiarPropiedades(jugador2);
+        Assert.assertTrue(jugador2.posee("Edesur"));
+        Assert.assertTrue(jugador1.posee("Subte"));
     }
 
     @Test

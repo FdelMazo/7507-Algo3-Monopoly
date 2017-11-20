@@ -19,6 +19,7 @@ public class Tablero {
     }
 
     public Casillero desplazarCasillero(Casillero actual, int num, Jugador jugador){
+        if (!jugador.mover()) return actual;
         int indexInicial = casilleros.indexOf(actual);
         int indexFinal = indexInicial + num;
         if(indexFinal > casilleros.size()){

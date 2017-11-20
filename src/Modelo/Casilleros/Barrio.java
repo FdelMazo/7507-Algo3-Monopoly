@@ -19,8 +19,6 @@ public class Barrio implements Casillero, Propiedades {
     public int casasTotales;
     public int valor_mercado;
 
-
-
     public Barrio(String unNombre, int valor_propiedad, int elAlquilerOriginal, List edificacionesCasas){
         nombre = unNombre;
         propietario  = null;
@@ -34,7 +32,6 @@ public class Barrio implements Casillero, Propiedades {
 
     public boolean vender(Jugador jugador){
         if(!jugador.solicitarDinero(valor_mercado)) return false;
-        jugador.agregar_propiedad(this);
         cambiarPropietario(jugador);
         valor_mercado = costo * 85 /100;
         return true;
@@ -42,6 +39,7 @@ public class Barrio implements Casillero, Propiedades {
 
     public void cambiarPropietario(Jugador jugador){
         propietario = jugador;
+        jugador.agregarPropiedad(this);
         destruirCasasConstruidas();
         alquilerActual = alquilerOriginal;
     }
@@ -56,10 +54,6 @@ public class Barrio implements Casillero, Propiedades {
         }
     }
 
-    public Jugador duenio (){
-        return propietario;
-    }
-
     public boolean todasLasCasasFueronConstruidas(){
         for (Edificacion casa : listaCasas) {
             if (!casa.estaEdificado()) return false;
@@ -69,7 +63,7 @@ public class Barrio implements Casillero, Propiedades {
 
     public void destruirCasasConstruidas(){
         for (Edificacion casa : listaCasas) {
-            casa.cambiarEstadoDeEdificacionAFalse();
+            casa.destruir();
         }
     }
 
@@ -78,19 +72,17 @@ public class Barrio implements Casillero, Propiedades {
     }
 
     public boolean edificarCasa(Jugador jugador) {
-        if (puedeEdificarCasa(jugador)){
-            jugador.solicitarDinero(listaCasas.get(casasTotales).getPrecio());
-            alquilerActual = listaCasas.get(casasTotales).getAlquiler();
-            listaCasas.get(casasTotales).cambiarEstadoDeEdificacionATrue();
-            casasTotales += 1;
-            return true;
-        }
-        return false;
+        if (! puedeEdificarCasa(jugador)) return false;
+        if (! jugador.solicitarDinero(listaCasas.get(casasTotales).getPrecio())) return false;
+        alquilerActual = listaCasas.get(casasTotales).getAlquiler();
+        listaCasas.get(casasTotales).construir();
+        casasTotales += 1;
+        return true;
     }
 
     public int resetear(){
         propietario = null;
-        return costo*(85/100);
+        return valor_mercado;
     }
 
     public String nombre() {

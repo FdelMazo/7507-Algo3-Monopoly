@@ -18,24 +18,23 @@ public class BarrioDoble extends Barrio{
         hermano = barrioHermano;
     }
 
-    public boolean tienenMismoPropietario(BarrioDoble barrioHermano){
-        return propietario == barrioHermano.duenio();
+    public boolean duenioDeAmbosHermanos(){
+        return propietario.posee(hermano.nombre());
     }
 
     public boolean puedeEdificarCasa(Jugador jugador) {
-        return (jugador.capital() >= listaCasas.get(0).getPrecio() && !todasLasCasasFueronConstruidas() && tienenMismoPropietario(hermano));
+        return (super.puedeEdificarCasa(jugador) && duenioDeAmbosHermanos());
     }
 
     public boolean puedeEdificarHotel(Jugador jugador){
-        return (jugador.capital() >= listaHoteles.get(0).getPrecio() && todasLasCasasFueronConstruidas() && tienenMismoPropietario(hermano) && hermano.todasLasCasasFueronConstruidas());
+        return (todasLasCasasFueronConstruidas() && hermano.todasLasCasasFueronConstruidas()) && duenioDeAmbosHermanos();
+
     }
 
     public boolean edificarHotel(Jugador jugador){
-        if (puedeEdificarHotel(jugador)){
-            alquilerActual = listaHoteles.get(0).getAlquiler();
-            jugador.solicitarDinero(listaHoteles.get(0).getPrecio());
-            return true;
-        }
-        return false;
+        if (! puedeEdificarHotel(jugador))return false;
+        if (!jugador.solicitarDinero(listaHoteles.get(0).getPrecio())) return false;
+        alquilerActual = listaHoteles.get(0).getAlquiler();
+        return true;
     }
 }

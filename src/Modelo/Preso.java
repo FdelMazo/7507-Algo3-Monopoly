@@ -10,7 +10,6 @@ public class Preso implements Estado{
         fianza = 45000;
     }
 
-    @Override
     public boolean mover(Jugador jugador) {
         diasPreso += 1;
         if (diasPreso > 3){
