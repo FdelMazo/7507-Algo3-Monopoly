@@ -58,10 +58,6 @@ public class Barrio implements Casillero, Propiedades {
         return propietario;
     }
 
-    public int valorMercado(){
-        return valor_mercado;
-    }
-
     public boolean todasLasCasasFueronConstruidas(){
         for (Edificacion casa : listaCasas) {
             if (!casa.estaEdificado()) return false;

@@ -47,7 +47,7 @@ public class Jugador {
     
     public void venderAlBanco(Propiedades propiedad) {
         propiedades.remove(propiedad);
-        int costo = propiedad.valorMercado();
+        int costo = propiedad.resetear();
         this.cobrar(costo);
     }
 
@@ -69,13 +69,8 @@ public class Jugador {
             capital -= dineroSolicitado;
             return true;
         }
-        return this.venderPropiedades((int) (dineroSolicitado));
-    }
-
-    public boolean venderPropiedades(int dineroSolicitado) {
-        for (Propiedades propiedadesDeJugador : propiedades) {
-            int monto = propiedadesDeJugador.resetear();
-            this.cobrar(monto);
+        for (Propiedades propiedad : propiedades) {
+            this.venderAlBanco(propiedad);
             if (this.solicitarDinero(dineroSolicitado)) return true;
         }
         return false;

@@ -53,15 +53,6 @@ public class Servicio implements Casillero, Propiedades{
         return valor_mercado;
     }
 
-    public boolean vender(Jugador jugador){
-        if(!jugador.solicitarDinero(valor_mercado)) return false;
-        jugador.agregar_propiedad(this);
-        propietario = jugador;
-        return true;
-    }
-
-    public int valorMercado(){return valor_mercado;}
-
     public void cambiarPropietario(Jugador jugador){
         propietario = jugador;
     }
