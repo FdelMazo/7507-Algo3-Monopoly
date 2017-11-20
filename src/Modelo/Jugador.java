@@ -79,6 +79,8 @@ public class Jugador {
         Propiedades propiedad2 = jugador.propiedadParaIntercambiar();
         jugador.agregar_propiedad(propiedad1);
         this.agregar_propiedad(propiedad2);
+        propiedad1.cambiarPropietario(jugador);
+        propiedad2.cambiarPropietario(this);
     }
 
     public boolean solicitar_dinero( double dinero_solicitado)    {

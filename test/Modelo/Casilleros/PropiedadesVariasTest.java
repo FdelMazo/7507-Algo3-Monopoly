@@ -2,6 +2,7 @@ package Modelo.Casilleros;
 
 import Modelo.Jugador;
 import Modelo.Tablero;
+import javafx.scene.Scene;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -17,6 +18,22 @@ public class PropiedadesVariasTest {
         jugador.caeEn(servicio,numDado,tablero);
         jugador.solicitar_dinero(70000);
         Assert.assertEquals(24300,jugador.capital());
+    }
+
+    @Test
+    public void JugadorIntercambiaPropiedadConOtroJugadorYAhoraElNuevoDueñoCobraElAlquiler(){
+
+        Tablero tablero = new Tablero();
+        Jugador jugador1 = new Jugador("Carlos");
+        Jugador jugador2 = new Jugador("Mario");
+        Servicio servicio1 = new Servicio("Trenes",38000,450,800,"Subte");
+        Servicio servicio2 = new Servicio("Subte",40000,600,1100,"Trenes");
+        jugador1.caeEn(servicio1,3,tablero);
+        jugador2.caeEn(servicio2,3,tablero);
+        jugador1.intercambiarPropiedades(jugador2);
+        Jugador jugador3 = new Jugador("Mario");
+        jugador3.caeEn(servicio1,2,tablero);
+        Assert.assertEquals(60900,jugador2.capital());
     }
 
 }
