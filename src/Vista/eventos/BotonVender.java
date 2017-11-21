@@ -4,10 +4,8 @@ import Modelo.Jugador;
 import Vista.Consola;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.media.AudioClip;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import sun.audio.AudioPlayer;
 
 public class BotonVender implements EventHandler<ActionEvent>{
     private int contador;
@@ -21,7 +19,7 @@ public class BotonVender implements EventHandler<ActionEvent>{
 
     @Override
     public void handle(ActionEvent event) {
-        String woah = null;
+        String woah = null ;
         if (contador == 0)woah = "woah0.mp3";
         else if (contador == 1)woah = "woah1.mp3";
         else if (contador == 2)woah = "woah2.mp3";
