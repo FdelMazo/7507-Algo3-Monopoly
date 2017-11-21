@@ -1,6 +1,7 @@
 package Modelo;
 
 public class Edificacion {
+
     int precio;
     int alquiler;
     boolean construido;

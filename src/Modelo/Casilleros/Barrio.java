@@ -80,9 +80,11 @@ public class Barrio implements Casillero, Propiedades {
         return true;
     }
 
-    public int resetear(){
+    public void cederAlBanco(Jugador jugador){
+
         propietario = null;
-        return valor_mercado;
+        jugador.cobrar(valor_mercado);
+
     }
 
     public String nombre() {

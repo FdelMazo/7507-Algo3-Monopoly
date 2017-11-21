@@ -49,12 +49,13 @@ public class Jugador {
     }
     
     public void venderAlBanco(Propiedades propiedad) {
+
         propiedades.remove(propiedad);
-        int costo = propiedad.resetear();
-        this.cobrar(costo);
+        propiedad.cederAlBanco(this);
     }
 
     public void intercambiarPropiedades(Jugador otroJugador) {
+
         Propiedades propiedad1 = propiedades.remove(0);
         Propiedades propiedad2 = otroJugador.propiedades.remove(0);
         otroJugador.agregarPropiedad(propiedad1);

@@ -31,18 +31,25 @@ public class BarrioDobleTest {
 
     @Test
     public void testUnJugadorPuedeEdificarUnaCasaAlTenerLosDosBarriosNecesariosBuenosAires(){
+
         Jugador jugador = new Jugador("Lance");
+
         List<Edificacion> listaCasas= new ArrayList();
         listaCasas.add(new Edificacion(5000, 3000));
         listaCasas.add(new Edificacion(5000, 3500));
+
         List<Edificacion> listaHoteles = new ArrayList();
         listaHoteles.add(new Edificacion(8000, 5000));
+
         BarrioDoble buenosAiresSur = new BarrioDoble("Buenos Aires Sur", 20000, 2000, listaCasas, listaHoteles);
         BarrioDoble buenosAiresNorte = new BarrioDoble("Buenos Aires Norte", 25000, 2500, listaCasas, listaHoteles);
+
         buenosAiresSur.setHermano(buenosAiresNorte);
         buenosAiresNorte.setHermano(buenosAiresSur);
+
         jugador.caeEn(buenosAiresSur, 0, null);
         jugador.caeEn(buenosAiresNorte, 0, null);
+
         Assert.assertTrue(buenosAiresSur.edificarCasa(jugador));
     }
 

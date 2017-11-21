@@ -8,11 +8,11 @@ public class ImpuestoAlLujoTest {
 
     @Test
     public void cobrarImpuesto(){
-        Tablero tablero = new Tablero();
+
         Jugador jugador = new Jugador("nick");
         ImpuestoAlLujo impuestoAlLujo = new ImpuestoAlLujo();
         int capital_anterior = jugador.capital();
-        jugador.caeEn(impuestoAlLujo,0,tablero);
+        jugador.caeEn(impuestoAlLujo,0,null);
         Assert.assertEquals(capital_anterior - capital_anterior*0.1,jugador.capital(),1);
 
 

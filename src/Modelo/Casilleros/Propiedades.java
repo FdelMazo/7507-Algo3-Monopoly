@@ -5,7 +5,7 @@ import Modelo.Jugador;
 
 public interface Propiedades {
 
-    int resetear();
+    void cederAlBanco(Jugador jugador);
     String nombre();
     void cambiarPropietario(Jugador jugador);
 }

@@ -17,6 +17,7 @@ public class Servicio implements Casillero, Propiedades{
     private String clase_hermana;
 
     public Servicio(String nombre_servicio, int valor_serv, int cobro_regular_serv, int cobro_plus_serv, String nombre_hermana){
+
         nombre = nombre_servicio;
         valor = valor_serv;
         cobro_plus = cobro_plus_serv;
@@ -25,16 +26,15 @@ public class Servicio implements Casillero, Propiedades{
         cobro = cobro_regular;
         clase_hermana = nombre_hermana;
         valor_mercado = valor * 85 / 100;
+
     }
 
     public void accionAlCaer(Jugador jugador, int numDado, Tablero tablero){
+
         if (propietario == null) {
             jugador.solicitarDinero(valor);
             cambiarPropietario(jugador);
             jugador.agregarPropiedad(this);
-            if (jugador.posee(clase_hermana)){
-                cobro = cobro_plus;
-            }
         }
         else if (propietario != jugador){
             if (propietario.posee(clase_hermana)) {
@@ -45,9 +45,11 @@ public class Servicio implements Casillero, Propiedades{
         }
     }
 
-    public int resetear(){
+    public void cederAlBanco( Jugador jugador){
+
         propietario = null;
-        return valor_mercado;
+        jugador.cobrar(valor_mercado);
+
     }
 
     public void cambiarPropietario(Jugador jugador){

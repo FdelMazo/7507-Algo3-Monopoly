@@ -74,6 +74,7 @@ public class ContenedorPrincipal extends BorderPane{
     }
 
     private void setConsola() {
+
         Consola consolaLocal = new Consola();
         this.setBottom(consolaLocal.contenedorConsola());
     }

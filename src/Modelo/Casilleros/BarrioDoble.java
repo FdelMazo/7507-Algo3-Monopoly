@@ -6,6 +6,7 @@ import Modelo.Jugador;
 import java.util.List;
 
 public class BarrioDoble extends Barrio{
+
     BarrioDoble hermano;
     List<Edificacion> listaHoteles;
 
