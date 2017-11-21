@@ -241,6 +241,7 @@ public class BarrioDobleTest {
     //ENTREGA 2: TEST 8 REQUERIDO (CORDOBA)
     @Test
     public void testUnJugadorPuedeEdificarUnaCasaAlTenerLosDosBarriosNecesariosCordoba(){
+
         Tablero tablero = new Tablero();
         Jugador jugador = new Jugador("Kevin");
         List<Edificacion> listaCasasS= new ArrayList();
@@ -568,5 +569,46 @@ public class BarrioDobleTest {
         saltaNorte.edificarHotel(jugador);
         jugadorAct.caeEn(saltaNorte,2,tablero);
         Assert.assertEquals(jugadorAct.capital(), 94500);
+    }
+
+
+    @Test
+    public void testVentaDeTerrenoEdificadoEliminaLasPropiedades(){
+
+        Jugador jugador = new Jugador("Kevin");
+
+        List<Edificacion> listaCasasS= new ArrayList();
+        listaCasasS.add(new Edificacion(2000, 1500));
+        listaCasasS.add(new Edificacion(2000, 2500));
+
+        List<Edificacion> listaHotelesS = new ArrayList();
+        listaHotelesS.add(new Edificacion(3000, 3000));
+
+        List<Edificacion> listaCasasN= new ArrayList();
+        listaCasasN.add(new Edificacion(2200, 1800));
+        listaCasasN.add(new Edificacion(2200, 2900));
+
+        List<Edificacion> listaHotelesN = new ArrayList();
+        listaHotelesN.add(new Edificacion(3500, 3500));
+
+        BarrioDoble cordobaSur = new BarrioDoble("Cordoba Aires Sur", 18000, 1000, listaCasasS, listaHotelesS);
+        BarrioDoble cordobaNorte = new BarrioDoble("Cordoba Norte", 20000, 1300, listaCasasN, listaHotelesN);
+        cordobaSur.setHermano(cordobaNorte);
+        cordobaNorte.setHermano(cordobaSur);
+
+        jugador.caeEn(cordobaSur, 4, null);
+        jugador.caeEn(cordobaNorte, 4, null);
+
+        cordobaNorte.edificarCasa(jugador);
+        jugador.venderAlBanco(cordobaNorte);
+
+        Jugador jugador1 = new Jugador("Marcos");
+        jugador1.caeEn(cordobaNorte,0,null);
+
+        Jugador jugador2 = new Jugador("Loreto");
+        jugador2.caeEn(cordobaNorte,0,null);
+
+        Assert.assertEquals(100000 - 1300 ,jugador2.capital());
+
     }
 }

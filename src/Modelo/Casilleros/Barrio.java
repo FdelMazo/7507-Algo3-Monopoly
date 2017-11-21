@@ -45,6 +45,7 @@ public class Barrio implements Casillero, Propiedades {
     }
 
     public void accionAlCaer(Jugador jugador, int numDado, Tablero tablero) {
+
         if (propietario == null){
             this.vender(jugador);
         }
@@ -83,6 +84,7 @@ public class Barrio implements Casillero, Propiedades {
     public void cederAlBanco(Jugador jugador){
 
         propietario = null;
+        this.destruirCasasConstruidas();
         jugador.cobrar(valor_mercado);
 
     }

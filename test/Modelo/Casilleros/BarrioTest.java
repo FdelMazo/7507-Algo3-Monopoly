@@ -161,7 +161,7 @@ public class BarrioTest {
 
     //ENTREGA 2: TEST 10 REQUERIDO (Neuquen)
     @Test
-    public void testNeuquenJugadorDebePagarAlquilerPierde3500(){
+    public void testNeuquenJugadorDebePagarAlquilerEnBarrioEdificadoPierde3800(){
 
         Jugador jugador1 = new Jugador("Lance");
         Jugador jugador2 = new Jugador("Hunk");
@@ -176,7 +176,7 @@ public class BarrioTest {
 
     //ENTREGA 2: TEST 10 REQUERIDO (Tucuman)
     @Test
-    public void testTucumanJugadorDebePagarAlquilerPierde3500(){
+    public void testTucumanJugadorDebePagarAlquilerEnBarrioEdificadoPierde3800(){
 
         Jugador jugador1 = new Jugador("Lance");
         Jugador jugador2 = new Jugador("Hunk");
@@ -187,6 +187,24 @@ public class BarrioTest {
         tucuman.edificarCasa(jugador1);
         jugador2.caeEn(tucuman, 0, null);
         Assert.assertEquals(100000 - 3800, jugador2.capital());
+    }
+
+    @Test
+    public void testJugadorVendePropiedadEdificadaYAhoraEstásNoExistenMas(){
+
+        Jugador jugador1 = new Jugador("Lance");
+        Jugador jugador2 = new Jugador("Hunk");
+        List<Edificacion> listaCasas= new ArrayList();
+        listaCasas.add(new Edificacion(4800, 3800));
+        Barrio tucuman = new Barrio("Tucuman", 17000, 1800, listaCasas);
+        jugador1.caeEn(tucuman, 0, null);
+        tucuman.edificarCasa(jugador1);
+        jugador1.venderAlBanco(tucuman);
+        jugador2.caeEn(tucuman, 0, null);
+        Jugador jugador3 = new Jugador("Batman");
+        jugador3.caeEn(tucuman,0,null);
+        Assert.assertEquals(100000 - 1800, jugador3.capital());
+
     }
 
 
