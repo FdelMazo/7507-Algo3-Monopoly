@@ -11,7 +11,6 @@ public class Municipio {
 
     private static Municipio primeraInstancia = null;
     private Hashtable<String, Jugador> propietarios = new Hashtable<>();
-    private Hashtable<String, Boolean> poseenHermano = new Hashtable<>();
     private Hashtable<String, String> hermano = new Hashtable<>();
     private Hashtable<String, Pair> alquiler_servicio = new Hashtable<>();
 
@@ -27,20 +26,6 @@ public class Municipio {
     }
 
     public void cargarDatos() {
-
-        poseenHermano.put("Bs As Zona Sur", true);
-        poseenHermano.put("Bs As Zona Norte", true);
-        poseenHermano.put("Salta Norte", true);
-        poseenHermano.put("Salta Sur", true);
-        poseenHermano.put("Cordoba Norte", true);
-        poseenHermano.put("Cordoba Sur", true);
-        poseenHermano.put("Tren", true);
-        poseenHermano.put("Aysa", true);
-        poseenHermano.put("Subte", true);
-        poseenHermano.put("Edesur", true);
-        poseenHermano.put("Santa Fe", false);
-        poseenHermano.put("Neuquén", false);
-        poseenHermano.put("Tucumán", false);
 
         hermano.put("Bs As Zona Sur", "Bs As Zona Norte");
         hermano.put("Bs As Zona Norte", "Bs As Zona Sur");
@@ -64,7 +49,6 @@ public class Municipio {
     public void cambiar_propietario(Jugador jugador, Propiedades propiedad) {
         propietarios.put(propiedad.nombre(), jugador);
 
-
     }
 
     public int devolverAlquilerServicio(Propiedades propiedad) {
@@ -75,7 +59,7 @@ public class Municipio {
     }
 
     public void devolverAlquilerBarrio(Propiedades propiedad) {
-        if (poseenHermano.get(propiedad.nombre())) {
+        if (hermano.containsKey(propiedad)) {
             if (propietarios.get(propiedad.nombre()) == propietarios.get(hermano.get(propiedad.nombre()))) {
                 return;
             }
