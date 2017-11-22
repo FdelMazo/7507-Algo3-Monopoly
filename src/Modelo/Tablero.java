@@ -32,25 +32,16 @@ public class Tablero {
     public Casillero salida(){
         return casilleros.get(0);
     }
-
     private void agregarCasilleros17a20() {
-        casilleros.add(new Servicio("Tren",
-                38000,450,800,"Subte"));
-        casilleros.add(new Barrio("Neuquen",
-                17000, 1800,
-                Arrays.asList(new Edificacion(4800, 3800))));
+        casilleros.add(new Servicio("Tren", 38000));
+        casilleros.add(new Barrio("Neuquen", 17000, 1800, Arrays.asList(new Edificacion(4800, 3800))));
         casilleros.add(new RetrocesoDinamico());
-        casilleros.add(new Barrio("Tucuman",
-                25000, 2500,
-                Arrays.asList(new Edificacion(7000, 4500))));
+        casilleros.add(new Barrio("Tucuman", 25000, 2500, Arrays.asList(new Edificacion(7000, 4500))));
     }
 
     private void agregarCasilleros12a16() {
-        casilleros.add(new Barrio("Santa Fe",
-                15000, 1500,
-                Arrays.asList(new Edificacion(4000, 3500))));
-        casilleros.add(new Servicio("Aysa",
-                30000,300,500,"Edesur"));
+        casilleros.add(new Barrio("Santa Fe", 15000, 1500, Arrays.asList(new Edificacion(4000, 3500))));
+        casilleros.add(new Servicio("Aysa", 30000));
         casilleros.add(new BarrioDoble("Salta Norte",
                 23000, 2000,
                 Arrays.asList(new Edificacion(4500, 3250),new Edificacion(4500, 3850)),
@@ -70,7 +61,7 @@ public class Tablero {
                 Arrays.asList(new Edificacion(3000, 3000))));
         casilleros.add(new AvanceDinamico());
         casilleros.add(new Servicio("Subte",
-                40000,600,1100,"Tren"));
+                40000));
         casilleros.add(new BarrioDoble("Cordoba Norte",
                 20000, 1300,
                 Arrays.asList(new Edificacion(2200, 1800),new Edificacion(2200, 2900)),
@@ -86,7 +77,7 @@ public class Tablero {
                 Arrays.asList(new Edificacion(3000, 5000),new Edificacion(3000, 3500)),
                 Arrays.asList(new Edificacion(8000, 5000))));
         casilleros.add(new Servicio("Edesur",
-                35000,500,1000,"Aysa"));
+                35000));
         casilleros.add(new BarrioDoble("Buenos Aires Norte",
                 25000, 2500,
                 Arrays.asList(new Edificacion(5500, 3500),new Edificacion(5500, 4000)),

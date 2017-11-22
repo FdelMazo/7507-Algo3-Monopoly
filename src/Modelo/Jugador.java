@@ -13,6 +13,7 @@ public class Jugador {
     private Casillero casilleroActual;
     private String nombre;
     private Estado estado;
+    Municipio municipio = Municipio.getInstance();
 
     public Jugador(String nombreJugador) {
         this.capital = 100000;
@@ -54,14 +55,15 @@ public class Jugador {
         propiedad.cederAlBanco(this);
     }
 
-    public void intercambiarPropiedades(Jugador otroJugador) {
+    public void intercambiarPropiedades(Jugador otroJugador, Propiedades propiedad) {
 
         Propiedades propiedad1 = propiedades.remove(0);
         Propiedades propiedad2 = otroJugador.propiedades.remove(0);
-        otroJugador.agregarPropiedad(propiedad1);
         this.agregarPropiedad(propiedad2);
-        propiedad1.cambiarPropietario(otroJugador);
-        propiedad2.cambiarPropietario(this);
+        otroJugador.agregarPropiedad(propiedad1);
+        municipio.cambiar_propietario(this,propiedad2);
+        municipio.cambiar_propietario(otroJugador,propiedad1);
+
     }
 
     public boolean solicitarDinero(double dineroSolicitado) {
