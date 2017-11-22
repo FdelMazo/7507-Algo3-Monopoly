@@ -19,7 +19,9 @@ public class Consola {
         contenedorConsola.setPadding(new Insets(0, 200, 0, 0));
         contenedorConsola.setStyle("-fx-background-color: black;");
         contenedorConsola.setMaxHeight(800);
+        contenedorConsola.setMaxWidth(300);
         contenedorConsola.setMinHeight(contenedorConsola.getMaxHeight());
+        contenedorConsola.setMinWidth(contenedorConsola.getMaxWidth());
         vbox = contenedorConsola;
     }
 

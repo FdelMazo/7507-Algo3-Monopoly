@@ -100,4 +100,6 @@ public class Jugador {
     public boolean perdio() {
         return capital == 0;
     }
+
+    public String getNombre(){ return nombre; }
 }

@@ -1,5 +1,6 @@
 package Vista.eventos;
 
+import Controladores.ControladorDeTurno;
 import Modelo.Dados;
 import Vista.Consola;
 import javafx.event.ActionEvent;
@@ -15,6 +16,9 @@ public class BotonTirarDados implements EventHandler<ActionEvent> {
         Media musicaInicio = new Media(getClass().getResource("dados_sonido.mp3").toExternalForm());
         MediaPlayer mediaPlayer = new MediaPlayer(musicaInicio);
         mediaPlayer.play();
+
+        ControladorDeTurno controlador = ControladorDeTurno.getInstance();
+        controlador.jugar();
 
         Dados dados = new Dados();
         int resultado = dados.suma();
