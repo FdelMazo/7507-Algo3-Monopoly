@@ -30,12 +30,13 @@ public class Main extends Application {
         listaJugadores.add(jugador3);
 
         ContenedorPrincipal contenedorPrincipal = new ContenedorPrincipal(listaJugadores,primaryStage);
-        Scene escenaJuego = new Scene(contenedorPrincipal,900,700);
+        Scene escenaJuego = new Scene(contenedorPrincipal,1200,700);
 
         ContenedorEntrada contenedorEntrada = new ContenedorEntrada(primaryStage,escenaJuego);
         Scene escenaBienvenidos = new Scene (contenedorEntrada,500,500);
 
         primaryStage.setScene(escenaBienvenidos);
+        primaryStage.setResizable(false);
 
         primaryStage.show();
     }
