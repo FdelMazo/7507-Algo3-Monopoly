@@ -1,6 +1,7 @@
 package Vista;
 
 import javafx.geometry.Insets;
+import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -15,8 +16,10 @@ public class Consola {
         text.setFill(Color.GREEN);
         VBox contenedorConsola = new VBox();
         contenedorConsola.getChildren().add(text);
-        contenedorConsola.setPadding(new Insets(0, 0, 100, 0));
+        contenedorConsola.setPadding(new Insets(0, 200, 0, 0));
         contenedorConsola.setStyle("-fx-background-color: black;");
+        contenedorConsola.setMaxHeight(800);
+        contenedorConsola.setMinHeight(contenedorConsola.getMaxHeight());
         vbox = contenedorConsola;
     }
 
@@ -33,6 +36,6 @@ public class Consola {
         Text text = new Text(cadena);
         text.setFont(Font.font("Verdana", 12));
         text.setFill(Color.GREEN);
-        vbox.getChildren().add(text);
+        vbox.getChildren().add(0, text);
     }
 }
