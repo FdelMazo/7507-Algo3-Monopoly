@@ -1,4 +1,4 @@
-package Vista.eventos;
+package Controladores;
 
 import Modelo.Jugador;
 import Vista.Sistema;

@@ -10,6 +10,7 @@ import javafx.scene.text.Text;
 
 public class Sistema {
     static VBox consola = null;
+    static boolean mudo = false;
 
     public Sistema() {
         Text text = new Text(">>> Consola");
@@ -30,6 +31,11 @@ public class Sistema {
         return consola;
     }
 
+    public static void mutear(){
+        if (mudo == true) mudo=false;
+        else if (mudo == false) mudo=true;
+    }
+
 
     public static void imprimir(String cadena) {
         if (consola == null) {
@@ -44,6 +50,7 @@ public class Sistema {
     }
 
     public static void reproducir(Class c, String archivo) {
+        if (mudo==true) return;
         Media musicaInicio = new Media(c.getResource(archivo).toExternalForm());
         MediaPlayer mediaPlayer = new MediaPlayer(musicaInicio);
         mediaPlayer.play();

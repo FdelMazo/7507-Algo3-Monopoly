@@ -1,4 +1,4 @@
-package Vista.eventos;
+package Controladores;
 
 import Modelo.Jugador;
 import Vista.Sistema;
@@ -15,6 +15,7 @@ public class BotonVender implements EventHandler<ActionEvent>{
     public BotonVender(Jugador jugador){
         contador = 0;
         this.jugador = jugador;
+
     }
 
     @Override

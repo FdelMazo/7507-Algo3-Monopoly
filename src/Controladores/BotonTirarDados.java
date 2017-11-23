@@ -1,4 +1,4 @@
-package Vista.eventos;
+package Controladores;
 
 import Controladores.ControladorDeTurno;
 import Modelo.Dados;
