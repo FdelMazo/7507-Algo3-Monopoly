@@ -6,8 +6,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.util.Duration;
 
-import java.awt.*;
-
 public class PiezaJugador {
 
     public int posX;

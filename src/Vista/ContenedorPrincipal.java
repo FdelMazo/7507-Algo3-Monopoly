@@ -8,14 +8,9 @@ import Vista.eventos.BotonVender;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.canvas.Canvas;
-import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import javafx.scene.control.Button;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
-import Modelo.Dados;
 
 import java.util.ArrayList;
 
@@ -74,8 +69,7 @@ public class ContenedorPrincipal extends BorderPane{
     }
 
     private void setConsola() {
-
-        Consola consolaLocal = new Consola();
+        Sistema consolaLocal = new Sistema();
         this.setRight(consolaLocal.contenedorConsola());
     }
 }

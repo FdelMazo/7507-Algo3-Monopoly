@@ -3,9 +3,7 @@ package Modelo;
 import Modelo.Casilleros.Propiedades;
 import javafx.util.Pair;
 
-import java.util.ArrayList;
 import java.util.Hashtable;
-import java.util.List;
 
 public class Municipio {
 

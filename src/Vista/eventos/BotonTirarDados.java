@@ -2,7 +2,7 @@ package Vista.eventos;
 
 import Controladores.ControladorDeTurno;
 import Modelo.Dados;
-import Vista.Consola;
+import Vista.Sistema;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.media.Media;
@@ -22,6 +22,6 @@ public class BotonTirarDados implements EventHandler<ActionEvent> {
 
         Dados dados = new Dados();
         int resultado = dados.suma();
-        Consola.println("Sacas : " + resultado);
+        Sistema.imprimir("Sacas : " + resultado);
     }
 }

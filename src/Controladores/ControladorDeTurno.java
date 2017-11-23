@@ -3,12 +3,11 @@ package Controladores;
 import Modelo.Jugador;
 import Modelo.Tablero;
 import Modelo.Turno;
-import Vista.Consola;
+import Vista.Sistema;
 
 import java.util.ArrayList;
 import java.util.Random;
 
-import static Vista.Consola.*;
 
 public class ControladorDeTurno {
 
@@ -43,8 +42,8 @@ public class ControladorDeTurno {
     public void jugar(){
         if (!ganador()){
             Turno turno = new Turno(tablero, actual);
-            println("Es el turno del jugador " + actual.getNombre());
-            println("Cae en " + actual.actual().nombre()); //para ver si se mueve
+            Sistema.imprimir("Es el turno del jugador " + actual.getNombre());
+            Sistema.imprimir("Cae en " + actual.actual().nombre()); //para ver si se mueve
             if (actual.perdio()) retirarJugador(actual);
             actual = siguienteJugador(actual);
         }

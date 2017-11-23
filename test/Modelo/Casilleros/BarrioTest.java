@@ -188,7 +188,7 @@ public class BarrioTest {
     }
 
     @Test
-    public void testJugadorVendePropiedadEdificadaYAhoraEstásNoExistenMas(){
+    public void testJugadorVendePropiedadEdificadaYAhoraEstasNoExistenMas(){
 
         Jugador jugador1 = new Jugador("Lance");
         Jugador jugador2 = new Jugador("Hunk");

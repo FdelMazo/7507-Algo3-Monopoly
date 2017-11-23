@@ -1,7 +1,7 @@
 package Vista.eventos;
 
 import Modelo.Jugador;
-import Vista.Consola;
+import Vista.Sistema;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.media.Media;
@@ -29,10 +29,8 @@ public class BotonVender implements EventHandler<ActionEvent>{
             woah = "woah4.mp3";
         };
 
-        Media musicaInicio = new Media(getClass().getResource(woah).toExternalForm());
-        MediaPlayer mediaPlayer = new MediaPlayer(musicaInicio);
-        mediaPlayer.play();
-        Consola.println("Vendo vendo");
+        Sistema.reproducir(getClass(), woah);
+        Sistema.imprimir("Vendo vendo");
         contador +=1;
     }
 }

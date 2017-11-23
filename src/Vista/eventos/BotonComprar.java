@@ -1,11 +1,10 @@
 package Vista.eventos;
 
 import Modelo.Jugador;
-import Vista.Consola;
+import Vista.Sistema;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
+
 
 public class BotonComprar implements EventHandler<ActionEvent>{
 
@@ -17,10 +16,8 @@ public class BotonComprar implements EventHandler<ActionEvent>{
 
     @Override
     public void handle(ActionEvent event) {
-        Media musicaInicio = new Media(getClass().getResource("background.mp3").toExternalForm());
-        MediaPlayer mediaPlayer = new MediaPlayer(musicaInicio);
-        mediaPlayer.play();
-        Consola.println("Compro Compro");
+        Sistema.reproducir(getClass(), "background.mp3");
+        Sistema.imprimir("Compro Compro");
         //this.jugador.comprar();
     }
 

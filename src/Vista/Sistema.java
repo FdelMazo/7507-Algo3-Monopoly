@@ -1,16 +1,17 @@
 package Vista;
 
 import javafx.geometry.Insets;
-import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
-public class Consola {
-    static VBox vbox = null;
+public class Sistema {
+    static VBox consola = null;
 
-    public Consola() {
+    public Sistema() {
         Text text = new Text(">>> Consola");
         text.setFont(Font.font("Verdana", 12));
         text.setFill(Color.GREEN);
@@ -22,22 +23,29 @@ public class Consola {
         contenedorConsola.setMaxWidth(300);
         contenedorConsola.setMinHeight(contenedorConsola.getMaxHeight());
         contenedorConsola.setMinWidth(contenedorConsola.getMaxWidth());
-        vbox = contenedorConsola;
+        consola = contenedorConsola;
     }
 
     public VBox contenedorConsola() {
-        return vbox;
+        return consola;
     }
 
 
-    public static void println(String cadena) {
-        if ( vbox== null){
+    public static void imprimir(String cadena) {
+        if (consola == null) {
 //            System.out.println(cadena);
             return;
-        };
+        }
+        ;
         Text text = new Text(cadena);
         text.setFont(Font.font("Verdana", 12));
         text.setFill(Color.GREEN);
-        vbox.getChildren().add(0, text);
+        consola.getChildren().add(0, text);
+    }
+
+    public static void reproducir(Class c, String archivo) {
+        Media musicaInicio = new Media(c.getResource(archivo).toExternalForm());
+        MediaPlayer mediaPlayer = new MediaPlayer(musicaInicio);
+        mediaPlayer.play();
     }
 }

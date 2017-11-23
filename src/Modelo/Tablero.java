@@ -1,7 +1,6 @@
 package Modelo;
 
 import Modelo.Casilleros.*;
-import Vista.Consola;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -21,7 +20,6 @@ public class Tablero {
         agregarCasilleros7a11();
         agregarCasilleros12a16();
         agregarCasilleros17a20();
-        Consola.println("Tablero creado");
     }
 
     private static class tableroInstancia {
