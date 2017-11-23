@@ -10,7 +10,7 @@ public class CarcelTest {
     @Test
     public void testCarcelPrimeraNocheNoPermiteMovimiento(){
 
-        Tablero tablero = new Tablero();
+        Tablero tablero = Tablero.getInstancia();
         Jugador jugador = new Jugador("man");
         Carcel carcel = new Carcel();
         jugador.caeEn(carcel,tablero);
@@ -21,7 +21,7 @@ public class CarcelTest {
     @Test
     public void testCarcelPermiteSalidaDespuesDelPrimerTurno() {
 
-        Tablero tablero = new Tablero();
+        Tablero tablero = Tablero.getInstancia();
         Jugador jugador = new Jugador("man");
         Carcel carcel = new Carcel();
         jugador.caeEn(carcel,  tablero);
@@ -32,7 +32,7 @@ public class CarcelTest {
     @Test
     public void testCarcelPermiteSalidaPasadas3Noches(){
 
-        Tablero tablero = new Tablero();
+        Tablero tablero = Tablero.getInstancia();
         Jugador jugador = new Jugador("man");
         Carcel carcel = new Carcel();
         jugador.caeEn(carcel,  tablero);

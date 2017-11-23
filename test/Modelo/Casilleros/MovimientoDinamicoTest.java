@@ -28,7 +28,7 @@ public class MovimientoDinamicoTest {
 
     @Test
     public void numeroEntre11y12AvanceDinamico() {
-        Tablero tablero = new Tablero();
+        Tablero tablero = Tablero.getInstancia();
         int numDado = 11;
         AvanceDinamico avanceDinamico = new AvanceDinamico();
         Jugador jugador = new Jugador("flor");
@@ -42,7 +42,7 @@ public class MovimientoDinamicoTest {
 
     @Test
     public void numeroEntre2Y6EnRetrocesoDianmico() {
-        Tablero tablero = new Tablero();
+        Tablero tablero = Tablero.getInstancia();
         int numDado = 2;
         RetrocesoDinamico retrocesoDinamico = new RetrocesoDinamico();
         Jugador jugador = new Jugador("flor");

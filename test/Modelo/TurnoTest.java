@@ -8,7 +8,7 @@ public class TurnoTest {
 
     @Test
     public void testTurnoDesplazaJugador(){
-        Tablero tablero = new Tablero();
+        Tablero tablero = Tablero.getInstancia();
         Jugador jugador = new Jugador("Jugador 1");
         jugador.asignarCasillero(tablero.salida());
         Casillero viejo = jugador.actual();

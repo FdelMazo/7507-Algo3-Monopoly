@@ -23,7 +23,7 @@ public class JugadorTest {
 
     @Test
     public void jugadorCaeEnBarrioSinPropietarioYAlComprarloSuCapitalSeRedujo(){
-        Tablero tablero = new Tablero();
+        Tablero tablero = Tablero.getInstancia();
         Jugador jugador = new Jugador("Lance");
         ArrayList<Edificacion> listaCasas= new ArrayList<>();
         listaCasas.add(new Edificacion(5000, 3000));

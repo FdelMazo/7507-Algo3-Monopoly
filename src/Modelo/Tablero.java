@@ -6,16 +6,30 @@ import Vista.Consola;
 import java.util.ArrayList;
 import java.util.Arrays;
 
+
+
+
+
+
 public class Tablero {
+    //Singleton!
     private ArrayList<Casillero> casilleros;
 
-    public Tablero(){
+    private Tablero(){
         casilleros = new ArrayList<>();
         agregarCasilleros0a6();
         agregarCasilleros7a11();
         agregarCasilleros12a16();
         agregarCasilleros17a20();
         Consola.println("Tablero creado");
+    }
+
+    private static class tableroInstancia {
+        private static final Tablero INSTANCE = new Tablero();
+    }
+
+    public static Tablero getInstancia() {
+        return tableroInstancia.INSTANCE;
     }
 
     public Casillero desplazarCasillero(Jugador jugador, int numDados){

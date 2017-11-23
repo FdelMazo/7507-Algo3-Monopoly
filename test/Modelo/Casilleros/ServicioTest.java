@@ -14,7 +14,7 @@ public class ServicioTest {
         Municipio municipio = Municipio.getInstance();
         municipio.resetear();
         int numDado = 4;
-        Tablero tablero = new Tablero();
+        Tablero tablero = Tablero.getInstancia();
         Jugador jugador = new Jugador("Pablo");
         Servicio servicio = new Servicio("Tren",38000);
         jugador.caeEn(servicio,tablero);
@@ -28,7 +28,7 @@ public class ServicioTest {
     public void testJugadorCaeEnEdesurAdueniadoPorOtroJugadorQueNoTieneAysa(){
 
         int numDado = 4;
-        Tablero tablero = new Tablero();
+        Tablero tablero = Tablero.getInstancia();
         Jugador jugador = new Jugador("Pablo");
         Servicio servicio = new Servicio("Edesur",35000);
         jugador.caeEn(servicio,tablero);
@@ -40,7 +40,7 @@ public class ServicioTest {
     public void testJugadorCaeEnEdesurPeroEsDuenioPorLoQueNoSeLeCobra(){
 
         int numDado = 4;
-        Tablero tablero = new Tablero();
+        Tablero tablero = Tablero.getInstancia();
         Jugador jugador = new Jugador("Pablo");
         Servicio servicio = new Servicio("Edesur",35000);
         jugador.caeEn(servicio,tablero);
@@ -55,7 +55,7 @@ public class ServicioTest {
         Municipio municipio = Municipio.getInstance();
         municipio.resetear();
         int numDado = 4;
-        Tablero tablero = new Tablero();
+        Tablero tablero = Tablero.getInstancia();
         Jugador jugador = new Jugador("Pablo");
         Servicio servicio1 = new Servicio("Edesur", 35000);
         Servicio servicio2 = new Servicio("Aysa", 30000);
@@ -72,7 +72,7 @@ public class ServicioTest {
         Municipio municipio = Municipio.getInstance();
         municipio.resetear();
         int numDado = 4;
-        Tablero tablero = new Tablero();
+        Tablero tablero = Tablero.getInstancia();
         Jugador jugador = new Jugador("Pablo");
         Servicio servicio1 = new Servicio("Tren",38000);
         Servicio servicio2 = new Servicio("Subte",40000);

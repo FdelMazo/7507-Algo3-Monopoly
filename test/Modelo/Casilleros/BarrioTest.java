@@ -133,7 +133,7 @@ public class BarrioTest {
     //ENTREGA 2: TEST 10 REQUERIDO (Buenos Aires Norte)
     @Test
     public void testBarrioBuenosAiresNorteJugadorDebePagarAlquilerPierde3500(){
-        Tablero tablero = new Tablero();
+        Tablero tablero = Tablero.getInstancia();
         Jugador jugador1 = new Jugador("Lance");
         Jugador jugador2 = new Jugador("Hunk");
         List<Edificacion> listaCasasS= new ArrayList();

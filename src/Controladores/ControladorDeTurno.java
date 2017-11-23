@@ -18,7 +18,7 @@ public class ControladorDeTurno {
     private Tablero tablero;
 
     private ControladorDeTurno(){
-        tablero = new Tablero();
+        tablero = Tablero.getInstancia();
         jugadores = new ArrayList<>();
         jugadores.add(new Jugador("Jugador 1"));
         jugadores.add(new Jugador("Jugador 2"));

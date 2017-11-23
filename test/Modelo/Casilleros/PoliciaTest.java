@@ -9,7 +9,7 @@ public class PoliciaTest {
 
     @Test
     public void testPoliciaLlevaAJugadorACarcelYNoSePuedeMover(){
-        Tablero tablero = new Tablero();
+        Tablero tablero = Tablero.getInstancia();
         Jugador jugador1 = new Jugador("Jugador 1");
         Jugador jugador2 = new Jugador("Jugador 2");
         Casillero salida = tablero.salida();
