@@ -11,8 +11,8 @@ public class TableroTest {
     public void testAvanzar3PasosEnTableroCaeEnEdesur() {
         Jugador jugador = new Jugador("Jugador 1");
         Tablero tablero = new Tablero();
-        Casillero salida = tablero.salida();
-        Servicio deberiaSerEdesur = (Servicio) tablero.desplazarCasillero(salida, 3, jugador);
+        jugador.asignarCasillero(tablero.salida());
+        Servicio deberiaSerEdesur = (Servicio) tablero.desplazarCasillero(jugador, 3);
         Assert.assertEquals("Edesur", deberiaSerEdesur.nombre());
     }
 
@@ -20,10 +20,11 @@ public class TableroTest {
     public void testAvanzar8yRetroceder5PasosEnTableroCaeEnEdesur() {
         Jugador jugador = new Jugador("Jugador 1");
         Tablero tablero = new Tablero();
-        Casillero salida = tablero.salida();
-        Servicio deberiaSerSubte = (Servicio) tablero.desplazarCasillero(salida, 8, jugador);
+        jugador.asignarCasillero(tablero.salida());
+        Servicio deberiaSerSubte = (Servicio) tablero.desplazarCasillero(jugador, 8);
+        jugador.caeEn(deberiaSerSubte, tablero);
         Assert.assertEquals("Subte", deberiaSerSubte.nombre());
-        Servicio deberiaSerEdesur = (Servicio) tablero.desplazarCasillero(deberiaSerSubte, -5, jugador);
+        Servicio deberiaSerEdesur = (Servicio) tablero.desplazarCasillero(jugador, -5);
         Assert.assertEquals("Edesur", deberiaSerEdesur.nombre());
     }
 
@@ -31,11 +32,8 @@ public class TableroTest {
     public void testPegarVueltaEnteraPasaPorSalidaYSumaCapital() {
         Jugador jugador = new Jugador("Jugador 1");
         Tablero tablero = new Tablero();
-        Casillero salida = tablero.salida();
-        Servicio deberiaSerAysa = (Servicio) tablero.desplazarCasillero(salida, 12, jugador);
-        Assert.assertEquals("Aysa", deberiaSerAysa.nombre());
-        Servicio deberiaSerEdesur = (Servicio) tablero.desplazarCasillero(deberiaSerAysa, 11, jugador);
-        Assert.assertEquals("Edesur", deberiaSerEdesur.nombre());
+        jugador.asignarCasillero(tablero.salida());
+        tablero.desplazarCasillero(jugador, 21);
         Assert.assertEquals(100000+2000, jugador.capital());
     }
 

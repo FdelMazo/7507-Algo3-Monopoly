@@ -21,19 +21,23 @@ public class Servicio implements Casillero, Propiedades{
 
     }
 
-    public void accionAlCaer(Jugador jugador, int numDado, Tablero tablero){
+    public void accionAlCaer(Jugador jugador, Tablero tablero){
 
         Jugador propietario = municipio.devolverPropietario(this);
-
         if (propietario == null) {
             jugador.solicitarDinero(valor);
             municipio.cambiar_propietario(jugador,this);
         }
         else if (propietario != jugador){
-            int cobro = municipio.devolverAlquilerServicio(this);
-            jugador.solicitarDinero(numDado * cobro);
-            propietario.cobrar(numDado*cobro);
+            int dineroACobrar = calcularCobro(jugador.sumaDados());
+            jugador.solicitarDinero(dineroACobrar);
+            propietario.cobrar(dineroACobrar);
         }
+    }
+
+    public int calcularCobro(int numDado){
+        int cobro = municipio.devolverAlquilerServicio(this);
+        return numDado*cobro;
     }
 
     public void cederAlBanco( Jugador jugador){

@@ -1,7 +1,6 @@
 package Modelo;
 import Modelo.Casilleros.Propiedades;
 import Modelo.Casilleros.Casillero;
-import Vista.Consola;
 
 import java.util.ArrayList;
 
@@ -13,15 +12,14 @@ public class Jugador {
     private Casillero casilleroActual;
     private String nombre;
     private Estado estado;
+    private Dados dados;
     Municipio municipio = Municipio.getInstance();
 
     public Jugador(String nombreJugador) {
         this.capital = 100000;
         propiedades = new ArrayList<>();
-        casilleroActual = null;
         nombre = nombreJugador;
         estado = new Libre();
-        Consola.println("El jugador "+nombreJugador+"ha ingresado a la partida");
     }
 
     public void asignarCasillero(Casillero casillero) {
@@ -32,9 +30,10 @@ public class Jugador {
         return propiedades.size();
     }
 
-    public void caeEn(Casillero casillero, int numDado, Tablero tablero) {
+    public void caeEn(Casillero casillero, Tablero tablero) {
+        if (dados == null) lanzarDados();
         asignarCasillero(casillero);
-        casilleroActual.accionAlCaer(this, numDado, tablero);
+        casilleroActual.accionAlCaer(this, tablero);
     }
 
     public Casillero actual() {
@@ -53,6 +52,15 @@ public class Jugador {
 
         propiedades.remove(propiedad);
         propiedad.cederAlBanco(this);
+    }
+
+    public int lanzarDados(){
+        dados = new Dados();
+        return sumaDados();
+    }
+
+    public boolean doble(){
+        return dados.doble();
     }
 
     public void intercambiarPropiedades(Jugador otroJugador, Propiedades propiedad) {
@@ -102,4 +110,8 @@ public class Jugador {
     }
 
     public String getNombre(){ return nombre; }
+
+    public int sumaDados() {
+        return dados.suma();
+    }
 }

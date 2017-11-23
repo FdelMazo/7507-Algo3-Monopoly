@@ -13,7 +13,7 @@ public class CarcelTest {
         Tablero tablero = new Tablero();
         Jugador jugador = new Jugador("man");
         Carcel carcel = new Carcel();
-        jugador.caeEn(carcel,6,tablero);
+        jugador.caeEn(carcel,tablero);
         Assert.assertFalse(jugador.mover());
 
     }
@@ -24,7 +24,7 @@ public class CarcelTest {
         Tablero tablero = new Tablero();
         Jugador jugador = new Jugador("man");
         Carcel carcel = new Carcel();
-        jugador.caeEn(carcel, 6, tablero);
+        jugador.caeEn(carcel,  tablero);
         jugador.mover();
         Assert.assertTrue(jugador.mover());
     }
@@ -35,7 +35,7 @@ public class CarcelTest {
         Tablero tablero = new Tablero();
         Jugador jugador = new Jugador("man");
         Carcel carcel = new Carcel();
-        jugador.caeEn(carcel, 6, tablero);
+        jugador.caeEn(carcel,  tablero);
         jugador.mover();
         jugador.mover();
         jugador.mover();

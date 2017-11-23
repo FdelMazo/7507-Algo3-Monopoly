@@ -36,7 +36,7 @@ public class MovimientoDinamicoTest {
         listaCasas.add(new Edificacion(5000, 3000));
         listaCasas.add(new Edificacion(5000, 3500));
         Barrio buenosAiresSur = new Barrio("Buenos Aires SUr", 20000, 2000, listaCasas);
-        jugador.caeEn(buenosAiresSur, numDado, tablero);
+        jugador.caeEn(buenosAiresSur, tablero);
         Assert.assertEquals(numDado - jugador.cantPropiedades(),avanceDinamico.calcularDinamismo(jugador, numDado));
     }
 
@@ -46,11 +46,11 @@ public class MovimientoDinamicoTest {
         int numDado = 2;
         RetrocesoDinamico retrocesoDinamico = new RetrocesoDinamico();
         Jugador jugador = new Jugador("flor");
-        ArrayList<Edificacion> listaCasas= new ArrayList();
+        ArrayList<Edificacion> listaCasas= new ArrayList<>();
         listaCasas.add(new Edificacion(5000, 3000));
         listaCasas.add(new Edificacion(5000, 3500));
         Barrio buenosAiresSur = new Barrio("Buenos Aires SUr", 20000, 2000, listaCasas);
-        jugador.caeEn(buenosAiresSur, numDado, tablero);
+        jugador.caeEn(buenosAiresSur, tablero);
         Assert.assertEquals(((numDado - jugador.cantPropiedades()) * -1), retrocesoDinamico.calcularDinamismo(jugador, numDado));
     }
 

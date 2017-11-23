@@ -7,7 +7,7 @@ import javafx.scene.paint.Paint;
 
 public class Salida implements Casillero {
 
-    public void accionAlCaer(Jugador jugador, int numDado, Tablero tablero) {
+    public void accionAlCaer(Jugador jugador, Tablero tablero) {
         jugador.cobrar(2000);
     }
 

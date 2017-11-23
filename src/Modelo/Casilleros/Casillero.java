@@ -6,7 +6,7 @@ import javafx.scene.paint.Paint;
 
 public interface Casillero {
 
-    void accionAlCaer(Jugador jugador, int numDado, Tablero tablero);
+    void accionAlCaer(Jugador jugador, Tablero tablero);
 
     String nombre();
 

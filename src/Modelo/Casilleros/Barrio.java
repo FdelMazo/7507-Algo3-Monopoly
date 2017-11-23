@@ -44,7 +44,7 @@ public class Barrio implements Casillero, Propiedades {
         alquilerActual = alquilerOriginal;
     }
 
-    public void accionAlCaer(Jugador jugador, int numDado, Tablero tablero) {
+    public void accionAlCaer(Jugador jugador, Tablero tablero) {
 
         if (propietario == null){
             this.vender(jugador);

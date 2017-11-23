@@ -18,12 +18,13 @@ public class Tablero {
         Consola.println("Tablero creado");
     }
 
-    public Casillero desplazarCasillero(Casillero actual, int num, Jugador jugador){
+    public Casillero desplazarCasillero(Jugador jugador, int numDados){
+        Casillero actual = jugador.actual();
         if (!jugador.mover()) return actual;
         int indexInicial = casilleros.indexOf(actual);
-        int indexFinal = indexInicial + num;
+        int indexFinal = indexInicial + numDados;
         if(indexFinal > casilleros.size()){
-            jugador.caeEn(salida(), 0, this);
+            jugador.caeEn(salida(), this);
             indexFinal-=casilleros.size();
         }
         return casilleros.get(indexFinal);

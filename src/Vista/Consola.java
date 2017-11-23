@@ -32,7 +32,7 @@ public class Consola {
 
     public static void println(String cadena) {
         if ( vbox== null){
-            System.out.println(cadena);
+//            System.out.println(cadena);
             return;
         };
         Text text = new Text(cadena);

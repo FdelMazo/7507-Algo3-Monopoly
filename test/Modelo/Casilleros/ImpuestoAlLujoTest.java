@@ -12,7 +12,7 @@ public class ImpuestoAlLujoTest {
         Jugador jugador = new Jugador("nick");
         ImpuestoAlLujo impuestoAlLujo = new ImpuestoAlLujo();
         int capital_anterior = jugador.capital();
-        jugador.caeEn(impuestoAlLujo,0,null);
+        jugador.caeEn(impuestoAlLujo,null);
         Assert.assertEquals(capital_anterior - capital_anterior*0.1,jugador.capital(),1);
 
 

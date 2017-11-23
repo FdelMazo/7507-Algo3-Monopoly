@@ -13,7 +13,7 @@ public class Quini6Test {
 
         Jugador jugador = new Jugador("Dio");
         Quini6 quini6 = new Quini6();
-        jugador.caeEn(quini6, 0, null);
+        jugador.caeEn(quini6, null);
         Assert.assertEquals(jugador.capital(), 150000);
     }
 
@@ -22,8 +22,8 @@ public class Quini6Test {
 
         Jugador jugador = new Jugador("Dio");
         Quini6 quini6 = new Quini6();
-        jugador.caeEn(quini6, 0, null);
-        jugador.caeEn(quini6, 0, null);
+        jugador.caeEn(quini6, null);
+        jugador.caeEn(quini6, null);
         Assert.assertEquals(jugador.capital(), 180000);
     }
 
@@ -32,10 +32,10 @@ public class Quini6Test {
 
         Jugador jugador = new Jugador("Dio");
         Quini6 quini6 = new Quini6();
-        jugador.caeEn(quini6, 0, null);
-        jugador.caeEn(quini6, 0, null);
-        jugador.caeEn(quini6, 0, null);
-        jugador.caeEn(quini6, 0, null);
+        jugador.caeEn(quini6,  null);
+        jugador.caeEn(quini6,  null);
+        jugador.caeEn(quini6,  null);
+        jugador.caeEn(quini6,  null);
         Assert.assertEquals(jugador.capital(), 180000);
     }
 }

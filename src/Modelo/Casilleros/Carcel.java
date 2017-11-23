@@ -8,7 +8,7 @@ import javafx.scene.paint.Paint;
 
 public class Carcel implements Casillero {
 
-    public void accionAlCaer(Jugador jugador, int numDado, Tablero tablero) {
+    public void accionAlCaer(Jugador jugador, Tablero tablero) {
         jugador.actualizarEstado(new Preso());
     }
 
