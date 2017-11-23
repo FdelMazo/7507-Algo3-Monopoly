@@ -2,7 +2,6 @@ package Modelo.Casilleros;
 
 import Modelo.Jugador;
 import Modelo.Municipio;
-import Modelo.Tablero;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 
@@ -21,7 +20,7 @@ public class Servicio implements Casillero, Propiedades{
 
     }
 
-    public void accionAlCaer(Jugador jugador, Tablero tablero){
+    public void accionAlCaer(Jugador jugador){
 
         Jugador propietario = municipio.devolverPropietario(this);
         if (propietario == null) {

@@ -36,7 +36,7 @@ public class MovimientoDinamicoTest {
         listaCasas.add(new Edificacion(5000, 3000));
         listaCasas.add(new Edificacion(5000, 3500));
         Barrio buenosAiresSur = new Barrio("Buenos Aires SUr", 20000, 2000, listaCasas);
-        jugador.caeEn(buenosAiresSur, tablero);
+        jugador.caeEn(buenosAiresSur);
         Assert.assertEquals(numDado - jugador.cantPropiedades(),avanceDinamico.calcularDinamismo(jugador, numDado));
     }
 
@@ -50,7 +50,7 @@ public class MovimientoDinamicoTest {
         listaCasas.add(new Edificacion(5000, 3000));
         listaCasas.add(new Edificacion(5000, 3500));
         Barrio buenosAiresSur = new Barrio("Buenos Aires SUr", 20000, 2000, listaCasas);
-        jugador.caeEn(buenosAiresSur, tablero);
+        jugador.caeEn(buenosAiresSur);
         Assert.assertEquals(((numDado - jugador.cantPropiedades()) * -1), retrocesoDinamico.calcularDinamismo(jugador, numDado));
     }
 

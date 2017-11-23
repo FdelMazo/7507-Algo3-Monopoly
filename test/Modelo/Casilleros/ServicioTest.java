@@ -17,9 +17,9 @@ public class ServicioTest {
         Tablero tablero = Tablero.getInstancia();
         Jugador jugador = new Jugador("Pablo");
         Servicio servicio = new Servicio("Tren",38000);
-        jugador.caeEn(servicio,tablero);
+        jugador.caeEn(servicio);
         Jugador jugador1 = new Jugador("Martin");
-        jugador1.caeEn(servicio,tablero);
+        jugador1.caeEn(servicio);
         Assert.assertEquals(450*numDado,servicio.calcularCobro(numDado));
 
     }
@@ -31,7 +31,7 @@ public class ServicioTest {
         Tablero tablero = Tablero.getInstancia();
         Jugador jugador = new Jugador("Pablo");
         Servicio servicio = new Servicio("Edesur",35000);
-        jugador.caeEn(servicio,tablero);
+        jugador.caeEn(servicio);
         Jugador jugador1 = new Jugador("Martin");
         Assert.assertEquals(500*numDado,servicio.calcularCobro(numDado));
     }
@@ -43,8 +43,8 @@ public class ServicioTest {
         Tablero tablero = Tablero.getInstancia();
         Jugador jugador = new Jugador("Pablo");
         Servicio servicio = new Servicio("Edesur",35000);
-        jugador.caeEn(servicio,tablero);
-        jugador.caeEn(servicio,tablero);
+        jugador.caeEn(servicio);
+        jugador.caeEn(servicio);
         Assert.assertEquals(100000 - 35000,jugador.capital());
 
     }
@@ -59,10 +59,10 @@ public class ServicioTest {
         Jugador jugador = new Jugador("Pablo");
         Servicio servicio1 = new Servicio("Edesur", 35000);
         Servicio servicio2 = new Servicio("Aysa", 30000);
-        jugador.caeEn(servicio2, tablero);
-        jugador.caeEn(servicio1, tablero);
+        jugador.caeEn(servicio2);
+        jugador.caeEn(servicio1);
         Jugador jugador1 = new Jugador("Martin");
-        jugador1.caeEn(servicio1, tablero);
+        jugador1.caeEn(servicio1);
         Assert.assertEquals(numDado * 1000, servicio1.calcularCobro(numDado));
     }
 
@@ -76,10 +76,10 @@ public class ServicioTest {
         Jugador jugador = new Jugador("Pablo");
         Servicio servicio1 = new Servicio("Tren",38000);
         Servicio servicio2 = new Servicio("Subte",40000);
-        jugador.caeEn(servicio2,tablero);
-        jugador.caeEn(servicio1,tablero);
+        jugador.caeEn(servicio2);
+        jugador.caeEn(servicio1);
         Jugador jugador1 = new Jugador("Martin");
-        jugador1.caeEn(servicio1,tablero);
+        jugador1.caeEn(servicio1);
         Assert.assertEquals(numDado*800,servicio1.calcularCobro(numDado));
 
     }

@@ -1,8 +1,6 @@
 package Modelo.Casilleros;
 
-import Modelo.Casilleros.Quini6;
 import Modelo.Jugador;
-import Modelo.Tablero;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -13,7 +11,7 @@ public class Quini6Test {
 
         Jugador jugador = new Jugador("Dio");
         Quini6 quini6 = new Quini6();
-        jugador.caeEn(quini6, null);
+        jugador.caeEn(quini6);
         Assert.assertEquals(jugador.capital(), 150000);
     }
 
@@ -22,8 +20,8 @@ public class Quini6Test {
 
         Jugador jugador = new Jugador("Dio");
         Quini6 quini6 = new Quini6();
-        jugador.caeEn(quini6, null);
-        jugador.caeEn(quini6, null);
+        jugador.caeEn(quini6);
+        jugador.caeEn(quini6);
         Assert.assertEquals(jugador.capital(), 180000);
     }
 
@@ -32,10 +30,10 @@ public class Quini6Test {
 
         Jugador jugador = new Jugador("Dio");
         Quini6 quini6 = new Quini6();
-        jugador.caeEn(quini6,  null);
-        jugador.caeEn(quini6,  null);
-        jugador.caeEn(quini6,  null);
-        jugador.caeEn(quini6,  null);
+        jugador.caeEn(quini6);
+        jugador.caeEn(quini6);
+        jugador.caeEn(quini6);
+        jugador.caeEn(quini6);
         Assert.assertEquals(jugador.capital(), 180000);
     }
 }

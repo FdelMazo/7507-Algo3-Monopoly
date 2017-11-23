@@ -1,6 +1,5 @@
 package Modelo;
 
-import Modelo.Casilleros.Casillero;
 import Modelo.Casilleros.Servicio;
 import org.junit.Assert;
 import org.junit.Test;
@@ -22,7 +21,7 @@ public class TableroTest {
         Tablero tablero = Tablero.getInstancia();
         jugador.asignarCasillero(tablero.salida());
         Servicio deberiaSerSubte = (Servicio) tablero.desplazarCasillero(jugador, 8);
-        jugador.caeEn(deberiaSerSubte, tablero);
+        jugador.caeEn(deberiaSerSubte);
         Assert.assertEquals("Subte", deberiaSerSubte.nombre());
         Servicio deberiaSerEdesur = (Servicio) tablero.desplazarCasillero(jugador, -5);
         Assert.assertEquals("Edesur", deberiaSerEdesur.nombre());

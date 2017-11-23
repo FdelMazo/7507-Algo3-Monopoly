@@ -2,7 +2,7 @@ package Modelo.Casilleros;
 
 import Modelo.Edificacion;
 import Modelo.Jugador;
-import Modelo.Tablero;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,8 +18,8 @@ public class BarrioDobleTest {
         BarrioDoble buenosAiresNorte = new BarrioDoble("Buenos Aires Norte", 25000, 2500, new ArrayList<>(), null);
         buenosAiresSur.setHermano(buenosAiresNorte);
         buenosAiresNorte.setHermano(buenosAiresSur);
-        jugador.caeEn(buenosAiresSur, null);
-        jugador.caeEn(buenosAiresNorte, null);
+        jugador.caeEn(buenosAiresSur);
+        jugador.caeEn(buenosAiresNorte);
         Assert.assertTrue(buenosAiresSur.duenioDeAmbosHermanos());
     }
 
@@ -32,8 +32,8 @@ public class BarrioDobleTest {
         BarrioDoble buenosAiresNorte = new BarrioDoble("Buenos Aires Norte", 25000, 2500, listaCasas, null);
         buenosAiresSur.setHermano(buenosAiresNorte);
         buenosAiresNorte.setHermano(buenosAiresSur);
-        jugador.caeEn(buenosAiresSur,  null);
-        jugador.caeEn(buenosAiresNorte,  null);
+        jugador.caeEn(buenosAiresSur);
+        jugador.caeEn(buenosAiresNorte);
         Assert.assertTrue(buenosAiresSur.edificarCasa(jugador));
     }
 
@@ -46,8 +46,8 @@ public class BarrioDobleTest {
         BarrioDoble buenosAiresNorte = new BarrioDoble("Buenos Aires Norte", 25000, 2500, listaCasas, null);
         buenosAiresSur.setHermano(buenosAiresNorte);
         buenosAiresNorte.setHermano(buenosAiresSur);
-        jugador.caeEn(buenosAiresSur,  null);
-        jugador.caeEn(buenosAiresNorte,  null);
+        jugador.caeEn(buenosAiresSur);
+        jugador.caeEn(buenosAiresNorte);
         buenosAiresSur.edificarCasa(jugador);
         Assert.assertEquals(jugador.capital(), 100000 - 20000 - 25000 - 5000);
     }
@@ -62,11 +62,11 @@ public class BarrioDobleTest {
         BarrioDoble buenosAiresNorte = new BarrioDoble("Buenos Aires Norte", 25000, 2500, listaCasas, null);
         buenosAiresSur.setHermano(buenosAiresNorte);
         buenosAiresNorte.setHermano(buenosAiresSur);
-        jugador1.caeEn(buenosAiresSur, null);
-        jugador1.caeEn(buenosAiresNorte, null);
+        jugador1.caeEn(buenosAiresSur);
+        jugador1.caeEn(buenosAiresNorte);
         buenosAiresSur.edificarCasa(jugador1);
         buenosAiresNorte.edificarCasa(jugador1);
-        jugador2.caeEn(buenosAiresSur, null);
+        jugador2.caeEn(buenosAiresSur);
         Assert.assertEquals(jugador2.capital(), 97000);
     }
 
@@ -83,12 +83,12 @@ public class BarrioDobleTest {
         BarrioDoble buenosAiresNorte = new BarrioDoble("Buenos Aires Norte", 25000, 2500, listaCasasN, null);
         buenosAiresSur.setHermano(buenosAiresNorte);
         buenosAiresNorte.setHermano(buenosAiresSur);
-        jugador1.caeEn(buenosAiresSur, null);
-        jugador1.caeEn(buenosAiresNorte, null);
+        jugador1.caeEn(buenosAiresSur);
+        jugador1.caeEn(buenosAiresNorte);
         buenosAiresSur.edificarCasa(jugador1);
         buenosAiresSur.edificarCasa(jugador1);
         buenosAiresNorte.edificarCasa(jugador1);
-        jugador2.caeEn(buenosAiresSur, null);
+        jugador2.caeEn(buenosAiresSur);
         Assert.assertEquals(jugador2.capital(), 96500);
     }
 
@@ -107,8 +107,8 @@ public class BarrioDobleTest {
         BarrioDoble buenosAiresNorte = new BarrioDoble("Buenos Aires Norte", 25000, 2500, listaCasasN, null);
         buenosAiresSur.setHermano(buenosAiresNorte);
         buenosAiresNorte.setHermano(buenosAiresSur);
-        jugador.caeEn(buenosAiresSur, null);
-        jugador.caeEn(buenosAiresNorte, null);
+        jugador.caeEn(buenosAiresSur);
+        jugador.caeEn(buenosAiresNorte);
         buenosAiresSur.edificarCasa(jugador);
         buenosAiresSur.edificarCasa(jugador);
         buenosAiresNorte.edificarCasa(jugador);
@@ -130,8 +130,8 @@ public class BarrioDobleTest {
         BarrioDoble buenosAiresNorte = new BarrioDoble("Buenos Aires Norte", 25000, 2500, listaCasasN, null);
         buenosAiresSur.setHermano(buenosAiresNorte);
         buenosAiresNorte.setHermano(buenosAiresSur);
-        jugador.caeEn(buenosAiresSur, null);
-        jugador.caeEn(buenosAiresNorte, null);
+        jugador.caeEn(buenosAiresSur);
+        jugador.caeEn(buenosAiresNorte);
         buenosAiresSur.edificarCasa(jugador);
         buenosAiresSur.edificarHotel(jugador);
         Assert.assertEquals(jugador.capital(), 100000 - 20000 - 25000 - 5000);
@@ -152,8 +152,8 @@ public class BarrioDobleTest {
         BarrioDoble buenosAiresNorte = new BarrioDoble("Buenos Aires Norte", 25000, 2500, listaCasasN, null);
         buenosAiresSur.setHermano(buenosAiresNorte);
         buenosAiresNorte.setHermano(buenosAiresSur);
-        jugador.caeEn(buenosAiresSur, null);
-        jugador.caeEn(buenosAiresNorte, null);
+        jugador.caeEn(buenosAiresSur);
+        jugador.caeEn(buenosAiresNorte);
         buenosAiresSur.edificarCasa(jugador);
         buenosAiresSur.edificarCasa(jugador);
         buenosAiresNorte.edificarCasa(jugador);
@@ -178,14 +178,14 @@ public class BarrioDobleTest {
         BarrioDoble buenosAiresNorte = new BarrioDoble("Buenos Aires Norte", 25000, 2500, listaCasasN, null);
         buenosAiresSur.setHermano(buenosAiresNorte);
         buenosAiresNorte.setHermano(buenosAiresSur);
-        jugador.caeEn(buenosAiresSur, null);
-        jugador.caeEn(buenosAiresNorte, null);
+        jugador.caeEn(buenosAiresSur);
+        jugador.caeEn(buenosAiresNorte);
         buenosAiresSur.edificarCasa(jugador);
         buenosAiresSur.edificarCasa(jugador);
         buenosAiresNorte.edificarCasa(jugador);
         buenosAiresNorte.edificarCasa(jugador);
         buenosAiresSur.edificarHotel(jugador);
-        jugadorAct.caeEn(buenosAiresSur,null);
+        jugadorAct.caeEn(buenosAiresSur);
         Assert.assertEquals(jugadorAct.capital(),95000 );
     }
 
@@ -200,8 +200,8 @@ public class BarrioDobleTest {
         BarrioDoble cordobaNorte = new BarrioDoble("Cordoba Norte", 20000, 1300, listaCasasN, null);
         cordobaSur.setHermano(cordobaNorte);
         cordobaNorte.setHermano(cordobaSur);
-        jugador.caeEn(cordobaSur, null);
-        jugador.caeEn(cordobaNorte, null);
+        jugador.caeEn(cordobaSur);
+        jugador.caeEn(cordobaNorte);
         cordobaNorte.edificarCasa(jugador);
         Assert.assertEquals(jugador.capital(), 59800);
     }
@@ -217,10 +217,10 @@ public class BarrioDobleTest {
         BarrioDoble cordobaNorte = new BarrioDoble("Cordoba Norte", 20000, 1300, listaCasasN, null);
         cordobaSur.setHermano(cordobaNorte);
         cordobaNorte.setHermano(cordobaSur);
-        jugador1.caeEn(cordobaSur, null);
-        jugador1.caeEn(cordobaNorte, null);
+        jugador1.caeEn(cordobaSur);
+        jugador1.caeEn(cordobaNorte);
         cordobaSur.edificarCasa(jugador1);
-        jugador2.caeEn(cordobaSur, null);
+        jugador2.caeEn(cordobaSur);
         Assert.assertEquals(jugador2.capital(), 98500);
     }
 
@@ -238,11 +238,11 @@ public class BarrioDobleTest {
         BarrioDoble cordobaNorte = new BarrioDoble("Cordoba Norte", 20000, 1300, listaCasasN, null);
         cordobaSur.setHermano(cordobaNorte);
         cordobaNorte.setHermano(cordobaSur);
-        jugador1.caeEn(cordobaSur, null);
-        jugador1.caeEn(cordobaNorte, null);
+        jugador1.caeEn(cordobaSur);
+        jugador1.caeEn(cordobaNorte);
         cordobaSur.edificarCasa(jugador1);
         cordobaSur.edificarCasa(jugador1);
-        jugador2.caeEn(cordobaSur, null);
+        jugador2.caeEn(cordobaSur);
         Assert.assertEquals(jugador2.capital(), 97500);
     }
 
@@ -261,8 +261,8 @@ public class BarrioDobleTest {
         BarrioDoble cordobaNorte = new BarrioDoble("Cordoba Norte", 20000, 1300, listaCasasN, listaHotelesN);
         cordobaSur.setHermano(cordobaNorte);
         cordobaNorte.setHermano(cordobaSur);
-        jugador.caeEn(cordobaSur, null);
-        jugador.caeEn(cordobaNorte, null);
+        jugador.caeEn(cordobaSur);
+        jugador.caeEn(cordobaNorte);
         cordobaNorte.edificarCasa(jugador);
         cordobaNorte.edificarHotel(jugador);
         Assert.assertEquals(jugador.capital(), 59800);
@@ -283,8 +283,8 @@ public class BarrioDobleTest {
         BarrioDoble cordobaNorte = new BarrioDoble("Cordoba Norte", 20000, 1300, listaCasasN, listaHotelesN);
         cordobaSur.setHermano(cordobaNorte);
         cordobaNorte.setHermano(cordobaSur);
-        jugador.caeEn(cordobaSur, null);
-        jugador.caeEn(cordobaNorte, null);
+        jugador.caeEn(cordobaSur);
+        jugador.caeEn(cordobaNorte);
         cordobaNorte.edificarCasa(jugador);
         cordobaNorte.edificarCasa(jugador);
         cordobaSur.edificarCasa(jugador);
@@ -309,14 +309,14 @@ public class BarrioDobleTest {
         BarrioDoble cordobaNorte = new BarrioDoble("Cordoba Norte", 20000, 1300, listaCasasN, listaHotelesN);
         cordobaSur.setHermano(cordobaNorte);
         cordobaNorte.setHermano(cordobaSur);
-        jugador.caeEn(cordobaSur, null);
-        jugador.caeEn(cordobaNorte, null);
+        jugador.caeEn(cordobaSur);
+        jugador.caeEn(cordobaNorte);
         cordobaNorte.edificarCasa(jugador);
         cordobaNorte.edificarCasa(jugador);
         cordobaSur.edificarCasa(jugador);
         cordobaSur.edificarCasa(jugador);
         cordobaNorte.edificarHotel(jugador);
-        jugadorAct.caeEn(cordobaNorte,null);
+        jugadorAct.caeEn(cordobaNorte);
         Assert.assertEquals(jugadorAct.capital(), 96500);
     }
 
@@ -333,8 +333,8 @@ public class BarrioDobleTest {
         BarrioDoble saltaNorte = new BarrioDoble("Salta Norte", 23000, 2000, listaCasasN, null);
         saltaSur.setHermano(saltaNorte);
         saltaNorte.setHermano(saltaSur);
-        jugador.caeEn(saltaSur, null);
-        jugador.caeEn(saltaNorte, null);
+        jugador.caeEn(saltaSur);
+        jugador.caeEn(saltaNorte);
         saltaNorte.edificarCasa(jugador);
         Assert.assertEquals(jugador.capital(), 49500);
     }
@@ -353,10 +353,10 @@ public class BarrioDobleTest {
         BarrioDoble saltaNorte = new BarrioDoble("Salta Norte", 23000, 2000, listaCasasN, null);
         saltaSur.setHermano(saltaNorte);
         saltaNorte.setHermano(saltaSur);
-        jugador1.caeEn(saltaSur, null);
-        jugador1.caeEn(saltaNorte, null);
+        jugador1.caeEn(saltaSur);
+        jugador1.caeEn(saltaNorte);
         saltaNorte.edificarCasa(jugador1);
-        jugador2.caeEn(saltaNorte, null);
+        jugador2.caeEn(saltaNorte);
         Assert.assertEquals(jugador2.capital(), 96750);
     }
 
@@ -374,11 +374,11 @@ public class BarrioDobleTest {
         BarrioDoble saltaNorte = new BarrioDoble("Salta Norte", 23000, 2000, listaCasasN, null);
         saltaSur.setHermano(saltaNorte);
         saltaNorte.setHermano(saltaSur);
-        jugador1.caeEn(saltaSur, null);
-        jugador1.caeEn(saltaNorte, null);
+        jugador1.caeEn(saltaSur);
+        jugador1.caeEn(saltaNorte);
         saltaNorte.edificarCasa(jugador1);
         saltaNorte.edificarCasa(jugador1);
-        jugador2.caeEn(saltaNorte, null);
+        jugador2.caeEn(saltaNorte);
         Assert.assertEquals(jugador2.capital(), 96150);
     }
 
@@ -397,8 +397,8 @@ public class BarrioDobleTest {
         BarrioDoble saltaNorte = new BarrioDoble("Salta Norte", 23000, 2000, listaCasasN, listaHotelesN);
         saltaSur.setHermano(saltaNorte);
         saltaNorte.setHermano(saltaSur);
-        jugador.caeEn(saltaSur, null);
-        jugador.caeEn(saltaNorte, null);
+        jugador.caeEn(saltaSur);
+        jugador.caeEn(saltaNorte);
         saltaNorte.edificarCasa(jugador);
         saltaNorte.edificarHotel(jugador);
         Assert.assertEquals(jugador.capital(), 49500);
@@ -419,8 +419,8 @@ public class BarrioDobleTest {
         BarrioDoble saltaNorte = new BarrioDoble("Salta Norte", 23000, 2000, listaCasasN, listaHotelesN);
         saltaSur.setHermano(saltaNorte);
         saltaNorte.setHermano(saltaSur);
-        jugador.caeEn(saltaSur, null);
-        jugador.caeEn(saltaNorte, null);
+        jugador.caeEn(saltaSur);
+        jugador.caeEn(saltaNorte);
         saltaNorte.edificarCasa(jugador);
         saltaNorte.edificarCasa(jugador);
         saltaSur.edificarCasa(jugador);
@@ -445,14 +445,14 @@ public class BarrioDobleTest {
         BarrioDoble saltaNorte = new BarrioDoble("Salta Norte", 23000, 2000, listaCasasN, listaHotelesN);
         saltaSur.setHermano(saltaNorte);
         saltaNorte.setHermano(saltaSur);
-        jugador.caeEn(saltaNorte, null);
-        jugador.caeEn(saltaSur, null);
+        jugador.caeEn(saltaNorte);
+        jugador.caeEn(saltaSur);
         saltaNorte.edificarCasa(jugador);
         saltaNorte.edificarCasa(jugador);
         saltaSur.edificarCasa(jugador);
         saltaSur.edificarCasa(jugador);
         saltaNorte.edificarHotel(jugador);
-        jugadorAct.caeEn(saltaNorte,null);
+        jugadorAct.caeEn(saltaNorte);
         Assert.assertEquals(jugadorAct.capital(), 94500);
     }
 
@@ -473,14 +473,14 @@ public class BarrioDobleTest {
         BarrioDoble cordobaNorte = new BarrioDoble("Cordoba Norte", 20000, 1300, listaCasasN, listaHotelesN);
         cordobaSur.setHermano(cordobaNorte);
         cordobaNorte.setHermano(cordobaSur);
-        jugador.caeEn(cordobaSur, null);
-        jugador.caeEn(cordobaNorte, null);
+        jugador.caeEn(cordobaSur);
+        jugador.caeEn(cordobaNorte);
         cordobaNorte.edificarCasa(jugador);
         jugador.venderAlBanco(cordobaNorte);
         Jugador jugador1 = new Jugador("Marcos");
-        jugador1.caeEn(cordobaNorte,null);
+        jugador1.caeEn(cordobaNorte);
         Jugador jugador2 = new Jugador("Loreto");
-        jugador2.caeEn(cordobaNorte,null);
+        jugador2.caeEn(cordobaNorte);
         Assert.assertEquals(100000 - 1300 ,jugador2.capital());
 
     }

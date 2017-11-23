@@ -1,7 +1,6 @@
 package Modelo.Casilleros;
 
 import Modelo.Jugador;
-import Modelo.Tablero;
 import Modelo.Edificacion;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
@@ -44,7 +43,7 @@ public class Barrio implements Casillero, Propiedades {
         alquilerActual = alquilerOriginal;
     }
 
-    public void accionAlCaer(Jugador jugador, Tablero tablero) {
+    public void accionAlCaer(Jugador jugador) {
 
         if (propietario == null){
             this.vender(jugador);

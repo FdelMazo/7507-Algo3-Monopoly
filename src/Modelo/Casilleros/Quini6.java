@@ -1,7 +1,6 @@
 package Modelo.Casilleros;
 
 import Modelo.Jugador;
-import Modelo.Tablero;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 
@@ -33,7 +32,7 @@ public class Quini6 implements Casillero {
         return 0;
     }
 
-    public void accionAlCaer( Jugador jugador, Tablero tablero){
+    public void accionAlCaer(Jugador jugador){
         this.sumarVisita(jugador);
         jugador.cobrar(this.calcularPrecio(jugador));
     }

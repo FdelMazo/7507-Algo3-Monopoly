@@ -17,7 +17,7 @@ public class PoliciaTest {
         jugador2.asignarCasillero(salida);
         Policia policia = (Policia) tablero.desplazarCasillero(jugador1, 15);
         Carcel carcel = (Carcel) tablero.desplazarCasillero(jugador2, 5);
-        jugador1.caeEn(policia, tablero);
+        jugador1.caeEn(policia);
         Assert.assertFalse(jugador1.actual() == policia);
         Assert.assertTrue(jugador1.actual() == carcel);
         Assert.assertFalse(jugador1.mover());

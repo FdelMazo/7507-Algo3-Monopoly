@@ -7,10 +7,10 @@ import javafx.scene.paint.Paint;
 
 public abstract class Dinamismo implements Casillero {
 
-    public void accionAlCaer(Jugador jugador, Tablero tablero){
+    public void accionAlCaer(Jugador jugador){
         int aMover = calcularDinamismo(jugador, jugador.sumaDados());
-        Casillero nuevoCasillero = tablero.desplazarCasillero(jugador, aMover);
-        jugador.caeEn(nuevoCasillero, tablero);
+        Casillero nuevoCasillero = Tablero.getInstancia().desplazarCasillero(jugador, aMover);
+        jugador.caeEn(nuevoCasillero);
     }
 
     public int calcularDinamismo(Jugador jugador, int numDado) {

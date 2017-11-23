@@ -30,10 +30,10 @@ public class Jugador {
         return propiedades.size();
     }
 
-    public void caeEn(Casillero casillero, Tablero tablero) {
+    public void caeEn(Casillero casillero) {
         if (dados == null) lanzarDados();
         asignarCasillero(casillero);
-        casilleroActual.accionAlCaer(this, tablero);
+        casilleroActual.accionAlCaer(this);
     }
 
     public Casillero actual() {
