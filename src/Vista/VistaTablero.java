@@ -29,22 +29,21 @@ public class VistaTablero {
 
         int x = 600; int x_rel = 0;
         int y = 350; int y_rel = 0;
+        Posicion manejadorDePosiciones = new Posicion(120,70);
+        manejadorDePosiciones.setInicial(600,350);
 
         for (Casillero casillero : tablero.casilleros()) {
 
             Rectangle rectangle = new Rectangle(120, 70);
-                Text text = new Text(casillero.nombre());
-                text.relocate(x+10, y+25);
+            Text text = new Text(casillero.nombre());
+            text.relocate(manejadorDePosiciones.getNextX()+10, manejadorDePosiciones.getNextY()+25);
 
             rectangle.setStroke(Color.BLACK);
             rectangle.setFill(casillero.color());
-            rectangle.relocate(x, y);
+            rectangle.relocate(manejadorDePosiciones.getNextX(), manejadorDePosiciones.getNextY());
 
             pane.getChildren().addAll(rectangle,text);
-            if (x_rel==0 & y_rel>0){y_rel-=1; y+=70;}
-            if (y_rel==5){x_rel-=1; x+=120;}
-            if (x_rel==5){y_rel+=1; y-=70;}
-            if (y_rel==0){x_rel+=1; x-=120;}
+            manejadorDePosiciones.actualizar();
         }
     }
 
