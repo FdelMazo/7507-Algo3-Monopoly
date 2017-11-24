@@ -2,6 +2,7 @@ package Modelo.Casilleros;
 
 import Modelo.Jugador;
 import Modelo.Municipio;
+import Modelo.Tablero;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 
@@ -20,23 +21,23 @@ public class Servicio implements Casillero, Propiedades{
 
     }
 
+    public int getValorMercado(){
+        return valor_mercado;
+    }
+
     public void accionAlCaer(Jugador jugador){
 
         Jugador propietario = municipio.devolverPropietario(this);
+
         if (propietario == null) {
-            jugador.solicitarDinero(valor);
+            jugador.comprar(valor,this);
             municipio.cambiar_propietario(jugador,this);
         }
         else if (propietario != jugador){
-            int dineroACobrar = calcularCobro(jugador.sumaDados());
-            jugador.solicitarDinero(dineroACobrar);
-            propietario.cobrar(dineroACobrar);
+            int cobro = municipio.devolverAlquilerServicio(this);
+            jugador.solicitarDinero(2 * cobro);
+            propietario.cobrar(2*cobro);
         }
-    }
-
-    public int calcularCobro(int numDado){
-        int cobro = municipio.devolverAlquilerServicio(this);
-        return numDado*cobro;
     }
 
     public void cederAlBanco( Jugador jugador){

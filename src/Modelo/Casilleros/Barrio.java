@@ -1,6 +1,8 @@
 package Modelo.Casilleros;
 
 import Modelo.Jugador;
+import Modelo.Municipio;
+import Modelo.Tablero;
 import Modelo.Edificacion;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
@@ -30,11 +32,15 @@ public class Barrio implements Casillero, Propiedades {
     }
 
     public boolean vender(Jugador jugador){
-        if(!jugador.solicitarDinero(valor_mercado)) return false;
+        if(!jugador.comprar(costo,this)) return false;
         cambiarPropietario(jugador);
         valor_mercado = costo * 85 /100;
         return true;
-        }
+    }
+
+    public int getValorMercado(){
+        return valor_mercado;
+    }
 
     public void cambiarPropietario(Jugador jugador){
         propietario = jugador;

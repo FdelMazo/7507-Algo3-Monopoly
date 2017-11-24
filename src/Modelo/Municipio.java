@@ -3,6 +3,7 @@ package Modelo;
 import Modelo.Casilleros.Propiedades;
 import javafx.util.Pair;
 
+import java.util.ArrayList;
 import java.util.Hashtable;
 
 public class Municipio {
@@ -11,6 +12,7 @@ public class Municipio {
     private Hashtable<String, Jugador> propietarios = new Hashtable<>();
     private Hashtable<String, String> hermano = new Hashtable<>();
     private Hashtable<String, Pair> alquiler_servicio = new Hashtable<>();
+    private Hashtable<String, ArrayList<Propiedades>> jugadorPropiedades = new Hashtable<>();
 
     private Municipio() {
     }
@@ -45,19 +47,34 @@ public class Municipio {
     }
 
     public void cambiar_propietario(Jugador jugador, Propiedades propiedad) {
-        propietarios.put(propiedad.nombre(), jugador);
 
+        //Si ya tenía propietario se la saca al propietario viejo
+        if (propietarios.containsKey(propiedad.nombre()) && propietarios.get(propiedad.nombre()) != null) {
+
+            Jugador exDuenio = propietarios.get(propiedad.nombre());
+            jugadorPropiedades.get(exDuenio.getNombre()).remove(propiedad);
+
+        }
+        propietarios.put(propiedad.nombre(), jugador);
+        //Agrego la propiedad al nuevo dueño
+        if (jugadorPropiedades.containsKey(jugador.getNombre())) {
+            jugadorPropiedades.get(jugador.getNombre()).add(propiedad);
+        } else {
+            ArrayList<Propiedades> propiedades = new ArrayList<>();
+            propiedades.add(propiedad);
+            jugadorPropiedades.put(jugador.getNombre(), propiedades);
+        }
     }
 
     public int devolverAlquilerServicio(Propiedades propiedad) {
         if (propietarios.get(propiedad.nombre()) == propietarios.get(hermano.get(propiedad.nombre()))) {
             return (int) (alquiler_servicio.get(propiedad.nombre()).getValue());
         }
-    return  (int) (alquiler_servicio.get(propiedad.nombre()).getKey());
+        return (int) (alquiler_servicio.get(propiedad.nombre()).getKey());
     }
 
     public void devolverAlquilerBarrio(Propiedades propiedad) {
-        if (hermano.containsKey(propiedad)) {
+        if (hermano.containsKey(propiedad.nombre())) {
             if (propietarios.get(propiedad.nombre()) == propietarios.get(hermano.get(propiedad.nombre()))) {
                 return;
             }
@@ -70,26 +87,37 @@ public class Municipio {
         primeraInstancia = null;
     }
 
-    public boolean tienePropietario(Propiedades propiedad){
-        if (this.propietarios.containsKey(propiedad.nombre()) && this.propietarios.get(propiedad.nombre()) != null){return true;}
+    public boolean tienePropietario(Propiedades propiedad) {
+        if (this.propietarios.containsKey(propiedad.nombre()) && this.propietarios.get(propiedad.nombre()) != null) {
+            return true;
+        }
         return false;
     }
 
-    public Jugador devolverPropietario(Propiedades propiedad){
-        if(this.tienePropietario(propiedad)){
+    public Jugador devolverPropietario(Propiedades propiedad) {
+        if (this.tienePropietario(propiedad)) {
             return propietarios.get(propiedad.nombre());
         }
         return null;
     }
 
+    public ArrayList<Propiedades> devolverPropiedades(Jugador jugador) {
+        if (jugadorPropiedades.containsKey(jugador.getNombre())) {
+            return jugadorPropiedades.get(jugador.getNombre());
+        }
+        return null;
+    }
 
+    public void cederPropiedadAlBanco(Jugador duenio, Propiedades propiedad) {
 
-
-
-
-
-
-
-
-
+        propietarios.remove(propiedad.nombre());
+        jugadorPropiedades.get(duenio.getNombre()).remove(propiedad);
+    }
 }
+
+
+
+
+
+
+
