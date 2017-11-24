@@ -43,17 +43,14 @@ public class ContenedorPrincipal extends BorderPane{
         BotonVender venderHandler = new BotonVender(jugador);
         botonVender.setOnAction(venderHandler);
 
+
         Button botonMute = new Button();
-        botonMute.setText("Mute");
+        botonMute.setText("Frenar musica");
         BotonMudo muteHandler = new BotonMudo();
         botonMute.setOnAction(muteHandler);
 
-        Button botonSonido = new Button();
-        botonSonido.setText("Frenar toda la musica");
-        BotonFrenar sonidoHandler = new BotonFrenar();
-        botonSonido.setOnAction(sonidoHandler);
 
-        VBox contenedorVertical = new VBox(botonComprar,botonVender,botonTirarDados, botonMute, botonSonido);
+        VBox contenedorVertical = new VBox(botonComprar,botonVender,botonTirarDados, botonMute);
         contenedorVertical.setSpacing(15);
         contenedorVertical.setPadding(new Insets(20));
 

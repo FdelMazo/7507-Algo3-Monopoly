@@ -9,8 +9,8 @@ public class BotonMudo implements EventHandler<ActionEvent>{
 
     @Override
     public void handle(ActionEvent event) {
+        Sistema.frenarSonidos();
         Sistema.mutear();
-
     }
 }
 

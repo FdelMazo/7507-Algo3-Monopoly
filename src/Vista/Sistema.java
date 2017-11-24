@@ -56,7 +56,6 @@ public class Sistema {
 
     public static void reproducir(Class c, String archivo) {
         if (mudo==true) return;
-        if (sonidos.size()>10) frenarSonidos();
         Media media = new Media(c.getResource("/Recursos/Sonidos/"+archivo).toExternalForm());
         MediaPlayer mediaPlayer = new MediaPlayer(media);
         mediaPlayer.play();
@@ -67,5 +66,6 @@ public class Sistema {
         for (MediaPlayer mp : sonidos) {
             mp.stop();
         }
+        sonidos.clear();
     }
 }
