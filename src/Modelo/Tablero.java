@@ -1,13 +1,8 @@
 package Modelo;
 
 import Modelo.Casilleros.*;
-
 import java.util.ArrayList;
 import java.util.Arrays;
-
-
-
-
 
 
 public class Tablero {

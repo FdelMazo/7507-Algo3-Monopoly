@@ -109,7 +109,7 @@ public class Municipio {
     }
 
     public void cederPropiedadAlBanco(Jugador duenio, Propiedades propiedad) {
-
+        propiedad.cederAlBanco(duenio);
         propietarios.remove(propiedad.nombre());
         jugadorPropiedades.get(duenio.getNombre()).remove(propiedad);
     }

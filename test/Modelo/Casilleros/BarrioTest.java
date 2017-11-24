@@ -26,7 +26,7 @@ public class BarrioTest {
     @Test
     public void testJugadorConFondosInsuficientesNoPuedeComprarPropiedad(){
 
-        Jugador jugador = new Jugador("Pablo");
+        Jugador jugador = new Jugador("Pabloo");
         List<Edificacion> listaCasas= new ArrayList();
         listaCasas.add(new Edificacion(5000, 3000));
         listaCasas.add(new Edificacion(5000, 3500));

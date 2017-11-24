@@ -55,4 +55,10 @@ public class Servicio implements Casillero, Propiedades{
         return nombre;
     }
 
-    public Paint color() { return Color.RED;  }}
+    public Paint color() { return Color.RED;  }
+
+    public int calcularCobro(int numDado){
+        int cobro = municipio.devolverAlquilerServicio(this);
+        return numDado*cobro;
+    }
+}

@@ -2,7 +2,6 @@ package Modelo;
 import Modelo.Casilleros.Propiedades;
 import Modelo.Casilleros.Casillero;
 
-
 import java.util.ArrayList;
 
 
@@ -12,6 +11,7 @@ public class Jugador {
     private Casillero casilleroActual;
     private String nombre;
     private Estado estado;
+    private Dados dados;
     Municipio municipio = Municipio.getInstance();
 
     public Jugador(String nombreJugador) {
@@ -19,7 +19,6 @@ public class Jugador {
         casilleroActual = null;
         nombre = nombreJugador;
         estado = new Libre();
-        //Consola.println("El jugador "+nombreJugador+"ha ingresado a la partida");
     }
 
     public void asignarCasillero(Casillero casillero) {
@@ -32,7 +31,8 @@ public class Jugador {
         return propiedades.size();
     }
 
-    public void caeEn(Casillero casillero, int numDado, Tablero tablero) {
+    public void caeEn(Casillero casillero) {
+        if (dados == null) lanzarDados();
         asignarCasillero(casillero);
         casilleroActual.accionAlCaer(this);
     }
@@ -51,7 +51,7 @@ public class Jugador {
 
     public boolean comprar(int monto,Propiedades propiedad){
 
-        if (this.capital < monto){return false;}
+        if (this.capital < monto) return false;
         this.agregarPropiedad(propiedad);
         this.solicitarDinero(monto);
         return true;
@@ -113,5 +113,17 @@ public class Jugador {
 
     public String getNombre() {
         return nombre;
+    }
+
+    public int lanzarDados(){
+        dados = new Dados();
+        return sumaDados();
+    }
+    public boolean doble(){
+        return dados.doble();
+    }
+
+    public int sumaDados() {
+        return dados.suma();
     }
 }

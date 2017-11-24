@@ -462,15 +462,11 @@ public class BarrioDobleTest {
         List<Edificacion> listaCasasS= new ArrayList<>();
         listaCasasS.add(new Edificacion(2000, 1500));
         listaCasasS.add(new Edificacion(2000, 2500));
-        List<Edificacion> listaHotelesS = new ArrayList<>();
-        listaHotelesS.add(new Edificacion(3000, 3000));
         List<Edificacion> listaCasasN= new ArrayList<>();
         listaCasasN.add(new Edificacion(2200, 1800));
         listaCasasN.add(new Edificacion(2200, 2900));
-        List<Edificacion> listaHotelesN = new ArrayList<>();
-        listaHotelesN.add(new Edificacion(3500, 3500));
-        BarrioDoble cordobaSur = new BarrioDoble("Cordoba Aires Sur", 18000, 1000, listaCasasS, listaHotelesS);
-        BarrioDoble cordobaNorte = new BarrioDoble("Cordoba Norte", 20000, 1300, listaCasasN, listaHotelesN);
+        BarrioDoble cordobaSur = new BarrioDoble("Cordoba Aires Sur", 18000, 1000, listaCasasS, null);
+        BarrioDoble cordobaNorte = new BarrioDoble("Cordoba Norte", 20000, 1300, listaCasasN, null);
         cordobaSur.setHermano(cordobaNorte);
         cordobaNorte.setHermano(cordobaSur);
         jugador.caeEn(cordobaSur);
