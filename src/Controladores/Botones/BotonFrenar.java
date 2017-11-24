@@ -1,16 +1,14 @@
-package Controladores;
+package Controladores.Botones;
 
-import Modelo.Jugador;
 import Vista.Sistema;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
-public class BotonSonido implements EventHandler<ActionEvent>{
+public class BotonFrenar implements EventHandler<ActionEvent>{
 
     @Override
     public void handle(ActionEvent event) {
-        Sistema.mutear();
-
+        Sistema.frenarSonidos();
     }
 }
 

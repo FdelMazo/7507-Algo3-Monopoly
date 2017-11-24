@@ -1,4 +1,4 @@
-package Controladores;
+package Controladores.Botones;
 
 import Modelo.Jugador;
 import Vista.Sistema;

@@ -1,11 +1,8 @@
 package Vista;
 
-import Controladores.BotonSonido;
+import Controladores.Botones.*;
 import Modelo.Jugador;
 import Modelo.Tablero;
-import Controladores.BotonComprar;
-import Controladores.BotonTirarDados;
-import Controladores.BotonVender;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.canvas.Canvas;
@@ -46,12 +43,17 @@ public class ContenedorPrincipal extends BorderPane{
         BotonVender venderHandler = new BotonVender(jugador);
         botonVender.setOnAction(venderHandler);
 
+        Button botonMute = new Button();
+        botonMute.setText("Mute");
+        BotonMudo muteHandler = new BotonMudo();
+        botonMute.setOnAction(muteHandler);
+
         Button botonSonido = new Button();
-        botonSonido.setText("Mute");
-        BotonSonido sonidoHandler = new BotonSonido();
+        botonSonido.setText("Frenar toda la musica");
+        BotonFrenar sonidoHandler = new BotonFrenar();
         botonSonido.setOnAction(sonidoHandler);
 
-        VBox contenedorVertical = new VBox(botonComprar,botonVender,botonTirarDados, botonSonido);
+        VBox contenedorVertical = new VBox(botonComprar,botonVender,botonTirarDados, botonMute, botonSonido);
         contenedorVertical.setSpacing(15);
         contenedorVertical.setPadding(new Insets(20));
 

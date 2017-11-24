@@ -16,7 +16,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
-import Controladores.BotonEntrarEventHandler;
+import Controladores.Botones.BotonEntrarEventHandler;
 
 public class ContenedorEntrada extends VBox {
 
@@ -31,7 +31,7 @@ public class ContenedorEntrada extends VBox {
         this.setAlignment(Pos.CENTER);
         this.setSpacing(20);
         this.setPadding(new Insets(25));
-        Image imagen = new Image("file:src/vista/Imagenes/mrmonopoly.jpg");
+        Image imagen = new Image("Recursos/Imagenes/mrmonopoly.jpg");
         BackgroundImage imagenDeFondo = new BackgroundImage(imagen, BackgroundRepeat.NO_REPEAT,BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, BackgroundSize.DEFAULT);
         this.setBackground(new Background(imagenDeFondo));
 

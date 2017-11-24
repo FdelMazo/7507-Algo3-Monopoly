@@ -8,9 +8,14 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
+import java.util.ArrayList;
+
+import static javafx.scene.input.KeyCode.R;
+
 public class Sistema {
     static VBox consola = null;
     static boolean mudo = false;
+    static ArrayList<MediaPlayer> sonidos = new ArrayList<MediaPlayer>();
 
     public Sistema() {
         Text text = new Text(">>> Consola");
@@ -51,8 +56,16 @@ public class Sistema {
 
     public static void reproducir(Class c, String archivo) {
         if (mudo==true) return;
-        Media musicaInicio = new Media(c.getResource(archivo).toExternalForm());
-        MediaPlayer mediaPlayer = new MediaPlayer(musicaInicio);
+        if (sonidos.size()>10) frenarSonidos();
+        Media media = new Media(c.getResource("/Recursos/Sonidos/"+archivo).toExternalForm());
+        MediaPlayer mediaPlayer = new MediaPlayer(media);
         mediaPlayer.play();
+        sonidos.add(mediaPlayer);
+    }
+
+    public static void frenarSonidos() {
+        for (MediaPlayer mp : sonidos) {
+            mp.stop();
+        }
     }
 }
