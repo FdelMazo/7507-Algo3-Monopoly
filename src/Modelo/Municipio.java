@@ -1,5 +1,6 @@
 package Modelo;
 
+import Modelo.Casilleros.Barrio;
 import Modelo.Casilleros.Propiedades;
 import javafx.util.Pair;
 
@@ -13,6 +14,7 @@ public class Municipio {
     private Hashtable<String, String> hermano = new Hashtable<>();
     private Hashtable<String, Pair> alquiler_servicio = new Hashtable<>();
     private Hashtable<String, ArrayList<Propiedades>> jugadorPropiedades = new Hashtable<>();
+    private Hashtable<String,ArrayList<Integer>> barrios_edificaciones = new Hashtable<>();
 
     private Municipio() {
     }
@@ -26,6 +28,29 @@ public class Municipio {
     }
 
     public void cargarDatos() {
+
+        ArrayList<Integer> neuquen = new ArrayList<>();
+        neuquen.add(4800);
+        neuquen.add(3800);
+        ArrayList<Integer> santaFe = new ArrayList<>();
+        neuquen.add(4500);
+        neuquen.add(2500);
+        ArrayList<Integer> tucuman = new ArrayList<>();
+        neuquen.add(3500);
+        neuquen.add(1500);
+
+
+
+
+        barrios_edificaciones.put("Neuquen", neuquen);
+        barrios_edificaciones.put("Santa Fe", santaFe);
+        barrios_edificaciones.put("Tucuman", tucuman);
+//        barrios_edificaciones.put("Cordoba Norte", new Pair(450, 800));
+//        barrios_edificaciones.put("Cordoba Sur", new Pair(450, 800));
+//        barrios_edificaciones.put("Salta Sur", new Pair(450, 800));
+//        barrios_edificaciones.put("Salta Norte", new Pair(450, 800));
+//        barrios_edificaciones.put("Bs As Zona Norte", new Pair(450, 800));
+//        barrios_edificaciones.put("Bs As Zona Sur", new Pair(450, 800));
 
         hermano.put("Bs As Zona Sur", "Bs As Zona Norte");
         hermano.put("Bs As Zona Norte", "Bs As Zona Sur");
@@ -43,6 +68,10 @@ public class Municipio {
         alquiler_servicio.put("Aysa", new Pair(300, 500));
         alquiler_servicio.put("Edesur", new Pair(500, 1000));
 
+        alquiler_servicio.put("Tren", new Pair(450, 800));
+        alquiler_servicio.put("Subte", new Pair(600, 1100));
+        alquiler_servicio.put("Aysa", new Pair(300, 500));
+        alquiler_servicio.put("Edesur", new Pair(500, 1000));
 
     }
 
