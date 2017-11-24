@@ -17,8 +17,8 @@ public class Barrio implements Casillero, Propiedades {
     public List<Edificacion> listaCasas;
     public int alquilerActual;
     public int alquilerOriginal;
-    public int casasTotales;
     public int valor_mercado;
+    Municipio municipio = Municipio.getInstance();
 
     public Barrio(String unNombre, int valor_propiedad, int elAlquilerOriginal, List edificacionesCasas){
         nombre = unNombre;
@@ -27,7 +27,6 @@ public class Barrio implements Casillero, Propiedades {
         listaCasas = edificacionesCasas;
         alquilerActual = elAlquilerOriginal;
         alquilerOriginal = elAlquilerOriginal;
-        casasTotales = 0;
         valor_mercado = costo;
     }
 
@@ -78,12 +77,15 @@ public class Barrio implements Casillero, Propiedades {
     }
 
     public boolean edificarCasa(Jugador jugador) {
+
         if (! puedeEdificarCasa(jugador)) return false;
+        int casasTotales = municipio.edificacionesExistentes(this);
         if (! jugador.solicitarDinero(listaCasas.get(casasTotales).getPrecio())) return false;
         alquilerActual = listaCasas.get(casasTotales).getAlquiler();
         listaCasas.get(casasTotales).construir();
-        casasTotales += 1;
+        municipio.agregarEdificacion(this);
         return true;
+
     }
 
     public void cederAlBanco(Jugador jugador){

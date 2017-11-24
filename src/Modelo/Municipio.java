@@ -6,6 +6,7 @@ import javafx.util.Pair;
 
 import java.util.ArrayList;
 import java.util.Hashtable;
+import java.util.List;
 
 public class Municipio {
 
@@ -15,6 +16,7 @@ public class Municipio {
     private Hashtable<String, Pair> alquiler_servicio = new Hashtable<>();
     private Hashtable<String, ArrayList<Propiedades>> jugadorPropiedades = new Hashtable<>();
     private Hashtable<String,ArrayList<Integer>> barrios_edificaciones = new Hashtable<>();
+    private Hashtable<String,Integer> cant_edificaciones = new Hashtable<>();
 
     private Municipio() {
     }
@@ -29,28 +31,9 @@ public class Municipio {
 
     public void cargarDatos() {
 
-        ArrayList<Integer> neuquen = new ArrayList<>();
-        neuquen.add(4800);
-        neuquen.add(3800);
-        ArrayList<Integer> santaFe = new ArrayList<>();
-        neuquen.add(4500);
-        neuquen.add(2500);
-        ArrayList<Integer> tucuman = new ArrayList<>();
-        neuquen.add(3500);
-        neuquen.add(1500);
 
 
 
-
-        barrios_edificaciones.put("Neuquen", neuquen);
-        barrios_edificaciones.put("Santa Fe", santaFe);
-        barrios_edificaciones.put("Tucuman", tucuman);
-//        barrios_edificaciones.put("Cordoba Norte", new Pair(450, 800));
-//        barrios_edificaciones.put("Cordoba Sur", new Pair(450, 800));
-//        barrios_edificaciones.put("Salta Sur", new Pair(450, 800));
-//        barrios_edificaciones.put("Salta Norte", new Pair(450, 800));
-//        barrios_edificaciones.put("Bs As Zona Norte", new Pair(450, 800));
-//        barrios_edificaciones.put("Bs As Zona Sur", new Pair(450, 800));
 
         hermano.put("Bs As Zona Sur", "Bs As Zona Norte");
         hermano.put("Bs As Zona Norte", "Bs As Zona Sur");
@@ -62,11 +45,6 @@ public class Municipio {
         hermano.put("Subte", "Tren");
         hermano.put("Aysa", "Edesur");
         hermano.put("Edesur", "Aysa");
-
-        alquiler_servicio.put("Tren", new Pair(450, 800));
-        alquiler_servicio.put("Subte", new Pair(600, 1100));
-        alquiler_servicio.put("Aysa", new Pair(300, 500));
-        alquiler_servicio.put("Edesur", new Pair(500, 1000));
 
         alquiler_servicio.put("Tren", new Pair(450, 800));
         alquiler_servicio.put("Subte", new Pair(600, 1100));
@@ -141,6 +119,40 @@ public class Municipio {
         propiedad.cederAlBanco(duenio);
         propietarios.remove(propiedad.nombre());
         jugadorPropiedades.get(duenio.getNombre()).remove(propiedad);
+    }
+
+    public void agregarEdificacion(Propiedades propiedad){
+        if(barrios_edificaciones.containsKey(propiedad.nombre())){
+            int valor = cant_edificaciones.get(propiedad.nombre());
+            cant_edificaciones.put(propiedad.nombre(),valor + 1);
+            return;
+        }
+        cant_edificaciones.put(propiedad.nombre(),1);
+    }
+
+    public int edificacionesExistentes(Propiedades propiedad){
+        if(barrios_edificaciones.containsKey(propiedad.nombre())){ return cant_edificaciones.get(propiedad.nombre());}
+        return 0;
+    }
+
+    public boolean poseeLosDosHermanos( Propiedades propiedad){
+
+        if (propietarios.containsKey(propiedad.nombre()) && propietarios.containsKey(hermano.get(propiedad.nombre()))){
+            return propietarios.get(propiedad.nombre()) == propietarios.get(hermano.get(propiedad.nombre()));
+        }
+        return false;
+    }
+
+    public boolean puedeEdificarHotel(Propiedades propiedad){
+
+        if(hermano.containsKey(propiedad.nombre())){
+            if(poseeLosDosHermanos(propiedad) && cant_edificaciones.containsKey(propiedad.nombre()) && cant_edificaciones.containsKey(hermano.get(propiedad.nombre()))){
+                if(propietarios.get(propiedad.nombre()) == propietarios.get(hermano.get(propiedad.nombre()))) {
+                    return cant_edificaciones.get(propiedad.nombre()) == 2 && cant_edificaciones.get(hermano.get(propiedad.nombre())) >= 2;
+                }
+            }
+        }
+        return false;
     }
 }
 

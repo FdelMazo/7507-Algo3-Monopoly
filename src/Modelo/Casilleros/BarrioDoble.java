@@ -7,7 +7,6 @@ import java.util.List;
 
 public class BarrioDoble extends Barrio{
 
-    BarrioDoble hermano;
     List<Edificacion> listaHoteles;
 
     public BarrioDoble(String unNombre, int valor_propiedad, int elAlquilerOriginal, List edificacionesCasas, List edificacionesHoteles) {
@@ -15,12 +14,8 @@ public class BarrioDoble extends Barrio{
         listaHoteles = edificacionesHoteles;
     }
 
-    public void setHermano(BarrioDoble barrioHermano){
-        hermano = barrioHermano;
-    }
-
     public boolean duenioDeAmbosHermanos(){
-        return propietario.posee(hermano.nombre());
+        return municipio.poseeLosDosHermanos(this);
     }
 
     public boolean puedeEdificarCasa(Jugador jugador) {
@@ -28,8 +23,14 @@ public class BarrioDoble extends Barrio{
     }
 
     public boolean puedeEdificarHotel(Jugador jugador){
-        return (todasLasCasasFueronConstruidas() && hermano.todasLasCasasFueronConstruidas()) && duenioDeAmbosHermanos();
 
+        boolean resultado =  municipio.puedeEdificarHotel(this);
+        if (resultado){
+                if (municipio.devolverPropietario(this)==jugador){
+                    return true;
+                }
+        }
+        return false;
     }
 
     public boolean edificarHotel(Jugador jugador){
