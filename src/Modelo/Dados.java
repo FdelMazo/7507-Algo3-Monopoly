@@ -16,4 +16,9 @@ public class Dados {
     }
 
     public boolean doble() {return dado1==dado2; }
+
+    public void dadosDobles(){
+        dado1 = 1;
+        dado2 = 1;
+    }
 }

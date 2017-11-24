@@ -119,6 +119,12 @@ public class Jugador {
         dados = new Dados();
         return sumaDados();
     }
+
+    public int lanzarDadosdobles(){
+        dados = new Dados();
+        dados.dadosDobles();
+        return sumaDados();
+    }
     public boolean doble(){
         return dados.doble();
     }

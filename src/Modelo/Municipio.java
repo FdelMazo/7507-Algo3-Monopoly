@@ -35,8 +35,8 @@ public class Municipio {
 
 
 
-        hermano.put("Bs As Zona Sur", "Bs As Zona Norte");
-        hermano.put("Bs As Zona Norte", "Bs As Zona Sur");
+        hermano.put("Buenos Aires Sur", "Buenos Aires Norte");
+        hermano.put("Buenos Aires Norte", "Buenos Aires Sur");
         hermano.put("Salta Norte", "Salta Sur");
         hermano.put("Salta Sur", "Salta Norte");
         hermano.put("Cordoba Norte", "Cordoba Sur");

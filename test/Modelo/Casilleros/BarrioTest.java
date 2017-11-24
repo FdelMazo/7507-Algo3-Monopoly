@@ -104,54 +104,54 @@ public class BarrioTest {
     }
 
     //ENTREGA 2: TEST 10 REQUERIDO (Buenos Aires Sur)
-//    @Test
-//    public void testBarrioBuenosAiresSurJugadorDebePagarAlquilerPierde3000(){
-//
-//        Jugador jugador1 = new Jugador("Lance");
-//        Jugador jugador2 = new Jugador("Hunk");
-//        List<Edificacion> listaCasasS= new ArrayList();
-//        listaCasasS.add(new Edificacion(5000, 3000));
-//        listaCasasS.add(new Edificacion(5000, 3500));
-//        List<Edificacion> listaHotelesS = new ArrayList();
-//        listaHotelesS.add(new Edificacion(8000, 5000));
-//        List<Edificacion> listaCasasN= new ArrayList();
-//        listaCasasN.add(new Edificacion(5500, 3500));
-//        listaCasasN.add(new Edificacion(5500, 4000));
-//        List<Edificacion> listaHotelesN = new ArrayList();
-//        listaHotelesN.add(new Edificacion(9000, 6000));
-//        BarrioDoble buenosAiresSur = new BarrioDoble("Buenos Aires Sur", 20000, 2000, listaCasasS, listaHotelesS);
-//        BarrioDoble buenosAiresNorte = new BarrioDoble("Buenos Aires Norte", 25000, 2500, listaCasasN, listaHotelesN);
-//        jugador1.caeEn(buenosAiresSur);
-//        jugador1.caeEn(buenosAiresNorte);
-//        buenosAiresSur.edificarCasa(jugador1);
-//        jugador2.caeEn(buenosAiresSur);
-//        Assert.assertEquals(jugador2.capital(), 100000 - 3000);
-//    }
+    @Test
+    public void testBarrioBuenosAiresSurJugadorDebePagarAlquilerPierde3000(){
+
+        Jugador jugador1 = new Jugador("Lance");
+        Jugador jugador2 = new Jugador("Hunk");
+        List<Edificacion> listaCasasS= new ArrayList();
+        listaCasasS.add(new Edificacion(5000, 3000));
+        listaCasasS.add(new Edificacion(5000, 3500));
+        List<Edificacion> listaHotelesS = new ArrayList();
+        listaHotelesS.add(new Edificacion(8000, 5000));
+        List<Edificacion> listaCasasN= new ArrayList();
+        listaCasasN.add(new Edificacion(5500, 3500));
+        listaCasasN.add(new Edificacion(5500, 4000));
+        List<Edificacion> listaHotelesN = new ArrayList();
+        listaHotelesN.add(new Edificacion(9000, 6000));
+        BarrioDoble buenosAiresSur = new BarrioDoble("Buenos Aires Sur", 20000, 2000, listaCasasS, listaHotelesS);
+        BarrioDoble buenosAiresNorte = new BarrioDoble("Buenos Aires Norte", 25000, 2500, listaCasasN, listaHotelesN);
+        jugador1.caeEn(buenosAiresSur);
+        jugador1.caeEn(buenosAiresNorte);
+        buenosAiresSur.edificarCasa(jugador1);
+        jugador2.caeEn(buenosAiresSur);
+        Assert.assertEquals(jugador2.capital(), 100000 - 3000);
+    }
 
 //    //ENTREGA 2: TEST 10 REQUERIDO (Buenos Aires Norte)
-//    @Test
-//    public void testBarrioBuenosAiresNorteJugadorDebePagarAlquilerPierde3500(){
-//        Tablero tablero = Tablero.getInstancia();
-//        Jugador jugador1 = new Jugador("Lance");
-//        Jugador jugador2 = new Jugador("Hunk");
-//        List<Edificacion> listaCasasS= new ArrayList();
-//        listaCasasS.add(new Edificacion(5000, 3000));
-//        listaCasasS.add(new Edificacion(5000, 3500));
-//        List<Edificacion> listaHotelesS = new ArrayList();
-//        listaHotelesS.add(new Edificacion(8000, 5000));
-//        List<Edificacion> listaCasasN= new ArrayList();
-//        listaCasasN.add(new Edificacion(5500, 3500));
-//        listaCasasN.add(new Edificacion(5500, 4000));
-//        List<Edificacion> listaHotelesN = new ArrayList();
-//        listaHotelesN.add(new Edificacion(9000, 6000));
-//        BarrioDoble buenosAiresSur = new BarrioDoble("Buenos Aires Sur", 20000, 2000, listaCasasS, listaHotelesS);
-//        BarrioDoble buenosAiresNorte = new BarrioDoble("Buenos Aires Norte", 25000, 2500, listaCasasN, listaHotelesN);
-//        jugador1.caeEn(buenosAiresSur);
-//        jugador1.caeEn(buenosAiresNorte);
-//        buenosAiresNorte.edificarCasa(jugador1);
-//        jugador2.caeEn(buenosAiresNorte);
-//        Assert.assertEquals(jugador2.capital(), 100000 - 3500);
-   // }
+    @Test
+    public void testBarrioBuenosAiresNorteJugadorDebePagarAlquilerPierde3500(){
+        Tablero tablero = Tablero.getInstancia();
+        Jugador jugador1 = new Jugador("Lance");
+        Jugador jugador2 = new Jugador("Hunk");
+        List<Edificacion> listaCasasS= new ArrayList();
+        listaCasasS.add(new Edificacion(5000, 3000));
+        listaCasasS.add(new Edificacion(5000, 3500));
+        List<Edificacion> listaHotelesS = new ArrayList();
+        listaHotelesS.add(new Edificacion(8000, 5000));
+        List<Edificacion> listaCasasN= new ArrayList();
+        listaCasasN.add(new Edificacion(5500, 3500));
+        listaCasasN.add(new Edificacion(5500, 4000));
+        List<Edificacion> listaHotelesN = new ArrayList();
+        listaHotelesN.add(new Edificacion(9000, 6000));
+        BarrioDoble buenosAiresSur = new BarrioDoble("Buenos Aires Sur", 20000, 2000, listaCasasS, listaHotelesS);
+        BarrioDoble buenosAiresNorte = new BarrioDoble("Buenos Aires Norte", 25000, 2500, listaCasasN, listaHotelesN);
+        jugador1.caeEn(buenosAiresSur);
+        jugador1.caeEn(buenosAiresNorte);
+        buenosAiresNorte.edificarCasa(jugador1);
+        jugador2.caeEn(buenosAiresNorte);
+        Assert.assertEquals(jugador2.capital(), 100000 - 3500);
+     }
 
     //ENTREGA 2: TEST 10 REQUERIDO (Neuquen)
     @Test
