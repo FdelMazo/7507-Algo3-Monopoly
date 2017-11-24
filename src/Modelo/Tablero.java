@@ -7,7 +7,7 @@ import java.util.Arrays;
 
 public class Tablero {
     //Singleton!
-    private ArrayList<Casillero> casilleros;
+    private ArrayList<Casillero> casilleros=new ArrayList<>();
 
     private Tablero(){
         casilleros = new ArrayList<>();

@@ -1,7 +1,5 @@
 package Vista;
 
-import jdk.internal.util.xml.impl.Pair;
-
 public class Posicion {
     int desplazamientoX; int desplazamientoY;
     int x_rel = 0; int y_rel = 0;
