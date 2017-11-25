@@ -1,6 +1,5 @@
 package Modelo;
 
-import Modelo.Casilleros.Barrio;
 import Modelo.Casilleros.Propiedades;
 import javafx.util.Pair;
 
@@ -14,7 +13,6 @@ public class Municipio {
     private Hashtable<String, String> hermano = new Hashtable<>();
     private Hashtable<String, Pair> alquiler_servicio = new Hashtable<>();
     private Hashtable<String, ArrayList<Propiedades>> jugadorPropiedades = new Hashtable<>();
-    private Hashtable<String,Integer> barrios_edificaciones = new Hashtable<>();
     private Hashtable<String,Integer> cant_edificaciones = new Hashtable<>();
 
     private Municipio() {

@@ -14,17 +14,36 @@ public class DadosTest {
 
     @Test
     public void testUnJugadorSacaElMismoValorEnLosDosDados(){
-        int cont = 2;
+        int cont = 0;
         Tablero tablero = Tablero.getInstancia();
         Jugador jugador = new Jugador("Joe");
         Casillero nuevo = tablero.desplazarCasillero(jugador, jugador.lanzarDadosdobles());
         jugador.caeEn(nuevo);
         if (jugador.doble()){
-            cont = cont + 2;
+            cont = cont + 1;
             Casillero nuevo2 = tablero.desplazarCasillero(jugador, jugador.lanzarDadosdobles());
             jugador.caeEn(nuevo);
         }
-        Assert.assertEquals(4,cont);
+        Assert.assertEquals(1,cont);
+    }
+    @Test
+    public void testUnJugadorSacaElMismoValorDosVecesEnLosDosDados(){
+        int cont = 0;
+        Tablero tablero = Tablero.getInstancia();
+        Jugador jugador = new Jugador("Joe");
+        Casillero nuevo = tablero.desplazarCasillero(jugador, jugador.lanzarDadosdobles());
+        jugador.caeEn(nuevo);
+        if (jugador.doble()) {
+            cont = cont + 1;
+            Casillero nuevo2 = tablero.desplazarCasillero(jugador, jugador.lanzarDadosdobles());
+            jugador.caeEn(nuevo);
+        }
+        if (jugador.doble()){
+                cont = cont + 1;
+                Casillero nuevo2 = tablero.desplazarCasillero(jugador, jugador.lanzarDadosdobles());
+                jugador.caeEn(nuevo);
+        }
+        Assert.assertEquals(2,cont);
     }
 
 }
