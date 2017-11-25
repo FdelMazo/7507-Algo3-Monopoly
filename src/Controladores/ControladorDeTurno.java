@@ -3,7 +3,6 @@ package Controladores;
 import Modelo.Jugador;
 import Modelo.Tablero;
 import Modelo.Turno;
-import Vista.Sistema;
 
 import java.util.ArrayList;
 import java.util.Random;

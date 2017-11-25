@@ -1,6 +1,6 @@
 package Controladores.Botones;
 
-import Vista.Sistema;
+import Controladores.Sistema;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;

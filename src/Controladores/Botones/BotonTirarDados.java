@@ -2,7 +2,7 @@ package Controladores.Botones;
 
 import Controladores.ControladorDeTurno;
 import Modelo.Dados;
-import Vista.Sistema;
+import Controladores.Sistema;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 

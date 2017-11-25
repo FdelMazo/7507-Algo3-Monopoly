@@ -1,7 +1,6 @@
 package Controladores.Botones;
 
-import Modelo.Jugador;
-import Vista.Sistema;
+import Controladores.Sistema;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 

@@ -1,6 +1,7 @@
 package Vista;
 
 import Controladores.Botones.*;
+import Controladores.Sistema;
 import Modelo.Jugador;
 import Modelo.Tablero;
 import javafx.geometry.Insets;

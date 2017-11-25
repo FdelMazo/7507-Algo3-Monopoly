@@ -1,4 +1,4 @@
-package Vista;
+package Controladores;
 
 import javafx.geometry.Insets;
 import javafx.scene.layout.VBox;
