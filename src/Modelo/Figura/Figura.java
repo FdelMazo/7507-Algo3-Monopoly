@@ -1,4 +1,4 @@
-package Vista.Figura;
+package Modelo.Figura;
 
 public class Figura {
     private Direccion direccion;

@@ -1,8 +1,8 @@
 package Vista;
 
-import Vista.Figura.Contenedor;
-import Vista.Figura.PosicionFigura;
-import Vista.Figura.Sensor;
+import Modelo.Figura.Contenedor;
+import Modelo.Figura.PosicionFigura;
+import Modelo.Figura.Sensor;
 import org.junit.Assert;
 import org.junit.Test;
 

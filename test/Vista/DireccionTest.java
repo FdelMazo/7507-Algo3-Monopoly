@@ -1,7 +1,7 @@
 package Vista;
 
-import Vista.Figura.Direccion;
-import Vista.Figura.PosicionFigura;
+import Modelo.Figura.Direccion;
+import Modelo.Figura.PosicionFigura;
 import org.junit.Assert;
 import org.junit.Test;
 

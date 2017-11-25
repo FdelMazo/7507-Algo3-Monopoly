@@ -1,6 +1,4 @@
-package Vista.Figura;
-
-import Vista.Posicion;
+package Modelo.Figura;
 
 public class Direccion {
 

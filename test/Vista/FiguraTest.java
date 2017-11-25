@@ -1,6 +1,6 @@
 package Vista;
 
-import Vista.Figura.*;
+import Modelo.Figura.*;
 import org.junit.Assert;
 import org.junit.Test;
 
