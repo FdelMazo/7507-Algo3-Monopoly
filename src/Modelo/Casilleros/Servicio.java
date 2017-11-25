@@ -17,7 +17,7 @@ public class Servicio implements Casillero, Propiedades{
 
         nombre = nombre_servicio;
         valor = valor_serv;
-        valor_mercado = valor * 85 / 100;
+        valor_mercado = valor*85/100;
 
     }
 
@@ -42,7 +42,6 @@ public class Servicio implements Casillero, Propiedades{
 
     public void cederAlBanco( Jugador jugador){
 
-        municipio.cambiar_propietario(null,this);
         jugador.cobrar(valor_mercado);
 
     }

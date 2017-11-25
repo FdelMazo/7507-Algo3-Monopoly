@@ -60,24 +60,26 @@ public class Jugador {
     public void venderAlBanco(Propiedades propiedad) {
 
         municipio.cederPropiedadAlBanco(this,propiedad);
-        this.cobrar(propiedad.getValorMercado());
+
     }
 
     public void intercambiarPropiedades(Propiedades miPropiedad,Jugador otroJugador, Propiedades propiedad) {
 
-        municipio.cambiar_propietario(this,propiedad);
-        municipio.cambiar_propietario(otroJugador,miPropiedad);
+        miPropiedad.cambiarPropietario(otroJugador);
+        propiedad.cambiarPropietario(this);
+
 
     }
 
     public boolean solicitarDinero(double dineroSolicitado) {
 
-        if (capital > dineroSolicitado) {
+        if (capital >= dineroSolicitado) {
             capital -= dineroSolicitado;
             return true;
         }
         ArrayList<Propiedades> propiedades = municipio.devolverPropiedades(this);
         for (Propiedades propiedad : propiedades) {
+
             this.venderAlBanco(propiedad);
             if (this.solicitarDinero(dineroSolicitado)) return true;
         }

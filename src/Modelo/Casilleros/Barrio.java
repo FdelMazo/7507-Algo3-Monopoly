@@ -43,6 +43,7 @@ public class Barrio implements Casillero, Propiedades {
 
     public void cambiarPropietario(Jugador jugador){
         propietario = jugador;
+        municipio.cambiar_propietario(jugador,this);
         jugador.agregarPropiedad(this);
         destruirCasasConstruidas();
         alquilerActual = alquilerOriginal;
@@ -61,7 +62,7 @@ public class Barrio implements Casillero, Propiedades {
 
     public boolean todasLasCasasFueronConstruidas(){
         int cantidad = municipio.edificacionesExistentes(this);
-        System.out.println(cantidad);
+
         return cantidad == listaCasas.size();
     }
 

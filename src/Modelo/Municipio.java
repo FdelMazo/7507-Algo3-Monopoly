@@ -6,7 +6,6 @@ import javafx.util.Pair;
 
 import java.util.ArrayList;
 import java.util.Hashtable;
-import java.util.List;
 
 public class Municipio {
 
@@ -32,9 +31,6 @@ public class Municipio {
     public void cargarDatos() {
 
 
-
-
-
         hermano.put("Buenos Aires Sur", "Buenos Aires Norte");
         hermano.put("Buenos Aires Norte", "Buenos Aires Sur");
         hermano.put("Salta Norte", "Salta Sur");
@@ -54,6 +50,11 @@ public class Municipio {
     }
 
     public void cambiar_propietario(Jugador jugador, Propiedades propiedad) {
+
+        //cambia propietario
+        if(cant_edificaciones.containsKey(propiedad)){
+            cant_edificaciones.put(propiedad.nombre(), 0);
+        }
 
         //Si ya tenía propietario se la saca al propietario viejo
         if (propietarios.containsKey(propiedad.nombre()) && propietarios.get(propiedad.nombre()) != null) {
@@ -119,6 +120,9 @@ public class Municipio {
         propiedad.cederAlBanco(duenio);
         propietarios.remove(propiedad.nombre());
         jugadorPropiedades.get(duenio.getNombre()).remove(propiedad);
+        if(cant_edificaciones.containsKey(propiedad)){
+            cant_edificaciones.put(propiedad.nombre(), 0);
+        }
     }
 
     public void agregarEdificacion(Propiedades propiedad){
