@@ -1,6 +1,7 @@
 package Modelo.Casilleros;
 
 import Modelo.Jugador;
+import Modelo.Municipio;
 import Modelo.Tablero;
 import Modelo.Edificacion;
 
@@ -171,7 +172,8 @@ public class BarrioTest {
     //ENTREGA 2: TEST 10 REQUERIDO (Tucuman)
     @Test
     public void testTucumanJugadorDebePagarAlquilerEnBarrioEdificadoPierde3800(){
-
+        Municipio municipio = Municipio.getInstance();
+        municipio.resetear();
         Jugador jugador1 = new Jugador("Lance");
         Jugador jugador2 = new Jugador("Hunk");
         List<Edificacion> listaCasas= new ArrayList();

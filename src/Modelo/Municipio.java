@@ -15,7 +15,7 @@ public class Municipio {
     private Hashtable<String, String> hermano = new Hashtable<>();
     private Hashtable<String, Pair> alquiler_servicio = new Hashtable<>();
     private Hashtable<String, ArrayList<Propiedades>> jugadorPropiedades = new Hashtable<>();
-    private Hashtable<String,ArrayList<Integer>> barrios_edificaciones = new Hashtable<>();
+    private Hashtable<String,Integer> barrios_edificaciones = new Hashtable<>();
     private Hashtable<String,Integer> cant_edificaciones = new Hashtable<>();
 
     private Municipio() {
@@ -122,16 +122,17 @@ public class Municipio {
     }
 
     public void agregarEdificacion(Propiedades propiedad){
-        if(barrios_edificaciones.containsKey(propiedad.nombre())){
+        if(cant_edificaciones.containsKey(propiedad.nombre())){
             int valor = cant_edificaciones.get(propiedad.nombre());
             cant_edificaciones.put(propiedad.nombre(),valor + 1);
             return;
         }
         cant_edificaciones.put(propiedad.nombre(),1);
+
     }
 
     public int edificacionesExistentes(Propiedades propiedad){
-        if(barrios_edificaciones.containsKey(propiedad.nombre())){ return cant_edificaciones.get(propiedad.nombre());}
+        if(cant_edificaciones.containsKey(propiedad.nombre())){ return cant_edificaciones.get(propiedad.nombre());}
         return 0;
     }
 
