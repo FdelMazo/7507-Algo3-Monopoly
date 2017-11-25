@@ -42,7 +42,7 @@ public class Direccion {
         return this.inverse;
     }
 
-    public PosicionFigura nextPosition(PosicionFigura posicion) {
+    public PosicionFigura nextPosicion(PosicionFigura posicion) {
         int nextX = posicion.getX() + this.valueX * 120;
         int nextY = posicion.getY() + this.valueY * 70;
 

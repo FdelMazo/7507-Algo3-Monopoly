@@ -14,6 +14,10 @@ public class PosicionFigura {
 
     public int getY() { return y; }
 
+    public PosicionFigura next(Direccion direccion) {
+        return direccion.nextPosicion(this);
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (!(obj instanceof PosicionFigura)) {
