@@ -26,8 +26,6 @@ public class Main extends Application {
         ContenedorEntrada contenedorEntrada = new ContenedorEntrada(primaryStage,escenaJuego);
         Scene escenaBienvenidos = new Scene (contenedorEntrada);
 
-        contenedorPrincipal.setJugadores(contenedorEntrada.getJugadores());
-
         primaryStage.setScene(escenaBienvenidos);
         primaryStage.setResizable(false);
 

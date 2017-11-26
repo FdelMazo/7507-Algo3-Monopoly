@@ -1,20 +1,15 @@
 package Vista;
 
 import Controladores.Botones.*;
-import Controladores.EntradaUsuario;
 import Controladores.Sistema;
 import Modelo.Jugador;
 import Modelo.Tablero;
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
-import java.lang.reflect.Array;
-import java.util.ArrayList;
 
 public class ContenedorPrincipal extends BorderPane{
 
@@ -22,16 +17,22 @@ public class ContenedorPrincipal extends BorderPane{
     VBox contenedorCentral;
     Sistema sistema;
     Pane centro;
+    Canvas fondo;
+    VistaJugador vistaJugador1;
+    VistaJugador vistaJugador2;
+    VistaJugador vistaJugador3;
+    VistaTablero vistaTablero;
+    VistaTotal vistaTotal;
 
     public ContenedorPrincipal(Stage stage){
         sistema = new Sistema();
-        this.setBotonera();
         this.setCentro(tablero);
         this.setConsola();
+        this.setBotonera();
     }
 
     private void setBotonera(){
-        Boton botonTirarDados = new Boton("Tirar Dados", new ControladorTirarDados());
+        Boton botonTirarDados = new Boton("Tirar Dados", new ControladorTirarDados(vistaTotal));
         Boton botonComprar = new Boton("Comprar", new ControladorComprar());
         Boton botonEdificar = new Boton("Edificar", new ControladorEdificar());
         Boton botonVender = new Boton("Vender", new ControladorVender());
@@ -46,12 +47,15 @@ public class ContenedorPrincipal extends BorderPane{
     }
 
     private void setCentro(Tablero tablero) {
+
         Canvas fondo = new Canvas(800,500);
         fondo.getGraphicsContext2D().setFill(Color.LIGHTGOLDENRODYELLOW);
         fondo.getGraphicsContext2D().fillRect(0, 0, 720, 420);
         centro = new Pane(fondo);
-        VistaTablero vistaTablero = new VistaTablero(Tablero.getInstancia(), centro);
+        vistaTablero = new VistaTablero(Tablero.getInstancia(), centro,fondo);
         vistaTablero.dibujar();
+        this.setJugadores(fondo);
+        vistaTotal = new VistaTotal(vistaJugador1,vistaJugador2,vistaJugador3,vistaTablero);
         VisorCasillero visorNulo = new VisorCasillero(Tablero.getInstancia().salida(), centro);
         contenedorCentral = new VBox(centro);
         contenedorCentral.setPadding(new Insets(25));
@@ -68,16 +72,19 @@ public class ContenedorPrincipal extends BorderPane{
         this.setRight(visor);
     }
 
-    public void setJugadores(ArrayList<EntradaUsuario> entradas) {
+    public void setJugadores(Canvas canvas) {
         int y = 0;
-        for (EntradaUsuario entrada: entradas){
-            Jugador jugador = new Jugador(entrada.getNombre());
-            VistaJugador vistaJugador = new VistaJugador(jugador, entrada.getColor());
-            Circle circulo = vistaJugador.getPieza();
-            circulo.relocate(680,355+y);
-            y+=20;
-            centro.getChildren().add(circulo);
-        }
+        Jugador jugador1 = new Jugador("Pablo");
+        vistaJugador1 = new VistaJugador(jugador1, Color.BLUE, canvas,680,355+y);
+        vistaJugador1.dibujar();
+        y+=20;
+        Jugador jugador2 = new Jugador("Pablo");
+        vistaJugador2 = new VistaJugador(jugador2, Color.BLUE, canvas,680,355+y);
+        vistaJugador2.dibujar();
+        y+=20;
+        Jugador jugador3 = new Jugador("Pablo");
+        vistaJugador3 = new VistaJugador(jugador3, Color.BLUE, canvas,680,355+y);
+        vistaJugador3.dibujar();
 
     }
 }
