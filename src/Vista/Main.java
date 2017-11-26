@@ -3,6 +3,7 @@ package Vista;
 import Modelo.Jugador;
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.util.ArrayList;
