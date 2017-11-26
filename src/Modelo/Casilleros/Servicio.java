@@ -60,4 +60,8 @@ public class Servicio implements Casillero, Propiedades{
         int cobro = municipio.devolverAlquilerServicio(this);
         return numDado*cobro;
     }
+
+    public int getCosto(){
+        return valor;
+    }
 }

@@ -102,4 +102,8 @@ public class Barrio implements Casillero, Propiedades {
 
     public Paint color() { return Color.ORANGE;  }
 
+    public int getCosto(){
+        return costo;
+    }
+
 }

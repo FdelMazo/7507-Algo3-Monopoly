@@ -9,4 +9,5 @@ public interface Propiedades {
     String nombre();
     void cambiarPropietario(Jugador jugador);
     int getValorMercado();
+    int getCosto();
 }

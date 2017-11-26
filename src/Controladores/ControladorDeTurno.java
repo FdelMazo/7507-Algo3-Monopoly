@@ -38,6 +38,10 @@ public class ControladorDeTurno {
         return jugadores.get(new Random().nextInt(jugadores.size()));
     }
 
+    public Jugador getJugadorActual(){
+        return actual;
+    }
+
     public void jugar(){
         if (!ganador()){
             Turno turno = new Turno(tablero, actual);
