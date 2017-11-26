@@ -7,15 +7,11 @@ import javafx.event.EventHandler;
 
 public class ControladorComprar implements EventHandler<ActionEvent>{
 
-    Jugador jugador;
-
-    public ControladorComprar(Jugador jugador){
-        this.jugador = jugador;
+    public ControladorComprar(){
     }
 
     @Override
     public void handle(ActionEvent event) {
-        //this.jugador.comprar();
     }
 
 

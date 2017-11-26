@@ -1,95 +1,80 @@
 package Vista;
 
 import Controladores.Botones.*;
+import Controladores.EntradaUsuario;
 import Controladores.Sistema;
-import Modelo.Figura.Contenedor;
-import Modelo.Figura.Figura;
-import Modelo.Figura.PosicionFigura;
-import Modelo.Figura.Sensor;
 import Modelo.Jugador;
 import Modelo.Tablero;
-import Vista.Figura.FiguraVista;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Group;
-import javafx.scene.canvas.Canvas;
-import javafx.scene.control.ToggleButton;
-import javafx.scene.control.Tooltip;
 import javafx.scene.layout.*;
-import javafx.scene.control.Button;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class ContenedorPrincipal extends BorderPane{
 
     Tablero tablero;
     VBox contenedorCentral;
-    Canvas canvasCentral;
-    VistaTablero vistaTablero;
-    Pane tableroCentral;
+    Sistema sistema;
+    Pane centro;
 
-    public ContenedorPrincipal(ArrayList<Jugador> jugadores, Stage stage){
-        this.setConsola();
-        this.setBotonera(jugadores.get(0)); //esto sería para probar, ver como maneja que spon varios jug
+    public ContenedorPrincipal(Stage stage){
+        sistema = new Sistema();
+        this.setBotonera();
         this.setCentro(tablero);
+        this.setVisoresJugador();
+        this.setConsola();
     }
 
-    private void setBotonera(Jugador jugador){
-
+    private void setBotonera(){
         Boton botonTirarDados = new Boton("Tirar Dados", new ControladorTirarDados());
-        Boton botonComprar = new Boton("Comprar", new ControladorComprar(jugador));
-        Boton botonVender = new Boton("Vender", new ControladorVender(jugador));
+        Boton botonComprar = new Boton("Comprar", new ControladorComprar());
+        Boton botonVender = new Boton("Vender", new ControladorVender());
         Presionador botonMudo = new Presionador("Mudo", new ControladorMudo());
         botonMudo.textoAlPasarMouse("Africa by Toto \nCover by 8 Bit Universe");
-
-        VBox contenedorVertical = new VBox(botonComprar,botonVender,botonTirarDados, botonMudo);
+        Pane espacioVacio = new Pane();
+        espacioVacio.setPrefHeight(280);
+        VBox contenedorVertical = new VBox(botonComprar,botonVender,botonTirarDados,espacioVacio, botonMudo);
         contenedorVertical.setSpacing(15);
         contenedorVertical.setPadding(new Insets(20));
-
         this.setLeft(contenedorVertical);
-
     }
 
     private void setCentro(Tablero tablero) {
-
-        Group tableroConFiguras = new Group();
-
-        // TABLERO
-
-        canvasCentral = new Canvas(800,500);
-        tableroCentral = new Pane();
-        vistaTablero = new VistaTablero(Tablero.getInstancia() , canvasCentral, tableroCentral);
+        centro = new Pane();
+        VistaTablero vistaTablero = new VistaTablero(Tablero.getInstancia(), centro);
         vistaTablero.dibujar();
-
-        contenedorCentral = new VBox(tableroCentral);
-        contenedorCentral.setAlignment(Pos.CENTER);
-        contenedorCentral.setSpacing(20);
+        VisorCasillero visorNulo = new VisorCasillero(Tablero.getInstancia().salida(), centro);
+        visorNulo.dibujar();
+        contenedorCentral = new VBox(centro);
         contenedorCentral.setPadding(new Insets(25));
-
-        // FIGURAS
-
-        VBox contenedorFiguras = new VBox();
-        contenedorFiguras.setAlignment(Pos.CENTER);
-        contenedorFiguras.setSpacing(20);
-        contenedorFiguras.setPadding(new Insets(25));
-
-        Contenedor contenedor = new Contenedor(720, 420);
-        Sensor sensor = new Sensor(contenedor);
-        Figura figura = new Figura(sensor, new PosicionFigura(0, 0));
-
-        Canvas canvasFigura = new Canvas();
-        contenedorFiguras.getChildren().add(canvasFigura);
-        FiguraVista figuraVista = new FiguraVista(figura, canvasFigura.getGraphicsContext2D());
-        figuraVista.draw();
-
-        tableroConFiguras.getChildren().addAll(contenedorCentral, contenedorFiguras);
-
-        this.setCenter(tableroConFiguras);
+        this.setCenter(contenedorCentral);
     }
+
 
     private void setConsola() {
         Sistema consolaLocal = new Sistema();
         this.setRight(consolaLocal.contenedorConsola());
+    }
+
+    private void setVisoresJugador() {
+        this.setBottom(new VBox());
+    }
+
+    public void setJugadores(ArrayList<EntradaUsuario> entradas) {
+        int y = 0;
+        for (EntradaUsuario entrada: entradas){
+            Jugador jugador = new Jugador(entrada.getNombre());
+            VistaJugador vistaJugador = new VistaJugador(jugador, entrada.getColor());
+            Circle circulo = vistaJugador.getPieza();
+            circulo.relocate(680,355+y);
+            y+=20;
+            centro.getChildren().add(circulo);
+        }
+
     }
 }

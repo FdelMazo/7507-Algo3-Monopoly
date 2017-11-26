@@ -11,8 +11,6 @@ public class ControladorTirarDados implements EventHandler<ActionEvent> {
     @Override
     public void handle(ActionEvent event) {
 
-        Sistema.reproducir(getClass(), "dados_sonido.mp3");
-
         ControladorDeTurno controlador = ControladorDeTurno.getInstance();
         controlador.jugar();
 

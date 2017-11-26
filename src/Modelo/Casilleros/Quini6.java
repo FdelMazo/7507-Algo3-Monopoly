@@ -38,6 +38,6 @@ public class Quini6 implements Casillero {
     }
     public String nombre() {  return "Quini 6";}
 
-    public Paint color() { return Color.BLUE;  }
+    public Paint color() { return Color.LIGHTPINK;  }
 
 }

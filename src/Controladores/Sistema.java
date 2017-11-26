@@ -1,5 +1,6 @@
 package Controladores;
 
+import Controladores.Botones.ControladorEntrar;
 import javafx.geometry.Insets;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
@@ -16,19 +17,15 @@ public class Sistema {
     static VBox consola = null;
     static boolean mudo = false;
     static ArrayList<MediaPlayer> sonidos = new ArrayList<MediaPlayer>();
+    static MediaPlayer musicaFondo;
 
     public Sistema() {
         Text text = new Text(">>> Consola");
         text.setFont(Font.font("Verdana", 12));
         text.setFill(Color.GREEN);
-        VBox contenedorConsola = new VBox();
-        contenedorConsola.getChildren().add(text);
-        contenedorConsola.setPadding(new Insets(0, 200, 0, 0));
+        VBox contenedorConsola = new VBox(text);
         contenedorConsola.setStyle("-fx-background-color: black;");
-        contenedorConsola.setMaxHeight(800);
-        contenedorConsola.setMaxWidth(300);
-        contenedorConsola.setMinHeight(contenedorConsola.getMaxHeight());
-        contenedorConsola.setMinWidth(contenedorConsola.getMaxWidth());
+        contenedorConsola.setPrefWidth(220);
         consola = contenedorConsola;
     }
 
@@ -44,10 +41,9 @@ public class Sistema {
 
     public static void imprimir(String cadena) {
         if (consola == null) {
-//            System.out.println(cadena);
+            System.out.println(cadena);
             return;
         }
-        ;
         Text text = new Text(cadena);
         text.setFont(Font.font("Verdana", 12));
         text.setFill(Color.GREEN);
@@ -67,5 +63,14 @@ public class Sistema {
             mp.stop();
         }
         sonidos.clear();
+        if(musicaFondo.getStatus().equals(MediaPlayer.Status.PLAYING)) musicaFondo.pause();
+        else musicaFondo.play();
+    }
+
+    public static void musicaFondo(Class c) {
+        Media media = new Media(c.getResource("/Recursos/Sonidos/background.mp3").toExternalForm());
+        MediaPlayer mediaPlayer = new MediaPlayer(media);
+        mediaPlayer.play();
+        musicaFondo = mediaPlayer;
     }
 }

@@ -20,21 +20,13 @@ public class Main extends Application {
 
         primaryStage.setTitle("AlgoPoly");
 
-        ArrayList<Jugador> listaJugadores = new ArrayList<>();
-
-        Jugador jugador1 = new Jugador("Jorge");
-        Jugador jugador2 = new Jugador("batman");
-        Jugador jugador3 = new Jugador("Kahlan");
-
-        listaJugadores.add(jugador1);
-        listaJugadores.add(jugador2);
-        listaJugadores.add(jugador3);
-
-        ContenedorPrincipal contenedorPrincipal = new ContenedorPrincipal(listaJugadores,primaryStage);
-        Scene escenaJuego = new Scene(contenedorPrincipal,1200,700);
+        ContenedorPrincipal contenedorPrincipal = new ContenedorPrincipal(primaryStage);
+        Scene escenaJuego = new Scene(contenedorPrincipal);
 
         ContenedorEntrada contenedorEntrada = new ContenedorEntrada(primaryStage,escenaJuego);
-        Scene escenaBienvenidos = new Scene (contenedorEntrada,500,500);
+        Scene escenaBienvenidos = new Scene (contenedorEntrada);
+
+        contenedorPrincipal.setJugadores(contenedorEntrada.getJugadores());
 
         primaryStage.setScene(escenaBienvenidos);
         primaryStage.setResizable(false);
