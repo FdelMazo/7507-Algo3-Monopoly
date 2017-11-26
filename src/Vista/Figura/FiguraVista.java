@@ -12,31 +12,24 @@ public class FiguraVista {
 
     private final Figura figura;
     GraphicsContext gc;
-    Circle figuraVista;
-    TranslateTransition tt;
 
-    public FiguraVista(Figura figura) {
+    public FiguraVista(Figura figura, GraphicsContext gc) {
         this.gc = gc;
         this.figura = figura;
-        this.figuraVista = new Circle(20, Color.RED);
-        this.draw();
-        this.tt = new TranslateTransition(Duration.millis(2000), this.figuraVista);
     }
 
     public void draw() {
-        this.drawShapes();
+        this.drawShapes(gc);
     }
 
-    private void drawShapes() {
-        figuraVista.setCenterX(figura.getPosicionFigura().getX());
-        figuraVista.setCenterY(figura.getPosicionFigura().getY());
+    private void drawShapes(GraphicsContext gc) {
+        gc.setFill(Color.RED);
+        gc.fillOval(figura.getPosicionFigura().getX(), figura.getPosicionFigura().getX(), 20, 20);
     }
 
     public void mover() {
         figura.move();
-        tt.setToX(figura.getPosicionFigura().getX());
-        tt.setToY(figura.getPosicionFigura().getY());
-        tt.play();
+        gc.fillOval(figura.getPosicionFigura().getX(), figura.getPosicionFigura().getX(), 20, 20);
     }
 
 }

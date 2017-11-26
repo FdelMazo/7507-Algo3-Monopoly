@@ -2,10 +2,16 @@ package Vista;
 
 import Controladores.Botones.*;
 import Controladores.Sistema;
+import Modelo.Figura.Contenedor;
+import Modelo.Figura.Figura;
+import Modelo.Figura.PosicionFigura;
+import Modelo.Figura.Sensor;
 import Modelo.Jugador;
 import Modelo.Tablero;
+import Vista.Figura.FiguraVista;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Group;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.control.Tooltip;
@@ -47,6 +53,10 @@ public class ContenedorPrincipal extends BorderPane{
 
     private void setCentro(Tablero tablero) {
 
+        Group tableroConFiguras = new Group();
+
+        // TABLERO
+
         canvasCentral = new Canvas(800,500);
         tableroCentral = new Pane();
         vistaTablero = new VistaTablero(Tablero.getInstancia() , canvasCentral, tableroCentral);
@@ -57,7 +67,25 @@ public class ContenedorPrincipal extends BorderPane{
         contenedorCentral.setSpacing(20);
         contenedorCentral.setPadding(new Insets(25));
 
-        this.setCenter(contenedorCentral);
+        // FIGURAS
+
+        VBox contenedorFiguras = new VBox();
+        contenedorFiguras.setAlignment(Pos.CENTER);
+        contenedorFiguras.setSpacing(20);
+        contenedorFiguras.setPadding(new Insets(25));
+
+        Contenedor contenedor = new Contenedor(720, 420);
+        Sensor sensor = new Sensor(contenedor);
+        Figura figura = new Figura(sensor, new PosicionFigura(0, 0));
+
+        Canvas canvasFigura = new Canvas();
+        contenedorFiguras.getChildren().add(canvasFigura);
+        FiguraVista figuraVista = new FiguraVista(figura, canvasFigura.getGraphicsContext2D());
+        figuraVista.draw();
+
+        tableroConFiguras.getChildren().addAll(contenedorCentral, contenedorFiguras);
+
+        this.setCenter(tableroConFiguras);
     }
 
     private void setConsola() {
