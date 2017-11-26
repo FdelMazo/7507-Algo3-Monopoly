@@ -8,81 +8,81 @@ import org.junit.Test;
 
 public class ServicioTest {
 
-    @Test
-    public void testJugadorCaeEnTrenAdueniadoPorOtroJugadorQueNoTieneSubte(){
-
-        Municipio municipio = Municipio.getInstance();
-        municipio.resetear();
-        int numDado = 4;
-        Tablero tablero = Tablero.getInstancia();
-        Jugador jugador = new Jugador("Pablo");
-        Servicio servicio = new Servicio("Tren",38000);
-        jugador.caeEn(servicio);
-        Jugador jugador1 = new Jugador("Martin");
-        jugador1.caeEn(servicio);
-        Assert.assertEquals(450*numDado,servicio.calcularCobro(numDado));
-
-    }
-
-    @Test
-    public void testJugadorCaeEnEdesurAdueniadoPorOtroJugadorQueNoTieneAysa(){
-
-        int numDado = 4;
-        Tablero tablero = Tablero.getInstancia();
-        Jugador jugador = new Jugador("Pablo");
-        Servicio servicio = new Servicio("Edesur",35000);
-        jugador.caeEn(servicio);
-        Jugador jugador1 = new Jugador("Martin");
-        Assert.assertEquals(500*numDado,servicio.calcularCobro(numDado));
-    }
-
-    @Test
-    public void testJugadorCaeEnEdesurPeroEsDuenioPorLoQueNoSeLeCobra(){
-
-        int numDado = 4;
-        Tablero tablero = Tablero.getInstancia();
-        Jugador jugador = new Jugador("Pablo");
-        Servicio servicio = new Servicio("Edesur",35000);
-        jugador.caeEn(servicio);
-        jugador.caeEn(servicio);
-        Assert.assertEquals(100000 - 35000,jugador.capital());
-
-    }
-
-    @Test
-    public void testJugadorCaeEnEdesurPeroElDuenioTambienPoseeAysa() {
-
-        Municipio municipio = Municipio.getInstance();
-        municipio.resetear();
-        int numDado = 4;
-        Tablero tablero = Tablero.getInstancia();
-        Jugador jugador = new Jugador("Pablo");
-        Servicio servicio1 = new Servicio("Edesur", 35000);
-        Servicio servicio2 = new Servicio("Aysa", 30000);
-        jugador.caeEn(servicio2);
-        jugador.caeEn(servicio1);
-        Jugador jugador1 = new Jugador("Martin");
-        jugador1.caeEn(servicio1);
-        Assert.assertEquals(numDado * 1000, servicio1.calcularCobro(numDado));
-    }
-
-    @Test
-    public void testJugadorCaeEnTrenPeroElDuenioTambienPoseeSubte(){
-
-        Municipio municipio = Municipio.getInstance();
-        municipio.resetear();
-        int numDado = 4;
-        Tablero tablero = Tablero.getInstancia();
-        Jugador jugador = new Jugador("Pablo");
-        Servicio servicio1 = new Servicio("Tren",38000);
-        Servicio servicio2 = new Servicio("Subte",40000);
-        jugador.caeEn(servicio2);
-        jugador.caeEn(servicio1);
-        Jugador jugador1 = new Jugador("Martin");
-        jugador1.caeEn(servicio1);
-        Assert.assertEquals(numDado*800,servicio1.calcularCobro(numDado));
-
-    }
+//    @Test
+//    public void testJugadorCaeEnTrenAdueniadoPorOtroJugadorQueNoTieneSubte(){
+//
+//        Municipio municipio = Municipio.getInstance();
+//        municipio.resetear();
+//        int numDado = 4;
+//        Tablero tablero = Tablero.getInstancia();
+//        Jugador jugador = new Jugador("Pablo");
+//        Servicio servicio = new Servicio("Tren",38000);
+//        jugador.caeEn(servicio);
+//        Jugador jugador1 = new Jugador("Martin");
+//        jugador1.caeEn(servicio);
+//        Assert.assertEquals(450*numDado,servicio.calcularCobro(numDado));
+//
+//    }
+//
+//    @Test
+//    public void testJugadorCaeEnEdesurAdueniadoPorOtroJugadorQueNoTieneAysa(){
+//
+//        int numDado = 4;
+//        Tablero tablero = Tablero.getInstancia();
+//        Jugador jugador = new Jugador("Pablo");
+//        Servicio servicio = new Servicio("Edesur",35000);
+//        jugador.caeEn(servicio);
+//        Jugador jugador1 = new Jugador("Martin");
+//        Assert.assertEquals(500*numDado,servicio.calcularCobro(numDado));
+//    }
+//
+//    @Test
+//    public void testJugadorCaeEnEdesurPeroEsDuenioPorLoQueNoSeLeCobra(){
+//
+//        int numDado = 4;
+//        Tablero tablero = Tablero.getInstancia();
+//        Jugador jugador = new Jugador("Pablo");
+//        Servicio servicio = new Servicio("Edesur",35000);
+//        jugador.caeEn(servicio);
+//        jugador.caeEn(servicio);
+//        Assert.assertEquals(100000 - 35000,jugador.capital());
+//
+//    }
+//
+//    @Test
+//    public void testJugadorCaeEnEdesurPeroElDuenioTambienPoseeAysa() {
+//
+//        Municipio municipio = Municipio.getInstance();
+//        municipio.resetear();
+//        int numDado = 4;
+//        Tablero tablero = Tablero.getInstancia();
+//        Jugador jugador = new Jugador("Pablo");
+//        Servicio servicio1 = new Servicio("Edesur", 35000);
+//        Servicio servicio2 = new Servicio("Aysa", 30000);
+//        jugador.caeEn(servicio2);
+//        jugador.caeEn(servicio1);
+//        Jugador jugador1 = new Jugador("Martin");
+//        jugador1.caeEn(servicio1);
+//        Assert.assertEquals(numDado * 1000, servicio1.calcularCobro(numDado));
+//    }
+//
+//    @Test
+//    public void testJugadorCaeEnTrenPeroElDuenioTambienPoseeSubte(){
+//
+//        Municipio municipio = Municipio.getInstance();
+//        municipio.resetear();
+//        int numDado = 4;
+//        Tablero tablero = Tablero.getInstancia();
+//        Jugador jugador = new Jugador("Pablo");
+//        Servicio servicio1 = new Servicio("Tren",38000);
+//        Servicio servicio2 = new Servicio("Subte",40000);
+//        jugador.caeEn(servicio2);
+//        jugador.caeEn(servicio1);
+//        Jugador jugador1 = new Jugador("Martin");
+//        jugador1.caeEn(servicio1);
+//        Assert.assertEquals(numDado*800,servicio1.calcularCobro(numDado));
+//
+//    }
 
     //@Test
     //public void testJugadoresIntercambiaPropiedadesYLasPropiedadesTieneNuevosDuenios(){

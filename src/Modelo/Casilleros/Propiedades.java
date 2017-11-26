@@ -10,4 +10,5 @@ public interface Propiedades {
     void cambiarPropietario(Jugador jugador);
     int getValorMercado();
     int getCosto();
+    boolean comprar(Jugador jugador);
 }

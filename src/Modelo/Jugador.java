@@ -50,7 +50,6 @@ public class Jugador {
     }
 
     public boolean comprar(int monto,Propiedades propiedad){
-
         if (this.capital < monto) return false;
         this.agregarPropiedad(propiedad);
         this.solicitarDinero(monto);

@@ -2,38 +2,39 @@ package Modelo.Casilleros;
 
 import Modelo.Jugador;
 import Modelo.Municipio;
-import Modelo.Tablero;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
 
 public class Servicio implements Casillero, Propiedades{
 
-    private int valor;
-    private int valor_mercado;
+    private int costo;
+    private int costoMercado;
     private String nombre;
     Municipio municipio = Municipio.getInstance();
 
     public Servicio(String nombre_servicio, int valor_serv){
 
         nombre = nombre_servicio;
-        valor = valor_serv;
-        valor_mercado = valor*85/100;
+        costo = valor_serv;
+        costoMercado = costo *85/100;
 
+    }
+
+    public boolean comprar(Jugador jugador){
+        if (jugador.capital() >= costo){
+            jugador.comprar(costo, this);
+            return true;
+        }
+        return false;
     }
 
     public int getValorMercado(){
-        return valor_mercado;
+        return costoMercado;
     }
 
     public void accionAlCaer(Jugador jugador){
-
         Jugador propietario = municipio.devolverPropietario(this);
-
-        if (propietario == null) {
-            jugador.comprar(valor,this);
-            municipio.cambiar_propietario(jugador,this);
-        }
-        else if (propietario != jugador){
+        if (propietario != jugador && propietario != null){
             int cobro = municipio.devolverAlquilerServicio(this);
             jugador.solicitarDinero(2 * cobro);
             propietario.cobrar(2*cobro);
@@ -41,10 +42,7 @@ public class Servicio implements Casillero, Propiedades{
     }
 
     public void cederAlBanco( Jugador jugador){
-
-        jugador.cobrar(valor_mercado);
-
-
+        jugador.cobrar(costoMercado);
     }
 
     public void cambiarPropietario(Jugador jugador){
@@ -63,6 +61,6 @@ public class Servicio implements Casillero, Propiedades{
     }
 
     public int getCosto(){
-        return valor;
+        return costo;
     }
 }

@@ -25,7 +25,7 @@ public class ControladorComprar implements EventHandler<ActionEvent>{
         if (municipio.esUnaPropiedad(actual.nombre())){
             if (!municipio.tienePropietario((Propiedades) actual)) {
                 //jugador.comprar(((Propiedades) actual).getCosto(), (Propiedades) actual);
-                //(Propiedades)actual.vender();
+                //(Propcaiedades)actual.vender();
                 Sistema.imprimir("Has comprado la propiedad " + actual.nombre());
             }
         }
