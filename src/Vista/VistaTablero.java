@@ -11,7 +11,6 @@ import javafx.scene.text.Text;
 public class VistaTablero {
 
     Tablero tablero;
-    Canvas fondo = new Canvas(800,500);
     Pane pane;
 
     VistaTablero(Tablero tablero, Pane pane){
@@ -20,8 +19,7 @@ public class VistaTablero {
     }
 
     public void dibujar() {
-        fondo.getGraphicsContext2D().setFill(Color.LIGHTYELLOW);
-        fondo.getGraphicsContext2D().fillRect(0, 0, 720, 420);
+
 
         int x = 600; int x_rel = 0;
         int y = 350; int y_rel = 0;
