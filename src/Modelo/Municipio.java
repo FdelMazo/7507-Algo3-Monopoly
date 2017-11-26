@@ -33,7 +33,7 @@ public class Municipio {
     public void cargarDatos() {
 
         ArrayList<String> nombres_propiedades = new ArrayList<>();
-        File file = new File("src\\Modelo\\nombres_propiedades.txt");
+        File file = new File("src/Recursos/nombres_propiedades.txt");
         try{
             BufferedReader br = new BufferedReader(new FileReader(file));
             String st;

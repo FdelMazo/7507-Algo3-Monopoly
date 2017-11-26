@@ -25,7 +25,7 @@ public class ContenedorEntrada extends VBox {
         super();
 
         this.stage = stage;
-        stage.getIcons().add(new Image("Recursos\\Imagenes\\monopoly_icon.png"));
+        stage.getIcons().add(new Image("Recursos/Imagenes/monopoly_icon.png"));
 
         this.setAlignment(Pos.CENTER);
         this.setSpacing(20);
