@@ -34,6 +34,7 @@ public class Barrio implements Casillero, Propiedades {
         if (jugador.capital() >= costo){
             jugador.comprar(costo, this);
             municipio.cambiar_propietario(jugador, this);
+            propietario = jugador;
             return true;
         }
         return false;
@@ -98,6 +99,7 @@ public class Barrio implements Casillero, Propiedades {
         propietario = null;
         this.destruirCasasConstruidas();
         jugador.cobrar(valor_mercado);
+        alquilerActual = alquilerOriginal;
 
     }
 
