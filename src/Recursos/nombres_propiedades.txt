@@ -1,13 +1,13 @@
-Buenos Aires Sur
-Buenos Aires Norte
-Salta Norte
-Salta Sur
-Cordoba Norte
-Cordoba Sur
-Neuquen
-Tucuman
-Santa Fe
-Tren
-Subte
-Aysa
-Edesur
+Buenos Aires Sur,Buenos Aires Norte
+Buenos Aires Norte,Buenos Aires Sur
+Salta Norte,Salta Sur
+Salta Sur,Salta Norte
+Cordoba Norte,Cordoba Sur
+Cordoba Sur,Cordoba Norte
+Neuquen,Neuquen
+Tucuman,Tucuman
+Santa Fe,Santa Fe
+Tren,Subte
+Subte,Tren
+Aysa,Edesur
+Edesur,Aysa

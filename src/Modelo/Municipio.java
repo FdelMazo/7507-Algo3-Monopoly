@@ -23,6 +23,7 @@ public class Municipio {
     }
 
     public static Municipio getInstance() {
+
         if (primeraInstancia == null) {
             primeraInstancia = new Municipio();
             primeraInstancia.cargarDatos();
@@ -33,32 +34,22 @@ public class Municipio {
     public void cargarDatos() {
 
         ArrayList<String> nombres_propiedades = new ArrayList<>();
-        File file = new File("src/Recursos/nombres_propiedades.txt");
+        File file = new File("src\\Recursos\\nombres_propiedades.txt");
         try{
             BufferedReader br = new BufferedReader(new FileReader(file));
             String st;
             while ((st = br.readLine()) != null) {
-                nombres_propiedades.add(st);
+                String conjunto_hermanos[] = st.split(",");
+                nombres_propiedades.add(conjunto_hermanos[0]);
+                hermano.put(conjunto_hermanos[0],conjunto_hermanos[1]);
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-
         for (String propiedad :nombres_propiedades){
             cant_edificaciones.put(propiedad,0);
         }
-
-        hermano.put("Buenos Aires Sur", "Buenos Aires Norte");
-        hermano.put("Buenos Aires Norte", "Buenos Aires Sur");
-        hermano.put("Salta Norte", "Salta Sur");
-        hermano.put("Salta Sur", "Salta Norte");
-        hermano.put("Cordoba Norte", "Cordoba Sur");
-        hermano.put("Cordoba Sur", "Cordoba Norte");
-        hermano.put("Tren", "Subte");
-        hermano.put("Subte", "Tren");
-        hermano.put("Aysa", "Edesur");
-        hermano.put("Edesur", "Aysa");
 
         alquiler_servicio.put("Tren", new Pair(450, 800));
         alquiler_servicio.put("Subte", new Pair(600, 1100));
@@ -111,10 +102,7 @@ public class Municipio {
     }
 
     public boolean tienePropietario(Propiedades propiedad) {
-        if (this.propietarios.containsKey(propiedad.nombre()) && this.propietarios.get(propiedad.nombre()) != null) {
-            return true;
-        }
-        return false;
+        return this.propietarios.get(propiedad.nombre()) != null;
     }
 
     public Jugador devolverPropietario(Propiedades propiedad) {
@@ -149,29 +137,19 @@ public class Municipio {
     }
 
     public boolean poseeLosDosHermanos( Propiedades propiedad){
-
-        if (propietarios.containsKey(propiedad.nombre()) && propietarios.containsKey(hermano.get(propiedad.nombre()))){
-            return propietarios.get(propiedad.nombre()) == propietarios.get(hermano.get(propiedad.nombre()));
-        }
-        return false;
+        return propietarios.get(propiedad.nombre()) == propietarios.get(hermano.get(propiedad.nombre()));
     }
 
     public boolean puedeEdificarHotel(Propiedades propiedad){
 
-        if(hermano.containsKey(propiedad.nombre())){
-            if(poseeLosDosHermanos(propiedad)){
-                if(propietarios.get(propiedad.nombre()) == propietarios.get(hermano.get(propiedad.nombre()))) {
-                    return cant_edificaciones.get(propiedad.nombre()) == 2 && cant_edificaciones.get(hermano.get(propiedad.nombre())) >= 2;
-                }
+        if(poseeLosDosHermanos(propiedad)){
+            if(propietarios.get(propiedad.nombre()) == propietarios.get(hermano.get(propiedad.nombre()))) {
+                return cant_edificaciones.get(propiedad.nombre()) == 2 && cant_edificaciones.get(hermano.get(propiedad.nombre())) >= 2;
             }
         }
         return false;
     }
 }
-
-
-
-
 
 
 
