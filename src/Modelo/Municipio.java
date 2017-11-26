@@ -56,6 +56,7 @@ public class Municipio {
         alquiler_servicio.put("Aysa", new Pair(300, 500));
         alquiler_servicio.put("Edesur", new Pair(500, 1000));
 
+
     }
 
     public void cambiar_propietario(Jugador jugador, Propiedades propiedad) {
@@ -85,16 +86,6 @@ public class Municipio {
             return (int) (alquiler_servicio.get(propiedad.nombre()).getValue());
         }
         return (int) (alquiler_servicio.get(propiedad.nombre()).getKey());
-    }
-
-    public void devolverAlquilerBarrio(Propiedades propiedad) {
-        if (hermano.containsKey(propiedad.nombre())) {
-            if (propietarios.get(propiedad.nombre()) == propietarios.get(hermano.get(propiedad.nombre()))) {
-                return;
-            }
-        } else {
-            return;
-        }
     }
 
     public void resetear() {

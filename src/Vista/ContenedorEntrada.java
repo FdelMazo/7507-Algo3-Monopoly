@@ -23,6 +23,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class ContenedorEntrada extends VBox {
+
     ArrayList<EntradaUsuario> jugadores = new ArrayList<>();
 
     public ContenedorEntrada(Stage stage, Scene proximaEscena) {

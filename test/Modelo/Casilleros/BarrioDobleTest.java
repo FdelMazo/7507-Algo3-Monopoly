@@ -12,6 +12,11 @@ import org.junit.Test;
 
 public class BarrioDobleTest {
 
+
+
+
+
+
     @Test
     public void testDosBarriosPertenecenAlMismoJugadorEsTrue() {
         Municipio municipio = Municipio.getInstance();

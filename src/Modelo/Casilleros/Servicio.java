@@ -44,6 +44,7 @@ public class Servicio implements Casillero, Propiedades{
 
         jugador.cobrar(valor_mercado);
 
+
     }
 
     public void cambiarPropietario(Jugador jugador){
