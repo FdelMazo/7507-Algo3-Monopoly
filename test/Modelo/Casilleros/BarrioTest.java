@@ -44,7 +44,7 @@ public class BarrioTest {
         List<Edificacion> listaCasas= new ArrayList();
         listaCasas.add(new Edificacion(5000, 3000));
         listaCasas.add(new Edificacion(5000, 3500));
-        Barrio buenosAiresSur = new Barrio("Buenos Aires SUr", 20000, 2000, listaCasas);
+        Barrio buenosAiresSur = new Barrio("Buenos Aires Sur", 20000, 2000, listaCasas);
         jugador.caeEn(buenosAiresSur);
         Assert.assertTrue(buenosAiresSur.edificarCasa(jugador));
     }
@@ -56,7 +56,7 @@ public class BarrioTest {
         List<Edificacion> listaCasas= new ArrayList();
         listaCasas.add(new Edificacion(5000, 3000));
         listaCasas.add(new Edificacion(5000, 3500));
-        Barrio buenosAiresSur = new Barrio("Buenos Aires SUr", 20000, 2000, listaCasas);
+        Barrio buenosAiresSur = new Barrio("Buenos Aires Sur", 20000, 2000, listaCasas);
         jugador.caeEn(buenosAiresSur);
         buenosAiresSur.edificarCasa(jugador);
         Assert.assertEquals(jugador.capital(), 75000);
@@ -70,7 +70,7 @@ public class BarrioTest {
         List<Edificacion> listaCasas= new ArrayList();
         listaCasas.add(new Edificacion(5000, 3000));
         listaCasas.add(new Edificacion(5000, 3500));
-        Barrio buenosAiresSur = new Barrio("Buenos Aires SUr", 20000, 2000, listaCasas);
+        Barrio buenosAiresSur = new Barrio("Buenos Aires Sur", 20000, 2000, listaCasas);
         jugador1.caeEn(buenosAiresSur);
         jugador2.caeEn(buenosAiresSur);
         Assert.assertEquals(jugador2.capital(), 98000);
@@ -107,6 +107,9 @@ public class BarrioTest {
     //ENTREGA 2: TEST 10 REQUERIDO (Buenos Aires Sur)
     @Test
     public void testBarrioBuenosAiresSurJugadorDebePagarAlquilerPierde3000(){
+
+        Municipio municipio = Municipio.getInstance();
+        municipio.resetear();
 
         Jugador jugador1 = new Jugador("Lance");
         Jugador jugador2 = new Jugador("Hunk");
