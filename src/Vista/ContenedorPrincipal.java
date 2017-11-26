@@ -7,6 +7,8 @@ import Modelo.Tablero;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.canvas.Canvas;
+import javafx.scene.control.ToggleButton;
+import javafx.scene.control.Tooltip;
 import javafx.scene.layout.*;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
@@ -29,29 +31,13 @@ public class ContenedorPrincipal extends BorderPane{
 
     private void setBotonera(Jugador jugador){
 
-        Button botonTirarDados = new Button();
-        botonTirarDados.setText("Tirar Dados");
-        BotonTirarDados tirarDadosBotonHanler = new BotonTirarDados();
-        botonTirarDados.setOnAction(tirarDadosBotonHanler);
+        Boton botonTirarDados = new Boton("Tirar Dados", new ControladorTirarDados());
+        Boton botonComprar = new Boton("Comprar", new ControladorComprar(jugador));
+        Boton botonVender = new Boton("Vender", new ControladorVender(jugador));
+        Presionador botonMudo = new Presionador("Mudo", new ControladorMudo());
+        botonMudo.textoAlPasarMouse("Africa by Toto \nCover by 8 Bit Universe");
 
-        Button botonComprar = new Button();
-        botonComprar.setText("Comprar");
-        BotonComprar comprarHandler = new BotonComprar(jugador);
-        botonComprar.setOnAction(comprarHandler);
-
-        Button botonVender = new Button();
-        botonVender.setText("Vender");
-        BotonVender venderHandler = new BotonVender(jugador);
-        botonVender.setOnAction(venderHandler);
-
-
-        Button botonMute = new Button();
-        botonMute.setText("Frenar musica");
-        BotonMudo muteHandler = new BotonMudo();
-        botonMute.setOnAction(muteHandler);
-
-
-        VBox contenedorVertical = new VBox(botonComprar,botonVender,botonTirarDados, botonMute);
+        VBox contenedorVertical = new VBox(botonComprar,botonVender,botonTirarDados, botonMudo);
         contenedorVertical.setSpacing(15);
         contenedorVertical.setPadding(new Insets(20));
 

@@ -5,11 +5,11 @@ import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
 
-public class BotonComprar implements EventHandler<ActionEvent>{
+public class ControladorComprar implements EventHandler<ActionEvent>{
 
     Jugador jugador;
 
-    public BotonComprar(Jugador jugador){
+    public ControladorComprar(Jugador jugador){
         this.jugador = jugador;
     }
 
@@ -17,5 +17,7 @@ public class BotonComprar implements EventHandler<ActionEvent>{
     public void handle(ActionEvent event) {
         //this.jugador.comprar();
     }
+
+
 
 }

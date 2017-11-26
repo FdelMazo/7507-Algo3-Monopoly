@@ -5,12 +5,12 @@ import Controladores.Sistema;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
-public class BotonVender implements EventHandler<ActionEvent>{
+public class ControladorVender implements EventHandler<ActionEvent>{
     private int contador;
 
     Jugador jugador;
 
-    public BotonVender(Jugador jugador){
+    public ControladorVender(Jugador jugador){
         contador = 0;
         this.jugador = jugador;
 
