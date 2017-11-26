@@ -55,8 +55,6 @@ public class Municipio {
         alquiler_servicio.put("Subte", new Pair(600, 1100));
         alquiler_servicio.put("Aysa", new Pair(300, 500));
         alquiler_servicio.put("Edesur", new Pair(500, 1000));
-
-
     }
 
     public void cambiar_propietario(Jugador jugador, Propiedades propiedad) {
@@ -142,7 +140,7 @@ public class Municipio {
     }
 
     public boolean esUnaPropiedad(String nombre){
-        return propietarios.containsKey(nombre);
+        return hermano.containsKey(nombre);
     }
 
 }
