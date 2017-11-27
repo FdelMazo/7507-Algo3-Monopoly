@@ -1,6 +1,5 @@
 package Modelo;
 
-import Modelo.Casilleros.Casillero;
 import Modelo.Casilleros.Propiedades;
 import javafx.util.Pair;
 
@@ -106,7 +105,7 @@ public class Municipio {
         if (jugadorPropiedades.containsKey(jugador.getNombre())) {
             return jugadorPropiedades.get(jugador.getNombre());
         }
-        return new ArrayList<Propiedades>();
+        return new ArrayList<>();
     }
 
     public void cederPropiedadAlBanco(Jugador duenio, Propiedades propiedad) {
@@ -128,10 +127,6 @@ public class Municipio {
 
     public boolean poseeLosDosHermanos( Propiedades propiedad){
         return propietarios.get(propiedad.nombre()) == propietarios.get(hermano.get(propiedad.nombre()));
-    }
-
-    public boolean puedeConstruir (Casillero  casilla){
-        return cant_edificaciones.containsKey(casilla.nombre());
     }
 
     public boolean puedeEdificarHotel(Propiedades propiedad){
