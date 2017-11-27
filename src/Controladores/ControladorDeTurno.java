@@ -48,8 +48,11 @@ public class ControladorDeTurno {
             Sistema.imprimir("Es el turno del jugador " + actual.getNombre());
             Sistema.imprimir("Cae en " + actual.actual().nombre()); //para ver si se mueve
             if (actual.perdio()) retirarJugador(actual);
-            actual = siguienteJugador(actual);
         }
+    }
+
+    public void cambiarTurno(){
+        actual = siguienteJugador(actual);
     }
 
     private Jugador siguienteJugador(Jugador actual) {
