@@ -33,6 +33,5 @@ public class ControladorTirarDados implements EventHandler<ActionEvent> {
 
         controlador.cambiarTurno();
 
-        }
+    }
 }
-

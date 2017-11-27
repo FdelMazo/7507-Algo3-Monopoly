@@ -11,4 +11,5 @@ public interface Propiedades {
     int getValorMercado();
     int getCosto();
     boolean comprar(Jugador jugador);
+    boolean edificarCasa(Jugador jugador);
 }

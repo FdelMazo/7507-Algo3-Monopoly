@@ -40,11 +40,12 @@ public class ContenedorPrincipal extends BorderPane{
         Boton botonEdificar = new Boton("Edificar", new ControladorEdificar());
         Boton botonVender = new Boton("Vender", new ControladorVender());
         Boton botonFinalizarTurno = new Boton("Finalizar turno", new ControladorFinalizarTurno());
+        Boton botonEdificarCasa = new Boton("Edificar casa", new ControladorEdificar());
         Presionador botonMudo = new Presionador("Mudo", new ControladorMudo());
         botonMudo.textoAlPasarMouse("Africa by Toto \nCover by 8 Bit Universe");
         Pane espacioVacio = new Pane();
         espacioVacio.setPrefHeight(280);
-        VBox contenedorVertical = new VBox(botonTirarDados, botonComprar,botonVender, botonFinalizarTurno, espacioVacio, botonMudo);
+        VBox contenedorVertical = new VBox(botonTirarDados, botonComprar,botonVender, botonFinalizarTurno, botonEdificarCasa, espacioVacio, botonMudo);
         contenedorVertical.setSpacing(15);
         contenedorVertical.setPadding(new Insets(20));
         this.setLeft(contenedorVertical);
