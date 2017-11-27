@@ -26,15 +26,17 @@ public class Tablero {
     }
 
     public Casillero desplazarCasillero(Jugador jugador, int numDados){
-        Casillero actual = jugador.actual();
-        if (!jugador.mover()) return actual;
-        int indexInicial = casilleros.indexOf(actual);
+        if (!jugador.mover()) return jugador.actual();
+        return   casilleros.get(getNextIndex(casilleros().indexOf(jugador.actual()),numDados));
+    }
+
+    public int getNextIndex(int actual, int numDados){
+        int indexInicial = actual;
         int indexFinal = indexInicial + numDados;
         if(indexFinal >= casilleros.size()){
-            jugador.caeEn(salida());
             indexFinal-=casilleros.size();
         }
-        return casilleros.get(indexFinal);
+        return indexFinal;
     }
 
     public Casillero salida(){

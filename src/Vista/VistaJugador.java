@@ -1,6 +1,8 @@
 package Vista;
 
 
+import Controladores.Sistema;
+import Modelo.Casilleros.Casillero;
 import Modelo.Jugador;
 import Modelo.Tablero;
 import javafx.animation.AnimationTimer;
@@ -51,6 +53,13 @@ public class VistaJugador {
             Y = posicion.getNextY();
             this.dibujar();
         }
+    }
+
+    public void moverDesdeHasta(Casillero viejo, Casillero nuevo){
+        int indexInicial = Tablero.getInstancia().casilleros().indexOf(viejo);
+        int indexFinal = Tablero.getInstancia().casilleros().indexOf(nuevo) - indexInicial;
+        if(indexFinal <0) indexFinal+=19;
+        mover(indexFinal);
     }
 
     public static VistaJugador getPorNombre(String unNombre){
