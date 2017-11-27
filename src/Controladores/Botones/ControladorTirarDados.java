@@ -31,7 +31,7 @@ public class ControladorTirarDados implements EventHandler<ActionEvent> {
             int resultado = dados.suma();
             Sistema.imprimir("Sacas : " + resultado);
             Sistema.imprimir("Caes en: " + controlador.getJugadorActual().actual().nombre());
-            vistaTotal.actualizarJugador(controlador.getJugadorActual().getNombre());
+            vistaTotal.actualizarJugador(controlador.getJugadorActual().getNombre(),resultado);
         }
         else{
             Sistema.imprimir("No puedes volver a tirar los dados");
