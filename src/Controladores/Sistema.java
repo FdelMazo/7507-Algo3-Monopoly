@@ -82,4 +82,8 @@ public class Sistema {
         mediaPlayer.play();
         musicaFondo = mediaPlayer;
     }
+
+    public static void error() {
+        imprimir("No puedes realizar esa accion");
+    }
 }

@@ -1,5 +1,6 @@
 package Vista;
 
+import javafx.beans.binding.BooleanBinding;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.ToggleButton;
@@ -15,5 +16,7 @@ public class Presionador extends ToggleButton {
     public void textoAlPasarMouse(String texto){
         setTooltip(new Tooltip(texto));
     }
+
+
 
 }

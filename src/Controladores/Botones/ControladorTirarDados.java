@@ -9,13 +9,14 @@ import javafx.event.EventHandler;
 
 
 public class ControladorTirarDados implements EventHandler<ActionEvent> {
-
-
-    public ControladorTirarDados(){
-    }
+    static boolean presionado = false;
 
     @Override
     public void handle(ActionEvent event) {
+        if (presionado) {
+            Sistema.imprimir("Ya has lanzado... tramposo");
+            return;
+        }
         ControladorDeTurno controlador = ControladorDeTurno.getInstance();
         Jugador actual = controlador.getJugadorActual();
         if(!controlador.jugar()){
@@ -31,6 +32,10 @@ public class ControladorTirarDados implements EventHandler<ActionEvent> {
             Sistema.imprimir(actual.getNombre() + " sacó doble! \nLanza nuevamente");
             return;
         }
-        controlador.cambiarTurno();
+        presionado = true;
+    }
+
+    public static void reset(){
+        presionado = false;
     }
 }

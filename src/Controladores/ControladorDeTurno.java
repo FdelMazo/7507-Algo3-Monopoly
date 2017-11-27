@@ -45,9 +45,12 @@ public class ControladorDeTurno {
             Turno turno = new Turno(tablero, actual);
             if(viejo == actual.actual()) return false;
             if (actual.perdio()){
+                Sistema.imprimir(actual.getNombre() + " perdió :(");
+                Sistema.reproducir(this.getClass(), "memuero.mp3");
                 retirarJugador(actual);
                 return false;
             }
+            ContenedorPrincipal.actualizar();
         }
         return true;
     }

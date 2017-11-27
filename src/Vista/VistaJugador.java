@@ -24,7 +24,7 @@ public class VistaJugador {
     Circle circulo;
     static HashMap<String, VistaJugador > diccionarioNombres = new HashMap<>();
 
-    public VistaJugador(Jugador jugador, Color color, Pane canvas , int x , int y) {
+    public VistaJugador(Jugador unJugador, Color color, Pane canvas , int x , int y) {
 
         this.X = x;
         this.Y = y;
@@ -36,6 +36,7 @@ public class VistaJugador {
         circulo.setStroke(Color.BLACK);
         circulo.setFill(color);
         canvas.getChildren().add(circulo);
+        jugador = unJugador;
         diccionarioNombres.put(jugador.getNombre(), this);
     }
 
@@ -56,6 +57,8 @@ public class VistaJugador {
         return diccionarioNombres.get(unNombre);
     }
 
-
+    public Jugador getJugador(){
+        return jugador;
+    }
 
 }
