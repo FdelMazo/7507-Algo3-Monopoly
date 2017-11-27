@@ -1,6 +1,5 @@
 package Modelo;
 
-import Controladores.Sistema;
 import Modelo.Casilleros.Casillero;
 
 public class Turno {

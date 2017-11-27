@@ -18,6 +18,7 @@ public class ControladorEdificar implements EventHandler<ActionEvent>{
 
     @Override
     public void handle(ActionEvent event) {
+
         ControladorDeTurno controlador = ControladorDeTurno.getInstance();
         Municipio municipio = Municipio.getInstance();
         Jugador jugador = controlador.getJugadorActual();
