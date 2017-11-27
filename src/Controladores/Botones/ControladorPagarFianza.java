@@ -16,7 +16,6 @@ public class ControladorPagarFianza implements EventHandler<ActionEvent> {
         ControladorDeTurno controlador = ControladorDeTurno.getInstance();
 
         Jugador jugador = controlador.getJugadorActual();
-        Casillero actual = jugador.actual();
 
         if ( jugador.estaPreso()){
             if(jugador.pagarFianza()) {

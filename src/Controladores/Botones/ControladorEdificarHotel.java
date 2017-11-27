@@ -25,10 +25,10 @@ public class ControladorEdificarHotel implements EventHandler<ActionEvent> {
             boolean puedeEdificar = ((Propiedades)actualCasillero).puedeEdificarHotel(jugador);
             if (puedeEdificar){
                 ((BarrioDoble)actualCasillero).edificarHotel(jugador);
-                Sistema.imprimir("Se ha edificado un Hotal");
+                Sistema.imprimir("\tSe ha edificado un Hotal");
             }
             else{
-                Sistema.imprimir("No se ha podido edificar un Hotel");
+                Sistema.imprimir("\tNo se ha podido edificar un Hotel");
             }
             jugadorAnterior = jugador;
         }
