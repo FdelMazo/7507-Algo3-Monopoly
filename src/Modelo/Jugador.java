@@ -11,7 +11,7 @@ public class Jugador {
     private Casillero casilleroActual;
     private String nombre;
     private Estado estado;
-    private Dados dados;
+    private Dados dados = null;
     Municipio municipio = Municipio.getInstance();
 
     public Jugador(String nombreJugador) {
@@ -132,6 +132,7 @@ public class Jugador {
     }
 
     public int sumaDados() {
+        if(dados == null) lanzarDados();
         return dados.suma();
     }
 

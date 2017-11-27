@@ -84,6 +84,6 @@ public class Sistema {
     }
 
     public static void error() {
-        imprimir("No puedes realizar esa accion");
+        imprimir("\tNo se puede realizar esa accion");
     }
 }

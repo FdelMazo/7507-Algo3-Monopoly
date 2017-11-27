@@ -7,6 +7,7 @@ import Modelo.Casilleros.Propiedades;
 import Modelo.Dados;
 import Modelo.Jugador;
 import Modelo.Municipio;
+import Vista.ContenedorPrincipal;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
@@ -27,16 +28,17 @@ public class ControladorEdificar implements EventHandler<ActionEvent>{
         if (municipio.esUnaPropiedad(actualCasillero.nombre()) && jugador != jugadorAnterior){
             boolean pudoEdificar = ((Propiedades)actualCasillero).edificarCasa(jugador);
             if (pudoEdificar){
-                Sistema.imprimir("Se ha podido edificar");
+                Sistema.imprimir("\tSe ha podido edificar");
             }
             else{
-                Sistema.imprimir("No se ha podido edificar");
+                Sistema.imprimir("\tNo se ha puede edificar");
             }
             jugadorAnterior = jugador;
         }
         else {
             Sistema.error();
         }
+        ContenedorPrincipal.actualizar();
     }
 
 

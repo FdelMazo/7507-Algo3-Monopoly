@@ -6,6 +6,7 @@ import Modelo.Casilleros.Casillero;
 import Modelo.Casilleros.Propiedades;
 import Modelo.Jugador;
 import Modelo.Municipio;
+import Vista.ContenedorPrincipal;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
@@ -21,18 +22,19 @@ public class ControladorComprar implements EventHandler<ActionEvent>{
         if (municipio.esUnaPropiedad(actual.nombre())){
             if (!municipio.tienePropietario((Propiedades) actual)) {
                 ((Propiedades) actual).comprar(jugador);
-                Sistema.imprimir(jugador.getNombre() + " ha comprado " + actual.nombre());
+                Sistema.imprimir("\tHa comprado " + actual.nombre());
             }
             else if (municipio.devolverPropietario((Propiedades)actual) == jugador){
-                Sistema.imprimir("Ya la has comprado");
+                Sistema.imprimir("\tYa es dueño..");
             }
             else{
-                Sistema.imprimir("Esta propiedad es de " + jugador.getNombre());
+                Sistema.imprimir("\tEsta propiedad es de " + jugador.getNombre());
             }
         }
         else {
-            Sistema.error();;
+            Sistema.error();
         }
+        ContenedorPrincipal.actualizar();
     }
 
 }

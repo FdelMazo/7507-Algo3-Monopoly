@@ -13,7 +13,7 @@ public class PosicionFiguraTest {
         Direccion norte = Direccion.north();
         PosicionFigura posicionEsperada = new PosicionFigura(0, 70);
         PosicionFigura posicionObtenida = posicion.next(norte);
-        //Assert.assertEquals(posicionEsperada, posicionObtenida);
+        Assert.assertEquals(posicionEsperada, posicionObtenida);
         Assert.assertEquals(posicionEsperada, posicionObtenida);
     }
 
@@ -23,7 +23,7 @@ public class PosicionFiguraTest {
         Direccion este = Direccion.east();
         PosicionFigura posicionEsperada = new PosicionFigura(120, 0);
         PosicionFigura posicionObtenida = posicion.next(este);
-        //Assert.assertEquals(posicionEsperada, posicionObtenida);
+        Assert.assertEquals(posicionEsperada, posicionObtenida);
         Assert.assertEquals(posicionEsperada, posicionObtenida);
     }
 

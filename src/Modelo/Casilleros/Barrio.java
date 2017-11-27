@@ -63,7 +63,7 @@ public class Barrio implements Casillero, Propiedades {
     }
 
     public boolean puedeEdificarCasa(Jugador jugador){
-        return (jugador.capital() >= listaCasas.get(0).getPrecio() && !todasLasCasasFueronConstruidas());
+        return (jugador.capital() >= precioSiguienteConstruccion() && !todasLasCasasFueronConstruidas());
     }
 
     public boolean edificarCasa(Jugador jugador) {
@@ -83,6 +83,10 @@ public class Barrio implements Casillero, Propiedades {
         jugador.cobrar(valor_mercado);
         alquilerActual = alquilerOriginal;
 
+    }
+
+    public int precioSiguienteConstruccion(){
+        return listaCasas.get(0).getPrecio();
     }
 
     public String nombre() {

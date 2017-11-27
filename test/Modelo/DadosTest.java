@@ -17,11 +17,11 @@ public class DadosTest {
         int cont = 0;
         Tablero tablero = Tablero.getInstancia();
         Jugador jugador = new Jugador("Joe");
-        Casillero nuevo = tablero.desplazarCasillero(jugador, jugador.lanzarDadosdobles());
+        Casillero nuevo = tablero.desplazarCasillero(jugador.actual(), jugador.lanzarDadosdobles());
         jugador.caeEn(nuevo);
         if (jugador.doble()){
             cont = cont + 1;
-            Casillero nuevo2 = tablero.desplazarCasillero(jugador, jugador.lanzarDadosdobles());
+            Casillero nuevo2 = tablero.desplazarCasillero(jugador.actual(), jugador.lanzarDadosdobles());
             jugador.caeEn(nuevo);
         }
         Assert.assertEquals(1,cont);
@@ -31,16 +31,16 @@ public class DadosTest {
         int cont = 0;
         Tablero tablero = Tablero.getInstancia();
         Jugador jugador = new Jugador("Joe");
-        Casillero nuevo = tablero.desplazarCasillero(jugador, jugador.lanzarDadosdobles());
+        Casillero nuevo = tablero.desplazarCasillero(jugador.actual(), jugador.lanzarDadosdobles());
         jugador.caeEn(nuevo);
         if (jugador.doble()) {
             cont = cont + 1;
-            Casillero nuevo2 = tablero.desplazarCasillero(jugador, jugador.lanzarDadosdobles());
+            Casillero nuevo2 = tablero.desplazarCasillero(jugador.actual(), jugador.lanzarDadosdobles());
             jugador.caeEn(nuevo);
         }
         if (jugador.doble()){
                 cont = cont + 1;
-                Casillero nuevo2 = tablero.desplazarCasillero(jugador, jugador.lanzarDadosdobles());
+                Casillero nuevo2 = tablero.desplazarCasillero(jugador.actual(), jugador.lanzarDadosdobles());
                 jugador.caeEn(nuevo);
         }
         Assert.assertEquals(2,cont);

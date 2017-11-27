@@ -25,9 +25,8 @@ public class Tablero {
         return tableroInstancia.INSTANCE;
     }
 
-    public Casillero desplazarCasillero(Jugador jugador, int numDados){
-        if (!jugador.mover()) return jugador.actual();
-        return   casilleros.get(getNextIndex(casilleros().indexOf(jugador.actual()),numDados));
+    public Casillero desplazarCasillero(Casillero actual, int numDados){
+        return  casilleros.get(getNextIndex(casilleros().indexOf(actual),numDados));
     }
 
     public int getNextIndex(int actual, int numDados){

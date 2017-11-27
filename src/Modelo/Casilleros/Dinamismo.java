@@ -9,7 +9,7 @@ public abstract class Dinamismo implements Casillero {
 
     public void accionAlCaer(Jugador jugador){
         int aMover = calcularDinamismo(jugador, jugador.sumaDados());
-        Casillero nuevoCasillero = Tablero.getInstancia().desplazarCasillero(jugador, aMover);
+        Casillero nuevoCasillero = Tablero.getInstancia().desplazarCasillero(jugador.actual(), aMover);
         jugador.caeEn(nuevoCasillero);
     }
 

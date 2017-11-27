@@ -2,6 +2,7 @@ package Vista;
 
 import Controladores.ControladorDeTurno;
 import Modelo.Casilleros.*;
+import Modelo.Edificacion;
 import Modelo.Jugador;
 import Modelo.Municipio;
 import javafx.scene.canvas.Canvas;
@@ -21,30 +22,32 @@ public class Visor {
     VBox vb;
 
     public Visor(VistaJugador vistaJugador, Pane pane) {
-        int x = 150;
+        int x = 140;
         int y = 100;
         Casillero actual = vistaJugador.getJugador().actual();
         Jugador jugadorActual = vistaJugador.getJugador();
         VBox flow = new VBox(2);
         Font fontTitulo = new Font("Tahoma Bold", 18);
         Font fontSubTitulo = new Font("Tahoma Bold", 16);
-        Label jugador = new Label(jugadorActual.getNombre() + " en "+ actual.nombre());
-        Label capital = new Label("$"+jugadorActual.capital());
+        Label jugador = new Label(jugadorActual.getNombre() + " ($" +jugadorActual.capital() + ")" +" en "+ actual.nombre());
         Pane espacioVacio = new Pane();
         espacioVacio.setPrefHeight(10);
-        flow.getChildren().addAll(jugador,capital, espacioVacio);
+        flow.getChildren().addAll(jugador, espacioVacio);
         if (Municipio.getInstance().esUnaPropiedad(actual.nombre())){
             Propiedades actualB = (Propiedades) actual;
-            jugador.setText(jugador.getText()+ " ($"+ Integer.toString(actualB.getCosto()) +")");
-            Label propiedadesL = new Label();
-            propiedadesL.setFont(fontSubTitulo);
-            for (Propiedades propiedad: Municipio.getInstance().devolverPropiedades(jugadorActual))
-                propiedadesL.setText(propiedadesL.getText() +" "+ propiedad.nombre());
-            flow.getChildren().add(propiedadesL);
+            Jugador propietario = Municipio.getInstance().devolverPropietario(actualB);
+            String nombrePropietario;
+            if (propietario==null) nombrePropietario =" Nadie lo sabe";
+            else nombrePropietario = propietario.getNombre();
+            jugador.setText(jugador.getText()+
+                    "\n\t$"+ Integer.toString(actualB.getCosto()) +"\n\t"
+                    +  Municipio.getInstance().edificacionesExistentes(actualB)+ " Edificaciones"
+                    + "\n\tDueño: " +  nombrePropietario
+            );
+
         }
         Label preso = null;
         jugador.setFont(fontTitulo);
-        capital.setFont(fontTitulo);
         if (!jugadorActual.mover()){
             preso = new Label("Preso :(");
             preso.setFont(fontSubTitulo);

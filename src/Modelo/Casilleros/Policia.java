@@ -9,7 +9,7 @@ public class Policia implements Casillero {
 
 
     public void accionAlCaer(Jugador jugador) {
-        Casillero carcel = Tablero.getInstancia().desplazarCasillero(jugador, -10);
+        Casillero carcel = Tablero.getInstancia().desplazarCasillero(jugador.actual(), -10);
         jugador.caeEn(carcel);
     }
 

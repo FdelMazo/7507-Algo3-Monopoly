@@ -46,9 +46,12 @@ public class ControladorDeTurno {
         if (!ganador()){
             Casillero viejo = actual.actual();
             Turno turno = new Turno(tablero, actual);
+            if (turno.dobleDesplazamiento(tablero, actual)){
+                Sistema.imprimir("\tCae en " + turno.getIntermedio().nombre());
+            }
             if(viejo == actual.actual()) return false;
             if (actual.perdio()){
-                Sistema.imprimir(actual.getNombre() + " perdió :(");
+                Sistema.imprimir("\tPerdió :(");
                 Sistema.reproducir(this.getClass(), "memuero.mp3");
                 retirarJugador(actual);
                 return false;
@@ -59,9 +62,10 @@ public class ControladorDeTurno {
     }
 
     public void cambiarTurno(){
-
         actual = siguienteJugador(actual);
         Sistema.imprimir("\nEs el turno de " + actual.getNombre());
+        ContenedorPrincipal.actualizar();
+
     }
 
     private Jugador siguienteJugador(Jugador actual) {

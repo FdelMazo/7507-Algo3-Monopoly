@@ -44,11 +44,11 @@ public class ContenedorPrincipal extends BorderPane {
     }
 
     private void setBotonera() {
-        Boton botonTirarDados = new Boton("Tirar Dados", new ControladorTirarDados());
+        Boton botonTirarDados = new Boton("Tirar Dados", null);
+        botonTirarDados.setControlador( new ControladorTirarDados(botonTirarDados));
         botonTirarDados.textoAlPasarMouse("Truquito: Doble click termina el turno");
         Boton botonComprar = new Boton("Comprar", new ControladorComprar());
         Boton botonVender = new Boton("Vender", new ControladorVender());
-        Boton botonFinalizarTurno = new Boton("Finalizar turno", new ControladorFinalizarTurno());
         Boton botonPagarFianza = new Boton("Pagar Fianza", new ControladorPagarFianza());
         Boton botonEdificarCasa = new Boton("Edificar Casa", new ControladorEdificar());
         Boton botonEdificarHotel = new Boton("Edificar Hotel", new ControladorEdificarHotel());
@@ -56,7 +56,9 @@ public class ContenedorPrincipal extends BorderPane {
         botonMudo.textoAlPasarMouse("Africa by Toto \nCover by 8 Bit Universe");
         Pane espacioVacio = new Pane();
         espacioVacio.setPrefHeight(280);
-        VBox contenedorVertical = new VBox(botonTirarDados, botonComprar, botonVender, botonEdificarCasa,botonEdificarHotel,botonPagarFianza,botonFinalizarTurno, espacioVacio, botonMudo);
+        VBox contenedorVertical = new VBox(botonTirarDados, botonComprar, botonVender, botonEdificarCasa,botonEdificarHotel,botonPagarFianza, espacioVacio, botonMudo);
+        contenedorVertical.setPrefWidth(150);
+        contenedorVertical.setPrefWidth(150);
         contenedorVertical.setSpacing(15);
         contenedorVertical.setPadding(new Insets(20));
         this.setLeft(contenedorVertical);
@@ -98,18 +100,5 @@ public class ContenedorPrincipal extends BorderPane {
         visorActual.reset();
         VistaJugador vjActual = VistaJugador.getPorNombre(ControladorDeTurno.getInstance().getJugadorActual().getNombre());
         visorActual = new Visor(vjActual, centro);
-//        for (VistaJugador vj : vistaJugadores) {
-//            vj.dibujar();
-//        }
-//        int jugadoresEnJuego = vistaJugadores.size();
-//        for (int i = 0; i < jugadoresEnJuego; i++) {
-//            if (vistaJugadores.get(i).esElJugador(nombreJugador)) {
-//                for (int x = 0; x < pasos; x++) {
-//                    vistaJugadores.get(i).mover();
-//                }
-//            } else {
-//                vistaJugadores.get(i).dibujar();
-//            }
-//        }
     }
 }

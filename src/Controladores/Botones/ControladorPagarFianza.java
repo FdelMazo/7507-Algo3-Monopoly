@@ -4,6 +4,7 @@ import Controladores.ControladorDeTurno;
 import Controladores.Sistema;
 import Modelo.Casilleros.Casillero;
 import Modelo.Jugador;
+import Vista.ContenedorPrincipal;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
@@ -19,15 +20,16 @@ public class ControladorPagarFianza implements EventHandler<ActionEvent> {
 
         if ( jugador.estaPreso()){
             if(jugador.pagarFianza()) {
-                Sistema.imprimir(jugador.getNombre() + " , eres libre");
+                Sistema.imprimir("\tLibreee");
             }
             else{
-                Sistema.imprimir(jugador.getNombre() + "  no podés pagar la fianza");
+                Sistema.imprimir("\tNo se puede pagar la fianza");
             }
         }
         else {
-            Sistema.imprimir(jugador.getNombre() + " No estás preso");
+            Sistema.imprimir("\tQue no estas preso!");
         }
+        ContenedorPrincipal.actualizar();
     }
 
 }
