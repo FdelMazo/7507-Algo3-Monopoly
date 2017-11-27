@@ -1,9 +1,12 @@
 package Controladores;
 
+import Modelo.Casilleros.Casillero;
 import Modelo.Jugador;
 import Modelo.Tablero;
 import Modelo.Turno;
+import Vista.ContenedorPrincipal;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -11,26 +14,19 @@ import java.util.Random;
 public class ControladorDeTurno {
 
     private static ControladorDeTurno controlador;
-    private ArrayList<Jugador> jugadores;
     private Jugador actual;
-    private Tablero tablero;
+    private Tablero tablero = Tablero.getInstancia();
+    ArrayList<Jugador> jugadores;
 
-    private ControladorDeTurno(){
-
-        tablero = Tablero.getInstancia();
-        jugadores = new ArrayList<>();
-        jugadores.add(new Jugador("Jugador 1"));
-        jugadores.add(new Jugador("Jugador 2"));
-        jugadores.add(new Jugador("Jugador 3"));
-        for (Jugador jugador: jugadores ) {
-            jugador.asignarCasillero(tablero.salida());
-        }
+    private ControladorDeTurno(ArrayList<Jugador> unosJugadores){
+        jugadores = unosJugadores;
         actual = elegirPrimerJugador();
+        Sistema.imprimir("Es el turno de " + actual.getNombre());
     }
 
     public static ControladorDeTurno getInstance(){
         if (controlador == null){
-            controlador = new ControladorDeTurno();
+            controlador = new ControladorDeTurno(ContenedorPrincipal.getJugadores());
         }
         return controlador;
     }
@@ -43,17 +39,23 @@ public class ControladorDeTurno {
         return actual;
     }
 
-    public void jugar(){
+    public boolean jugar(){
         if (!ganador()){
+            Casillero viejo = actual.actual();
             Turno turno = new Turno(tablero, actual);
-            Sistema.imprimir("Es el turno del jugador " + actual.getNombre());
-            Sistema.imprimir("Cae en " + actual.actual().nombre()); //para ver si se mueve
-            if (actual.perdio()) retirarJugador(actual);
+            if(viejo == actual.actual()) return false;
+            if (actual.perdio()){
+                retirarJugador(actual);
+                return false;
+            }
         }
+        return true;
     }
 
     public void cambiarTurno(){
+
         actual = siguienteJugador(actual);
+        Sistema.imprimir("\nEs el turno de " + actual.getNombre());
     }
 
     private Jugador siguienteJugador(Jugador actual) {
@@ -69,9 +71,5 @@ public class ControladorDeTurno {
 
     private boolean ganador() {
         return jugadores.size() == 1;
-    }
-
-    public ArrayList<Jugador> getJugadores() {
-        return jugadores;
     }
 }

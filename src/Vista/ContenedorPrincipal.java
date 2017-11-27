@@ -9,63 +9,59 @@ import javafx.geometry.Insets;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
-import javafx.stage.Stage;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 
-public class ContenedorPrincipal extends BorderPane{
+public class ContenedorPrincipal extends BorderPane {
 
     Tablero tablero;
     VBox contenedorCentral;
-    Sistema sistema;
-    Pane centro;
-    Canvas fondo;
-    VistaJugador vistaJugador1;
-    VistaJugador vistaJugador2;
-    VistaJugador vistaJugador3;
-    VistaTablero vistaTablero;
-    VistaTotal vistaTotal;
+    static Pane centro;
+    static ArrayList<VistaJugador> vistaJugadores = new ArrayList<>();
+    static ArrayList<Jugador> jugadores = new ArrayList<>();
+    static VistaTablero vistaTablero;
+    static Canvas fondo;
 
-    public ContenedorPrincipal(Stage stage){
-        sistema = new Sistema();
+    public ContenedorPrincipal() {
+        this.setFondo();
         this.setCentro(tablero);
         this.setConsola();
         this.setBotonera();
     }
 
-    private void setBotonera(){
-        Boton botonTirarDados = new Boton("Tirar Dados", new ControladorTirarDados(vistaTotal));
+    public static ArrayList<Jugador> getJugadores() {
+        return jugadores;
+    }
+
+    private void setFondo() {
+        fondo = new Canvas(800, 500);
+        fondo.getGraphicsContext2D().setFill(Color.LIGHTGOLDENRODYELLOW);
+        fondo.getGraphicsContext2D().fillRect(0, 0, 720, 420);
+        centro = new Pane(fondo);
+    }
+
+    private void setBotonera() {
+        Boton botonTirarDados = new Boton("Tirar Dados", new ControladorTirarDados());
         Boton botonComprar = new Boton("Comprar", new ControladorComprar());
-        Boton botonEdificar = new Boton("Edificar", new ControladorEdificar());
         Boton botonVender = new Boton("Vender", new ControladorVender());
-        Boton botonFinalizarTurno = new Boton("Finalizar turno", new ControladorFinalizarTurno());
         Boton botonEdificarCasa = new Boton("Edificar casa", new ControladorEdificar());
         Presionador botonMudo = new Presionador("Mudo", new ControladorMudo());
         botonMudo.textoAlPasarMouse("Africa by Toto \nCover by 8 Bit Universe");
         Pane espacioVacio = new Pane();
         espacioVacio.setPrefHeight(280);
-        VBox contenedorVertical = new VBox(botonTirarDados, botonComprar,botonVender, botonFinalizarTurno, botonEdificarCasa, espacioVacio, botonMudo);
+        VBox contenedorVertical = new VBox(botonTirarDados, botonComprar, botonVender, botonEdificarCasa, espacioVacio, botonMudo);
         contenedorVertical.setSpacing(15);
         contenedorVertical.setPadding(new Insets(20));
         this.setLeft(contenedorVertical);
     }
 
     private void setCentro(Tablero tablero) {
-
-        Canvas fondo = new Canvas(800,500);
-        fondo.getGraphicsContext2D().setFill(Color.LIGHTGOLDENRODYELLOW);
-        fondo.getGraphicsContext2D().fillRect(0, 0, 720, 420);
-        centro = new Pane(fondo);
-        vistaTablero = new VistaTablero(Tablero.getInstancia(), centro,fondo);
+        vistaTablero = new VistaTablero(Tablero.getInstancia(), centro, fondo);
         vistaTablero.dibujar();
-        this.setJugadores(fondo);
-        ArrayList<VistaJugador> vistaJugadores = new ArrayList<>();
-        vistaJugadores.add(vistaJugador1);
-        vistaJugadores.add(vistaJugador2);
-        vistaJugadores.add(vistaJugador3);
-        vistaTotal = new VistaTotal(vistaJugadores,vistaTablero);
-        VisorCasillero visorNulo = new VisorCasillero(Tablero.getInstancia().salida(), centro);
+//        VisorCasillero visorNulo = new VisorCasillero(Tablero.getInstancia().salida(), centro);
         contenedorCentral = new VBox(centro);
         contenedorCentral.setPadding(new Insets(25));
         this.setCenter(contenedorCentral);
@@ -73,26 +69,43 @@ public class ContenedorPrincipal extends BorderPane{
 
 
     private void setConsola() {
-        Sistema consolaLocal = new Sistema();
-        this.setRight(consolaLocal.contenedorConsola());
+        this.setRight(Sistema.contenedorConsola());
     }
 
     private void setVisoresJugador(VisorJugador visor) {
         this.setRight(visor);
     }
 
-    public void setJugadores(Canvas canvas) {
-
-        ControladorDeTurno controlador = ControladorDeTurno.getInstance();
-        ArrayList<Jugador> jugadores = controlador.getJugadores();
+    public static void setJugadores() {
         int y = 0;
-        vistaJugador1 = new VistaJugador(jugadores.get(0), Color.BLUE, canvas,680,355+y);
-        vistaJugador1.dibujar();
-        y+=20;
-        vistaJugador2 = new VistaJugador(jugadores.get(1), Color.BLUE, canvas,680,355+y);
-        vistaJugador2.dibujar();
-        y+=20;
-        vistaJugador3 = new VistaJugador(jugadores.get(2), Color.BLUE, canvas,680,355+y);
-        vistaJugador3.dibujar();
+        int x = 680;
+        for (Map.Entry<String, Color> entrada : Sistema.dicColores.entrySet()) {
+            Jugador jugador = new Jugador(entrada.getKey());
+            jugador.asignarCasillero(Tablero.getInstancia().salida());
+            jugadores.add(jugador);
+            vistaJugadores.add(new VistaJugador(jugador, entrada.getValue(), centro, x, 355 + y));
+            y += 20;
+        }
+        for (VistaJugador vj : vistaJugadores) {
+            vj.dibujar();
+        }
+        ControladorDeTurno.getInstance();
+    }
+
+    public static void actualizar() {
+//        vistaTablero.dibujar();
+//        for (VistaJugador vj : vistaJugadores) {
+//            vj.dibujar();
+//        }
+//        int jugadoresEnJuego = vistaJugadores.size();
+//        for (int i = 0; i < jugadoresEnJuego; i++) {
+//            if (vistaJugadores.get(i).esElJugador(nombreJugador)) {
+//                for (int x = 0; x < pasos; x++) {
+//                    vistaJugadores.get(i).mover();
+//                }
+//            } else {
+//                vistaJugadores.get(i).dibujar();
+//            }
+//        }
     }
 }

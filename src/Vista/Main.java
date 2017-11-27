@@ -1,8 +1,10 @@
 package Vista;
 
+import Controladores.Sistema;
 import Modelo.Jugador;
 import javafx.application.Application;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
@@ -17,18 +19,18 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-
+        new Sistema();
         primaryStage.setTitle("AlgoPoly");
+        primaryStage.getIcons().add(new Image("/Recursos/Imagenes/monopoly_icon.png"));
 
-        ContenedorPrincipal contenedorPrincipal = new ContenedorPrincipal(primaryStage);
+        ContenedorEntrada contenedorEntrada = new ContenedorEntrada();
+        Scene escenaBienvenidos = new Scene (contenedorEntrada);
+        ContenedorPrincipal contenedorPrincipal = new ContenedorPrincipal();
         Scene escenaJuego = new Scene(contenedorPrincipal);
 
-        ContenedorEntrada contenedorEntrada = new ContenedorEntrada(primaryStage,escenaJuego);
-        Scene escenaBienvenidos = new Scene (contenedorEntrada);
-
+        contenedorEntrada.setBotonJugar(primaryStage,escenaJuego);
         primaryStage.setScene(escenaBienvenidos);
         primaryStage.setResizable(false);
-
         primaryStage.show();
     }
 }

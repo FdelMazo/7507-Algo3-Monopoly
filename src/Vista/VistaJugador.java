@@ -1,51 +1,58 @@
 package Vista;
 
 
-import Controladores.MovimientoJugador;
 import Modelo.Jugador;
+import Modelo.Tablero;
+import javafx.animation.AnimationTimer;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.scene.canvas.Canvas;
+import javafx.scene.shape.Circle;
+
+import java.util.HashMap;
+import java.util.concurrent.TimeUnit;
 
 
 public class VistaJugador {
 
+    Posicion posicion;
     Color color;
-    Canvas canvas;
+    Pane canvas;
     int X;
     int Y;
-    int R = 15;
-    MovimientoJugador pos;
     Jugador jugador;
+    Circle circulo;
+    static HashMap<String, VistaJugador > diccionarioNombres = new HashMap<>();
 
-    public VistaJugador(Jugador jugador, Color color, Canvas canvas , int x , int y) {
-
+    public VistaJugador(Jugador jugador, Color color, Pane canvas , int x , int y) {
         this.X = x;
         this.Y = y;
         this.color = color;
         this.canvas = canvas;
-        this.pos = new MovimientoJugador(120,70,6, x,y);
-        this.jugador = jugador;
+        this.posicion = new Posicion(120,70);
+        posicion.setInicial(x,y);
+        circulo = new Circle(12);
+        circulo.setStroke(Color.BLACK);
+        circulo.setFill(color);
+        canvas.getChildren().add(circulo);
+        diccionarioNombres.put(jugador.getNombre(), this);
     }
 
     public void dibujar() {
-
-        canvas.getGraphicsContext2D().setFill(color);
-        canvas.getGraphicsContext2D().setStroke(Color.BLACK);
-        canvas.getGraphicsContext2D().fillOval(X,Y,this.R,this.R);
-
+        circulo.relocate(X,Y);
     }
 
-    public boolean esElJugador(String nombreJugador){
-        return nombreJugador == jugador.getNombre();
+    public void mover(int pasos){
+        for (int i = 0; i<pasos; i++) {
+            posicion.actualizar();
+            X = posicion.getNextX();
+            Y = posicion.getNextY();
+            this.dibujar();
+        }
     }
 
-    public void mover(){
-
-        X -=pos.getNextX();
-        Y = pos.getNextY();
-
-        this.dibujar();
-
+    public static VistaJugador getPorNombre(String unNombre){
+        return diccionarioNombres.get(unNombre);
     }
 
 

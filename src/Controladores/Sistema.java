@@ -2,6 +2,7 @@ package Controladores;
 
 import Controladores.Botones.ControladorEntrar;
 import javafx.geometry.Insets;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -9,7 +10,9 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 
+import java.awt.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import static javafx.scene.input.KeyCode.R;
 
@@ -19,6 +22,8 @@ public class Sistema {
     static boolean mudo = false;
     static ArrayList<MediaPlayer> sonidos = new ArrayList<MediaPlayer>();
     static MediaPlayer musicaFondo;
+    static ScrollPane sp;
+    public static HashMap<String,Color> dicColores = new HashMap<>();
 
     public Sistema() {
         Text text = new Text(">>> Consola");
@@ -26,12 +31,15 @@ public class Sistema {
         text.setFill(Color.GREEN);
         VBox contenedorConsola = new VBox(text);
         contenedorConsola.setStyle("-fx-background-color: black;");
-        contenedorConsola.setPrefWidth(220);
+        contenedorConsola.setPrefWidth(280);
         consola = contenedorConsola;
+        sp = new ScrollPane(contenedorConsola);
+        sp.setStyle("-fx-background: black;");
+        sp.vvalueProperty().bind(consola.heightProperty());
     }
 
-    public VBox contenedorConsola() {
-        return consola;
+    public static ScrollPane contenedorConsola() {
+        return sp;
     }
 
     public static void mutear(){
@@ -48,7 +56,7 @@ public class Sistema {
         Text text = new Text(cadena);
         text.setFont(Font.font("Verdana", 12));
         text.setFill(Color.GREEN);
-        consola.getChildren().add(0, text);
+        consola.getChildren().add(text);
     }
 
     public static void reproducir(Class c, String archivo) {

@@ -77,6 +77,7 @@ public class Jugador {
             return true;
         }
         ArrayList<Propiedades> propiedades = municipio.devolverPropiedades(this);
+        if(propiedades==null) return false;
         for (Propiedades propiedad : propiedades) {
 
             this.venderAlBanco(propiedad);
@@ -109,7 +110,7 @@ public class Jugador {
     }
 
     public boolean perdio() {
-        return capital == 0;
+        return capital <= 0;
     }
 
     public String getNombre() {

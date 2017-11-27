@@ -1,14 +1,10 @@
 package Vista;
 
 import Controladores.EntradaUsuario;
-import Controladores.Sistema;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
@@ -20,15 +16,15 @@ import javafx.stage.Stage;
 import Controladores.Botones.ControladorEntrar;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.HashMap;
 
 public class ContenedorEntrada extends VBox {
 
     ArrayList<EntradaUsuario> jugadores = new ArrayList<>();
+    ControladorEntrar ce;
 
-    public ContenedorEntrada(Stage stage, Scene proximaEscena) {
+    public ContenedorEntrada() {
         super();
-        stage.getIcons().add(new Image("/Recursos/Imagenes/monopoly_icon.png"));
         this.setAlignment(Pos.CENTER);
         this.setSpacing(20);
         this.setPadding(new Insets(25));
@@ -43,11 +39,6 @@ public class ContenedorEntrada extends VBox {
         VBox vb = new VBox(entrada1.getHb(), entrada2.getHb(),entrada3.getHb());
         vb.setSpacing(30);
 
-        Button botonEntrar = new Button();
-        botonEntrar.setText("JUGAR");
-        ControladorEntrar botonEntrarHandler = new ControladorEntrar(stage, proximaEscena);
-        botonEntrar.setOnAction(botonEntrarHandler);
-
         Label titulo = new Label("AlgoPoly");
         titulo.setFont(Font.font("Tahoma", FontWeight.BOLD, 18));
         titulo.setTextAlignment(TextAlignment.CENTER);
@@ -60,10 +51,12 @@ public class ContenedorEntrada extends VBox {
         Image imagen = new Image("/Recursos/Imagenes/Monopoly_pack_logo.png",1500,150,true,true);
         final ImageView imagenVista = new ImageView(imagen);
 
-        this.getChildren().addAll(titulo,subtitulo, vb, botonEntrar,imagenVista);
+        this.getChildren().addAll(titulo,subtitulo, vb,imagenVista);
     }
 
-    public ArrayList<EntradaUsuario> getJugadores() {
-        return jugadores;
+    public void setBotonJugar(Stage stage, Scene proximaEscena){
+        ce = new ControladorEntrar(stage,proximaEscena, jugadores);
+        Boton botonEntrar = new Boton("JUGAR", ce);
+        this.getChildren().add(3, botonEntrar);
     }
 }

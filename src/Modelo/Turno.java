@@ -1,13 +1,14 @@
 package Modelo;
 
+import Controladores.Sistema;
 import Modelo.Casilleros.Casillero;
 
 public class Turno {
 
     public Turno(Tablero tablero, Jugador jugador){
+        if (!jugador.mover()) return;
         Casillero nuevo = tablero.desplazarCasillero(jugador, jugador.lanzarDados());
         jugador.caeEn(nuevo);
-        if (jugador.doble()) new Turno(tablero, jugador);
         }
     }
 

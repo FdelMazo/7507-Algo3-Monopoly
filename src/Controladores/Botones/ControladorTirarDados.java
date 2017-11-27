@@ -1,40 +1,36 @@
 package Controladores.Botones;
 
 import Controladores.ControladorDeTurno;
-import Modelo.Casilleros.Casillero;
-import Modelo.Dados;
 import Controladores.Sistema;
 import Modelo.Jugador;
-import Vista.VistaTotal;
+import Vista.VistaJugador;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
 
 public class ControladorTirarDados implements EventHandler<ActionEvent> {
 
-    private VistaTotal vistaTotal;
 
-    public ControladorTirarDados(VistaTotal vistaTotal){
-
-        this.vistaTotal = vistaTotal;
+    public ControladorTirarDados(){
     }
 
     @Override
     public void handle(ActionEvent event) {
-
         ControladorDeTurno controlador = ControladorDeTurno.getInstance();
-        controlador.jugar();
-        Jugador anteriorJugador = null;
         Jugador actual = controlador.getJugadorActual();
-        if (anteriorJugador != actual) {
-            Dados dados = new Dados();
-            int resultado = dados.suma();
-            Sistema.imprimir("Sacas : " + resultado);
-            Sistema.imprimir("Caes en: " + controlador.getJugadorActual().actual().nombre());
-            vistaTotal.actualizarJugador(controlador.getJugadorActual().getNombre(),resultado);
+        if(!controlador.jugar()){
+            controlador.cambiarTurno();
+            return;
         }
-        else{
-            Sistema.imprimir("No puedes volver a tirar los dados");
+        int dados = actual.sumaDados();
+        Sistema.imprimir(actual.getNombre() + " saca " + dados);
+        Sistema.imprimir(controlador.getJugadorActual().getNombre() + " cae en " + controlador.getJugadorActual().actual().nombre());
+        VistaJugador vj = VistaJugador.getPorNombre(actual.getNombre());
+        vj.mover(dados);
+        if (actual.doble()) {
+            Sistema.imprimir(actual.getNombre() + " sacó doble! \nLanza nuevamente");
+            return;
         }
+        controlador.cambiarTurno();
     }
 }

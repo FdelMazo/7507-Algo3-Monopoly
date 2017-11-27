@@ -30,7 +30,7 @@ public class Tablero {
         if (!jugador.mover()) return actual;
         int indexInicial = casilleros.indexOf(actual);
         int indexFinal = indexInicial + numDados;
-        if(indexFinal > casilleros.size()){
+        if(indexFinal >= casilleros.size()){
             jugador.caeEn(salida());
             indexFinal-=casilleros.size();
         }

@@ -7,7 +7,6 @@ public class Posicion {
     int x; int y;
 
     public Posicion(int cantX,int cantY){
-
         desplazamientoX = cantX;
         desplazamientoY = cantY;
 
