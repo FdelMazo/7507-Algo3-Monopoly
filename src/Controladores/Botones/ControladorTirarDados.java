@@ -16,7 +16,6 @@ public class ControladorTirarDados implements EventHandler<ActionEvent> {
     @Override
     public void handle(ActionEvent event) {
         if (presionado) {
-            Sistema.imprimir("Ya has lanzado... tramposo");
             ControladorDeTurno.getInstance().terminarTurno();
             return;
         }
@@ -30,17 +29,16 @@ public class ControladorTirarDados implements EventHandler<ActionEvent> {
 
         }
         if(!controlador.jugar()){
-            Sistema.imprimir("Ya has lanzado... tramposo");
             ControladorDeTurno.getInstance().terminarTurno();
             return;
         }
         int dados = actual.sumaDados();
-        Sistema.imprimir(actual.getNombre() + " saca " + dados);
+//        Sistema.imprimir(actual.getNombre() + " saca " + dados);
         Sistema.imprimir(controlador.getJugadorActual().getNombre() + " cae en " + controlador.getJugadorActual().actual().nombre());
         VistaJugador vj = VistaJugador.getPorNombre(actual.getNombre());
         vj.moverDesdeHasta(viejo, actual.actual());
         if (actual.doble()) {
-            Sistema.reproducir(this.getClass(), "woah3.mp3");
+//            Sistema.reproducir(this.getClass(), "woah3.mp3");
             Sistema.imprimir(actual.getNombre() + " sacó doble! \nLanza nuevamente");
             return;
         }

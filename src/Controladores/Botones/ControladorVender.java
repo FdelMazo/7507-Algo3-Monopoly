@@ -29,7 +29,7 @@ public class ControladorVender implements EventHandler<ActionEvent>{
             }
         }
         else {
-            Sistema.imprimir("No puedes realizar esa accion");
+            Sistema.error();
         }
     }
 }

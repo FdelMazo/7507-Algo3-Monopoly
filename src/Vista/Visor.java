@@ -39,7 +39,7 @@ public class Visor {
             Label propiedadesL = new Label();
             propiedadesL.setFont(fontSubTitulo);
             for (Propiedades propiedad: Municipio.getInstance().devolverPropiedades(jugadorActual))
-                propiedadesL.setText(propiedadesL.getText() + propiedad.nombre());
+                propiedadesL.setText(propiedadesL.getText() +" "+ propiedad.nombre());
             flow.getChildren().add(propiedadesL);
         }
         Label preso = null;
