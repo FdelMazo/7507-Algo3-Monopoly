@@ -23,8 +23,11 @@ public class ControladorComprar implements EventHandler<ActionEvent>{
                 ((Propiedades) actual).comprar(jugador);
                 Sistema.imprimir(jugador.getNombre() + " ha comprado " + actual.nombre());
             }
-            else{
+            else if (municipio.devolverPropietario((Propiedades)actual) == jugador){
                 Sistema.imprimir("Ya la has comprado");
+            }
+            else{
+                Sistema.imprimir("Esta propiedad es de " + jugador.getNombre());
             }
         }
         else {
