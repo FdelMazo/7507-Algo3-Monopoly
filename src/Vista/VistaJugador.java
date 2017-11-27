@@ -25,6 +25,7 @@ public class VistaJugador {
     static HashMap<String, VistaJugador > diccionarioNombres = new HashMap<>();
 
     public VistaJugador(Jugador jugador, Color color, Pane canvas , int x , int y) {
+
         this.X = x;
         this.Y = y;
         this.color = color;

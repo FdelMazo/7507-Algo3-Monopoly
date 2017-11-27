@@ -5,11 +5,9 @@ import Modelo.Jugador;
 
 public interface Propiedades {
 
-    void cederAlBanco(Jugador jugador);
     String nombre();
     void cambiarPropietario(Jugador jugador);
-    int getValorMercado();
-    int getCosto();
     boolean comprar(Jugador jugador);
+    void cederAlBanco(Jugador jugador);
     boolean edificarCasa(Jugador jugador);
 }

@@ -28,9 +28,6 @@ public class Servicio implements Casillero, Propiedades{
         return false;
     }
 
-    public int getValorMercado(){
-        return costoMercado;
-    }
 
     public void accionAlCaer(Jugador jugador){
         Jugador propietario = municipio.devolverPropietario(this);
@@ -60,9 +57,6 @@ public class Servicio implements Casillero, Propiedades{
         return numDado*cobro;
     }
 
-    public int getCosto(){
-        return costo;
-    }
 
     public boolean edificarCasa(Jugador jugador){ return false; }
 

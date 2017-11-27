@@ -28,10 +28,11 @@ public class VistaTablero {
 
 
     public void dibujar() {
-        int x = 600; int x_rel = 0;
-        int y = 350; int y_rel = 0;
+
+        int x = 600;
+        int y = 350;
         Posicion manejadorDePosiciones = new Posicion(120,70);
-        manejadorDePosiciones.setInicial(600,350);
+        manejadorDePosiciones.setInicial(x,y);
 
         for (Casillero casillero : tablero.casilleros()) {
 
@@ -44,6 +45,8 @@ public class VistaTablero {
             rectangle.relocate(manejadorDePosiciones.getNextX(), manejadorDePosiciones.getNextY());
 
             pane.getChildren().addAll(rectangle,text);
+
+
             manejadorDePosiciones.actualizar();
         }
     }
