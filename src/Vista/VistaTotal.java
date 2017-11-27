@@ -17,7 +17,7 @@ public class VistaTotal {
     }
 
     public void actualizarJugador(String nombreJugador){
-        //ahora mueve uno al azar pero dps debería recibirlo de alguna forma
+
         tablero.dibujar();
         int jugadoresEnJuego = vistaJugadores.size();
         for (int i = 0; i<jugadoresEnJuego ; i++){

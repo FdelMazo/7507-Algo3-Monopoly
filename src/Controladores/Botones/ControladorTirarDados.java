@@ -22,18 +22,17 @@ public class ControladorTirarDados implements EventHandler<ActionEvent> {
     public void handle(ActionEvent event) {
 
         ControladorDeTurno controlador = ControladorDeTurno.getInstance();
-        Jugador actual = null;
-        if (actual != controlador.getJugadorActual()){
-            controlador.jugar();
-            Dados dados = new Dados();
-            int resultado = dados.suma();
-            Sistema.imprimir("Sacas : " + resultado);
-            vistaTotal.actualizarJugador(actual.getNombre());
-            actual = controlador.getJugadorActual();
-        }
-        else {
-            Sistema.imprimir("No puedes volver a tirar los dados");
-        }
-    }
+        controlador.jugar();
+        Jugador actual = controlador.getJugadorActual();
 
+        Dados dados = new Dados();
+        int resultado = dados.suma();
+        Sistema.imprimir("Sacas : " + resultado);
+
+        vistaTotal.actualizarJugador(actual.getNombre());
+
+        controlador.cambiarTurno();
+
+        }
 }
+
