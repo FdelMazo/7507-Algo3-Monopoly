@@ -30,4 +30,8 @@ public class VistaTotal {
         }
 
     }
+
+    public void agregarEdificacion(){
+
+    }
 }

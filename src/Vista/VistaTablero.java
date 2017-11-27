@@ -1,6 +1,10 @@
 package Vista;
 
+import Controladores.ControladorDeTurno;
 import Modelo.Casilleros.Casillero;
+import Modelo.Casilleros.Propiedades;
+import Modelo.Jugador;
+import Modelo.Municipio;
 import Modelo.Tablero;
 import javafx.scene.canvas.Canvas;
 import javafx.scene.layout.Pane;
@@ -29,11 +33,28 @@ public class VistaTablero {
 
         for (Casillero casillero : tablero.casilleros()) {
 
+            Municipio municipio = Municipio.getInstance();
+
+            int posx= manejadorDePosiciones.getNextX();
+            int posy =manejadorDePosiciones.getNextY();
+
             canvas.getGraphicsContext2D().setStroke(Color.BLACK);
             canvas.getGraphicsContext2D().setFill(casillero.color());
-            canvas.getGraphicsContext2D().fillRect(manejadorDePosiciones.getNextX(),manejadorDePosiciones.getNextY(),120,70);
+            canvas.getGraphicsContext2D().fillRect(posx,posy,120,70);
+
+            if(municipio.puedeConstruir(casillero)){
+                int cantidadEdificaciones = municipio.edificacionesExistentes((Propiedades)(casillero));
+                for (int i = 0 ; i<cantidadEdificaciones ; i++){
+                    canvas.getGraphicsContext2D().setStroke(Color.BLACK);
+                    canvas.getGraphicsContext2D().setFill(Color.BLUE); // cambiar al color del dueño dps
+                    canvas.getGraphicsContext2D().fillRect(posx,posy,10,10);
+                    posx +=15;
+                    posy +=15;
+                }
+            }
 
             manejadorDePosiciones.actualizar();
         }
     }
+
 }
