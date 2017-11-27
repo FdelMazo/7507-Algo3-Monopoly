@@ -16,6 +16,7 @@ public class ControladorDeTurno {
     private Tablero tablero;
 
     private ControladorDeTurno(){
+
         tablero = Tablero.getInstancia();
         jugadores = new ArrayList<>();
         jugadores.add(new Jugador("Jugador 1"));
@@ -70,4 +71,7 @@ public class ControladorDeTurno {
         return jugadores.size() == 1;
     }
 
+    public ArrayList<Jugador> getJugadores() {
+        return jugadores;
+    }
 }

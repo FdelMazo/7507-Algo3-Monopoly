@@ -14,6 +14,7 @@ public class VistaJugador {
     int Y;
     int R = 15;
     Posicion pos;
+    Jugador jugador;
 
     public VistaJugador(Jugador jugador, Color color, Canvas canvas , int x , int y) {
 
@@ -23,6 +24,7 @@ public class VistaJugador {
         this.canvas = canvas;
         this.pos = new Posicion(120,70);
         this.pos.setInicial(X,Y);
+        this.jugador = jugador;
     }
 
     public void dibujar() {
@@ -33,10 +35,15 @@ public class VistaJugador {
 
     }
 
+    public boolean esElJugador(String nombreJugador){
+        return nombreJugador == jugador.getNombre();
+    }
+
     public void mover(){
 
-        X -= 120;
+        X = pos.getNextY();
         Y = pos.getNextY();
+
         this.dibujar();
 
     }

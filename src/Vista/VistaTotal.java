@@ -1,29 +1,33 @@
 package Vista;
 
 
+import java.util.ArrayList;
+
 public class VistaTotal {
 
-    VistaJugador jugador1;
-    VistaJugador jugador2;
-    VistaJugador jugador3;
+    ArrayList<VistaJugador> vistaJugadores;
     VistaTablero tablero;
 
-    public VistaTotal(VistaJugador jugador1, VistaJugador jugador2, VistaJugador jugador3, VistaTablero tablero){
+    public VistaTotal(ArrayList<VistaJugador> jugadores, VistaTablero tablero){
 
-        this.jugador1 = jugador1;
-        this.jugador2 = jugador2;
-        this.jugador3 = jugador3;
+
+        this.vistaJugadores = jugadores;
         this.tablero = tablero;
 
     }
 
-    public void actualizar(){
-
+    public void actualizarJugador(String nombreJugador){
+        //ahora mueve uno al azar pero dps debería recibirlo de alguna forma
         tablero.dibujar();
-        jugador1.mover();
-        jugador2.dibujar();
-        jugador3.dibujar();
+        int jugadoresEnJuego = vistaJugadores.size();
+        for (int i = 0; i<jugadoresEnJuego ; i++){
+            if (vistaJugadores.get(i).esElJugador(nombreJugador)){
+                vistaJugadores.get(i).mover();
+            }
+            else{
+                vistaJugadores.get(i).dibujar();
+            }
+        }
 
     }
-
 }

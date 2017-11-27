@@ -28,12 +28,12 @@ public class ControladorTirarDados implements EventHandler<ActionEvent> {
             Dados dados = new Dados();
             int resultado = dados.suma();
             Sistema.imprimir("Sacas : " + resultado);
+            vistaTotal.actualizarJugador(actual.getNombre());
             actual = controlador.getJugadorActual();
         }
         else {
             Sistema.imprimir("No puedes volver a tirar los dados");
         }
-        vistaTotal.actualizar();
     }
 
 }
