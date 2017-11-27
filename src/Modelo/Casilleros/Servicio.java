@@ -59,5 +59,8 @@ public class Servicio implements Casillero, Propiedades{
 
 
     public boolean edificarCasa(Jugador jugador){ return false; }
+    public int getCosto(){
+        return costo;
+    }
 
 }

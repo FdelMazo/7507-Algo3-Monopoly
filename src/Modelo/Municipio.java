@@ -106,7 +106,7 @@ public class Municipio {
         if (jugadorPropiedades.containsKey(jugador.getNombre())) {
             return jugadorPropiedades.get(jugador.getNombre());
         }
-        return null;
+        return new ArrayList<Propiedades>();
     }
 
     public void cederPropiedadAlBanco(Jugador duenio, Propiedades propiedad) {

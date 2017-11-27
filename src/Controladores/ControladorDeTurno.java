@@ -1,5 +1,6 @@
 package Controladores;
 
+import Controladores.Botones.ControladorTirarDados;
 import Modelo.Casilleros.Casillero;
 import Modelo.Jugador;
 import Modelo.Tablero;
@@ -50,8 +51,8 @@ public class ControladorDeTurno {
                 retirarJugador(actual);
                 return false;
             }
-            ContenedorPrincipal.actualizar();
         }
+        ContenedorPrincipal.actualizar();
         return true;
     }
 
@@ -74,5 +75,10 @@ public class ControladorDeTurno {
 
     private boolean ganador() {
         return jugadores.size() == 1;
+    }
+
+    public void terminarTurno(){
+        ControladorTirarDados.reset();
+        controlador.cambiarTurno();
     }
 }

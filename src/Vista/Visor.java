@@ -1,8 +1,7 @@
 package Vista;
 
 import Controladores.ControladorDeTurno;
-import Modelo.Casilleros.Barrio;
-import Modelo.Casilleros.Casillero;
+import Modelo.Casilleros.*;
 import Modelo.Jugador;
 import Modelo.Municipio;
 import javafx.scene.canvas.Canvas;
@@ -15,6 +14,8 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextFlow;
+
+import java.lang.invoke.SerializedLambda;
 
 public class Visor {
     VBox vb;
@@ -29,17 +30,18 @@ public class Visor {
         Font fontSubTitulo = new Font("Tahoma Bold", 16);
         Label jugador = new Label(jugadorActual.getNombre() + " en "+ actual.nombre());
         if (Municipio.getInstance().esUnaPropiedad(actual.nombre())){
-            Barrio actualB = (Barrio) actual;
+            Propiedades actualB = (Propiedades) actual;
             jugador.setText(jugador.getText()+ " ($"+ Integer.toString(actualB.getCosto()) +")");
+            Label propiedades = new Label(Municipio.getInstance().devolverPropiedades(jugadorActual).toString());
+            flow.getChildren().add(propiedades);
         }
         Label capital = new Label("$"+jugadorActual.capital());
-//        Label propiedades = new Label();
 //        Municipio.getInstance().esUnaPropiedad(casillero.get)
         Label preso = null;
         jugador.setFont(fontTitulo);
         capital.setFont(fontTitulo);
         flow.getChildren().addAll(jugador,capital);
-        if (!jugadorActual.mover()){
+        if (!jugadorActual.estaPreso()){
             preso = new Label("Preso :(");
             preso.setFont(fontSubTitulo);
             flow.getChildren().add(preso);

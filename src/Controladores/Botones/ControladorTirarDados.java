@@ -15,12 +15,14 @@ public class ControladorTirarDados implements EventHandler<ActionEvent> {
     public void handle(ActionEvent event) {
         if (presionado) {
             Sistema.imprimir("Ya has lanzado... tramposo");
+            ControladorDeTurno.getInstance().terminarTurno();
             return;
         }
         ControladorDeTurno controlador = ControladorDeTurno.getInstance();
         Jugador actual = controlador.getJugadorActual();
         if(!controlador.jugar()){
-            controlador.cambiarTurno();
+            Sistema.imprimir("Ya has lanzado... tramposo");
+            ControladorDeTurno.getInstance().terminarTurno();
             return;
         }
         int dados = actual.sumaDados();
@@ -29,6 +31,7 @@ public class ControladorTirarDados implements EventHandler<ActionEvent> {
         VistaJugador vj = VistaJugador.getPorNombre(actual.getNombre());
         vj.mover(dados);
         if (actual.doble()) {
+            Sistema.reproducir(this.getClass(), "woah3.mp3");
             Sistema.imprimir(actual.getNombre() + " sacó doble! \nLanza nuevamente");
             return;
         }

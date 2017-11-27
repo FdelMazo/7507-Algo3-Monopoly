@@ -11,9 +11,7 @@ public class ControladorFinalizarTurno implements EventHandler<ActionEvent>{
 
     @Override
     public void handle(ActionEvent event) {
-        ControladorTirarDados.reset();
-        ControladorDeTurno controlador = ControladorDeTurno.getInstance();
-        controlador.cambiarTurno();
+        ControladorDeTurno.getInstance().terminarTurno();
     }
 
 }
