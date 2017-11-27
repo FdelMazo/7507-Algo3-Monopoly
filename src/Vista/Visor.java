@@ -29,19 +29,23 @@ public class Visor {
         Font fontTitulo = new Font("Tahoma Bold", 18);
         Font fontSubTitulo = new Font("Tahoma Bold", 16);
         Label jugador = new Label(jugadorActual.getNombre() + " en "+ actual.nombre());
+        Label capital = new Label("$"+jugadorActual.capital());
+        Pane espacioVacio = new Pane();
+        espacioVacio.setPrefHeight(10);
+        flow.getChildren().addAll(jugador,capital, espacioVacio);
         if (Municipio.getInstance().esUnaPropiedad(actual.nombre())){
             Propiedades actualB = (Propiedades) actual;
             jugador.setText(jugador.getText()+ " ($"+ Integer.toString(actualB.getCosto()) +")");
-            Label propiedades = new Label(Municipio.getInstance().devolverPropiedades(jugadorActual).toString());
-            flow.getChildren().add(propiedades);
+            Label propiedadesL = new Label();
+            propiedadesL.setFont(fontSubTitulo);
+            for (Propiedades propiedad: Municipio.getInstance().devolverPropiedades(jugadorActual))
+                propiedadesL.setText(propiedadesL.getText() + propiedad.nombre());
+            flow.getChildren().add(propiedadesL);
         }
-        Label capital = new Label("$"+jugadorActual.capital());
-//        Municipio.getInstance().esUnaPropiedad(casillero.get)
         Label preso = null;
         jugador.setFont(fontTitulo);
         capital.setFont(fontTitulo);
-        flow.getChildren().addAll(jugador,capital);
-        if (!jugadorActual.estaPreso()){
+        if (!jugadorActual.mover()){
             preso = new Label("Preso :(");
             preso.setFont(fontSubTitulo);
             flow.getChildren().add(preso);
