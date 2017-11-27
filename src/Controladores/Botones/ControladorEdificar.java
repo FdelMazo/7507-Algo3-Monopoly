@@ -35,7 +35,7 @@ public class ControladorEdificar implements EventHandler<ActionEvent>{
             jugadorAnterior = jugador;
         }
         else {
-            Sistema.imprimir("No se puede realizar esa accion");
+            Sistema.error();
         }
     }
 

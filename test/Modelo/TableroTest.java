@@ -1,8 +1,11 @@
 package Modelo;
 
+import Modelo.Casilleros.Casillero;
 import Modelo.Casilleros.Servicio;
 import org.junit.Assert;
 import org.junit.Test;
+
+import java.lang.annotation.Repeatable;
 
 public class TableroTest {
 
@@ -36,4 +39,13 @@ public class TableroTest {
         Assert.assertEquals(100000+2000, jugador.capital());
     }
 
+    @Test
+    public void testAvanzarSegunDadosLanzados() {
+        Jugador jugador = new Jugador("Jugador 1");
+        Tablero tablero = Tablero.getInstancia();
+        jugador.asignarCasillero(tablero.salida());
+        jugador.lanzarDados();
+        Casillero nuevoCasillero = tablero.desplazarCasillero(jugador, jugador.sumaDados());
+        Assert.assertEquals(jugador.sumaDados(), Tablero.getInstancia().casilleros().indexOf(nuevoCasillero));
+    }
 }
