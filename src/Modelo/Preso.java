@@ -17,7 +17,11 @@ public class Preso implements Estado{
 
     public boolean mover() {
         diasPreso += 1;
-        return diasPreso>3 || fianzaPagada ;
+        if(diasPreso>3 || fianzaPagada){
+            jugador.actualizarEstado(new Libre());
+            return  true;
+        }
+        return false;
     }
 
     public boolean pagarFianza (){

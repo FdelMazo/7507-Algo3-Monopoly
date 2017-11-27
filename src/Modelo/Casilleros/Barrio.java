@@ -41,15 +41,6 @@ public class Barrio implements Casillero, Propiedades {
         return false;
     }
 
-    public boolean vender(Jugador jugador){
-
-        if(!jugador.comprar(costo,this)) return false;
-        cambiarPropietario(jugador);
-        valor_mercado = costo * 85 /100;
-        return true;
-    }
-
-
     public void cambiarPropietario(Jugador jugador){
         propietario = jugador;
         municipio.cambiar_propietario(jugador,this);

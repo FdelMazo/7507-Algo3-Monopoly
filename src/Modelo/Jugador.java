@@ -15,10 +15,12 @@ public class Jugador {
     Municipio municipio = Municipio.getInstance();
 
     public Jugador(String nombreJugador) {
+
         this.capital = 100000;
         casilleroActual = null;
         nombre = nombreJugador;
         estado = new Libre();
+
     }
 
     public void asignarCasillero(Casillero casillero) {
