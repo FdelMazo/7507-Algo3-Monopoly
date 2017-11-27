@@ -7,7 +7,7 @@ import java.util.List;
 
 public class BarrioDoble extends Barrio{
 
-    List<Edificacion> listaHoteles;
+    private List<Edificacion> listaHoteles;
 
     public BarrioDoble(String unNombre, int valor_propiedad, int elAlquilerOriginal, List edificacionesCasas, List edificacionesHoteles) {
         super(unNombre,valor_propiedad, elAlquilerOriginal, edificacionesCasas);

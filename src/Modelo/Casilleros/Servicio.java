@@ -64,4 +64,8 @@ public class Servicio implements Casillero, Propiedades{
         return costo;
     }
 
+    public boolean puedeEdificarHotel(Jugador jugador){
+        return false;
+    }
+
 }

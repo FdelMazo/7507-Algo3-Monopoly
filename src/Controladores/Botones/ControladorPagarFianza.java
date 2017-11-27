@@ -26,7 +26,7 @@ public class ControladorPagarFianza implements EventHandler<ActionEvent> {
             }
         }
         else {
-            Sistema.imprimir(jugador.getNombre() + "No estás preso");
+            Sistema.imprimir(jugador.getNombre() + " No estás preso");
         }
     }
 

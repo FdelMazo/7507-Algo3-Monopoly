@@ -10,6 +10,7 @@ public interface Propiedades {
     boolean comprar(Jugador jugador);
     void cederAlBanco(Jugador jugador);
     boolean edificarCasa(Jugador jugador);
+    boolean puedeEdificarHotel(Jugador jugador);
     int getCosto();
 
 }
