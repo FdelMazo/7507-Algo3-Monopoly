@@ -2,9 +2,9 @@ package Modelo;
 
 public class Edificacion {
 
-    int precio;
-    int alquiler;
-    boolean construido;
+    private int precio;
+    private int alquiler;
+    private boolean construido;
 
     public Edificacion(int unPrecio, int unAlquiler){
         precio = unPrecio;

@@ -16,7 +16,7 @@ public class ControladorDeTurno {
     private static ControladorDeTurno controlador;
     private Jugador actual;
     private Tablero tablero = Tablero.getInstancia();
-    ArrayList<Jugador> jugadores;
+    private ArrayList<Jugador> jugadores;
 
     private ControladorDeTurno(ArrayList<Jugador> unosJugadores){
         jugadores = unosJugadores;
