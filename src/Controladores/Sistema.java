@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import static javafx.scene.input.KeyCode.R;
 
 public class Sistema {
+
     static VBox consola = null;
     static boolean mudo = false;
     static ArrayList<MediaPlayer> sonidos = new ArrayList<MediaPlayer>();

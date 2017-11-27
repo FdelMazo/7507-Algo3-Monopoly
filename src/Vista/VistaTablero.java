@@ -29,8 +29,8 @@ public class VistaTablero {
 
         for (Casillero casillero : tablero.casilleros()) {
 
-            canvas.getGraphicsContext2D().setFill(casillero.color());
             canvas.getGraphicsContext2D().setStroke(Color.BLACK);
+            canvas.getGraphicsContext2D().setFill(casillero.color());
             canvas.getGraphicsContext2D().fillRect(manejadorDePosiciones.getNextX(),manejadorDePosiciones.getNextY(),120,70);
 
             manejadorDePosiciones.actualizar();

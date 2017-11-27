@@ -1,6 +1,7 @@
 package Vista;
 
 import Controladores.Botones.*;
+import Controladores.ControladorDeTurno;
 import Controladores.Sistema;
 import Modelo.Jugador;
 import Modelo.Tablero;
@@ -9,6 +10,8 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+
+import java.util.ArrayList;
 
 
 public class ContenedorPrincipal extends BorderPane{
@@ -55,7 +58,11 @@ public class ContenedorPrincipal extends BorderPane{
         vistaTablero = new VistaTablero(Tablero.getInstancia(), centro,fondo);
         vistaTablero.dibujar();
         this.setJugadores(fondo);
-        vistaTotal = new VistaTotal(vistaJugador1,vistaJugador2,vistaJugador3,vistaTablero);
+        ArrayList<VistaJugador> vistaJugadores = new ArrayList<>();
+        vistaJugadores.add(vistaJugador1);
+        vistaJugadores.add(vistaJugador2);
+        vistaJugadores.add(vistaJugador3);
+        vistaTotal = new VistaTotal(vistaJugadores,vistaTablero);
         VisorCasillero visorNulo = new VisorCasillero(Tablero.getInstancia().salida(), centro);
         contenedorCentral = new VBox(centro);
         contenedorCentral.setPadding(new Insets(25));
@@ -73,18 +80,17 @@ public class ContenedorPrincipal extends BorderPane{
     }
 
     public void setJugadores(Canvas canvas) {
+
+        ControladorDeTurno controlador = ControladorDeTurno.getInstance();
+        ArrayList<Jugador> jugadores = controlador.getJugadores();
         int y = 0;
-        Jugador jugador1 = new Jugador("Pablo");
-        vistaJugador1 = new VistaJugador(jugador1, Color.BLUE, canvas,680,355+y);
+        vistaJugador1 = new VistaJugador(jugadores.get(0), Color.BLUE, canvas,680,355+y);
         vistaJugador1.dibujar();
         y+=20;
-        Jugador jugador2 = new Jugador("Pablo");
-        vistaJugador2 = new VistaJugador(jugador2, Color.BLUE, canvas,680,355+y);
+        vistaJugador2 = new VistaJugador(jugadores.get(1), Color.BLUE, canvas,680,355+y);
         vistaJugador2.dibujar();
         y+=20;
-        Jugador jugador3 = new Jugador("Pablo");
-        vistaJugador3 = new VistaJugador(jugador3, Color.BLUE, canvas,680,355+y);
+        vistaJugador3 = new VistaJugador(jugadores.get(2), Color.BLUE, canvas,680,355+y);
         vistaJugador3.dibujar();
-
     }
 }

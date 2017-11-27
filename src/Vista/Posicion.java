@@ -1,11 +1,13 @@
 package Vista;
 
 public class Posicion {
+
     int desplazamientoX; int desplazamientoY;
     int x_rel = 0; int y_rel = 0;
     int x; int y;
 
     public Posicion(int cantX,int cantY){
+
         desplazamientoX = cantX;
         desplazamientoY = cantY;
 
