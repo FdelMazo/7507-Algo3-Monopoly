@@ -11,13 +11,13 @@ import java.util.List;
 
 public class Barrio implements Casillero, Propiedades {
 
-    public Jugador propietario;
+    private Jugador propietario;
     public String nombre;
-    public int costo;
-    public List<Edificacion> listaCasas;
+    private int costo;
+    private List<Edificacion> listaCasas;
     public int alquilerActual;
-    public int alquilerOriginal;
-    public int valor_mercado;
+    private int alquilerOriginal;
+    private int valor_mercado;
     Municipio municipio = Municipio.getInstance();
 
     public Barrio(String unNombre, int valor_propiedad, int elAlquilerOriginal, List edificacionesCasas){

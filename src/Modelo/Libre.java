@@ -2,7 +2,11 @@ package Modelo;
 
 public class Libre implements Estado {
 
-    public boolean mover(Jugador jugador) {
+    public boolean mover() {
+        return true;
+    }
+
+    public boolean movimienoHabilitado() {
         return true;
     }
 }

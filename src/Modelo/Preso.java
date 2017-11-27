@@ -2,22 +2,33 @@ package Modelo;
 
 public class Preso implements Estado{
 
-    int diasPreso;
-    int fianza;
+    private int diasPreso;
+    private int fianza;
+    private boolean fianzaPagada;
+    private Jugador jugador;
 
-    public Preso(){
-        diasPreso = 0;
+    public Preso(Jugador jugador){
+
+        diasPreso = 1;
         fianza = 45000;
+        fianzaPagada = false;
+        this.jugador = jugador;
     }
 
-    public boolean mover(Jugador jugador) {
+    public boolean mover() {
         diasPreso += 1;
-        if (diasPreso > 3){
-            return true;
+        return diasPreso>3 || fianzaPagada ;
+    }
+
+    public boolean pagarFianza (){
+
+        if(diasPreso>1) {
+            fianzaPagada = jugador.solicitarDinero(fianza);
         }
-        else if (diasPreso > 1){
-            return jugador.solicitarDinero(fianza);
-        }
-        return false;
+        return fianzaPagada;
+    }
+
+    public boolean movimienoHabilitado(){
+        return fianzaPagada;
     }
 }

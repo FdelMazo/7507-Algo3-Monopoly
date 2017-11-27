@@ -2,6 +2,7 @@ package Modelo;
 
 public interface Estado {
 
-    boolean mover(Jugador jugador);
+    boolean mover();
+    boolean movimienoHabilitado();
 
 }
