@@ -11,7 +11,7 @@ public class TableroTest {
 
     @Test
     public void testAvanzar3PasosEnTableroCaeEnEdesur() {
-        Jugador jugador = new Jugador("Jugador 1");
+        Jugador jugador = new Jugador("Jugaddor 1");
         Tablero tablero = Tablero.getInstancia();
         jugador.asignarCasillero(tablero.salida());
         Servicio deberiaSerEdesur = (Servicio) tablero.desplazarCasillero(jugador, 3);
@@ -31,17 +31,8 @@ public class TableroTest {
     }
 
     @Test
-    public void testPegarVueltaEnteraPasaPorSalidaYSumaCapital() {
-        Jugador jugador = new Jugador("Jugador 1");
-        Tablero tablero = Tablero.getInstancia();
-        jugador.asignarCasillero(tablero.salida());
-        tablero.desplazarCasillero(jugador, 21);
-        Assert.assertEquals(100000+2000, jugador.capital());
-    }
-
-    @Test
     public void testAvanzarSegunDadosLanzados() {
-        Jugador jugador = new Jugador("Jugador 1");
+        Jugador jugador = new Jugador("Jugadorr 1");
         Tablero tablero = Tablero.getInstancia();
         jugador.asignarCasillero(tablero.salida());
         jugador.lanzarDados();
