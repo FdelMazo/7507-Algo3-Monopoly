@@ -30,6 +30,7 @@ public class Visor {
         Font fontTitulo = new Font("Tahoma Bold", 18);
         Font fontSubTitulo = new Font("Tahoma Bold", 16);
         Label jugador = new Label(jugadorActual.getNombre() + " ($" +jugadorActual.capital() + ")" +" en "+ actual.nombre());
+        jugador.setTextFill(vistaJugador.color);
         Pane espacioVacio = new Pane();
         espacioVacio.setPrefHeight(10);
         flow.getChildren().addAll(jugador, espacioVacio);
@@ -51,6 +52,7 @@ public class Visor {
         if (!jugadorActual.mover()){
             preso = new Label("Preso :(");
             preso.setFont(fontSubTitulo);
+            preso.setTextFill(vistaJugador.color);
             flow.getChildren().add(preso);
         }
         flow.relocate(x, y);

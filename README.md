@@ -59,11 +59,11 @@ Siempre:
 - [X] Un jugador cae en EDESUR adquirida previamente por otro jugador que además es el dueño de AYSA . Verificar que su dinero se reduzca por 1000 veces lo que dice los dados arrojados previamente.
 
 3ra entrega (30 de Noviembre):
-- [ ] **Trabajo Práctico completo funcionando, con interfaz gráfica final, sonidos e informe completo.**
-- [ ] Un jugador arroja los dados y ambos tienen el mismo valor. Verificar que puede volver a jugar. 
-- [ ] Un jugador arroja los dados y ambos tienen el mismo valor en dos oportunidades. Verificar que puede volver a jugar.
-- [ ] Un jugador no cuenta con efectivo y cae en un área que genera gasto. Verificar que un tercer jugador cae en el área que entregó el primer jugador y el cobro del dinero se acredita en la cuenta del jugador que ostenta la titularidad por un monto igual al área sin construcción.
-- [ ] Un jugador arroja los dados. Verificar que este paso de su posición actual a la posición indicada por los dados.
-- [ ] No se puede construir hoteles en terrenos simples (no dobles)
-- [ ] Fin del juego en todas sus variantes.
+- [X] **Trabajo Práctico completo funcionando, con interfaz gráfica final, sonidos e informe completo.**
+- [X] Un jugador arroja los dados y ambos tienen el mismo valor. Verificar que puede volver a jugar. 
+- [X] Un jugador arroja los dados y ambos tienen el mismo valor en dos oportunidades. Verificar que puede volver a jugar.
+- [X] Un jugador no cuenta con efectivo y cae en un área que genera gasto. Verificar que un tercer jugador cae en el área que entregó el primer jugador y el cobro del dinero se acredita en la cuenta del jugador que ostenta la titularidad por un monto igual al área sin construcción.
+- [X] Un jugador arroja los dados. Verificar que este paso de su posición actual a la posición indicada por los dados.
+- [X] No se puede construir hoteles en terrenos simples (no dobles)
+- [X] Fin del juego en todas sus variantes.
 

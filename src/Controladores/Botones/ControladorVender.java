@@ -28,7 +28,7 @@ public class ControladorVender implements EventHandler<ActionEvent>{
                 Sistema.imprimir("\tHa vendido " + actual.nombre() );
             }
             else{
-                Sistema.imprimir("\tYa fue vendida");
+                Sistema.error();
             }
         }
         else {
