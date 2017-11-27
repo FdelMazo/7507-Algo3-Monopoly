@@ -20,6 +20,7 @@ public class ControladorDeTurno {
     private ArrayList<Jugador> jugadores;
 
     private ControladorDeTurno(ArrayList<Jugador> unosJugadores){
+
         jugadores = unosJugadores;
         actual = elegirPrimerJugador();
         Sistema.imprimir("Es el turno de " + actual.getNombre());
@@ -33,6 +34,7 @@ public class ControladorDeTurno {
     }
 
     private Jugador elegirPrimerJugador() {
+
         return jugadores.get(new Random().nextInt(jugadores.size()));
     }
 
@@ -73,7 +75,7 @@ public class ControladorDeTurno {
         jugadores.remove(actual);
     }
 
-    private boolean ganador() {
+    public boolean ganador() {
         return jugadores.size() == 1;
     }
 

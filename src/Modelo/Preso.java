@@ -9,7 +9,7 @@ public class Preso implements Estado{
 
     public Preso(Jugador jugador){
 
-        diasPreso = 1;
+        diasPreso = 0;
         fianza = 45000;
         fianzaPagada = false;
         this.jugador = jugador;

@@ -30,7 +30,7 @@ public class ControladorEdificar implements EventHandler<ActionEvent>{
                 Sistema.imprimir("Se ha podido edificar");
             }
             else{
-                Sistema.imprimir("No se ha puede edificar");
+                Sistema.imprimir("No se ha podido edificar");
             }
             jugadorAnterior = jugador;
         }

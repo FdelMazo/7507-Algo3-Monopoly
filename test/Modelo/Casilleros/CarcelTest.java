@@ -26,6 +26,7 @@ public class CarcelTest {
         Carcel carcel = new Carcel();
         jugador.caeEn(carcel);
         jugador.mover();
+        jugador.mover();
         Assert.assertTrue(jugador.pagarFianza());
     }
 

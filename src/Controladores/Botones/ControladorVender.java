@@ -19,13 +19,12 @@ public class ControladorVender implements EventHandler<ActionEvent>{
 
         Jugador jugador = controlador.getJugadorActual();
         Casillero actual = jugador.actual();
-        if (municipio.esUnaPropiedad(actual.nombre())){
+        if (municipio.esUnaPropiedad(actual.nombre())) {
             if (municipio.tienePropietario((Propiedades) actual) && municipio.devolverPropietario((Propiedades) actual) == jugador) {
                 jugador.venderAlBanco((Propiedades) actual);
                 Sistema.imprimir("Has vendido la propiedad " + actual.nombre());
-            }
-            else{
-                Sistema.imprimir("Ya la has vendido");
+            } else {
+                Sistema.imprimir("No es tu propiedad!");
             }
         }
         else {
@@ -33,5 +32,3 @@ public class ControladorVender implements EventHandler<ActionEvent>{
         }
     }
 }
-
-
