@@ -66,8 +66,6 @@ public class Jugador {
 
         miPropiedad.cambiarPropietario(otroJugador);
         propiedad.cambiarPropietario(this);
-
-
     }
 
     public boolean solicitarDinero(double dineroSolicitado) {
@@ -102,7 +100,7 @@ public class Jugador {
     }
 
     public boolean mover() {
-        return estado.mover(this);
+        return estado.mover();
     }
 
     public void actualizarEstado(Estado nuevo_estado) {
@@ -133,5 +131,13 @@ public class Jugador {
 
     public int sumaDados() {
         return dados.suma();
+    }
+
+    public boolean estaPreso(){
+        return !estado.movimienoHabilitado();
+    }
+
+    public boolean pagarFianza(){
+        return ((Preso)estado).pagarFianza();
     }
 }

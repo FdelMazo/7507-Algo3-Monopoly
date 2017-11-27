@@ -8,9 +8,8 @@ import javafx.scene.paint.Paint;
 public class Carcel implements Casillero {
 
     public void accionAlCaer(Jugador jugador) {
-        jugador.actualizarEstado(new Preso());
+        jugador.actualizarEstado(new Preso(jugador));
     }
-
 
     public String nombre() {  return "Carcel";}
 
