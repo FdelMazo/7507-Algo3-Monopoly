@@ -3,10 +3,10 @@ Trabajo Práctico de Algoritmos y Programación III (FIUBA) - Modelo de Monopoly
 
 [![Build Status](https://travis-ci.com/FdelMazo/TP-AlgoPoly.svg?token=kj1PzEAEuR5mVTx6hGWT&branch=master)](https://travis-ci.com/FdelMazo/TP-AlgoPoly)
 
-Link del enunciado: https://docs.google.com/document/d/1RyvpADWb5YdPkJh7CrAvl50YPDFybpk-A0Vhe_ewsRg/edit
+![Pantalla de entrada](Screenshots/intro.png)
+![Pantalla principal](Screenshots/ppal.png)
 
-Link de informe en OverLeaf: https://www.overleaf.com/12145961vynncnsxsbsh#/46137547/
-
+---
 ### Pasos para trabajar:
 
 Solo la primera vez:
@@ -25,6 +25,8 @@ Siempre:
 1. `git push origin master` 
 1. Confirmar que el build paso las pruebas de [Travis](https://travis-ci.com/FdelMazo/TP-AlgoPoly/) (se recibe un mail de no hacerlo)
 
+
+---
 1ra Entrega (13 de Noviembre):
 - [X] Un jugador cae en Quini 6 por primera vez. Verificar que su capital se incrementa en $50000.
 - [X] Un jugador cae en Quini 6 por segunda vez. Verificar que su capital se incrementa en $30000.
